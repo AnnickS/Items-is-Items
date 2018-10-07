@@ -5,8 +5,8 @@
     |___||__|  \___  >__|_|  /____  > |__/____  > |___||__|  \___  >__|_|  /____  >
                    \/      \/     \/          \/                 \/      \/     \/
 
-# Authors: Job Bletcher, Jordan Bletcher, Annick Stefanin
+Authors: Job Bletcher, Jordan Bletcher, Annick Stefanin
 
 # Overview:
 
-# A top down 2D adventure puzzle game for mobile devices.
+A top down 2D adventure puzzle game for mobile devices.
