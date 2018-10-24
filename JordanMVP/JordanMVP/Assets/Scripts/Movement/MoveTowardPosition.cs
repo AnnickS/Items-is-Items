@@ -41,7 +41,6 @@ public class MoveTowardPosition : MonoBehaviour
         }
         else if (moving == true)
         {
-            Debug.Log("Moving");
             move();
         }
     }
