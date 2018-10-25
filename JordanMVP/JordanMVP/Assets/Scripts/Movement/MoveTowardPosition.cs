@@ -17,7 +17,7 @@ public class MoveTowardPosition : MonoBehaviour
         }
     }
 
-    public void goToPosition(Vector2 newGoalPosition)
+    public void moveToPosition(Vector2 newGoalPosition)
     {
         targetPosition = newGoalPosition;
         moving = true;
@@ -41,7 +41,6 @@ public class MoveTowardPosition : MonoBehaviour
         }
         else if (moving == true)
         {
-            Debug.Log("Moving");
             move();
         }
     }
