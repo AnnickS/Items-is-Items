@@ -31,7 +31,7 @@ public class MovementTest
         MoveTowardPosition moveTowardPosition = character.GetComponent<MoveTowardPosition>();
         Vector3 expected = character.transform.position;
 
-        moveTowardPosition.goToPosition(new Vector2(1, 1));
+        moveTowardPosition.moveToPosition(new Vector2(1, 1));
 
         Time.timeScale = 100;
         yield return new WaitForSeconds(1);
@@ -48,7 +48,7 @@ public class MovementTest
         MoveTowardPosition moveTowardPosition = character.GetComponent<MoveTowardPosition>();
         Vector2 targetPosition = new Vector2(1, 1);
 
-        moveTowardPosition.goToPosition(targetPosition);
+        moveTowardPosition.moveToPosition(targetPosition);
 
         Time.timeScale = 100;
         yield return new WaitForSeconds(10);

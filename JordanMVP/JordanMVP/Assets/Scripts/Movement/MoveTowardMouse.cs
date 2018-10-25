@@ -11,7 +11,7 @@ public class MoveTowardMouse : MoveTowardPosition
         if (Input.GetMouseButtonDown(mouseButton) || Input.GetMouseButton(mouseButton))
         {
             Vector3 mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-            base.goToPosition(mousePosition);
+            base.moveToPosition(mousePosition);
         }
     }
 }
