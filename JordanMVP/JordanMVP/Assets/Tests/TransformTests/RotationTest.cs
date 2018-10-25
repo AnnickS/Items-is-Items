@@ -37,19 +37,32 @@ public class RotationTest {
     public IEnumerator RotateTowardsMovePositionTest()
     {
         GameObject character = MonoBehaviour.Instantiate(Resources.Load<GameObject>("Character"));
-        MoveTowardPosition moveTowardPosition = character.GetComponent<MoveTowardPosition>();
-        RotateTowardPosition rotateTowardPosition = character.GetComponent<RotateTowardPosition>();
+        character.transform.position = new Vector2(0, 0);
+        MoveTowardPosition moveScript = character.GetComponent<MoveTowardPosition>();
+        RotateTowardMovementTarget rotateScript = character.GetComponent<RotateTowardMovementTarget>();
 
         character.transform.position = new Vector3(0, 0);
         Vector2 targetPosition = new Vector2(1, 1);
-        moveTowardPosition.moveToPosition(targetPosition);
+        moveScript.moveToPosition(targetPosition);
 
-        yield return null;
+        rotateScript.rotateTowardsTargetPosition();
 
         Quaternion actual = character.transform.rotation;
-        Quaternion expected = Quaternion.Euler(new Vector3(0, 0, -45 + rotateTowardPosition.rotationOffset));
+        Quaternion expected = Quaternion.Euler(new Vector3(0, 0, -45 + rotateScript.rotationOffset));
 
-        Assert.True(actual.eulerAngles.z.Equals(expected.eulerAngles.z));
+        string errorMessage = "";
+        errorMessage += "The Rotation Test failed it had: ";
+        errorMessage += "/nActual rotation of: ";
+        errorMessage += actual;
+        errorMessage += "/nExpected rotation of: ";
+        errorMessage += expected;
+        errorMessage += "/nActual eular angle of ";
+        errorMessage += actual.eulerAngles;
+        errorMessage += "/nExpected eular angle of ";
+        errorMessage += expected.eulerAngles;
+
+        Assert.True(actual.eulerAngles.z.Equals(expected.eulerAngles.z), errorMessage);
         MonoBehaviour.Destroy(character);
+        yield return null;
     }
 }

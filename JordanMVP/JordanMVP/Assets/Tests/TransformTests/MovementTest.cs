@@ -45,6 +45,7 @@ public class MovementTest
     public IEnumerator GoToPositionTest()
     {
         GameObject character = MonoBehaviour.Instantiate(Resources.Load<GameObject>("Character"));
+        character.transform.position = new Vector2(0, 0);
         MoveTowardPosition moveTowardPosition = character.GetComponent<MoveTowardPosition>();
         Vector2 targetPosition = new Vector2(1, 1);
 
