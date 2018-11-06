@@ -6,6 +6,7 @@ public class ItemSlot : MonoBehaviour {
 
     public Button button;
     public Image image;
+    private Pickup item;
 
     // Use this for initialization
     void Start () {
@@ -22,13 +23,19 @@ public class ItemSlot : MonoBehaviour {
         Selected selected = Selected.getInstance();
         Debug.Log("Hi");
 
-        if(selected.isItemSelected())
+        if(item != null)
+        {
+
+        }
+        else if(selected.isItemSelected())
         {
             Debug.Log("bye");
 
             Pickup item = selected.getSelectedItem();
             image.sprite = item.GetComponent<SpriteRenderer>().sprite;
             image.enabled = true;
+            item.gameObject.SetActive(false);
+            this.item = item;
 
             selected.deselect();
         }

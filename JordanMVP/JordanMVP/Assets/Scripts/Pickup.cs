@@ -13,7 +13,7 @@ public class Pickup : MoveTowardPosition
     }
 
     //inventory Follow Player
-    /*
+    //*
     private GameObject targetGameObject;
     bool move = false;
 
