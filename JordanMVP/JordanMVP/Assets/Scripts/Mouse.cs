@@ -25,6 +25,15 @@ public class Mouse : MonoBehaviour {
                 mousePosition.z = selectedItem.transform.position.z;
                 selectedItem.transform.position = mousePosition;
             }
+
+            if(ItemSlot.isItemSelected())
+            {
+                Pickup selectedItem = ItemSlot.getSelectedItem();
+                ItemSlot.deselect();
+                mousePosition.z = selectedItem.transform.position.z;
+                selectedItem.transform.position = mousePosition;
+
+            }
         }
     }
 }

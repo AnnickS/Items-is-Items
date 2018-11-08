@@ -33,17 +33,17 @@ public class Selected
         spriteRenderer.color = color;
     }
 
-    internal Pickup getSelectedItem()
+    public Pickup getSelectedItem()
     {
         return selectedItem;
     }
 
-    internal bool isItemSelected()
+    public bool isItemSelected()
     {
         return selectedItem != null;
     }
 
-    internal void deselect()
+    public void deselect()
     {
         setColorOfItem(selectedItem, Color.white);
         selectedItem = null;
