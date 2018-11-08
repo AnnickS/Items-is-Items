@@ -17,18 +17,18 @@ public class Mouse : MonoBehaviour {
         {
             Vector3 mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
 
-            Selected selected = Selected.getInstance();
+            Select selected = Select.getInstance();
 
             if(selected.isItemSelected())
             {
-                Pickup selectedItem = selected.getSelectedItem();
+                Selectable selectedItem = selected.getSelectedItem();
                 mousePosition.z = selectedItem.transform.position.z;
                 selectedItem.transform.position = mousePosition;
             }
 
             if(ItemSlot.isItemSelected())
             {
-                Pickup selectedItem = ItemSlot.getSelectedItem();
+                Selectable selectedItem = ItemSlot.getSelectedItem();
                 ItemSlot.deselect();
                 mousePosition.z = selectedItem.transform.position.z;
                 selectedItem.transform.position = mousePosition;

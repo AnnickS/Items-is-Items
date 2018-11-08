@@ -6,7 +6,7 @@ public class ItemSlot : MonoBehaviour {
 
     protected static ItemSlot selectedItemSlot;
 
-    public static Pickup getSelectedItem()
+    public static Selectable getSelectedItem()
     {
         return selectedItemSlot.item;
     }
@@ -33,7 +33,7 @@ public class ItemSlot : MonoBehaviour {
         selectedItemSlot.item = null;
     }
 
-    private static void setColorOfItem(Pickup item, Color color)
+    private static void setColorOfItem(Selectable item, Color color)
     {
         SpriteRenderer spriteRenderer = item.GetComponent<SpriteRenderer>();
         spriteRenderer.color = color;
@@ -43,7 +43,7 @@ public class ItemSlot : MonoBehaviour {
 
     public Button button;
     public Image image;
-    private Pickup item;
+    private Selectable item;
 
     // Use this for initialization
     void Start () {
@@ -58,7 +58,7 @@ public class ItemSlot : MonoBehaviour {
     void ButtonPressed()
     {
         Debug.Log("button presesed");
-        Selected selected = Selected.getInstance();
+        Select selected = Select.getInstance();
 
         if(item != null)
         {
@@ -67,7 +67,7 @@ public class ItemSlot : MonoBehaviour {
         else if(selected.isItemSelected())
         {
 
-            Pickup item = selected.getSelectedItem();
+            Selectable item = selected.getSelectedItem();
             image.enabled = true;
             image.color = Color.white;
             image.sprite = item.GetComponent<SpriteRenderer>().sprite;
