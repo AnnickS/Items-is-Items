@@ -33,7 +33,7 @@ public class MoveTowardPosition : MonoBehaviour
         return moving;
     }
 
-    void FixedUpdate()
+    protected void FixedUpdate()
     {
         if (isAlreadyAtTarget())
         {
