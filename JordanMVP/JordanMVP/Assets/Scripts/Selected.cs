@@ -9,9 +9,7 @@ public class Selected
 
     public void Select(Pickup newItem)
     {
-
-
-        if(isItemSelected())
+        if (isItemSelected())
         {
             if(selectedItem == newItem)
             {
