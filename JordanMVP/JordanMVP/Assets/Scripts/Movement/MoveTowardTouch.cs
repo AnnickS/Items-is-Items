@@ -2,18 +2,9 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-[RequireComponent(typeof(SpriteRenderer))]
-public class Pickup : MoveTowardPosition
+public class MoveTowardTouch : MoveTowardPosition
 {
-    //inventory put into UI
 
-    void OnMouseDown()
-    {
-        Selected.getInstance().Select(this);
-    }
-
-    //inventory Follow Player
-    //*
     private GameObject targetGameObject;
     bool move = false;
 
@@ -32,12 +23,10 @@ public class Pickup : MoveTowardPosition
 
     void FixedUpdate()
     {
-        if(move)
+        if (move)
         {
             base.moveToPosition(targetGameObject.transform.position);
         }
         base.FixedUpdate();
     }
-
-    //*/
 }

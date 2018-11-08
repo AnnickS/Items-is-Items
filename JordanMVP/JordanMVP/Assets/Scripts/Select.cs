@@ -3,11 +3,11 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Selected
+public class Select
 {
-    private Pickup selectedItem;
+    private Selectable selectedItem;
 
-    public void Select(Pickup newItem)
+    public void selectItem(Selectable newItem)
     {
         if (isItemSelected())
         {
@@ -27,13 +27,13 @@ public class Selected
         setColorOfItem(selectedItem, Color.gray);
     }
 
-    private void setColorOfItem(Pickup item, Color color)
+    private void setColorOfItem(Selectable item, Color color)
     {
         SpriteRenderer spriteRenderer = item.GetComponent<SpriteRenderer>();
         spriteRenderer.color = color;
     }
 
-    public Pickup getSelectedItem()
+    public Selectable getSelectedItem()
     {
         return selectedItem;
     }
@@ -49,13 +49,13 @@ public class Selected
         selectedItem = null;
     }
 
-    private static Selected instance;
+    private static Select instance;
 
-    public static Selected getInstance()
+    public static Select getInstance()
     {
         if (instance == null)
         {
-            instance = new Selected();
+            instance = new Select();
         }
 
         return instance;
