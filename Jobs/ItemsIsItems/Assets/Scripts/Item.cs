@@ -4,11 +4,19 @@ using UnityEngine;
 
 public class Item : MonoBehaviour
 {
-    /*
-     * Tools (weapons, beds)
-     * consumibles (cheese, poison?)
-     * terrain/buldings (doors)
-     * entities (knights, rats)
-     * general items (coins)
-     */
+    GameObject graphicalObj;
+
+    void Start()
+    {
+        graphicalObj = transform.Find("Mesh").gameObject;
+        if(graphicalObj == null)
+        {
+            graphicalObj = gameObject;
+        }
+    }
+
+    public void ChangeColor(Color newColor)
+    {
+        graphicalObj.GetComponent<MeshRenderer>().material.color = newColor;
+    }
 }

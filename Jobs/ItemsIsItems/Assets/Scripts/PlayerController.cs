@@ -25,14 +25,6 @@ public class PlayerController : MonoBehaviour {
 
     private void OnMouseHold()
     {
-        /*
-        Vector3 clickPos = GetMouseWorldPosistionByRay();
-        if (clickPos != Vector3.zero)
-        { 
-            move.SetTargetPosition(clickPos);
-        }
-        */
-
         Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
         RaycastHit hit;
         if (Physics.Raycast(ray, out hit))
