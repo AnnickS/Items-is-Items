@@ -32,11 +32,12 @@ public class FollowMovement : MonoBehaviour {
     private void changeMovement()
     {
         PlayerPosition = new Vector2(Player.transform.position.x, Player.transform.position.y);
-        transform.position = Vector2.MoveTowards(transform.position, PlayerPosition, Speed * Time.deltaTime);
+        Vector2 Distance = new Vector2(transform.position.x, transform.position.y) - PlayerPosition;
 
-        if(Distance.magnitude > 10)
+        if(Distance.magnitude > 1)
         {
-            Vector2 Distance = new Vector2(transform.position.x, transform.position.y) - PlayerPosition;
+            transform.position = Vector2.MoveTowards(transform.position, PlayerPosition, Speed * Time.deltaTime);
+            
         }
     }
 
