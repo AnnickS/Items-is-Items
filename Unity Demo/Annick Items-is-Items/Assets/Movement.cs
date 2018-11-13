@@ -9,7 +9,7 @@ public class Movement : MonoBehaviour {
 
     private void FixedUpdate()
     {
-        playerMovement = new Vector2(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical"));
+        playerMovement = new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical"));
         playerBody.AddForce(playerMovement*speed);
     }
 
@@ -20,6 +20,16 @@ public class Movement : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update ()
+    {
+        /*playerMovement = new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical"));
+
+        if(playerMovement.x != 0 || playerMovement.y != 0)
+        {
+            attemptMove()
+        }*/
+    }
+
+    private void attemptMove(Vector2 movement)
     {
 
     }
