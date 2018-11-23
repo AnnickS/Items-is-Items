@@ -204,9 +204,7 @@ MonoBehaviour:
   player: {fileID: 499815965}
   followBehind: {fileID: 0}
   Speed: 4
-  inPlayerInventory: 0
-  changeFollowBehind: 
-  thisObject: 
+  overPlayer: 0
 --- !u!61 &15631672
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -240,7 +238,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 15631668}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 05cbf720a389c904cb49e8487e7d74b6, type: 3}
+  m_Script: {fileID: 11500000, guid: a49f32046e4d03d47a9e1bee614fc476, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &499815965
@@ -256,6 +254,7 @@ GameObject:
   - component: {fileID: 499815968}
   - component: {fileID: 499815967}
   - component: {fileID: 499815966}
+  - component: {fileID: 499815972}
   m_Layer: 0
   m_Name: AlienGirl
   m_TagString: Player
@@ -389,6 +388,17 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &499815972
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 499815965}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e39c2824cd411dc489a0c8531b36e078, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &981215184
 GameObject:
   m_ObjectHideFlags: 0
@@ -502,9 +512,7 @@ MonoBehaviour:
   player: {fileID: 499815965}
   followBehind: {fileID: 0}
   Speed: 4
-  inPlayerInventory: 0
-  changeFollowBehind: 
-  thisObject: 
+  overPlayer: 0
 --- !u!61 &1157607882
 BoxCollider2D:
   m_ObjectHideFlags: 0

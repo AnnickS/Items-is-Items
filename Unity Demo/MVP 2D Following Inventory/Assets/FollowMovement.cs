@@ -14,6 +14,7 @@ public class FollowMovement : MonoBehaviour {
     private Vector2 PlayerPosition;
     private bool onDrag = false;
     private bool inPlayerInventory = false;
+    public bool overPlayer = false;
 
     // Use this for initialization
     void Start()
@@ -66,6 +67,19 @@ public class FollowMovement : MonoBehaviour {
         if (onDrag)
         {
             onDrag = false;
+            if (overPlayer)
+            {
+                player.GetComponent<Player>().changeColor(Color.green);
+                Destroy(this.gameObject);
+            }
+        }
+    }
+
+    private void OnTriggerExit2D(Collider2D other)
+    {
+        if (other.gameObject.CompareTag("Player"))
+        {
+            overPlayer = false;
         }
     }
 
@@ -83,6 +97,11 @@ public class FollowMovement : MonoBehaviour {
 
     void OnTriggerEnter2D(Collider2D other)
     {
+        if (onDrag)
+        {
+            overPlayer = true;
+
+        }
         //Check the provided Collider2D parameter other to see if it is tagged "Player", if it is...
         if (other.gameObject.CompareTag("Player") && (inPlayerInventory == false))
         {

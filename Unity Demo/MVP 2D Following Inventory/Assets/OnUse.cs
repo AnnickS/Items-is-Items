@@ -13,9 +13,4 @@ public class OnUse : MonoBehaviour {
 	void Update () {
 		
 	}
-
-    private void OnMouseDown()
-    {
-        
-    }
 }
