@@ -1,17 +1,15 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
 using UnityEngine;
 
 public abstract class Inventory : MonoBehaviour
 {
-    public List<Item> items = new List<Item>();
+    protected List<Item> items = new List<Item>();
+    protected GameObject belongsTo;
 
-    public PlayerController player {get; set;}
-
-    void Start()
+    protected virtual void Start()
     {
-        player = GetComponent<PlayerController>();
+        this.belongsTo = gameObject;
     }
 
     public abstract void Open();
@@ -22,13 +20,12 @@ public abstract class Inventory : MonoBehaviour
         items.Add(item);
     }
 
-    public virtual void removeItem(Item item)
+    public virtual void RemoveItem(Item item)
     {
         items.Remove(item);
     }
 
-
-    public bool Contains(Item item)
+    public virtual bool Contains(Item item)
     {
         return items.Contains(item);
     }

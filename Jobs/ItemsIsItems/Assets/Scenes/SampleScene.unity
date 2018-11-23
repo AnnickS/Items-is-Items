@@ -123,7 +123,7 @@ GameObject:
   - component: {fileID: 157014076}
   - component: {fileID: 157014078}
   - component: {fileID: 157014077}
-  m_Layer: 0
+  m_Layer: 14
   m_Name: Mesh
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -337,7 +337,7 @@ GameObject:
   - component: {fileID: 577609926}
   - component: {fileID: 577609931}
   - component: {fileID: 577609932}
-  m_Layer: 0
+  m_Layer: 14
   m_Name: Player
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -393,10 +393,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a350ba2aaa3e0ba44bda6c0a7e2a00cd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  canMove: 0
+  canMove: 1
   speed: 10
-  targetPosition: {x: 0, y: 0, z: 0}
   offset: 0.5
+  targetPosition: {x: 0, y: 0, z: 0}
 --- !u!4 &577609930
 Transform:
   m_ObjectHideFlags: 0
@@ -422,7 +422,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 48824b4c3dc2e4747919dbd7602c6203, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  items: []
 --- !u!114 &577609932
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -434,6 +433,47 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b83b1ee880447184ba5735c247233f96, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isPickupable: 1
+--- !u!1 &864742841
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 864742843}
+  - component: {fileID: 864742842}
+  m_Layer: 0
+  m_Name: GameManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &864742842
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 864742841}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b6ef65b3d4c46c04aa90a2b50f7767f6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!4 &864742843
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 864742841}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.17107624, y: -0.3036499, z: -1.9640667}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 5
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1792185205
 GameObject:
   m_ObjectHideFlags: 0
@@ -621,6 +661,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b83b1ee880447184ba5735c247233f96, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isPickupable: 1
 --- !u!114 &2027100484
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -634,8 +675,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   canMove: 0
   speed: 10
-  targetPosition: {x: 0, y: 0, z: 0}
   offset: 2
+  targetPosition: {x: 0, y: 0, z: 0}
 --- !u!54 &2027100485
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -649,7 +690,7 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 0
+  m_Constraints: 80
   m_CollisionDetection: 0
 --- !u!114 &2027100486
 MonoBehaviour:

@@ -2,21 +2,28 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+[RequireComponent(typeof(Movement))]
 public class Item : MonoBehaviour
 {
-    GameObject graphicalObj;
+    //GameObject graphicalObj;
+    public bool isPickupable = true;
+
+    Movement movement;
 
     void Start()
     {
-        graphicalObj = transform.Find("Mesh").gameObject;
-        if(graphicalObj == null)
-        {
-            graphicalObj = gameObject;
-        }
+        movement = GetComponent<Movement>();
+
+        //graphicalObj = transform.Find("Mesh").gameObject;
     }
 
-    public void ChangeColor(Color newColor)
+    public void OnCollisionEnter(Collision collision)
     {
-        graphicalObj.GetComponent<MeshRenderer>().material.color = newColor;
+        Item other = collision.gameObject.GetComponent<Item>();
+        if (other != null)
+        {
+            GameManager.gameManager.OnItemTouch(this, other);
+        }        
     }
+
 }

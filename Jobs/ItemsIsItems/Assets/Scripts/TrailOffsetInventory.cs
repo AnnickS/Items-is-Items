@@ -5,14 +5,9 @@ using UnityEngine;
 public class TrailOffsetInventory : Inventory
 {
 
-    private void Start()
-    {
-        player = GetComponent<PlayerController>();
-    }
-
     void FixedUpdate()
     {
-        if(player == null)
+        if(belongsTo == null)
         {
             return;
         }
@@ -45,9 +40,9 @@ public class TrailOffsetInventory : Inventory
         item.GetComponent<Movement>().SetMoveable(true);
     }
 
-    public override void removeItem(Item item)
+    public override void RemoveItem(Item item)
     {
-        base.removeItem(item);
+        base.RemoveItem(item);
         item.GetComponent<Movement>().SetMoveable(false);
     }
 

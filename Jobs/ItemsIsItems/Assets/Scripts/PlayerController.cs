@@ -4,55 +4,52 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour {
 
+    //public bool canMove = true;
+
+
     Movement move;
     Inventory inventory;
 
-    // Use this for initialization
     void Start () {
-        move = GetComponent<Movement>();
-        move.SetMoveable(true);
         inventory = GetComponent<Inventory>();
-        inventory.player = this;
-    }
-	
-	// Update is called once per frame
-    void Update()
-    {
-        if (Input.GetMouseButton(0)){
-            OnMouseHold();
-        }
+        move = GetComponent<Movement>();
+        InputManager.instance.OnTouch.AddListener(OnFingerDown);
     }
 
-    private void OnMouseHold()
+    private void OnFingerDown(Touch touch)
     {
-        Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+        Ray ray = Camera.main.ScreenPointToRay(touch.position);
         RaycastHit hit;
         if (Physics.Raycast(ray, out hit))
         {
+            Debug.Log(hit.transform.name);
             switch (LayerMask.LayerToName(hit.collider.gameObject.layer))
             {
+                case "Player":
+                    if(hit.transform == this.transform){
+                        move.SetTargetPosition(touch);
+                    }
+                    break;
                 case "Ground":
-                    move.SetTargetPosition(hit.point);
+                    move.SetTargetPosition(touch);
                     break;
                 case "Item":
-                    if (Input.GetMouseButtonDown(0))
-                    {
-                        Item item = hit.collider.gameObject.GetComponent<Item>();
-                        if (!inventory.Contains(item))
-                        {
-                            inventory.AddItem(item);
-                        }
-                        else
-                        {
-                            inventory.removeItem(item);
-                        }
+                    Item item = hit.transform.GetComponent<Item>();
+                    if (inventory.Contains(item)){
+                        inventory.RemoveItem(item);
+                        hit.transform.GetComponent<Movement>().SetTargetPosition(touch);
                     }
                     break;
             }
         }
     }
 
-    Vector3 GetMouseWorldPosistionByCamera() {
+    private void OnFingerUp(Touch touch)
+    {
+
+    }
+
+    Vector3 GetMouseWorldPositionByCamera() {
         return Camera.main.ScreenToWorldPoint(Input.mousePosition);
     }
 
@@ -66,11 +63,15 @@ public class PlayerController : MonoBehaviour {
         return Vector3.zero;
     }
 
-    Collider GetClickRaycast()
+    private void OnCollisionEnter(Collision collision)
     {
-        Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-        RaycastHit hit;
-        Physics.Raycast(ray, out hit);
-        return hit.collider;
+        Item item = collision.gameObject.GetComponent<Item>();
+        if (item != null && item.isPickupable)
+        { 
+            if (!inventory.Contains(item))
+            {
+                inventory.AddItem(item);
+            }
+        }
     }
 }
