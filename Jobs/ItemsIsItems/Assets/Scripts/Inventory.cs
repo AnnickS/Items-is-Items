@@ -17,7 +17,7 @@ public abstract class Inventory : MonoBehaviour
 
     public virtual void AddItem(Item item)
     {
-        items.Add(item);
+        items.Insert(0, item);
     }
 
     public virtual void RemoveItem(Item item)

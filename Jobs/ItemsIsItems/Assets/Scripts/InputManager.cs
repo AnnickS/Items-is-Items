@@ -7,9 +7,10 @@ public class InputManager : MonoBehaviour
 {
     public static InputManager instance;
     
-    Dictionary<int, UnityEvent> touches = new Dictionary<int, UnityEvent>();
+    Dictionary<int, UnityTouchEvent> touches = new Dictionary<int, UnityTouchEvent>();
 
-    public UnityTouchEvent OnTouch = new UnityTouchEvent();
+    public UnityTouchEvent OnTouchDown = new UnityTouchEvent();
+    //public UnityTouchEvent OnTouchUp = new UnityTouchEvent();
 
     private void Awake()
     {
@@ -38,7 +39,7 @@ public class InputManager : MonoBehaviour
     {
         if(touches[touch.fingerId] != null)
         {
-            touches[touch.fingerId].Invoke();
+            touches[touch.fingerId].Invoke(touch);
         }
         touches.Remove(touch.fingerId);
     }
@@ -47,13 +48,31 @@ public class InputManager : MonoBehaviour
     {
         if (touches.ContainsKey(touch.fingerId) == false)
         {
-            touches.Add(touch.fingerId, new UnityEvent());
+            touches.Add(touch.fingerId, new UnityTouchEvent());
         }
 
-        if (OnTouch != null)
+        if (OnTouchDown != null)
         {
-            OnTouch.Invoke(touch);
+            OnTouchDown.Invoke(touch);
         }
+        /*
+        Ray ray = Camera.main.ScreenPointToRay(touch.position);
+        RaycastHit hit;
+        if (Physics.Raycast(ray, out hit))
+        {
+            switch (LayerMask.LayerToName(hit.collider.gameObject.layer))
+            {
+                case "Item":
+                    Item item = hit.transform.GetComponent<Item>();
+                    if (Contains(item))
+                    {
+                        selectedItems.Add(touch.fingerId, item);
+                        //RemoveItem(item);
+                        //hit.transform.GetComponent<Movement>().SetTargetPosition(touch);
+                    }
+                    break;
+            }
+        }*/
     }
 
     public Touch? GetTouch(int touchID)
@@ -68,12 +87,11 @@ public class InputManager : MonoBehaviour
         return null;
     }
 
-    public bool OnTouchEnd(int touchID, UnityAction action)
+    public bool OnTouchEnd(int touchID, UnityAction<Touch> action)
     {
         if (touches.ContainsKey(touchID))
         {
             touches[touchID].AddListener(action);
-            Debug.Log("Listening");
             return true;
         }
         return false;

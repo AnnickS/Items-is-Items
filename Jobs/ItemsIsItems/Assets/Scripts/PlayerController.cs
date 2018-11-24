@@ -6,6 +6,7 @@ public class PlayerController : MonoBehaviour {
 
     //public bool canMove = true;
 
+    LinkedList<int> touches = new LinkedList<int>();
 
     Movement move;
     Inventory inventory;
@@ -13,7 +14,22 @@ public class PlayerController : MonoBehaviour {
     void Start () {
         inventory = GetComponent<Inventory>();
         move = GetComponent<Movement>();
-        InputManager.instance.OnTouch.AddListener(OnFingerDown);
+        InputManager.instance.OnTouchDown.AddListener(OnFingerDown);
+    }
+
+    private void Update()
+    {
+        if (touches.Count > 0)
+        {
+            Ray ray = Camera.main.ScreenPointToRay(InputManager.instance.GetTouch(touches.First.Value).Value.position);
+            RaycastHit hit;
+            Physics.Raycast(ray, out hit, 10000f, 1 << LayerMask.NameToLayer("Ground"));
+            move.SetTargetPosition(hit.point);
+        }
+        else
+        {
+            move.CancelMove();//.isMoving = false;
+        }
     }
 
     private void OnFingerDown(Touch touch)
@@ -26,27 +42,24 @@ public class PlayerController : MonoBehaviour {
             switch (LayerMask.LayerToName(hit.collider.gameObject.layer))
             {
                 case "Player":
-                    if(hit.transform == this.transform){
-                        move.SetTargetPosition(touch);
-                    }
-                    break;
                 case "Ground":
-                    move.SetTargetPosition(touch);
+                    touches.AddFirst(touch.fingerId);
+                    InputManager.instance.OnTouchEnd(touch.fingerId, OnFingerUp);
                     break;
                 case "Item":
-                    Item item = hit.transform.GetComponent<Item>();
-                    if (inventory.Contains(item)){
-                        inventory.RemoveItem(item);
-                        hit.transform.GetComponent<Movement>().SetTargetPosition(touch);
+                Item item = hit.transform.GetComponent<Item>();
+                    if (inventory.Contains(item) == false){
+                        touches.AddFirst(touch.fingerId);
+                        InputManager.instance.OnTouchEnd(touch.fingerId, OnFingerUp);
                     }
-                    break;
+                break;
             }
         }
     }
 
     private void OnFingerUp(Touch touch)
     {
-
+        touches.Remove(touch.fingerId);
     }
 
     Vector3 GetMouseWorldPositionByCamera() {

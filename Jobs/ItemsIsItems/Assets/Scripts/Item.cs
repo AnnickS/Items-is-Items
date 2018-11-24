@@ -5,7 +5,7 @@ using UnityEngine;
 [RequireComponent(typeof(Movement))]
 public class Item : MonoBehaviour
 {
-    //GameObject graphicalObj;
+    public GameObject graphicalObj;
     public bool isPickupable = true;
 
     Movement movement;
@@ -13,8 +13,15 @@ public class Item : MonoBehaviour
     void Start()
     {
         movement = GetComponent<Movement>();
-
-        //graphicalObj = transform.Find("Mesh").gameObject;
+        
+        if(transform.Find("Mesh") != null)
+        {
+            graphicalObj = transform.Find("Mesh").gameObject;
+        }
+        else
+        {
+            graphicalObj = gameObject;
+        }
     }
 
     public void OnCollisionEnter(Collision collision)
@@ -22,7 +29,10 @@ public class Item : MonoBehaviour
         Item other = collision.gameObject.GetComponent<Item>();
         if (other != null)
         {
-            GameManager.gameManager.OnItemTouch(this, other);
+            if (GetHashCode() > other.GetHashCode())
+            {
+                GameManager.gameManager.OnItemTouch(new ItemInteractionRequest(this, other));
+            }
         }        
     }
 
