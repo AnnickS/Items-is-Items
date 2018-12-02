@@ -19,9 +19,10 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4276802900265518}
+  - component: {fileID: 114772486061818740}
   - component: {fileID: 212309581443847424}
   - component: {fileID: 61697811224869470}
-  - component: {fileID: 50019797031248880}
+  - component: {fileID: 50387694716213120}
   m_Layer: 0
   m_Name: ItemDye
   m_TagString: Untagged
@@ -42,7 +43,7 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!50 &50019797031248880
+--- !u!50 &50387694716213120
 Rigidbody2D:
   serializedVersion: 4
   m_ObjectHideFlags: 1
@@ -71,7 +72,7 @@ BoxCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
@@ -87,6 +88,19 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
+--- !u!114 &114772486061818740
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1615365873837686}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a1cade541f532cc4bb024a187b90e165, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 0.05
+  moving: 0
 --- !u!212 &212309581443847424
 SpriteRenderer:
   m_ObjectHideFlags: 1
