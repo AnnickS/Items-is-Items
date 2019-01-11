@@ -8,7 +8,7 @@ public class ItemManager : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
         Manager = this;
-        combinations.Add(new Combination("ItemFlower", "Item", new EffectChangeColor()));
+        combinations.Add(new Combination(typeof(Item), typeof(Item), new EffectChangeColor()));
 	}
 	
 	// Update is called once per frame
@@ -17,21 +17,35 @@ public class ItemManager : MonoBehaviour {
 	}
 
     private List<Combination> combinations = new List<Combination>();
-    public void UseItem(Collider2D useItem, Collider2D affectedItem)
+    public void UseItem(Collider2D useItemCollider, Collider2D affectedItemCollider)
     {
-        List<string> itemUseTags = useItem.GetComponent<Item>().Tags;
-        List<string> affectedItemTags = useItem.GetComponent<Item>().Tags;
-
-        foreach(Combination combination in combinations)
+        Item useItem = useItemCollider.gameObject.GetComponent<Item>();
+        if(useItem == null)
         {
-            if(combination.match(itemUseTags, affectedItemTags))
+            return;
+        }
+
+        Item affectedItem = affectedItemCollider.gameObject.GetComponent<Item>();
+        if (affectedItem == null)
+        {
+            return;
+        }
+
+        bool combined = false;
+        foreach (Combination combination in combinations)
+        {
+            if(combination.match(useItem, affectedItem))
             {
                 Effect effect = combination.getEffect();
                 effect.actOn(useItem.gameObject, affectedItem.gameObject);
+                combined = true;
             }
         }
 
-        Destroy(useItem.gameObject);
+        if(combined)
+        {
+            Destroy(useItem.gameObject);
+        }
 
         /*
         string itemUse = useItem.GetComponent<Item>().Tags[0];

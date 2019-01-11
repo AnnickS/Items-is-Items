@@ -1,24 +1,28 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class Combination
 {
 
-    string tag1;
-    string tag2;
+    Type useItemType;
+    Type affectedItemType;
     Effect effect;
 
-    public Combination(string tag1, string tag2, Effect effect)
+    public Combination(Type useItemType, Type affectedItemType, Effect effect)
     {
-        this.tag1 = tag1;
-        this.tag2 = tag2;
+        this.useItemType = useItemType;
+        this.affectedItemType = affectedItemType;
         this.effect = effect;
     }
 
-    public bool match(List<string> tags1, List<string> tags2)
+    public bool match(Item useItem, Item affectedItem)
     {
-        return true;
+        bool useItemSame = useItemType.IsAssignableFrom(useItem.GetType());
+        bool affectedItemSame = affectedItemType.IsAssignableFrom(affectedItem.GetType());
+
+        return (useItemSame && affectedItemSame);
     }
 
     public Effect getEffect()
