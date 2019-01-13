@@ -5,13 +5,17 @@ using UnityEngine;
 [RequireComponent(typeof(MoveTowardPosition))]
 public class Item : MonoBehaviour
 {
+    public new String name;
     public GameObject graphicalObj;
-    public bool isPickupable = true;
-    public bool drag;
-    public List<String> Tags;
+    public Collider2D overObject;
+
     public Inventory inventory;
     MoveTowardPosition movement;
-    public Collider2D overObject;
+    
+    public bool isPickupable = true;
+    public bool drag;
+
+    public List<ItemDescriptor> Descriptors;
 
     void Start()
     {
