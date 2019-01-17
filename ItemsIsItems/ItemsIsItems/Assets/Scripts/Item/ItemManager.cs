@@ -8,7 +8,7 @@ public class ItemManager : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
         Manager = this;
-        combinations.Add(new Combination(typeof(Item), typeof(Item), new EffectChangeColor()));
+        combinations.Add(new Combination(new Item(), new Item(), new EffectChangeColor()));
 	}
 	
 	// Update is called once per frame

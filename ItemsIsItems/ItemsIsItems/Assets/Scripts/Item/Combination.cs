@@ -3,14 +3,20 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+[Serializable]
 public class Combination
 {
 
-    Type useItemType;
-    Type affectedItemType;
-    Effect effect;
+    public Item useItemType;
+    public Item affectedItemType;
+    public Effect effect;
 
-    public Combination(Type useItemType, Type affectedItemType, Effect effect)
+    public Combination()
+    {
+
+    }
+
+    public Combination(Item useItemType, Item affectedItemType, Effect effect)
     {
         this.useItemType = useItemType;
         this.affectedItemType = affectedItemType;
@@ -19,8 +25,8 @@ public class Combination
 
     public bool match(Item useItem, Item affectedItem)
     {
-        bool useItemSame = useItemType.IsAssignableFrom(useItem.GetType());
-        bool affectedItemSame = affectedItemType.IsAssignableFrom(affectedItem.GetType());
+        bool useItemSame = useItemType.GetType().IsAssignableFrom(useItem.GetType());
+        bool affectedItemSame = affectedItemType.GetType().IsAssignableFrom(affectedItem.GetType());
 
         return (useItemSame && affectedItemSame);
     }
