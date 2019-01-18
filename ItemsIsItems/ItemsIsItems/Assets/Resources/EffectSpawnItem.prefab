@@ -9,45 +9,47 @@ Prefab:
     m_Modifications: []
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
-  m_RootGameObject: {fileID: 1417315083013384}
+  m_RootGameObject: {fileID: 1833963009264088}
   m_IsPrefabParent: 1
---- !u!1 &1417315083013384
+--- !u!1 &1833963009264088
 GameObject:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   serializedVersion: 5
   m_Component:
-  - component: {fileID: 4808151486866110}
-  - component: {fileID: 114878771660376714}
+  - component: {fileID: 4070200587269894}
+  - component: {fileID: 114136943851712850}
   m_Layer: 0
-  m_Name: EffectChangeColor
+  m_Name: EffectSpawnItem
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &4808151486866110
+--- !u!4 &4070200587269894
 Transform:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1417315083013384}
+  m_GameObject: {fileID: 1833963009264088}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.6188997, y: 0.48860475, z: 0}
+  m_LocalPosition: {x: 2.7328882, y: -1.6292566, z: 0.17796178}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &114878771660376714
+--- !u!114 &114136943851712850
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1417315083013384}
+  m_GameObject: {fileID: 1833963009264088}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 06369dc3e6cef1a498c732212976137d, type: 3}
+  m_Script: {fileID: 11500000, guid: 7889e15cda6944b4c867f76933c5059f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  itemToSpawn: {fileID: 114196809215396984, guid: 53078ca4093931040b60ed4a59fa9f1e,
+    type: 2}
