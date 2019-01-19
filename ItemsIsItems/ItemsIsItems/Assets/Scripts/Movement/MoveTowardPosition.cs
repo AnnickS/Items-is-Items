@@ -11,10 +11,7 @@ public class MoveTowardPosition : MonoBehaviour
 
     void Start()
     {
-        if(targetPosition == null)
-        {
-            targetPosition = this.transform.position;
-        }
+        targetPosition = this.transform.position;
     }
 
     public void moveToPosition(Vector2 newGoalPosition)

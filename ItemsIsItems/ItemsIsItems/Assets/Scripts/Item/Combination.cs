@@ -3,31 +3,51 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Combination
+public abstract class Combination
 {
+    public IEffect effect;
 
-    Type useItemType;
-    Type affectedItemType;
-    Effect effect;
+    public abstract bool Match(Item item1, Item item2);
 
-    public Combination(Type useItemType, Type affectedItemType, Effect effect)
+    public IEffect GetEffect()
     {
-        this.useItemType = useItemType;
-        this.affectedItemType = affectedItemType;
+        return effect;
+    }
+}
+
+public class ItemCombination : Combination
+{ 
+    public Item item1;
+    public Item item2;
+
+    public ItemCombination(Item item1, Item item2, IEffect effect)
+    {
+        this.item1 = item1;
+        this.item2 = item2;
         this.effect = effect;
     }
 
-    public bool match(Item useItem, Item affectedItem)
+    public override bool Match(Item item1, Item item2)
     {
-        bool useItemSame = useItemType.IsAssignableFrom(useItem.GetType());
-        bool affectedItemSame = affectedItemType.IsAssignableFrom(affectedItem.GetType());
+        return (item1.NameEquals(this.item1) && item2.NameEquals(this.item2));
+    }
+}
 
-        return (useItemSame && affectedItemSame);
+public class GeneralItemCombination : Combination
+{
+    public Item item;
+    public Descriptor tag;
+
+    public GeneralItemCombination(Item item, Descriptor tag, IEffect effect)
+    {
+        this.item = item;
+        this.tag = tag;
+        this.effect = effect;
     }
 
-    public Effect getEffect()
+    public override bool Match(Item item1, Item item2)
     {
-        return effect;
+        return (item1.NameEquals(this.item) && item2.HasDescriptor(this.tag));
     }
 }
 

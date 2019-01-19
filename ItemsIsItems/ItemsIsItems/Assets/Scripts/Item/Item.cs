@@ -15,7 +15,7 @@ public class Item : MonoBehaviour
     public bool isPickupable = true;
     public bool drag;
 
-    public List<ItemDescriptor> Descriptors;
+    public List<Descriptor> Descriptors;
 
     void Start()
     {
@@ -66,13 +66,17 @@ public class Item : MonoBehaviour
     void OnMouseUp()
     {
         drag = false;
-        if(ItemManager.Manager != null && overObject != null)
+        if(ItemManager.Instance != null && overObject != null)
         {
-            ItemManager.Manager.UseItem(this.GetComponent<Collider2D>(), overObject);
+            Item other = overObject.GetComponent<Item>();
+            if (other != null)
+            {
+                ItemManager.Instance.ExecuteInteraction(this, other);
+            }
         }
     }
 
-    /*
+    /*/
     public void OnCollisionEnter(Collision collision)
     {
         Item other = collision.gameObject.GetComponent<Item>();
@@ -80,10 +84,26 @@ public class Item : MonoBehaviour
         {
             if (GetHashCode() > other.GetHashCode())
             {
-                GameManager.gameManager.OnItemTouch(new ItemInteractionRequest(this, other));
+                ItemManager.Instance.ExecuteInteraction(this, other);
             }
         }        
     }
-    */
+    /**/
 
+    public bool HasDescriptor(Descriptor tag)
+    {
+        foreach(Descriptor d in Descriptors)
+        {
+            if (d.Contains(tag))
+            {
+                return true;
+            }
+        }
+        return false;
+    }
+
+    public bool NameEquals(Item other)
+    {
+        return other.name == this.name;
+    }
 }
