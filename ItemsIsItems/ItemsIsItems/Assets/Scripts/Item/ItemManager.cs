@@ -13,13 +13,14 @@ public class ItemManager {//: MonoBehaviour {
         Instance = new ItemManager();
         Descriptor.Load();// root = Descriptor.ROOT;
         Debug.Log(Descriptor.ROOT.ToStringRecursive());
+
+        //Instance.combinations.Add(new GeneralItemCombination(new Item(), Descriptor.ROOT.GetDescriptor("Food"), new EffectSpawn()));
     }
 
     /*
 	// Use this for initialization
 	void Start () {
         Instance = this;
-        //combinations.Add(new Combination(typeof(Item), typeof(Item), new EffectChangeColor()));
 	}*/
 
     /*
