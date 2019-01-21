@@ -23,8 +23,8 @@ public class CombinationDrawer : PropertyDrawer
         // Calculate rects
         int spacing = (int)(position.width)/3;
         Rect amountRect = new Rect(position.x + spacing*0 + 0, position.y, spacing, position.height);
-        Rect unitRect = new Rect(position.x + spacing*1 + 5, position.y, spacing, position.height);
-        Rect nameRect = new Rect(position.x + spacing*2 + 10, position.y, spacing, position.height);
+        Rect unitRect = new Rect(position.x + spacing*1 + 3, position.y, spacing, position.height);
+        Rect nameRect = new Rect(position.x + spacing*2 + 6, position.y, spacing, position.height);
 
         // Draw fields - passs GUIContent.none to each so they are drawn without labels
         EditorGUI.PropertyField(amountRect, property.FindPropertyRelative("useItemType"), GUIContent.none);
@@ -33,6 +33,7 @@ public class CombinationDrawer : PropertyDrawer
 
         // Set indent back to what it was
         EditorGUI.indentLevel = indent;
+        //*/
 
         EditorGUI.EndProperty();
     }

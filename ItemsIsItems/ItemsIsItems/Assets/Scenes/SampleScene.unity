@@ -677,7 +677,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 358652d2ce8d2dc46be91694ec3a11aa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  combinations: []
+  combinations:
+  - useItemType: {fileID: 0}
+    affectedItemType: {fileID: 0}
+    effect: {fileID: 0}
+  - useItemType: {fileID: 0}
+    affectedItemType: {fileID: 0}
+    effect: {fileID: 0}
 --- !u!4 &1976639918
 Transform:
   m_ObjectHideFlags: 0

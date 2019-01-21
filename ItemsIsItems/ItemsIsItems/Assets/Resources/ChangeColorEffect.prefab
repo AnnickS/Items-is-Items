@@ -21,7 +21,7 @@ GameObject:
   - component: {fileID: 4808151486866110}
   - component: {fileID: 114878771660376714}
   m_Layer: 0
-  m_Name: EffectChangeColor
+  m_Name: ChangeColorEffect
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
