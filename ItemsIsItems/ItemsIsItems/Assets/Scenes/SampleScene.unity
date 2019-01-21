@@ -485,6 +485,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 362a32be076302f42938b3bb054aba4b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  combinations: []
 --- !u!4 &931319923
 Transform:
   m_ObjectHideFlags: 0
@@ -677,10 +678,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 358652d2ce8d2dc46be91694ec3a11aa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  combinations:
-  - useItemType: {fileID: 0}
+  combinationNew:
+    useItemType: {fileID: 114196809215396984, guid: 53078ca4093931040b60ed4a59fa9f1e,
+      type: 2}
     affectedItemType: {fileID: 0}
     effect: {fileID: 0}
+  combinationDisplay:
   - useItemType: {fileID: 0}
     affectedItemType: {fileID: 0}
     effect: {fileID: 0}

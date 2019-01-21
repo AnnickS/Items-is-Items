@@ -1,22 +1,32 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ItemManager : MonoBehaviour {
+public class ItemManager {
     public static ItemManager Manager;
 
+    public ItemManager()
+    {
+        //combinations.Add(new Combination(new Item(), new Item(), new EffectChangeColor()));
+    }
+
+    /*
 	// Use this for initialization
 	void Start () {
         Manager = this;
         combinations.Add(new Combination(new Item(), new Item(), new EffectChangeColor()));
 	}
-	
-	// Update is called once per frame
-	void Update () {
-		
-	}
+    //*/
 
-    private List<Combination> combinations = new List<Combination>();
+    List<Combination> combinations = new List<Combination>();
+
+    public List<Combination> GetCombinations()
+    {
+        return combinations;
+    }
+
+
     public void UseItem(Collider2D useItemCollider, Collider2D affectedItemCollider)
     {
         Item useItem = useItemCollider.gameObject.GetComponent<Item>();
@@ -44,7 +54,7 @@ public class ItemManager : MonoBehaviour {
 
         if(combined)
         {
-            Destroy(useItem.gameObject);
+            GameObject.Destroy(useItem.gameObject);
         }
 
         /*
@@ -60,6 +70,17 @@ public class ItemManager : MonoBehaviour {
         Destroy(useItem.gameObject);
         //*/
 
+    }
+
+    public void addCombination(Combination combination)
+    {
+        if( ! combinations.Contains(combination))
+        {
+            if(combination.isFull())
+            {
+                combinations.Add(combination);
+            }
+        }
     }
 
     void changeColor(Collider2D affectedItem, Color color)
