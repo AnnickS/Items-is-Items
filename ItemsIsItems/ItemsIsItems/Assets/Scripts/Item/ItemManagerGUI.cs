@@ -6,10 +6,10 @@ using UnityEngine;
 [ExecuteInEditMode]
 public class ItemManagerGUI : MonoBehaviour
 {
-    public ItemManager itemManager = new ItemManager();
     public Combination combinationNew = new Combination();
     public List<Combination> combinationDisplay = new List<Combination>();
     protected List<Combination> bufferDisplay = new List<Combination>();
+    protected ItemManager itemManager = new ItemManager();
 
     void Update()
     {
