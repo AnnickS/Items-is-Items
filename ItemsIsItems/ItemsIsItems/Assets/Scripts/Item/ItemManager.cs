@@ -9,16 +9,8 @@ public class ItemManager
 
     public ItemManager()
     {
-        //combinations.Add(new Combination(new Item(), new Item(), new EffectChangeColor()));
-    }
 
-    /*
-	// Use this for initialization
-	void Start () {
-        Manager = this;
-        combinations.Add(new Combination(new Item(), new Item(), new EffectChangeColor()));
-	}
-    //*/
+    }
 
     List<Combination> combinations = new List<Combination>();
 
@@ -58,19 +50,6 @@ public class ItemManager
             GameObject.Destroy(useItem.gameObject);
         }
 
-        /*
-        string itemUse = useItem.GetComponent<Item>().Tags[0];
-        if (itemUse.Equals("RED"))
-        {
-            changeColor(affectedItem, Color.red);
-        } else if (itemUse.Equals("YELLOW"))
-        {
-            changeColor(affectedItem, Color.yellow);
-        }
-        
-        Destroy(useItem.gameObject);
-        //*/
-
     }
 
     public void removeCombination(Combination combination)
@@ -81,14 +60,19 @@ public class ItemManager
         }
     }
 
-    public void addCombination(Combination combination)
+    public void addCombination(Combination combinationNew)
     {
-        if (!combinations.Contains(combination))
+        foreach(Combination combination in combinations)
         {
-            if (combination.isFull())
+            if(combination.contains(combinationNew))
             {
-                combinations.Add(combination);
+                return;
             }
+        }
+
+        if (combinationNew.isFull())
+        {
+            combinations.Add(combinationNew);
         }
     }
 
