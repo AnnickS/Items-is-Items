@@ -3,7 +3,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ItemManager {
+public class ItemManager
+{
     public static ItemManager Manager;
 
     public ItemManager()
@@ -30,7 +31,7 @@ public class ItemManager {
     public void UseItem(Collider2D useItemCollider, Collider2D affectedItemCollider)
     {
         Item useItem = useItemCollider.gameObject.GetComponent<Item>();
-        if(useItem == null)
+        if (useItem == null)
         {
             return;
         }
@@ -44,7 +45,7 @@ public class ItemManager {
         bool combined = false;
         foreach (Combination combination in combinations)
         {
-            if(combination.match(useItem, affectedItem))
+            if (combination.match(useItem, affectedItem))
             {
                 Effect effect = combination.getEffect();
                 effect.actOn(useItem.gameObject, affectedItem.gameObject);
@@ -52,7 +53,7 @@ public class ItemManager {
             }
         }
 
-        if(combined)
+        if (combined)
         {
             GameObject.Destroy(useItem.gameObject);
         }
@@ -72,11 +73,19 @@ public class ItemManager {
 
     }
 
+    public void removeCombination(Combination combination)
+    {
+        if (combinations.Contains(combination))
+        {
+            combinations.Remove(combination);
+        }
+    }
+
     public void addCombination(Combination combination)
     {
-        if( ! combinations.Contains(combination))
+        if (!combinations.Contains(combination))
         {
-            if(combination.isFull())
+            if (combination.isFull())
             {
                 combinations.Add(combination);
             }

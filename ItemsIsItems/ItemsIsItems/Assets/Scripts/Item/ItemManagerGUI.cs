@@ -9,55 +9,73 @@ public class ItemManagerGUI : MonoBehaviour
     public ItemManager itemManager = new ItemManager();
     public Combination combinationNew = new Combination();
     public List<Combination> combinationDisplay = new List<Combination>();
-
-    void Awake()
-    {
-        Debug.Log("Editor causes this Awake");
-    }
+    protected List<Combination> bufferDisplay = new List<Combination>();
 
     void Update()
     {
+        updateModifiedCombinations();
+        addAnyNewCombinations();
+        createBufferMatchingNewCombination();
+        copyBufferToDisplay();
+    }
 
-        List<Combination> combinations = itemManager.GetCombinations();
-
-
-        if (combinationNew.isFull())
-        {
-            itemManager.addCombination(combinationNew);
-            combinationNew = new Combination();
-        }
-
-        foreach (Combination combination in combinations)
-        {
-            if ( ! combinations.Contains(combination))
-            {
-                itemManager.addCombination(combination);
-            }
-        }
-
+    private void copyBufferToDisplay()
+    {
         combinationDisplay.Clear();
-        //combinationDisplay.Add(new Combination());
+        foreach (Combination combination in bufferDisplay)
+        {
+            combinationDisplay.Add(combination);
+        }
+    }
 
-
+    private void createBufferMatchingNewCombination()
+    {
+        bufferDisplay.Clear();
+        List<Combination> combinations = itemManager.GetCombinations();
         if (combinationNew == null || combinationNew.isEmpty())
         {
             foreach (Combination combination in combinations)
             {
-                combinationDisplay.Add(combination);
+                bufferDisplay.Add(combination);
             }
         }
         else
         {
             foreach (Combination combination in combinations)
             {
-                if(combination.contains(combinationNew))
+                if (combination.contains(combinationNew))
                 {
-                    combinationDisplay.Add(combination);
+                    bufferDisplay.Add(combination);
                 }
             }
         }
+    }
 
+    private void addAnyNewCombinations()
+    {
+        if (combinationNew.isFull())
+        {
+            itemManager.addCombination(combinationNew);
+            combinationNew = new Combination();
+        }
+    }
 
+    private void updateModifiedCombinations()
+    {
+        for (int index = 0; index < combinationDisplay.Count; index++)
+        {
+            Combination displayCombination = combinationDisplay[index];
+            Combination bufferCombination = bufferDisplay[index];
 
+            if(displayCombination.isPartial())
+            {
+                itemManager.removeCombination(bufferCombination);
+            }
+            else if (displayCombination != bufferCombination)
+            {
+                itemManager.removeCombination(bufferCombination);
+                itemManager.addCombination(displayCombination);
+            }
+        }
     }
 }
