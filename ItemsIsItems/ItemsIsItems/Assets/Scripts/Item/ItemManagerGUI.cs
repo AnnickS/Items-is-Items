@@ -4,15 +4,26 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [ExecuteInEditMode]
+[RequireComponent(typeof(ItemManager))]
 public class ItemManagerGUI : MonoBehaviour
 {
     public Combination combinationNew = new Combination();
     public List<Combination> combinationDisplay = new List<Combination>();
     protected List<Combination> bufferDisplay = new List<Combination>();
-    protected ItemManager itemManager = new ItemManager();
+    protected ItemManager itemManager;
+
+    void Start()
+    {
+        itemManager = GetComponent<ItemManager>();
+    }
 
     void Update()
     {
+        if(itemManager == null)
+        {
+            itemManager = GetComponent<ItemManager>();
+        }
+
         updateModifiedCombinations();
         addAnyNewCombinations();
         createBufferMatchingNewCombination();
@@ -64,18 +75,27 @@ public class ItemManagerGUI : MonoBehaviour
     {
         for (int index = 0; index < combinationDisplay.Count; index++)
         {
-            Combination displayCombination = combinationDisplay[index];
-            Combination bufferCombination = bufferDisplay[index];
-
-            if(displayCombination.isPartial())
+            if(index >= bufferDisplay.Count)
             {
-                itemManager.removeCombination(bufferCombination);
-            }
-            else if (displayCombination != bufferCombination)
-            {
-                itemManager.removeCombination(bufferCombination);
+                Combination displayCombination = combinationDisplay[index];
                 itemManager.addCombination(displayCombination);
             }
+            else
+            {
+                Combination displayCombination = combinationDisplay[index];
+                Combination bufferCombination = bufferDisplay[index];
+
+                if (displayCombination.isPartial())
+                {
+                    itemManager.removeCombination(bufferCombination);
+                }
+                else if (displayCombination != bufferCombination)
+                {
+                    itemManager.removeCombination(bufferCombination);
+                    itemManager.addCombination(displayCombination);
+                }
+            }
         }
+
     }
 }
