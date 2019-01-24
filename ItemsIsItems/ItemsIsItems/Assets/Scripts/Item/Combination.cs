@@ -8,7 +8,7 @@ public abstract class Combination
     public IEffect effect;
 
     public abstract bool Match(Item item1, Item item2);
-
+    
     public IEffect GetEffect()
     {
         return effect;

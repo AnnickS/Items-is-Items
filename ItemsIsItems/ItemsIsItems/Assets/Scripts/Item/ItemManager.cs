@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -28,7 +29,6 @@ public class ItemManager {//: MonoBehaviour {
 	void Update () {
 		
 	}*/
-
 
     public void ExecuteInteraction(Item item1, Item item2)
     {
