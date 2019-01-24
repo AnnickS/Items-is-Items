@@ -1,8 +1,11 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System;
 
-public abstract class Effect {
+[Serializable]
+public class Effect : MonoBehaviour
+{
 
-    public abstract void actOn(GameObject item1, GameObject item2);
+    public void actOn(GameObject item1, GameObject item2) { }
 }

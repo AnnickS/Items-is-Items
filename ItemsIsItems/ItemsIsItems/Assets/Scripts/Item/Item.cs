@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [RequireComponent(typeof(MoveTowardPosition))]
+[Serializable]
 public class Item : MonoBehaviour
 {
     public GameObject graphicalObj;

@@ -1,26 +1,30 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ItemManager : MonoBehaviour {
+[ExecuteInEditMode]
+public class ItemManager : MonoBehaviour
+{
     public static ItemManager Manager;
 
-	// Use this for initialization
-	void Start () {
-        Manager = this;
-        combinations.Add(new Combination(typeof(Item), typeof(Item), new EffectChangeColor()));
-	}
-	
-	// Update is called once per frame
-	void Update () {
-		
-	}
+    public ItemManager()
+    {
 
-    private List<Combination> combinations = new List<Combination>();
+    }
+
+    List<Combination> combinations = new List<Combination>();
+
+    public List<Combination> GetCombinations()
+    {
+        return combinations;
+    }
+
+
     public void UseItem(Collider2D useItemCollider, Collider2D affectedItemCollider)
     {
         Item useItem = useItemCollider.gameObject.GetComponent<Item>();
-        if(useItem == null)
+        if (useItem == null)
         {
             return;
         }
@@ -34,7 +38,7 @@ public class ItemManager : MonoBehaviour {
         bool combined = false;
         foreach (Combination combination in combinations)
         {
-            if(combination.match(useItem, affectedItem))
+            if (combination.match(useItem, affectedItem))
             {
                 Effect effect = combination.getEffect();
                 effect.actOn(useItem.gameObject, affectedItem.gameObject);
@@ -42,24 +46,35 @@ public class ItemManager : MonoBehaviour {
             }
         }
 
-        if(combined)
+        if (combined)
         {
-            Destroy(useItem.gameObject);
+            GameObject.Destroy(useItem.gameObject);
         }
 
-        /*
-        string itemUse = useItem.GetComponent<Item>().Tags[0];
-        if (itemUse.Equals("RED"))
-        {
-            changeColor(affectedItem, Color.red);
-        } else if (itemUse.Equals("YELLOW"))
-        {
-            changeColor(affectedItem, Color.yellow);
-        }
-        
-        Destroy(useItem.gameObject);
-        //*/
+    }
 
+    public void removeCombination(Combination combination)
+    {
+        if (combinations.Contains(combination))
+        {
+            combinations.Remove(combination);
+        }
+    }
+
+    public void addCombination(Combination combinationNew)
+    {
+        foreach(Combination combination in combinations)
+        {
+            if(combination.contains(combinationNew))
+            {
+                return;
+            }
+        }
+
+        if (combinationNew.isFull())
+        {
+            combinations.Add(combinationNew);
+        }
     }
 
     void changeColor(Collider2D affectedItem, Color color)

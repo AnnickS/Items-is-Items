@@ -3,14 +3,20 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+[Serializable]
 public class Combination
 {
 
-    Type useItemType;
-    Type affectedItemType;
-    Effect effect;
+    public Item useItemType;
+    public Item affectedItemType;
+    public Effect effect;
 
-    public Combination(Type useItemType, Type affectedItemType, Effect effect)
+    public Combination()
+    {
+
+    }
+
+    public Combination(Item useItemType, Item affectedItemType, Effect effect)
     {
         this.useItemType = useItemType;
         this.affectedItemType = affectedItemType;
@@ -19,8 +25,8 @@ public class Combination
 
     public bool match(Item useItem, Item affectedItem)
     {
-        bool useItemSame = useItemType.IsAssignableFrom(useItem.GetType());
-        bool affectedItemSame = affectedItemType.IsAssignableFrom(affectedItem.GetType());
+        bool useItemSame = useItemType.GetType().IsAssignableFrom(useItem.GetType());
+        bool affectedItemSame = affectedItemType.GetType().IsAssignableFrom(affectedItem.GetType());
 
         return (useItemSame && affectedItemSame);
     }
@@ -28,6 +34,72 @@ public class Combination
     public Effect getEffect()
     {
         return effect;
+    }
+
+    public bool isEmpty()
+    {
+        bool emptyUseItem = (useItemType == null);
+        bool emptyAffectedItemType = (affectedItemType == null);
+        bool emptyEffect = (effect == null);
+
+        return (emptyUseItem && emptyAffectedItemType && emptyEffect);
+    }
+
+    public bool isPartial()
+    {
+        return (!isEmpty() && !isFull());
+    }
+
+    public bool isFull ()
+    {
+        bool emptyUseItem = (useItemType == null);
+        bool emptyAffectedItemType = (affectedItemType == null);
+        bool emptyEffect = (effect == null);
+
+        return ! (emptyUseItem || emptyAffectedItemType || emptyEffect);
+    }
+
+    internal bool contains(Combination combinationNew)
+    {
+        if(this.isEmpty() || this.isPartial())
+        {
+            return false;
+        }
+
+        bool sameuseItemType = false;
+        bool sameaffectedItemType = false;
+        bool sameeffect = false;
+
+        if (combinationNew.useItemType != null)
+        {
+            sameuseItemType = (useItemType.GetType() == combinationNew.useItemType.GetType());
+        }
+        else
+        {
+            sameuseItemType = true;
+        }
+
+        if (combinationNew.affectedItemType != null)
+        {
+            sameaffectedItemType = (affectedItemType.GetType() == combinationNew.affectedItemType.GetType());
+        }
+        else
+        {
+            sameaffectedItemType = true;
+        }
+
+        if (combinationNew.effect != null)
+        {
+            sameeffect = (effect.GetType() == combinationNew.effect.GetType());
+        }
+        else
+        {
+            sameeffect = true;
+        }
+
+
+
+        return (sameuseItemType && sameaffectedItemType && sameeffect);
     }
 }
 
