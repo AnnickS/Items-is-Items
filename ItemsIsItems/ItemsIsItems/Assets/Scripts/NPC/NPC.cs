@@ -3,17 +3,17 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class NPC : Item {
-    public List<Item> AttractedTo;
-    public List<Item> ScaredOf;
-    public List<Item> HostileTo;
+    public List<string> AttractedTo;
+    public List<string> ScaredOf;
+    public List<string> HostileTo;
     public Inventory NPCInventory;
     public Vector2 target;
 
     public Collider2D[] WithinCircle;
     public LayerMask obstacleMask;
     public List<Item> WithinView;
-    float viewRadius = 5;
-    float viewAngle = 135;
+    public float viewRadius = 5;
+    public float viewAngle = 135;
 
 
 	// Use this for initialization
@@ -31,23 +31,25 @@ public class NPC : Item {
     private Vector2 SelectTarget()
     {
         Vector2 CurrentPosition = new Vector2(transform.position.x, transform.position.y);
+
         for(int i = 0; i < WithinView.Count; i++)
         {
             Item current = WithinView[i];
             string name = current.GetComponent<GameObject>().name;
 
             //Items that the npc is scared of have priority
-            if (ScaredOf.Find(delegate(Item t) { return t.GetComponent<GameObject>().name.Contains(name); }) != null)
+            if (ScaredOf.Find(delegate(string t) { return t.Contains(name); }) != null)
             {
                 Vector2 runFrom = new Vector2(-current.GetComponent<Transform>().position.x, -current.GetComponent<Transform>().position.y);
 
                 return new Vector2(current.GetComponent<Transform>().position.x, current.GetComponent<Transform>().position.y);
             }//Items that the npc is hostile to have the next priority
-            else if (HostileTo.Find(delegate (Item t) { return t.GetComponent<GameObject>().name.Contains(name); }) != null)
+            else if (HostileTo.Find(delegate (string t) { return t.Contains(name); }) != null)
             {
+                //t.GetComponent<GameObject>().name.Contains(name);
                 return new Vector2(current.GetComponent<Transform>().position.x, current.GetComponent<Transform>().position.y);
             }//Items that the npc is attracted to have last priority
-            else if (AttractedTo.Find(delegate (Item t) { return t.GetComponent<GameObject>().name.Contains(name); }) != null)
+            else if (AttractedTo.Find(delegate (string t) { return t.Contains(name); }) != null)
             {
                 return new Vector2(current.GetComponent<Transform>().position.x, current.GetComponent<Transform>().position.y);
             }
