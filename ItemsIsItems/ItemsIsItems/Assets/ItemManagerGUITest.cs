@@ -7,12 +7,39 @@ public class ItemManagerGUITest
 {
 
     [Test]
-    public void ItemManagerGUIResourceExists()
+    public void ResourceItemManagerGUIExists()
     {
         GameObject itemManagerGUIGameObject = MonoBehaviour.Instantiate(Resources.Load<GameObject>("ItemManagerGUI"));
         ItemManagerGUI itemManagerGUI = itemManagerGUIGameObject.GetComponent<ItemManagerGUI>();
         Assert.IsNotNull(itemManagerGUIGameObject);
         MonoBehaviour.Destroy(itemManagerGUIGameObject);
+    }
+
+    [Test]
+    public void ResourceFlowerRoseExists()
+    {
+        GameObject flowerRose = MonoBehaviour.Instantiate(Resources.Load<GameObject>("FlowerRose"));
+        Item flowerRoseItem = flowerRose.GetComponent<Item>();
+        Assert.IsNotNull(flowerRoseItem);
+        MonoBehaviour.Destroy(flowerRose);
+    }
+
+    [Test]
+    public void ResourceCharacterExists()
+    {
+        GameObject character = MonoBehaviour.Instantiate(Resources.Load<GameObject>("Character"));
+        Item characterItem = character.GetComponent<Item>();
+        Assert.IsNotNull(characterItem);
+        MonoBehaviour.Destroy(character);
+    }
+
+    [Test]
+    public void ResourceChangeColorEffectExists()
+    {
+        GameObject effectChangeColor = MonoBehaviour.Instantiate(Resources.Load<GameObject>("ChangeColorEffect"));
+        Effect effectChangeColorEffect = effectChangeColor.GetComponent<Effect>();
+        Assert.IsNotNull(effectChangeColorEffect);
+        MonoBehaviour.Destroy(effectChangeColor);
     }
 
     [Test]
@@ -23,22 +50,25 @@ public class ItemManagerGUITest
         Assert.IsNotNull(itemManagerGUI);
         MonoBehaviour.Destroy(itemManagerGUIGameObject);
     }
-
-    // A UnityTest behaves like a coroutine in PlayMode
-    // and allows you to yield null to skip a frame in EditMode
+    
     [UnityTest]
     public IEnumerator WhenCombinationNewFullEmptyAgain()
     {
         GameObject itemManagerGUIGameObject = MonoBehaviour.Instantiate(Resources.Load<GameObject>("ItemManagerGUI"));
         ItemManagerGUI itemManagerGUI = itemManagerGUIGameObject.GetComponent<ItemManagerGUI>();
 
+        GameObject flowerRose = MonoBehaviour.Instantiate(Resources.Load<GameObject>("FlowerRose"));
+        Item flowerRoseItem = flowerRose.GetComponent<Item>();
+        GameObject effectChangeColor = MonoBehaviour.Instantiate(Resources.Load<GameObject>("ChangeColorEffect"));
+        Effect effectChangeColorEffect = effectChangeColor.GetComponent<Effect>();
+
         yield return null;
 
-        itemManagerGUI.combinationNew.useItemType = new Item();
+        itemManagerGUI.combinationNew.useItemType = flowerRoseItem;
         yield return null;
-        itemManagerGUI.combinationNew.affectedItemType = new Item();
+        itemManagerGUI.combinationNew.affectedItemType = flowerRoseItem;
         yield return null;
-        itemManagerGUI.combinationNew.effect = new EffectChangeColor();
+        itemManagerGUI.combinationNew.effect = effectChangeColorEffect;
 
         yield return null;
 
@@ -49,23 +79,71 @@ public class ItemManagerGUITest
         Assert.IsTrue(actual);
 
         MonoBehaviour.Destroy(itemManagerGUIGameObject);
+        MonoBehaviour.Destroy(flowerRoseItem);
+        MonoBehaviour.Destroy(effectChangeColorEffect);
     }
 
     [UnityTest]
-    public IEnumerator WhenCombinationNewFullAddToCombinationsDisplay()
+    public IEnumerator CombinationNewFullAddToCombinationsDisplay()
     {
         GameObject itemManagerGUIGameObject = MonoBehaviour.Instantiate(Resources.Load<GameObject>("ItemManagerGUI"));
         ItemManagerGUI itemManagerGUI = itemManagerGUIGameObject.GetComponent<ItemManagerGUI>();
         ItemManager ItemManager = itemManagerGUIGameObject.GetComponent<ItemManager>();
 
+        GameObject flowerRose = MonoBehaviour.Instantiate(Resources.Load<GameObject>("FlowerRose"));
+        Item flowerRoseItem = flowerRose.GetComponent<Item>();
+        GameObject character = MonoBehaviour.Instantiate(Resources.Load<GameObject>("Character"));
+        Item characterItem = character.GetComponent<Item>();
+        GameObject effectChangeColor = MonoBehaviour.Instantiate(Resources.Load<GameObject>("ChangeColorEffect"));
+        Effect effectChangeColorEffect = effectChangeColor.GetComponent<Effect>();
+
         yield return null;
 
-        itemManagerGUI.combinationNew.useItemType = new Item();
+        itemManagerGUI.combinationNew.useItemType = flowerRoseItem;
         yield return null;
-        itemManagerGUI.combinationNew.affectedItemType = new Item();
+        itemManagerGUI.combinationNew.affectedItemType = flowerRoseItem;
         yield return null;
-        itemManagerGUI.combinationNew.effect = new EffectChangeColor();
+        itemManagerGUI.combinationNew.effect = effectChangeColorEffect;
 
+        yield return null;
+
+        yield return null;
+
+        itemManagerGUI.combinationNew.useItemType = flowerRoseItem;
+        yield return null;
+        itemManagerGUI.combinationNew.affectedItemType = characterItem;
+        yield return null;
+        itemManagerGUI.combinationNew.effect = effectChangeColorEffect;
+
+        yield return null;
+
+        int actual = itemManagerGUI.combinationDisplay.Count;
+        int expected = 2;
+
+        Assert.AreEqual(expected, actual);
+        
+        MonoBehaviour.Destroy(itemManagerGUIGameObject);
+        MonoBehaviour.Destroy(flowerRoseItem);
+        MonoBehaviour.Destroy(characterItem);
+        MonoBehaviour.Destroy(effectChangeColorEffect);
+    }
+
+    [UnityTest]
+    public IEnumerator CombinationDisplayAddingKeeps()
+    {
+        GameObject itemManagerGUIGameObject = MonoBehaviour.Instantiate(Resources.Load<GameObject>("ItemManagerGUI"));
+        ItemManagerGUI itemManagerGUI = itemManagerGUIGameObject.GetComponent<ItemManagerGUI>();
+
+        GameObject flowerRose = MonoBehaviour.Instantiate(Resources.Load<GameObject>("FlowerRose"));
+        Item flowerRoseItem = flowerRose.GetComponent<Item>();
+        GameObject character = MonoBehaviour.Instantiate(Resources.Load<GameObject>("Character"));
+        Item characterItem = character.GetComponent<Item>();
+        GameObject effectChangeColor = MonoBehaviour.Instantiate(Resources.Load<GameObject>("ChangeColorEffect"));
+        Effect effectChangeColorEffect = effectChangeColor.GetComponent<Effect>();
+
+        yield return null;
+        CombinationGUI newCombination = new CombinationGUI(flowerRoseItem, characterItem, effectChangeColorEffect);
+        itemManagerGUI.combinationDisplay.Add(newCombination);
         yield return null;
         yield return null;
         yield return null;
@@ -76,5 +154,46 @@ public class ItemManagerGUITest
         Assert.AreEqual(expected, actual);
 
         MonoBehaviour.Destroy(itemManagerGUIGameObject);
+        MonoBehaviour.Destroy(flowerRoseItem);
+        MonoBehaviour.Destroy(characterItem);
+        MonoBehaviour.Destroy(effectChangeColorEffect);
+    }
+
+    [UnityTest]
+    public IEnumerator Search()
+    {
+        GameObject itemManagerGUIGameObject = MonoBehaviour.Instantiate(Resources.Load<GameObject>("ItemManagerGUI"));
+        ItemManagerGUI itemManagerGUI = itemManagerGUIGameObject.GetComponent<ItemManagerGUI>();
+
+        GameObject flowerRose = MonoBehaviour.Instantiate(Resources.Load<GameObject>("FlowerRose"));
+        Item flowerRoseItem = flowerRose.GetComponent<Item>();
+        GameObject character = MonoBehaviour.Instantiate(Resources.Load<GameObject>("Character"));
+        Item characterItem = character.GetComponent<Item>();
+        GameObject effectChangeColor = MonoBehaviour.Instantiate(Resources.Load<GameObject>("ChangeColorEffect"));
+        Effect effectChangeColorEffect = effectChangeColor.GetComponent<Effect>();
+
+        yield return null;
+        CombinationGUI combination1 = new CombinationGUI(flowerRoseItem, flowerRoseItem, effectChangeColorEffect);
+        CombinationGUI combination2 = new CombinationGUI(flowerRoseItem, characterItem, effectChangeColorEffect);
+        CombinationGUI combination3 = new CombinationGUI(characterItem, flowerRoseItem, effectChangeColorEffect);
+        itemManagerGUI.combinationDisplay.Add(combination1);
+        itemManagerGUI.combinationDisplay.Add(combination2);
+        itemManagerGUI.combinationDisplay.Add(combination3);
+        Assert.AreEqual(3, itemManagerGUI.combinationDisplay.Count);
+        yield return null;
+        itemManagerGUI.combinationNew = new CombinationGUI();
+        yield return null;
+
+        itemManagerGUI.combinationNew.useItemType = flowerRoseItem;
+        yield return null;
+        int actual = itemManagerGUI.combinationDisplay.Count;
+        int expected = 2;
+
+        Assert.AreEqual(expected, actual);
+
+        MonoBehaviour.Destroy(itemManagerGUIGameObject);
+        MonoBehaviour.Destroy(flowerRoseItem);
+        MonoBehaviour.Destroy(characterItem);
+        MonoBehaviour.Destroy(effectChangeColorEffect);
     }
 }
