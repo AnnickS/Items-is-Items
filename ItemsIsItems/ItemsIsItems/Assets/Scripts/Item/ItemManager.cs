@@ -40,7 +40,7 @@ public class ItemManager : MonoBehaviour
         {
             if (combination.match(useItem, affectedItem))
             {
-                Effect effect = combination.getEffect();
+                Effect effect = combination.effect;
                 effect.actOn(useItem.gameObject, affectedItem.gameObject);
                 combined = true;
             }
@@ -51,30 +51,6 @@ public class ItemManager : MonoBehaviour
             GameObject.Destroy(useItem.gameObject);
         }
 
-    }
-
-    public void removeCombination(Combination combination)
-    {
-        if (combinations.Contains(combination))
-        {
-            combinations.Remove(combination);
-        }
-    }
-
-    public void addCombination(Combination combinationNew)
-    {
-        foreach(Combination combination in combinations)
-        {
-            if(combination.contains(combinationNew))
-            {
-                return;
-            }
-        }
-
-        if (combinationNew.isFull())
-        {
-            combinations.Add(combinationNew);
-        }
     }
 
     void changeColor(Collider2D affectedItem, Color color)

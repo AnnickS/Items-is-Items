@@ -7,8 +7,8 @@ using UnityEngine;
 [RequireComponent(typeof(ItemManager))]
 public class ItemManagerGUI : MonoBehaviour
 {
-    public Combination combinationNew = new Combination();
-    public List<Combination> combinationDisplay = new List<Combination>();
+    public CombinationGUI combinationNew = new CombinationGUI();
+    public List<CombinationGUI> combinationDisplay = new List<CombinationGUI>();
     protected List<Combination> bufferDisplay = new List<Combination>();
     protected ItemManager itemManager;
 
@@ -35,7 +35,7 @@ public class ItemManagerGUI : MonoBehaviour
         combinationDisplay.Clear();
         foreach (Combination combination in bufferDisplay)
         {
-            combinationDisplay.Add(combination);
+            combinationDisplay.Add(new CombinationGUI(combination));
         }
     }
 
@@ -54,7 +54,9 @@ public class ItemManagerGUI : MonoBehaviour
         {
             foreach (Combination combination in combinations)
             {
-                if (combination.contains(combinationNew))
+                CombinationGUI combinationGUI = new CombinationGUI(combination);
+
+                if (combinationGUI.contains(combinationNew))
                 {
                     bufferDisplay.Add(combination);
                 }
@@ -66,8 +68,8 @@ public class ItemManagerGUI : MonoBehaviour
     {
         if (combinationNew.isFull())
         {
-            itemManager.addCombination(combinationNew);
-            combinationNew = new Combination();
+            addCombination(combinationNew);
+            combinationNew = new CombinationGUI();
         }
     }
 
@@ -77,25 +79,52 @@ public class ItemManagerGUI : MonoBehaviour
         {
             if(index >= bufferDisplay.Count)
             {
-                Combination displayCombination = combinationDisplay[index];
-                itemManager.addCombination(displayCombination);
+                CombinationGUI displayCombination = combinationDisplay[index];
+                addCombination(displayCombination);
             }
             else
             {
-                Combination displayCombination = combinationDisplay[index];
+                CombinationGUI displayCombination = combinationDisplay[index];
                 Combination bufferCombination = bufferDisplay[index];
 
                 if (displayCombination.isPartial())
                 {
-                    itemManager.removeCombination(bufferCombination);
+                    removeCombination(bufferCombination);
                 }
-                else if (displayCombination != bufferCombination)
+                else if (displayCombination.contains(new CombinationGUI(bufferCombination)))
                 {
-                    itemManager.removeCombination(bufferCombination);
-                    itemManager.addCombination(displayCombination);
+                    removeCombination(bufferCombination);
+                    addCombination(displayCombination);
                 }
             }
         }
 
+    }
+
+
+    public void addCombination(CombinationGUI combinationNew)
+    {
+        List<Combination> combinations = itemManager.GetCombinations();
+        foreach (Combination combination in combinations)
+        {
+            if (new CombinationGUI(combination).contains(combinationNew))
+            {
+                return;
+            }
+        }
+
+        if (combinationNew.isFull())
+        {
+            combinations.Add(combinationNew.getCombination());
+        }
+    }
+
+    public void removeCombination(Combination combination)
+    {
+        List<Combination> combinations = itemManager.GetCombinations();
+        if (combinations.Contains(combination))
+        {
+            combinations.Remove(combination);
+        }
     }
 }

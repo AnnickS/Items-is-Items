@@ -466,6 +466,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 931319923}
+  - component: {fileID: 931319924}
   - component: {fileID: 931319922}
   m_Layer: 0
   m_Name: ItemManager
@@ -485,7 +486,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 362a32be076302f42938b3bb054aba4b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  combinations: []
 --- !u!4 &931319923
 Transform:
   m_ObjectHideFlags: 0
@@ -499,6 +499,27 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &931319924
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 931319921}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 358652d2ce8d2dc46be91694ec3a11aa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  combinationNew:
+    useItemType: {fileID: 0}
+    affectedItemType: {fileID: 0}
+    effect: {fileID: 0}
+  combinationDisplay:
+  - useItemType: {fileID: 114196809215396984, guid: 53078ca4093931040b60ed4a59fa9f1e,
+      type: 2}
+    affectedItemType: {fileID: 114252050865059776, guid: 3553da48257ca744e95a9a88105b10f2,
+      type: 2}
+    effect: {fileID: 114878771660376714, guid: 5297e5c91e805cb46a0532befbd4fbf7, type: 2}
 --- !u!1 &1037407641 stripped
 GameObject:
   m_PrefabParentObject: {fileID: 1095877137879606, guid: 3553da48257ca744e95a9a88105b10f2,
@@ -660,6 +681,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1976639918}
   - component: {fileID: 1976639917}
+  - component: {fileID: 1976639919}
   m_Layer: 0
   m_Name: ItemManagerGui
   m_TagString: Untagged
@@ -683,16 +705,11 @@ MonoBehaviour:
     affectedItemType: {fileID: 0}
     effect: {fileID: 0}
   combinationDisplay:
-  - useItemType: {fileID: 114252050865059776, guid: 3553da48257ca744e95a9a88105b10f2,
-      type: 2}
-    affectedItemType: {fileID: 114196809215396984, guid: 53078ca4093931040b60ed4a59fa9f1e,
-      type: 2}
-    effect: {fileID: 114878771660376714, guid: 5297e5c91e805cb46a0532befbd4fbf7, type: 2}
   - useItemType: {fileID: 114196809215396984, guid: 53078ca4093931040b60ed4a59fa9f1e,
       type: 2}
     affectedItemType: {fileID: 114252050865059776, guid: 3553da48257ca744e95a9a88105b10f2,
       type: 2}
-    effect: {fileID: 114943288219947976, guid: 107d8b48430e93042bc242590a0045af, type: 2}
+    effect: {fileID: 114878771660376714, guid: 5297e5c91e805cb46a0532befbd4fbf7, type: 2}
 --- !u!4 &1976639918
 Transform:
   m_ObjectHideFlags: 0
@@ -706,3 +723,14 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1976639919
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1976639916}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 362a32be076302f42938b3bb054aba4b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
