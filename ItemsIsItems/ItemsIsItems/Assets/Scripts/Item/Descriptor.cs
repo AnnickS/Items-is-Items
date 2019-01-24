@@ -19,7 +19,6 @@ public class Descriptor //: ScriptableObject
         Stack<Descriptor> levelStack = new Stack<Descriptor>();
         levelStack.Push(ROOT);
         string[] lines = File.ReadAllLines(Path.Combine(Application.streamingAssetsPath, "Descriptor.txt"));
-        Debug.Log(lines.Length);
         foreach (string line in lines)
         {
             if (line.IndexOf('{') != -1)
@@ -37,12 +36,12 @@ public class Descriptor //: ScriptableObject
         }
     }
 
-    private Descriptor(string name)
+    public Descriptor(string name)
     {
         this.name = name;
     }
 
-    private Descriptor(string name, Descriptor parentDescriptor) : this(name)
+    public Descriptor(string name, Descriptor parentDescriptor) : this(name)
     {
         parentDescriptor.children.Add(this);
     }/**/

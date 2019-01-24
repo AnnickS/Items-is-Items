@@ -199,7 +199,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 5
+  orthographic size: 8.214059
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -296,15 +296,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 830a61b150f3ac24bbe0978249224c6c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  name: 
   graphicalObj: {fileID: 0}
+  overObject: {fileID: 0}
+  inventory: {fileID: 0}
   isPickupable: 1
   drag: 0
-  Tags:
-  - 
-  - 
-  - 
-  inventory: {fileID: 0}
-  overObject: {fileID: 0}
 --- !u!212 &723780739
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -582,8 +579,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 358652d2ce8d2dc46be91694ec3a11aa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  userItem: {fileID: 0}
-  EffectedItem: {fileID: 0}
 --- !u!4 &1976639918
 Transform:
   m_ObjectHideFlags: 0
