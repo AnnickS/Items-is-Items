@@ -37,7 +37,7 @@ public class ItemManagerGUITest
     public void ResourceChangeColorEffectExists()
     {
         GameObject effectChangeColor = MonoBehaviour.Instantiate(Resources.Load<GameObject>("ChangeColorEffect"));
-        Effect effectChangeColorEffect = effectChangeColor.GetComponent<Effect>();
+        IEffect effectChangeColorEffect = effectChangeColor.GetComponent<IEffect>();
         Assert.IsNotNull(effectChangeColorEffect);
         MonoBehaviour.Destroy(effectChangeColor);
     }
@@ -60,7 +60,7 @@ public class ItemManagerGUITest
         GameObject flowerRose = MonoBehaviour.Instantiate(Resources.Load<GameObject>("FlowerRose"));
         Item flowerRoseItem = flowerRose.GetComponent<Item>();
         GameObject effectChangeColor = MonoBehaviour.Instantiate(Resources.Load<GameObject>("ChangeColorEffect"));
-        Effect effectChangeColorEffect = effectChangeColor.GetComponent<Effect>();
+        IEffect effectChangeColorEffect = effectChangeColor.GetComponent<IEffect>();
 
         yield return null;
 
@@ -80,7 +80,7 @@ public class ItemManagerGUITest
 
         MonoBehaviour.Destroy(itemManagerGUIGameObject);
         MonoBehaviour.Destroy(flowerRoseItem);
-        MonoBehaviour.Destroy(effectChangeColorEffect);
+        //MonoBehaviour.Destroy(effectChangeColorEffect);
     }
 
     [UnityTest]
@@ -95,7 +95,7 @@ public class ItemManagerGUITest
         GameObject character = MonoBehaviour.Instantiate(Resources.Load<GameObject>("Character"));
         Item characterItem = character.GetComponent<Item>();
         GameObject effectChangeColor = MonoBehaviour.Instantiate(Resources.Load<GameObject>("ChangeColorEffect"));
-        Effect effectChangeColorEffect = effectChangeColor.GetComponent<Effect>();
+        IEffect effectChangeColorEffect = effectChangeColor.GetComponent<IEffect>();
 
         yield return null;
 
@@ -125,7 +125,7 @@ public class ItemManagerGUITest
         MonoBehaviour.Destroy(itemManagerGUIGameObject);
         MonoBehaviour.Destroy(flowerRoseItem);
         MonoBehaviour.Destroy(characterItem);
-        MonoBehaviour.Destroy(effectChangeColorEffect);
+        //MonoBehaviour.Destroy(effectChangeColorEffect);
     }
 
     [UnityTest]
@@ -139,7 +139,7 @@ public class ItemManagerGUITest
         GameObject character = MonoBehaviour.Instantiate(Resources.Load<GameObject>("Character"));
         Item characterItem = character.GetComponent<Item>();
         GameObject effectChangeColor = MonoBehaviour.Instantiate(Resources.Load<GameObject>("ChangeColorEffect"));
-        Effect effectChangeColorEffect = effectChangeColor.GetComponent<Effect>();
+        IEffect effectChangeColorEffect = effectChangeColor.GetComponent<IEffect>();
 
         yield return null;
         ItemCombinationGUI newCombination = new ItemCombinationGUI(flowerRoseItem, characterItem, effectChangeColorEffect);
@@ -156,7 +156,7 @@ public class ItemManagerGUITest
         MonoBehaviour.Destroy(itemManagerGUIGameObject);
         MonoBehaviour.Destroy(flowerRoseItem);
         MonoBehaviour.Destroy(characterItem);
-        MonoBehaviour.Destroy(effectChangeColorEffect);
+        //MonoBehaviour.Destroy(effectChangeColorEffect);
     }
 
     [UnityTest]
@@ -170,7 +170,7 @@ public class ItemManagerGUITest
         GameObject character = MonoBehaviour.Instantiate(Resources.Load<GameObject>("Character"));
         Item characterItem = character.GetComponent<Item>();
         GameObject effectChangeColor = MonoBehaviour.Instantiate(Resources.Load<GameObject>("ChangeColorEffect"));
-        Effect effectChangeColorEffect = effectChangeColor.GetComponent<Effect>();
+        IEffect effectChangeColorEffect = effectChangeColor.GetComponent<IEffect>();
 
         yield return null;
         ItemCombinationGUI combination1 = new ItemCombinationGUI(flowerRoseItem, flowerRoseItem, effectChangeColorEffect);
@@ -194,6 +194,6 @@ public class ItemManagerGUITest
         MonoBehaviour.Destroy(itemManagerGUIGameObject);
         MonoBehaviour.Destroy(flowerRoseItem);
         MonoBehaviour.Destroy(characterItem);
-        MonoBehaviour.Destroy(effectChangeColorEffect);
+        //MonoBehaviour.Destroy(effectChangeColorEffect);
     }
 }
