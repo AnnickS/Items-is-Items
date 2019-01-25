@@ -10,7 +10,6 @@ public class Item : MonoBehaviour
     public bool isPickupable = true;
     public bool drag;
     public List<String> Tags;
-    public Inventory inventory;
     MoveTowardPosition movement;
     public Collider2D overObject;
 
@@ -25,47 +24,6 @@ public class Item : MonoBehaviour
         else
         {
             graphicalObj = gameObject;
-        }
-    }
-
-    private void OnMouseDrag()
-    {
-        if (inventory != null)
-        {
-            drag = true;
-            inventory.RemoveItem(this);
-            inventory = null;
-        }
-        if (drag)
-        {
-            Vector2 mousePosition = new Vector2(Input.mousePosition.x, Input.mousePosition.y);
-            Vector2 objectPosition = Camera.main.ScreenToWorldPoint(mousePosition);
-            transform.position = objectPosition;
-        }
-    }
-
-    void OnTriggerEnter2D(Collider2D other)
-    {
-        if (drag)
-        {
-            overObject = other;
-        }
-    }
-
-    void OnTriggerExit2D(Collider2D other)
-    {
-        if(overObject == other && drag)
-        {
-            overObject = null;
-        }
-    }
-
-    void OnMouseUp()
-    {
-        drag = false;
-        if(ItemManager.Manager != null && overObject != null)
-        {
-            ItemManager.Manager.UseItem(this.GetComponent<Collider2D>(), overObject);
         }
     }
 
