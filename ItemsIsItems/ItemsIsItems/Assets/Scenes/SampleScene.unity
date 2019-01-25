@@ -697,8 +697,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 358652d2ce8d2dc46be91694ec3a11aa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-<<<<<<< HEAD
-=======
   combinationNew:
     useItemType: {fileID: 0}
     affectedItemType: {fileID: 0}
@@ -709,7 +707,6 @@ MonoBehaviour:
     affectedItemType: {fileID: 114252050865059776, guid: 3553da48257ca744e95a9a88105b10f2,
       type: 2}
     effect: {fileID: 114878771660376714, guid: 5297e5c91e805cb46a0532befbd4fbf7, type: 2}
->>>>>>> 9d1ecb105d76b0513041c70ddf67267866c0cf54
 --- !u!4 &1976639918
 Transform:
   m_ObjectHideFlags: 0
