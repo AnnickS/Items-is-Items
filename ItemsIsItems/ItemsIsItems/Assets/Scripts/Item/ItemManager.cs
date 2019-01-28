@@ -3,82 +3,43 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-[ExecuteInEditMode]
-public class ItemManager : MonoBehaviour
-{
-    public static ItemManager Manager;
+public class ItemManager {//: MonoBehaviour {
+    
+    public static ItemManager Instance;
+    private List<Combination> combinations = new List<Combination>();
 
-    public ItemManager()
+    [RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.AfterSceneLoad)]
+    private static void Initialize()
     {
+        Instance = new ItemManager();
+        Descriptor.Load();// root = Descriptor.ROOT;
+        Debug.Log(Descriptor.ROOT.ToStringRecursive());
 
+        //Instance.combinations.Add(new GeneralItemCombination(new Item(), Descriptor.ROOT.GetDescriptor("Food"), new EffectSpawn()));
     }
 
-    List<Combination> combinations = new List<Combination>();
+    /*
+	// Use this for initialization
+	void Start () {
+        Instance = this;
+	}*/
 
-    public List<Combination> GetCombinations()
+    /*
+	// Update is called once per frame
+	void Update () {
+		
+	}*/
+
+    public void ExecuteInteraction(Item item1, Item item2)
     {
-        return combinations;
-    }
-
-
-    public void UseItem(Collider2D useItemCollider, Collider2D affectedItemCollider)
-    {
-        Item useItem = useItemCollider.gameObject.GetComponent<Item>();
-        if (useItem == null)
-        {
-            return;
-        }
-
-        Item affectedItem = affectedItemCollider.gameObject.GetComponent<Item>();
-        if (affectedItem == null)
-        {
-            return;
-        }
-
-        bool combined = false;
         foreach (Combination combination in combinations)
         {
-            if (combination.match(useItem, affectedItem))
+            if(combination.Match(item1, item2))
             {
-                Effect effect = combination.getEffect();
-                effect.actOn(useItem.gameObject, affectedItem.gameObject);
-                combined = true;
+                IEffect effect = combination.GetEffect();
+                effect.Execute(item1, item2);
+                break;
             }
         }
-
-        if (combined)
-        {
-            GameObject.Destroy(useItem.gameObject);
-        }
-
-    }
-
-    public void removeCombination(Combination combination)
-    {
-        if (combinations.Contains(combination))
-        {
-            combinations.Remove(combination);
-        }
-    }
-
-    public void addCombination(Combination combinationNew)
-    {
-        foreach(Combination combination in combinations)
-        {
-            if(combination.contains(combinationNew))
-            {
-                return;
-            }
-        }
-
-        if (combinationNew.isFull())
-        {
-            combinations.Add(combinationNew);
-        }
-    }
-
-    void changeColor(Collider2D affectedItem, Color color)
-    {
-        affectedItem.GetComponent<SpriteRenderer>().material.color = color;
     }
 }

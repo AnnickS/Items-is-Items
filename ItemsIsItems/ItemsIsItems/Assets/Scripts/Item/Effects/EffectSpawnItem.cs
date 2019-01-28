@@ -2,13 +2,13 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class EffectSpawnItem : Effect {
+public class EffectSpawnItem : IEffect {
 
     public Item itemToSpawn;
 
-    public void actOn(GameObject item1, GameObject item2)
+    public void Execute(Item sender, Item interactor)
     {
         Item item = GameObject.Instantiate<Item>(itemToSpawn);
-        item.transform.position = item2.transform.position;
+        item.transform.position = interactor.transform.position;
     }
 }

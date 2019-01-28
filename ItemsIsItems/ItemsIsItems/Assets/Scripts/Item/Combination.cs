@@ -3,103 +3,51 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-[Serializable]
-public class Combination
+public abstract class Combination
 {
+    public IEffect effect;
 
-    public Item useItemType;
-    public Item affectedItemType;
-    public Effect effect;
-
-    public Combination()
-    {
-
-    }
-
-    public Combination(Item useItemType, Item affectedItemType, Effect effect)
-    {
-        this.useItemType = useItemType;
-        this.affectedItemType = affectedItemType;
-        this.effect = effect;
-    }
-
-    public bool match(Item useItem, Item affectedItem)
-    {
-        bool useItemSame = useItemType.GetType().IsAssignableFrom(useItem.GetType());
-        bool affectedItemSame = affectedItemType.GetType().IsAssignableFrom(affectedItem.GetType());
-
-        return (useItemSame && affectedItemSame);
-    }
-
-    public Effect getEffect()
+    public abstract bool Match(Item item1, Item item2);
+    
+    public IEffect GetEffect()
     {
         return effect;
     }
+}
 
-    public bool isEmpty()
+public class ItemCombination : Combination
+{ 
+    public Item item1;
+    public Item item2;
+
+    public ItemCombination(Item item1, Item item2, IEffect effect)
     {
-        bool emptyUseItem = (useItemType == null);
-        bool emptyAffectedItemType = (affectedItemType == null);
-        bool emptyEffect = (effect == null);
-
-        return (emptyUseItem && emptyAffectedItemType && emptyEffect);
+        this.item1 = item1;
+        this.item2 = item2;
+        this.effect = effect;
     }
 
-    public bool isPartial()
+    public override bool Match(Item item1, Item item2)
     {
-        return (!isEmpty() && !isFull());
+        return (item1.NameEquals(this.item1) && item2.NameEquals(this.item2));
+    }
+}
+
+public class GeneralItemCombination : Combination
+{
+    public Item item;
+    public Descriptor tag;
+
+    public GeneralItemCombination(Item item, Descriptor tag, IEffect effect)
+    {
+        this.item = item;
+        this.tag = tag;
+        this.effect = effect;
     }
 
-    public bool isFull ()
+    public override bool Match(Item item1, Item item2)
     {
-        bool emptyUseItem = (useItemType == null);
-        bool emptyAffectedItemType = (affectedItemType == null);
-        bool emptyEffect = (effect == null);
-
-        return ! (emptyUseItem || emptyAffectedItemType || emptyEffect);
-    }
-
-    internal bool contains(Combination combinationNew)
-    {
-        if(this.isEmpty() || this.isPartial())
-        {
-            return false;
-        }
-
-        bool sameuseItemType = false;
-        bool sameaffectedItemType = false;
-        bool sameeffect = false;
-
-        if (combinationNew.useItemType != null)
-        {
-            sameuseItemType = (useItemType.GetType() == combinationNew.useItemType.GetType());
-        }
-        else
-        {
-            sameuseItemType = true;
-        }
-
-        if (combinationNew.affectedItemType != null)
-        {
-            sameaffectedItemType = (affectedItemType.GetType() == combinationNew.affectedItemType.GetType());
-        }
-        else
-        {
-            sameaffectedItemType = true;
-        }
-
-        if (combinationNew.effect != null)
-        {
-            sameeffect = (effect.GetType() == combinationNew.effect.GetType());
-        }
-        else
-        {
-            sameeffect = true;
-        }
-
-
-
-        return (sameuseItemType && sameaffectedItemType && sameeffect);
+        return (item1.NameEquals(this.item) && item2.HasDescriptor(this.tag));
     }
 }
 

@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEditor;
 using UnityEngine;
 
-[CustomPropertyDrawer(typeof(Combination))]
+[CustomPropertyDrawer(typeof(ItemCombinationGUI))]
 public class CombinationDrawer : PropertyDrawer
 {
     // Draw the property inside the given rect
