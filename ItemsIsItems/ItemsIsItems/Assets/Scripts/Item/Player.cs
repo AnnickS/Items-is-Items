@@ -41,9 +41,9 @@ public class Player : Item {
     void OnMouseUp()
     {
         drag = false;
-        if (ItemManager.Manager != null && overObject != null)
+        if (ItemManager.Instance != null && overObject != null)
         {
-            ItemManager.Manager.UseItem(this.GetComponent<Collider2D>(), overObject);
+            ItemManager.Instance.ExecuteInteraction(this, overObject.GetComponent<Item>());
         }
     }
 }

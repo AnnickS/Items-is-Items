@@ -8,6 +8,8 @@ public class NPC : Item {
     public List<string> HostileTo;
     public Inventory NPCInventory;
     public Vector2 target;
+    public string targetName;
+    public int count = 0;
 
     public Collider2D[] WithinCircle;
     public LayerMask obstacleMask;
@@ -31,8 +33,19 @@ public class NPC : Item {
     private Vector2 SelectTarget()
     {
         Vector2 CurrentPosition = new Vector2(transform.position.x, transform.position.y);
+        Item current;
+        Transform cTransform;
+        count = WithinView.Count;
 
-        for(int i = 0; i < WithinView.Count; i++)
+        if(WithinView.Count >= 1)
+        {
+            current = WithinView[0];
+            cTransform = current.GetComponent<Transform>();
+            CurrentPosition = new Vector2(cTransform.position.x, cTransform.position.y);
+            targetName = current.gameObject.name;
+        }
+
+        /*for(int i = 0; i < WithinView.Count; i++)
         {
             Item current = WithinView[i];
             string name = current.GetComponent<GameObject>().name;
@@ -53,7 +66,7 @@ public class NPC : Item {
             {
                 return new Vector2(current.GetComponent<Transform>().position.x, current.GetComponent<Transform>().position.y);
             }
-        }
+        }*/
 
         return CurrentPosition;
     }
