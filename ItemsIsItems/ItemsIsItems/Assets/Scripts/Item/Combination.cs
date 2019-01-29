@@ -17,37 +17,37 @@ public abstract class Combination
 
 public class ItemCombination : Combination
 { 
-    public Item item1;
-    public Item item2;
+    public String item1Name;
+    public String item2Name;
 
-    public ItemCombination(Item item1, Item item2, IEffect effect)
+    public ItemCombination(String item1Name, String item2Name, IEffect effect)
     {
-        this.item1 = item1;
-        this.item2 = item2;
+        this.item1Name = item1Name;
+        this.item2Name = item2Name;
         this.effect = effect;
     }
 
     public override bool Match(Item item1, Item item2)
     {
-        return (item1.NameEquals(this.item1) && item2.NameEquals(this.item2));
+        return (item1.name == item1Name && item2.name == item2Name);
     }
 }
 
 public class GeneralItemCombination : Combination
 {
-    public Item item;
+    public String itemName;
     public Descriptor tag;
 
-    public GeneralItemCombination(Item item, Descriptor tag, IEffect effect)
+    public GeneralItemCombination(String itemName, Descriptor tag, IEffect effect)
     {
-        this.item = item;
+        this.itemName = itemName;
         this.tag = tag;
         this.effect = effect;
     }
 
     public override bool Match(Item item1, Item item2)
     {
-        return (item1.NameEquals(this.item) && item2.HasDescriptor(this.tag));
+        return (item1.name == itemName && item2.HasDescriptor(this.tag));
     }
 }
 

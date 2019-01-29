@@ -11,29 +11,33 @@ public class Descriptor //: ScriptableObject
     public new string name;
     public List<Descriptor> children = new List<Descriptor>();
     /**/
-    public static Descriptor ROOT;
+    private static Descriptor ROOT;
 
-    public static void Load()
+    public static Descriptor GetRoot()
     {
-        ROOT = new Descriptor("ROOT");
-        Stack<Descriptor> levelStack = new Stack<Descriptor>();
-        levelStack.Push(ROOT);
-        string[] lines = File.ReadAllLines(Path.Combine(Application.streamingAssetsPath, "Descriptor.txt"));
-        foreach (string line in lines)
+        if (ROOT == null)
         {
-            if (line.IndexOf('{') != -1)
+            ROOT = new Descriptor("ROOT");
+            Stack<Descriptor> levelStack = new Stack<Descriptor>();
+            levelStack.Push(ROOT);
+            string[] lines = File.ReadAllLines(Path.Combine(Application.streamingAssetsPath, "Descriptor.txt"));
+            foreach (string line in lines)
             {
-                levelStack.Push(new Descriptor(line.Substring(0, line.Length - 1), levelStack.Peek()));
-            }
-            else if (line.IndexOf('}') != -1)
-            {
-                levelStack.Pop();
-            }
-            else
-            {
-                new Descriptor(line, levelStack.Peek());
+                if (line.IndexOf('{') != -1)
+                {
+                    levelStack.Push(new Descriptor(line.Substring(0, line.Length - 1), levelStack.Peek()));
+                }
+                else if (line.IndexOf('}') != -1)
+                {
+                    levelStack.Pop();
+                }
+                else
+                {
+                    new Descriptor(line, levelStack.Peek());
+                }
             }
         }
+        return ROOT;
     }
 
     public Descriptor(string name)
