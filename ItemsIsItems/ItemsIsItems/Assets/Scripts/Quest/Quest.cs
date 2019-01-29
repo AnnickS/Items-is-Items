@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 
 [RequireComponent(typeof(BoxCollider2D))]
@@ -12,7 +13,7 @@ public class Quest : MonoBehaviour
     private Color colorNormal;
     private Color colorRunning = Color.yellow;
 
-    public TextMesh textMesh;
+    public TextMeshPro textMesh;
     public string text = "Hi I'm flowey";
 
     void Start()
