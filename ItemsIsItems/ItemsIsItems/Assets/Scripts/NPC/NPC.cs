@@ -36,37 +36,28 @@ public class NPC : Item {
         Item current;
         Transform cTransform;
         count = WithinView.Count;
+        
 
-        if(WithinView.Count >= 1)
+        for(int i = 0; i < WithinView.Count; i++)
         {
-            current = WithinView[0];
+            current = WithinView[i];
             cTransform = current.GetComponent<Transform>();
-            CurrentPosition = new Vector2(cTransform.position.x, cTransform.position.y);
-            targetName = current.gameObject.name;
-        }
-
-        /*for(int i = 0; i < WithinView.Count; i++)
-        {
-            Item current = WithinView[i];
-            string name = current.GetComponent<GameObject>().name;
-
-            //Items that the npc is scared of have priority
-            if (ScaredOf.Find(delegate(string t) { return t.Contains(name); }) != null)
+            string name = current.gameObject.name;
+            
+            //Items that the npc is scared of has next priority
+            if (ScaredOf.Find(x => name.Contains(x)) != null)
             {
-                Vector2 runFrom = new Vector2(-current.GetComponent<Transform>().position.x, -current.GetComponent<Transform>().position.y);
-
-                return new Vector2(current.GetComponent<Transform>().position.x, current.GetComponent<Transform>().position.y);
-            }//Items that the npc is hostile to have the next priority
-            else if (HostileTo.Find(delegate (string t) { return t.Contains(name); }) != null)
+                return new Vector2(-cTransform.position.x, -cTransform.position.y);
+            }//Items that the npc is hostile to has next priority
+            else if (HostileTo.Find(x => name.Contains(x)) != null)
             {
-                //t.GetComponent<GameObject>().name.Contains(name);
-                return new Vector2(current.GetComponent<Transform>().position.x, current.GetComponent<Transform>().position.y);
+                return new Vector2(cTransform.position.x, cTransform.position.y);
             }//Items that the npc is attracted to have last priority
-            else if (AttractedTo.Find(delegate (string t) { return t.Contains(name); }) != null)
+            else if (AttractedTo.Find(x => name.Contains(x)) != null)
             {
-                return new Vector2(current.GetComponent<Transform>().position.x, current.GetComponent<Transform>().position.y);
+                return new Vector2(cTransform.position.x, cTransform.position.y);
             }
-        }*/
+        }
 
         return CurrentPosition;
     }
