@@ -30,12 +30,14 @@ public class Quest : MonoBehaviour
             Debug.Log("Running");
             spriteRenderer.color = colorRunning;
             textMesh.text = text;
+            textMesh.gameObject.SetActive(true);
         }
         else
         {
             Debug.Log("No Running");
             spriteRenderer.color = colorNormal;
             textMesh.text = "";
+            textMesh.gameObject.SetActive(false);
         }
     }
 
