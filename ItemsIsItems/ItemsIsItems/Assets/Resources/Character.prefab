@@ -54,12 +54,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ecd754e060ecdd347b1f86362be6cac5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  name: 
   graphicalObj: {fileID: 0}
+  overObject: {fileID: 0}
+  inventory: {fileID: 0}
   isPickupable: 1
   drag: 0
-  Tags: []
-  inventory: {fileID: 0}
-  overObject: {fileID: 0}
 --- !u!114 &114290536557606640
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -85,7 +85,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ccbb68d842519e543a8c7a698635c80b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rotationOffset: 0
+  rotationOffset: 180
 --- !u!212 &212063277550925142
 SpriteRenderer:
   m_ObjectHideFlags: 1
