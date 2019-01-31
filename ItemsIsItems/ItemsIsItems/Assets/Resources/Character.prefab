@@ -21,8 +21,8 @@ GameObject:
   - component: {fileID: 4980471409131562}
   - component: {fileID: 212063277550925142}
   - component: {fileID: 114546223294604956}
-  - component: {fileID: 114252050865059776}
   - component: {fileID: 114290536557606640}
+  - component: {fileID: 114740959461368540}
   m_Layer: 0
   m_Name: Character
   m_TagString: Untagged
@@ -43,23 +43,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &114252050865059776
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1095877137879606}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ecd754e060ecdd347b1f86362be6cac5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  graphicalObj: {fileID: 0}
-  isPickupable: 1
-  drag: 0
-  Tags: []
-  inventory: {fileID: 0}
-  overObject: {fileID: 0}
 --- !u!114 &114290536557606640
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -73,7 +56,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 0.05
   moving: 0
-  mouseButton: 1
+  mouseButton: 180
 --- !u!114 &114546223294604956
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -85,7 +68,25 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ccbb68d842519e543a8c7a698635c80b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rotationOffset: 180
+  rotationOffset: 37
+--- !u!114 &114740959461368540
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1095877137879606}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b722b2df36ecc2f4e8cb897c50f7ea7c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  name: 
+  graphicalObj: {fileID: 0}
+  overObject: {fileID: 0}
+  inventory: {fileID: 0}
+  isPickupable: 1
+  drag: 0
+  inventory: {fileID: 0}
 --- !u!212 &212063277550925142
 SpriteRenderer:
   m_ObjectHideFlags: 1
