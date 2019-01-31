@@ -16,4 +16,9 @@ public static class ItemLoader
 
         throw new NotImplementedException();
     }
+
+    public static GameObject GetItemGameObject(String itemName)
+    {
+        return Resources.Load<GameObject>(itemName);
+    }
 }

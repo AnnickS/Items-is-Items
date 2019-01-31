@@ -1,0 +1,5 @@
+Cheese Door {UpdateState Cheese}
+
+Rope "Sharp" {Spawn Rope}
+
+Rope "Sharp" {Multi {Spawn Rope} {Color Blue Green}}

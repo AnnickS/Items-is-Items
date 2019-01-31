@@ -7,8 +7,8 @@ using UnityEngine;
 public class ItemCombinationGUI
 {
 
-    public Item useItemType;
-    public Item affectedItemType;
+    public String useItemType;
+    public String affectedItemType;
     public IEffect effect;
 
     public ItemCombinationGUI()
@@ -16,7 +16,7 @@ public class ItemCombinationGUI
 
     }
 
-    public ItemCombinationGUI(Item useItemType, Item affectedItemType, IEffect effect)
+    public ItemCombinationGUI(String useItemType, String affectedItemType, IEffect effect)
     {
         this.useItemType = useItemType;
         this.affectedItemType = affectedItemType;
@@ -25,8 +25,8 @@ public class ItemCombinationGUI
 
     public ItemCombinationGUI(ItemCombination combination)
     {
-        useItemType = combination.item1;
-        affectedItemType = combination.item2;
+        useItemType = combination.item1Name;
+        affectedItemType = combination.item1Name;
         effect = combination.effect;
     }
 
@@ -36,8 +36,8 @@ public class ItemCombinationGUI
         bool useItemSame = useItemType.GetType().IsAssignableFrom(useItem.GetType());
         bool affectedItemSame = affectedItemType.GetType().IsAssignableFrom(affectedItem.GetType());
         */
-        bool useItemSame = useItemType.NameEquals(affectedItem);
-        bool affectedItemSame = affectedItemType.NameEquals(affectedItem);
+        bool useItemSame = useItemType == useItem.name;
+        bool affectedItemSame = affectedItemType == affectedItem.name;
 
         return (useItemSame && affectedItemSame);
     }

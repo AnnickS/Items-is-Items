@@ -1,6 +1,7 @@
 ﻿using System.Collections;
-using System.Collections.Generic;
+using System;
 using UnityEngine;
+using System.Collections.Generic;
 
 public class EffectMultipleEffects : IEffect
 {
@@ -13,5 +14,11 @@ public class EffectMultipleEffects : IEffect
         {
             effect.Execute(item1, item2);
         }
+    }
+
+    public IEffect LoadArgs(String[] args)
+    {
+        //foreach()
+        return this;
     }
 }

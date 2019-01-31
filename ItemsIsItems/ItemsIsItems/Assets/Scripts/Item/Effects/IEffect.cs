@@ -5,4 +5,5 @@ using UnityEngine;
 
 public interface IEffect {
     void Execute(Item sender, Item interactor);
+    IEffect LoadArgs(String[] args);
 }

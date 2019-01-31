@@ -50,6 +50,8 @@ public class ItemManagerGUITest
         Assert.IsNotNull(itemManagerGUI);
         MonoBehaviour.Destroy(itemManagerGUIGameObject);
     }
+
+    /*
     
     [UnityTest]
     public IEnumerator WhenCombinationNewFullEmptyAgain()
@@ -196,4 +198,6 @@ public class ItemManagerGUITest
         MonoBehaviour.Destroy(characterItem);
         //MonoBehaviour.Destroy(effectChangeColorEffect);
     }
+
+    */
 }

@@ -1,5 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
+﻿using System;
 using UnityEngine;
 
 public class EffectSpawn : IEffect
@@ -10,5 +9,12 @@ public class EffectSpawn : IEffect
     public void Execute(Item sender, Item interactor)
     {
         GameObject.Instantiate(prefab, transform.position, Quaternion.identity);
+    }
+
+    public IEffect LoadArgs(String[] args)
+    {
+        prefab = ItemLoader.GetItemGameObject(args[0]);
+        //transform = GameManager.instance.GetItemByID(args[1]);
+        return this;
     }
 }
