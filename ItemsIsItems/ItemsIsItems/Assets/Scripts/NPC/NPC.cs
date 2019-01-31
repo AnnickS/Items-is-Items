@@ -8,8 +8,6 @@ public class NPC : Item {
     public List<string> HostileTo;
     public Inventory NPCInventory;
     public Vector2 target;
-    public string targetName;
-    public int count = 0;
 
     public Collider2D[] WithinCircle;
     public LayerMask obstacleMask;
@@ -27,6 +25,7 @@ public class NPC : Item {
 	void Update () {
         InView();
         target = SelectTarget();
+        gameObject.GetComponent<MoveTowardPosition>().moveToPosition(target);
 	}
 
     //Gets a direction for the npc to go towards
@@ -35,7 +34,6 @@ public class NPC : Item {
         Vector2 CurrentPosition = new Vector2(transform.position.x, transform.position.y);
         Item current;
         Transform cTransform;
-        count = WithinView.Count;
         
 
         for(int i = 0; i < WithinView.Count; i++)
@@ -44,7 +42,7 @@ public class NPC : Item {
             cTransform = current.GetComponent<Transform>();
             string name = current.gameObject.name;
             
-            //Items that the npc is scared of has next priority
+            //Items that the npc is scared of has first priority
             if (ScaredOf.Find(x => name.Contains(x)) != null)
             {
                 return new Vector2(-cTransform.position.x, -cTransform.position.y);
@@ -73,7 +71,7 @@ public class NPC : Item {
             Transform ItemTransform = WithinCircle[i].transform;
             Vector2 DirItem = new Vector2(ItemTransform.position.x - transform.position.x, ItemTransform.position.y - transform.position.y);
 
-            if(Vector2.Angle(DirItem, transform.right) < viewAngle / 2)
+            if(Vector2.Angle(DirItem, -transform.up) < viewAngle / 2)
             {
                 float Distance = Vector2.Distance(transform.position, ItemTransform.position);
 
