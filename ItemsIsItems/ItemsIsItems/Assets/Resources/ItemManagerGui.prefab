@@ -55,7 +55,6 @@ MonoBehaviour:
   combinationNew:
     useItemType: {fileID: 0}
     affectedItemType: {fileID: 0}
-    effect: {fileID: 0}
   combinationDisplay: []
 --- !u!114 &114326141966055884
 MonoBehaviour:
