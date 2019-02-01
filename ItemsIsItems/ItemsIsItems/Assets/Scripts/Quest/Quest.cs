@@ -15,7 +15,7 @@ public class Quest : MonoBehaviour
         dialog.setText(text);
     }
 
-    void OnMouseDown()
+    public void OnMouseDown()
     {
         dialog.show();
     }
