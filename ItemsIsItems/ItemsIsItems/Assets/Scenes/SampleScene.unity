@@ -859,7 +859,15 @@ Prefab:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1637548426560836, guid: 53078ca4093931040b60ed4a59fa9f1e, type: 2}
+<<<<<<< HEAD
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 1637548426560836, guid: 53078ca4093931040b60ed4a59fa9f1e, type: 2}
+      propertyPath: m_StaticEditorFlags
+=======
       propertyPath: m_IsActive
+>>>>>>> JordanDialog
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []

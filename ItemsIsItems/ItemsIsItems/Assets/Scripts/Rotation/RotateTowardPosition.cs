@@ -14,7 +14,12 @@ public class RotateTowardPosition : MonoBehaviour
     public void rotateToPosition(Vector2 targetPosition)
     {
         Vector2 currentPosition = new Vector2(transform.position.x, transform.position.y);
+<<<<<<< HEAD
+
+        if (currentTargetPosition == targetPosition || targetPosition == null || targetPosition.Equals(currentPosition))
+=======
         if (currentTargetPosition.Equals(targetPosition) || targetPosition == null || targetPosition.Equals(currentPosition))
+>>>>>>> JordanDialog
         {
             return;
         }
