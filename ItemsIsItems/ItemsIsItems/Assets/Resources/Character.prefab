@@ -22,6 +22,7 @@ GameObject:
   - component: {fileID: 212063277550925142}
   - component: {fileID: 114546223294604956}
   - component: {fileID: 114252050865059776}
+  - component: {fileID: 114292439936922718}
   - component: {fileID: 114290536557606640}
   m_Layer: 0
   m_Name: Character
@@ -74,6 +75,18 @@ MonoBehaviour:
   speed: 0.05
   moving: 0
   mouseButton: 1
+--- !u!114 &114292439936922718
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1095877137879606}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8339e6c2e35569d4584f57fbe99e3f26, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rotationOffset: 0
 --- !u!114 &114546223294604956
 MonoBehaviour:
   m_ObjectHideFlags: 1
