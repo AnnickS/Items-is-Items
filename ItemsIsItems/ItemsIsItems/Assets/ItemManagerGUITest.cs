@@ -36,7 +36,7 @@ public class ItemManagerGUITest
     [Test]
     public void ResourceChangeColorEffectExists()
     {
-        GameObject effectChangeColor = MonoBehaviour.Instantiate(Resources.Load<GameObject>("ChangeColorEffect"));
+        GameObject effectChangeColor = MonoBehaviour.Instantiate(Resources.Load<GameObject>("EffectChangeColor"));
         IEffect effectChangeColorEffect = effectChangeColor.GetComponent<IEffect>();
         Assert.IsNotNull(effectChangeColorEffect);
         MonoBehaviour.Destroy(effectChangeColor);
@@ -59,7 +59,7 @@ public class ItemManagerGUITest
 
         GameObject flowerRose = MonoBehaviour.Instantiate(Resources.Load<GameObject>("FlowerRose"));
         Item flowerRoseItem = flowerRose.GetComponent<Item>();
-        GameObject effectChangeColor = MonoBehaviour.Instantiate(Resources.Load<GameObject>("ChangeColorEffect"));
+        GameObject effectChangeColor = MonoBehaviour.Instantiate(Resources.Load<GameObject>("EffectChangeColor"));
         IEffect effectChangeColorEffect = effectChangeColor.GetComponent<IEffect>();
 
         yield return null;
@@ -94,7 +94,7 @@ public class ItemManagerGUITest
         Item flowerRoseItem = flowerRose.GetComponent<Item>();
         GameObject character = MonoBehaviour.Instantiate(Resources.Load<GameObject>("Character"));
         Item characterItem = character.GetComponent<Item>();
-        GameObject effectChangeColor = MonoBehaviour.Instantiate(Resources.Load<GameObject>("ChangeColorEffect"));
+        GameObject effectChangeColor = MonoBehaviour.Instantiate(Resources.Load<GameObject>("EffectChangeColor"));
         IEffect effectChangeColorEffect = effectChangeColor.GetComponent<IEffect>();
 
         yield return null;
@@ -138,7 +138,7 @@ public class ItemManagerGUITest
         Item flowerRoseItem = flowerRose.GetComponent<Item>();
         GameObject character = MonoBehaviour.Instantiate(Resources.Load<GameObject>("Character"));
         Item characterItem = character.GetComponent<Item>();
-        GameObject effectChangeColor = MonoBehaviour.Instantiate(Resources.Load<GameObject>("ChangeColorEffect"));
+        GameObject effectChangeColor = MonoBehaviour.Instantiate(Resources.Load<GameObject>("EffectChangeColor"));
         IEffect effectChangeColorEffect = effectChangeColor.GetComponent<IEffect>();
 
         yield return null;
@@ -169,7 +169,7 @@ public class ItemManagerGUITest
         Item flowerRoseItem = flowerRose.GetComponent<Item>();
         GameObject character = MonoBehaviour.Instantiate(Resources.Load<GameObject>("Character"));
         Item characterItem = character.GetComponent<Item>();
-        GameObject effectChangeColor = MonoBehaviour.Instantiate(Resources.Load<GameObject>("ChangeColorEffect"));
+        GameObject effectChangeColor = MonoBehaviour.Instantiate(Resources.Load<GameObject>("EffectChangeColor"));
         IEffect effectChangeColorEffect = effectChangeColor.GetComponent<IEffect>();
 
         yield return null;
