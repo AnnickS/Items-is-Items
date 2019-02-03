@@ -69,6 +69,11 @@ public class NPC : Item {
         for(int i = 0; i < WithinCircle.Length; i++)
         {
             Transform ItemTransform = WithinCircle[i].transform;
+            if(!ItemTransform.GetComponent<Item>().isPickupable)
+            {
+                continue;
+            }
+
             Vector2 DirItem = new Vector2(ItemTransform.position.x - transform.position.x, ItemTransform.position.y - transform.position.y);
 
             if(Vector2.Angle(DirItem, -transform.up) < viewAngle / 2)

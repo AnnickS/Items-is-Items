@@ -39,6 +39,7 @@ public class Item : MonoBehaviour
             drag = true;
             inventory.RemoveItem(this);
             inventory = null;
+            isPickupable = true;
         }
         if (drag)
         {
