@@ -7,15 +7,16 @@ public class NPC : Item {
     public List<string> ScaredOf;
     public List<string> HostileTo;
     public Inventory NPCInventory;
-    public Vector2 target;
+    public Vector2 Target;
 
     public Collider2D[] WithinCircle;
-    public LayerMask obstacleMask;
+    public LayerMask ObstacleMask;
     public List<Item> WithinView;
     public List<Item> WithinSmell;
     public bool Rotate = false;
-    public float viewRadius = 5;
-    public float viewAngle = 135;
+    public float ViewRadius = 5;
+    public float ViewAngle = 135;
+    public float RotationSpeed = 10F;
 
 
 	// Use this for initialization
@@ -27,11 +28,12 @@ public class NPC : Item {
 	void Update () {
         if (Rotate)
         {
-
+            transform.Rotate(new Vector3(0, 0, 1.5F));
+            //transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.Euler(0, 360, 0), Time.deltaTime * RotationSpeed);
         }
         InView();
-        target = SelectTarget();
-        gameObject.GetComponent<MoveTowardPosition>().moveToPosition(target);
+        Target = SelectTarget();
+        gameObject.GetComponent<MoveTowardPosition>().moveToPosition(Target);
 	}
 
     //Gets a direction for the npc to go towards
@@ -49,6 +51,7 @@ public class NPC : Item {
             cTransform = current.GetComponent<Transform>();
             string name = current.gameObject.name;
             
+            //NOTE: Needs to change to accept Tags instead of Strings
             //Items that the npc is scared of has first priority
             if (ScaredOf.Find(x => name.Contains(x)) != null)
             {
@@ -84,7 +87,7 @@ public class NPC : Item {
     //Detects game objects within FoV and adds them to WithinView list
     private void InView()
     {
-        WithinCircle = Physics2D.OverlapCircleAll(transform.position, viewRadius);
+        WithinCircle = Physics2D.OverlapCircleAll(transform.position, ViewRadius);
         WithinView.Clear();
         WithinSmell.Clear();
 
@@ -98,12 +101,12 @@ public class NPC : Item {
                 Vector2 DirItem = new Vector2(ItemTransform.position.x - transform.position.x, ItemTransform.position.y - transform.position.y);
 
                 //Checks if object is within viewing distance
-                if (Vector2.Angle(DirItem, -transform.up) < viewAngle / 2)
+                if (Vector2.Angle(DirItem, -transform.up) < ViewAngle / 2)
                 {
                     float Distance = Vector2.Distance(transform.position, ItemTransform.position);
 
                     //obstacles will be below the layer the object is in
-                    if (!Physics2D.Raycast(transform.position, DirItem, Distance, obstacleMask))
+                    if (!Physics2D.Raycast(transform.position, DirItem, Distance, ObstacleMask))
                     {
                         WithinView.Add(WithinCircle[i].GetComponent<Item>());
                     }

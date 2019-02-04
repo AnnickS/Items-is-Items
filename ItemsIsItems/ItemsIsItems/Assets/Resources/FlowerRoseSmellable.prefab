@@ -24,7 +24,7 @@ GameObject:
   - component: {fileID: 114853476238258690}
   - component: {fileID: 61821019130556170}
   m_Layer: 0
-  m_Name: FlowerRose
+  m_Name: FlowerRoseSmellable
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -79,13 +79,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 830a61b150f3ac24bbe0978249224c6c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  name: 
   graphicalObj: {fileID: 0}
+  overObject: {fileID: 0}
+  inventory: {fileID: 0}
   isPickupable: 1
   drag: 0
-  Tags:
-  - 
-  inventory: {fileID: 0}
-  overObject: {fileID: 0}
 --- !u!114 &114853476238258690
 MonoBehaviour:
   m_ObjectHideFlags: 1

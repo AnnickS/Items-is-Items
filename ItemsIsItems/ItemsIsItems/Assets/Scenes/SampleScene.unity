@@ -809,7 +809,7 @@ GameObject:
   - component: {fileID: 723780737}
   - component: {fileID: 723780736}
   m_Layer: 9
-  m_Name: FlowerRose (1)
+  m_Name: FlowerRoseSmellable (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1031,7 +1031,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 1637548426560836, guid: 53078ca4093931040b60ed4a59fa9f1e, type: 2}
       propertyPath: m_Name
-      value: FlowerRose (2)
+      value: FlowerRoseSmellable (2)
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 53078ca4093931040b60ed4a59fa9f1e, type: 2}
