@@ -13,6 +13,11 @@ public class QuestStateIdle : QuestState
         this.text = text;
     }
 
+    public override void FixedUpdate()
+    {
+        return;
+    }
+
     public override void Initialize()
     {
         dialog.setText(text);

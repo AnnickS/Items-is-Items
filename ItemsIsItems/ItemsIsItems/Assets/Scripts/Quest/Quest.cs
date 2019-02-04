@@ -15,7 +15,6 @@ public class Quest : MonoBehaviour
 
     void Start()
     {
-
         states.Add(new QuestStateAskFor(dialog, "By the power invested in me... Gimme a flower!"));
         states.Add(new QuestStateIdle(dialog, "I'm currently Idle, bugger off?!"));
 
@@ -24,10 +23,15 @@ public class Quest : MonoBehaviour
 
     void FixedUpdate()
     {
+        getCurrentQuestState().FixedUpdate();
+
         if(getCurrentQuestState().IsDone())
         {
-            currentStateIndex++;
-            getCurrentQuestState().Initialize();
+            if(currentStateIndex + 1 < states.Count)
+            {
+                currentStateIndex++;
+                getCurrentQuestState().Initialize();
+            }
         }
     }
 

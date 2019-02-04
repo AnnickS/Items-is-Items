@@ -6,6 +6,7 @@ public class QuestStateAskFor : QuestState
 {
     private Dialog dialog;
     private string text;
+    bool showedDialog = false;
 
     public QuestStateAskFor(Dialog dialog, string text)
     {
@@ -21,10 +22,14 @@ public class QuestStateAskFor : QuestState
     public override void OnQuestGiverClicked()
     {
         dialog.show();
+        showedDialog = true;
     }
 
-    void FixedUpdate()
+    public override void FixedUpdate()
     {
-        
+        if(showedDialog && !dialog.isShowing())
+        {
+            done();
+        }
     }
 }
