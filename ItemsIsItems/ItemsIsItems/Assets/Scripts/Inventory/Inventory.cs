@@ -4,6 +4,7 @@ using UnityEngine;
 
 public abstract class Inventory : MonoBehaviour
 {
+    [SerializeField]
     protected List<Item> items = new List<Item>();
     protected GameObject belongsTo;
 

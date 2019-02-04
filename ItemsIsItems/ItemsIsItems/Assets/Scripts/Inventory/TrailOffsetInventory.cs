@@ -70,7 +70,7 @@ public class TrailOffsetInventory : Inventory
     {
         base.RemoveItem(item);
     }
-
+    
     void OnTriggerEnter2D(Collider2D other)
     {
         Item item = other.GetComponent<Item>();
