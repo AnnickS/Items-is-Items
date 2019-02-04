@@ -7,6 +7,7 @@ public class NPC : Item {
     public List<string> ScaredOf;
     public List<string> HostileTo;
     public Vector2 Target;
+    public Vector2 Base;
 
     Collider2D[] WithinCircle;
     public LayerMask ObstacleMask;
@@ -16,11 +17,12 @@ public class NPC : Item {
     public float ViewRadius = 5;
     public float ViewAngle = 135;
     public float RotationSpeed = 10F;
+    public float Wait = 100;
 
 
 	// Use this for initialization
 	void Start () {
-		
+        Base = transform.position;
 	}
 	
 	// Update is called once per frame
@@ -31,6 +33,13 @@ public class NPC : Item {
         }
         InView();
         Target = SelectTarget();
+        if(Target == new Vector2(transform.position.x, transform.position.y) && Wait == 0)
+        {
+            Target = Base;
+        } else
+        {
+            Wait--;
+        }
         gameObject.GetComponent<MoveTowardPosition>().moveToPosition(Target);
 	}
 
@@ -53,14 +62,17 @@ public class NPC : Item {
             //Items that the npc is scared of has first priority
             if (ScaredOf.Find(x => name.Contains(x)) != null)
             {
+                Wait = 100;
                 return new Vector2(-cTransform.position.x-transform.position.x, -cTransform.position.y-transform.position.y);
             }//Items that the npc is hostile to has next priority
             else if (HostileTo.Find(x => name.Contains(x)) != null)
             {
+                Wait = 100;
                 return new Vector2(cTransform.position.x, cTransform.position.y);
             }//Items that the npc is attracted to have last priority
             else if (AttractedTo.Find(x => name.Contains(x)) != null)
             {
+                Wait = 100;
                 return new Vector2(cTransform.position.x, cTransform.position.y);
             }
         }
@@ -78,7 +90,6 @@ public class NPC : Item {
                 return CurrentPosition;
             }
         }
-
         return CurrentPosition;
     }
 
