@@ -6,10 +6,9 @@ public class NPC : Item {
     public List<string> AttractedTo;
     public List<string> ScaredOf;
     public List<string> HostileTo;
-    public Inventory NPCInventory;
     public Vector2 Target;
 
-    public Collider2D[] WithinCircle;
+    Collider2D[] WithinCircle;
     public LayerMask ObstacleMask;
     public List<Item> WithinView;
     public List<Item> WithinSmell;
@@ -29,7 +28,6 @@ public class NPC : Item {
         if (Rotate)
         {
             transform.Rotate(new Vector3(0, 0, 1.5F));
-            //transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.Euler(0, 360, 0), Time.deltaTime * RotationSpeed);
         }
         InView();
         Target = SelectTarget();
