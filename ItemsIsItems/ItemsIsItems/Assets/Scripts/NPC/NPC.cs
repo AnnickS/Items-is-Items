@@ -33,6 +33,8 @@ public class NPC : Item {
         }
         InView();
         Target = SelectTarget();
+
+        //Moves NPC back to base if movement has stopped and timer is finished
         if(Target == new Vector2(transform.position.x, transform.position.y) && Wait == 0)
         {
             Target = Base;

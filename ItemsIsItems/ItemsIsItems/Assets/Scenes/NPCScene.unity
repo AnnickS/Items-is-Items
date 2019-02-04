@@ -203,6 +203,11 @@ Prefab:
       propertyPath: Rotate
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 114082189032574304, guid: e86bf148fce6b5b4993fef83dafaa0ed,
+        type: 2}
+      propertyPath: Wait
+      value: 100
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: e86bf148fce6b5b4993fef83dafaa0ed, type: 2}
   m_IsPrefabParent: 0
