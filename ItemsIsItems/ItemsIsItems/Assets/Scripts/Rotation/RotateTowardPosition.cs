@@ -4,17 +4,13 @@ using UnityEngine;
 public class RotateTowardPosition : MonoBehaviour
 {
     public int rotationOffset;
-    private Vector2 currentTargetPosition;
-
-    void Start()
-    {
-        currentTargetPosition = new Vector2(transform.position.x, transform.position.y);
-    }
+    private Vector2 currentTargetPosition = new Vector2();
 
     public void rotateToPosition(Vector2 targetPosition)
     {
         Vector2 currentPosition = new Vector2(transform.position.x, transform.position.y);
-        if (currentTargetPosition.Equals(targetPosition) || targetPosition == null || targetPosition.Equals(currentPosition))
+
+        if (currentTargetPosition == targetPosition || targetPosition == null || targetPosition.Equals(currentPosition))
         {
             return;
         }

@@ -66,13 +66,18 @@ public class Item : MonoBehaviour
 
     void OnMouseUp()
     {
-        drag = false;
-        if(ItemManager.Instance != null && overObject != null)
+        if(drag == true)
         {
-            Item other = overObject.GetComponent<Item>();
-            if (other != null)
+            drag = false;
+            isPickupable = true;
+
+            if (ItemManager.Instance != null && overObject != null)
             {
-                ItemManager.Instance.ExecuteInteraction(this, other);
+                Item other = overObject.GetComponent<Item>();
+                if (other != null)
+                {
+                    ItemManager.Instance.ExecuteInteraction(this, other);
+                }
             }
         }
     }
