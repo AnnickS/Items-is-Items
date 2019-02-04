@@ -2,15 +2,24 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class QuestStateIdle : QuestState {
+public class QuestStateIdle : QuestState
+{
+    private Dialog dialog;
+    private string text;
 
-	// Use this for initialization
-	void Start () {
-		
-	}
-	
-	// Update is called once per frame
-	void Update () {
-		
-	}
+    public QuestStateIdle(Dialog dialog, string text)
+    {
+        this.dialog = dialog;
+        this.text = text;
+    }
+
+    public override void Initialize()
+    {
+        dialog.setText(text);
+    }
+
+    public override void OnQuestGiverClicked()
+    {
+        dialog.show();
+    }
 }

@@ -11,46 +11,33 @@ public class Quest : MonoBehaviour
     public Dialog dialog;
     public string text = "Hi I'm flowey";
     public List<QuestState> states = new List<QuestState>();
-    public QuestState currentState;
+    public int currentStateIndex = 0;
 
     void Start()
     {
-        dialog.setText(text);
 
-        states.Add(new QuestStateAskFor());
-        states.Add(new QuestStateIdle());
+        states.Add(new QuestStateAskFor(dialog, "By the power invested in me... Gimme a flower!"));
+        states.Add(new QuestStateIdle(dialog, "I'm currently Idle, bugger off?!"));
 
-        goToNextState();
+        getCurrentQuestState().Initialize();
     }
 
-    private void goToNextState()
+    void FixedUpdate()
     {
-        int currentStateIndex = getCurrentStateIndex();
-
-        if (currentStateIndex >= states.Count)
+        if(getCurrentQuestState().IsDone())
         {
-            return;
-        }
-        else
-        {
-            currentState = states[currentStateIndex + 1];
-        }
-    }
-
-    private int getCurrentStateIndex()
-    {
-        if (currentState == null)
-        {
-            return 0;
-        }
-        else
-        {
-            return states.IndexOf(currentState);
+            currentStateIndex++;
+            getCurrentQuestState().Initialize();
         }
     }
 
     public void OnMouseDown()
     {
-        dialog.show();
+        getCurrentQuestState().OnQuestGiverClicked();
+    }
+
+    private QuestState getCurrentQuestState()
+    {
+        return states[currentStateIndex];
     }
 }

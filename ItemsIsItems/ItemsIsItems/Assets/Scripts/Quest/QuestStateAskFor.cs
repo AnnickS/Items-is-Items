@@ -2,15 +2,29 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class QuestStateAskFor : QuestState {
+public class QuestStateAskFor : QuestState
+{
+    private Dialog dialog;
+    private string text;
 
-	// Use this for initialization
-	void Start () {
-		
-	}
-	
-	// Update is called once per frame
-	void Update () {
-		
-	}
+    public QuestStateAskFor(Dialog dialog, string text)
+    {
+        this.dialog = dialog;
+        this.text = text;
+    }
+
+    public override void Initialize()
+    {
+        dialog.setText(text);
+    }
+
+    public override void OnQuestGiverClicked()
+    {
+        dialog.show();
+    }
+
+    void FixedUpdate()
+    {
+        
+    }
 }
