@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System.Text;
 using System.Text.RegularExpressions;
 using UnityEngine;
 
@@ -11,73 +12,44 @@ public static class CombinationStorageManager
 
     public static List<Combination> Load()
     {
-        string fileText = File.ReadAllText(Path.Combine(Application.streamingAssetsPath, "Combinations.txt"));
-
-        //MatchCollection match = Regex.Matches(fileText, @"(.*?)\s(.*?)\s({.*})");
-
-        foreach(Match match in Regex.Matches(fileText, @"\s*(.*?)\s(.*?)\s({.*})"))
+        if (combinations.Count == 0)
         {
-            Debug.Log(":"+match.Groups[1].Value+ " + " + match.Groups[2].Value+" = " + match.Groups[3].Value);
-            //IEffect effect = ParseEffect(match.Groups[3].Value);
-            ParseEffect(match.Groups[3].Value);
+            string fileText = File.ReadAllText(Path.Combine(Application.streamingAssetsPath, "Combinations.txt"));
+
+            IEffect effect = null;
+            foreach (Match match in Regex.Matches(fileText, @"\s*(.*?)\s(.*?)\s({.*})"))
+            {
+                Debug.Log(":" + match.Groups[1].Value + " + " + match.Groups[2].Value + " = " + match.Groups[3].Value);
+
+                InteracteeItem item1 = new InteracteeItem(match.Groups[1].Value);
+                String interactee = match.Groups[2].Value;
+                effect = ParseEffect(match.Groups[3].Value);
+
+                if (interactee.IndexOf('"') != -1)
+                {
+                    InteracteeDescriptor desc = new InteracteeDescriptor(Descriptor.GetRoot().GetDescriptor(interactee.Replace("\"", "")));
+                    combinations.Add(new Combination(item1, desc, effect));
+                }
+                else
+                {
+                    InteracteeItem item2 = new InteracteeItem(interactee);
+                    combinations.Add(new Combination(item1, item2, effect));
+                }
+            }
         }
-
-        /*for(int i = 0; i < lines.Length; i++)
-        {
-            foreach(Match match in Regex.Matches(lines[0], @"(\w*?)\b(\w*?)\b({.*?})")){
-
-            }
-
-            
-            String[] args = lines[i].Split();
-            String item1 = args[0];
-
-            String[] effectArgs = new String[args.Length-3];
-            Array.Copy(args, effectArgs, effectArgs.Length);
-
-            IEffect effect = LoadEffect(args[3], effectArgs);
-
-        /*
-            if (args[1].IndexOf('"') != -1)
-            {
-                Descriptor desc = Descriptor.GetRoot().GetDescriptor(args[1].Replace("\"", " "));
-                combinations.Add(new GeneralItemCombination(item1, desc, effect));
-            }
-            else
-            {
-                combinations.Add(new ItemCombination(item1, args[1], effect));
-            }
-        }*/
-
-
-        throw new NotImplementedException();
+        return combinations;
     }
 
-    private static void ParseEffect(String s)
+    private static IEffect ParseEffect(String s)
     {
-        //IEffect effect;
         Match m = Regex.Match(s, @"{(?:\s*({.*?}|.+?(?=[\s}])))*}");
-        String ss = "";
-        for(int i = 0; i < m.Groups[1].Captures.Count; i++)
+        String[] args = new String[m.Groups[1].Captures.Count-1];
+        for(int i = 0; i < args.Length; i++)
         {
-            ss += " '" +m.Groups[1].Captures[i].Value+"'";
+            args[i] = m.Groups[1].Captures[i+1].Value;
         }
-        Debug.Log(ss);
-        /*
-        foreach(Match match in Regex.Matches(s, @"(.*?)*"))
-        {
-        
-            String effectName = match.Groups[1].Value;
-            if (effectName == "Multi")
-            {
-                IEffect[] effects = 
-                effect = new EffectMultipleEffects();
-            }
-            else {
-                effect = LoadEffect(effectName, String[] args);
-            }
-        }*/
-        //return effect;
+
+        return LoadEffect(m.Groups[1].Captures[0].Value, args);
     }
 
     public static IEffect LoadEffect(String effectName, String[] args)
@@ -86,6 +58,13 @@ public static class CombinationStorageManager
         {
             case "Spawn":
                 return new EffectSpawn().LoadArgs(args);
+            case "Multi":
+                List<IEffect> effects = new List<IEffect>();
+                for(int i = 0; i < args.Length; i++)
+                {
+                    effects.Add(ParseEffect(args[i]));
+                }
+                return new EffectMultipleEffects().LoadArgs(effects.ToArray());
             default:
                 throw new Exception("Effect not found!");
         }
@@ -98,8 +77,13 @@ public static class CombinationStorageManager
 
     public static void Save()
     {
+        StringBuilder stringBuilder = new StringBuilder();
+        foreach(Combination combination in combinations){
+            combination.ToSafeFormat(stringBuilder);
+        }
         throw new NotImplementedException();
     }
+
     /*
     public static void AddCombination(Combination newCombination)
     {

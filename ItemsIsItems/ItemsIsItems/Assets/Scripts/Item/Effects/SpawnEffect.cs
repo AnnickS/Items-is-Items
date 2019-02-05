@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Text;
 using UnityEngine;
 
 public class EffectSpawn : IEffect
@@ -11,10 +12,15 @@ public class EffectSpawn : IEffect
         GameObject.Instantiate(prefab, transform.position, Quaternion.identity);
     }
 
-    public IEffect LoadArgs(String[] args)
+    public IEffect LoadArgs(System.Object[] args)
     {
-        prefab = ItemLoader.GetItemGameObject(args[0]);
+        prefab = ItemLoader.GetItemGameObject((System.String)args[0]);
         //transform = GameManager.instance.GetItemByID(args[1]);
         return this;
+    }
+
+    public void ToSafeFormat(StringBuilder stringBuilder)
+    {
+        throw new NotImplementedException();
     }
 }

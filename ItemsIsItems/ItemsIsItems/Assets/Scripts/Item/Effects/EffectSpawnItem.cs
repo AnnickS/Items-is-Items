@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -12,9 +13,9 @@ public class EffectSpawnItem : IEffect {
         item.transform.position = interactor.transform.position;
     }
 
-    public IEffect LoadArgs(string[] args)
+    public IEffect LoadArgs(System.Object[] args)
     {
-        itemToSpawn = ItemLoader.GetItemGameObject(args[0]);
+        itemToSpawn = ItemLoader.GetItemGameObject((String)args[0]);
         return this;
     }
 }

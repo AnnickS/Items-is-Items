@@ -16,9 +16,13 @@ public class EffectMultipleEffects : IEffect
         }
     }
 
-    public IEffect LoadArgs(String[] args)
+    public IEffect LoadArgs(System.Object[] args)
     {
-        //foreach()
+        IEffect[] effects = (IEffect[])args;
+        for(int i = 0; i < effects.Length; i++)
+        {
+            this.effects.Add(effects[i]);
+        }
         return this;
     }
 }
