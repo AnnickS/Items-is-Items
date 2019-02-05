@@ -7,8 +7,8 @@ using UnityEngine;
 public class ItemCombinationGUI
 {
 
-    public String useItemType;
-    public String affectedItemType;
+    public IInteractable useItemType;
+    public IInteractable affectedItemType;
     public IEffect effect;
 
     public ItemCombinationGUI()
@@ -16,28 +16,24 @@ public class ItemCombinationGUI
 
     }
 
-    public ItemCombinationGUI(String useItemType, String affectedItemType, IEffect effect)
+    public ItemCombinationGUI(IInteractable useItemType, IInteractable affectedItemType, IEffect effect)
     {
         this.useItemType = useItemType;
         this.affectedItemType = affectedItemType;
         this.effect = effect;
     }
 
-    public ItemCombinationGUI(ItemCombination combination)
+    public ItemCombinationGUI(Combination combination)
     {
-        useItemType = combination.item1Name;
-        affectedItemType = combination.item1Name;
+        useItemType = combination.interactable1;
+        affectedItemType = combination.interactable2;
         effect = combination.effect;
     }
 
     public bool match(Item useItem, Item affectedItem)
     {
-        /*
-        bool useItemSame = useItemType.GetType().IsAssignableFrom(useItem.GetType());
-        bool affectedItemSame = affectedItemType.GetType().IsAssignableFrom(affectedItem.GetType());
-        */
-        bool useItemSame = useItemType == useItem.name;
-        bool affectedItemSame = affectedItemType == affectedItem.name;
+        bool useItemSame = useItemType.ItemMatch(useItem);
+        bool affectedItemSame = affectedItemType.ItemMatch(affectedItem);
 
         return (useItemSame && affectedItemSame);
     }
@@ -115,7 +111,7 @@ public class ItemCombinationGUI
 
     internal Combination getCombination()
     {
-        return new ItemCombination(useItemType, affectedItemType, effect);
+        return new Combination(useItemType, affectedItemType, effect);
     }
 }
 

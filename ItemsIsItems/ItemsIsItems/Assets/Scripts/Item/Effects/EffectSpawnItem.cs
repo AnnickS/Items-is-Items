@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Text;
 using UnityEngine;
 
 public class EffectSpawnItem : IEffect {
@@ -17,5 +18,12 @@ public class EffectSpawnItem : IEffect {
     {
         itemToSpawn = ItemLoader.GetItemGameObject((String)args[0]);
         return this;
+    }
+
+    public void ToSafeFormat(StringBuilder stringBuilder)
+    {
+        stringBuilder.Append("{SpawnUnderItem ");
+        stringBuilder.Append(itemToSpawn.name);
+        stringBuilder.Append("}");
     }
 }

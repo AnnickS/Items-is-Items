@@ -9,7 +9,7 @@ public class ItemManagerGUI : MonoBehaviour
 {
     public ItemCombinationGUI combinationNew = new ItemCombinationGUI();
     public List<ItemCombinationGUI> combinationDisplay = new List<ItemCombinationGUI>();
-    protected List<ItemCombination> bufferDisplay = new List<ItemCombination>();
+    protected List<Combination> bufferDisplay = new List<Combination>();
     //protected ItemManager itemManager;
 
     void Start()
@@ -34,7 +34,7 @@ public class ItemManagerGUI : MonoBehaviour
     private void copyBufferToDisplay()
     {
         combinationDisplay.Clear();
-        foreach (ItemCombination combination in bufferDisplay)
+        foreach (Combination combination in bufferDisplay)
         {
             combinationDisplay.Add(new ItemCombinationGUI(combination));
         }
@@ -48,24 +48,18 @@ public class ItemManagerGUI : MonoBehaviour
         {
             foreach (Combination combination in combinations)
             {
-                if (combination is ItemCombination)
-                {
-                    bufferDisplay.Add((ItemCombination)combination);
-                }
+                bufferDisplay.Add(combination);
             }
         }
         else
         {
             foreach (Combination combination in combinations)
             {
-                if (combination is ItemCombination)
-                {
-                    ItemCombinationGUI combinationGUI = new ItemCombinationGUI((ItemCombination)combination);
+                ItemCombinationGUI combinationGUI = new ItemCombinationGUI(combination);
 
-                    if (combinationGUI.contains(combinationNew))
-                    {
-                        bufferDisplay.Add((ItemCombination)combination);
-                    }
+                if (combinationGUI.contains(combinationNew))
+                {
+                    bufferDisplay.Add(combination);
                 }
             }
         }
@@ -84,7 +78,7 @@ public class ItemManagerGUI : MonoBehaviour
     {
         for (int index = 0; index < combinationDisplay.Count; index++)
         {
-            if(index >= bufferDisplay.Count)
+            if (index >= bufferDisplay.Count)
             {
                 ItemCombinationGUI displayCombination = combinationDisplay[index];
                 addCombination(displayCombination);
@@ -92,19 +86,16 @@ public class ItemManagerGUI : MonoBehaviour
             else
             {
                 ItemCombinationGUI displayCombination = combinationDisplay[index];
-                if (bufferDisplay[index] is ItemCombination)
-                {
-                    ItemCombination bufferCombination = bufferDisplay[index];
+                Combination bufferCombination = bufferDisplay[index];
 
-                    if (displayCombination.isPartial())
-                    {
-                        removeCombination(bufferCombination);
-                    }
-                    else if (displayCombination.contains(new ItemCombinationGUI(bufferCombination)))
-                    {
-                        removeCombination(bufferCombination);
-                        addCombination(displayCombination);
-                    }
+                if (displayCombination.isPartial())
+                {
+                    removeCombination(bufferCombination);
+                }
+                else if (displayCombination.contains(new ItemCombinationGUI(bufferCombination)))
+                {
+                    removeCombination(bufferCombination);
+                    addCombination(displayCombination);
                 }
             }
         }
@@ -117,12 +108,9 @@ public class ItemManagerGUI : MonoBehaviour
         List<Combination> combinations = CombinationStorageManager.GetCombinations();
         foreach (Combination combination in combinations)
         {
-            if (combination is ItemCombination)
+            if (new ItemCombinationGUI(combination).contains(combinationNew))
             {
-                if (new ItemCombinationGUI((ItemCombination)combination).contains(combinationNew))
-                {
-                    return;
-                }
+                return;
             }
         }
 

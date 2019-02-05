@@ -7,8 +7,18 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
-    //public static GameManager instance = new GameManager();
+    public static GameManager instance = new GameManager();
 
-    
+    public Item GetItemByNickname(String name)
+    {
+        foreach(Item item in GameObject.FindObjectsOfType<Item>())
+        {
+            if(item.nickname == name)
+            {
+                return item;
+            }
+        }
+        throw new Exception("Item nickname not found!");
+    }
 
 }

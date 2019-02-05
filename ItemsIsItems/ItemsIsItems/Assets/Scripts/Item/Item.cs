@@ -7,6 +7,7 @@ using UnityEngine;
 public class Item : MonoBehaviour
 {
     public new String name;
+    public String nickname;
     public GameObject graphicalObj;
     public Collider2D overObject;
 

@@ -8,18 +8,20 @@ using UnityEngine;
 
 public static class CombinationStorageManager
 {
+    private const String COMBINATIONFILE = "Combinations.txt";
     private static List<Combination> combinations = new List<Combination>();
+    public static bool isLoaded = false; 
 
     public static List<Combination> Load()
     {
         if (combinations.Count == 0)
         {
-            string fileText = File.ReadAllText(Path.Combine(Application.streamingAssetsPath, "Combinations.txt"));
+            string fileText = File.ReadAllText(Path.Combine(Application.streamingAssetsPath, COMBINATIONFILE));
 
             IEffect effect = null;
             foreach (Match match in Regex.Matches(fileText, @"\s*(.*?)\s(.*?)\s({.*})"))
             {
-                Debug.Log(":" + match.Groups[1].Value + " + " + match.Groups[2].Value + " = " + match.Groups[3].Value);
+                Debug.Log(match.Groups[1].Value + " + " + match.Groups[2].Value + " = " + match.Groups[3].Value);
 
                 InteracteeItem item1 = new InteracteeItem(match.Groups[1].Value);
                 String interactee = match.Groups[2].Value;
@@ -65,14 +67,21 @@ public static class CombinationStorageManager
                     effects.Add(ParseEffect(args[i]));
                 }
                 return new EffectMultipleEffects().LoadArgs(effects.ToArray());
+            case "SpawnUnderItem":
+                return new EffectSpawnItem().LoadArgs(args);
             default:
-                throw new Exception("Effect not found!");
+                throw new Exception("Effect, "+effectName+", not found!");
         }
     }
 
     public static List<Combination> GetCombinations()
     {
-        throw new NotImplementedException();
+        if(isLoaded == false)
+        {
+            isLoaded = true;
+            Load();
+        }
+        return combinations;
     }
 
     public static void Save()
@@ -81,17 +90,24 @@ public static class CombinationStorageManager
         foreach(Combination combination in combinations){
             combination.ToSafeFormat(stringBuilder);
         }
-        throw new NotImplementedException();
-    }
 
-    /*
+        File.WriteAllText(Path.Combine(Application.streamingAssetsPath, COMBINATIONFILE), stringBuilder.ToString());
+    }  
+
+    
     public static void AddCombination(Combination newCombination)
     {
-        throw new NotImplementedException(); //combinations.Add(newCombination);
+        if (combinations.Contains(newCombination) == false)
+        {
+            combinations.Add(newCombination);
+        }
     }
 
     public static void AddCombination(List<Combination> newCombinations)
     {
-        throw new NotImplementedException(); //combinations.AddRange(newCombinations);
-    }*/
+        foreach(Combination combination in newCombinations)
+        {
+            AddCombination(combination);
+        }
+    }
 }

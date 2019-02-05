@@ -2,6 +2,7 @@
 using System;
 using UnityEngine;
 using System.Collections.Generic;
+using System.Text;
 
 public class EffectMultipleEffects : IEffect
 {
@@ -24,5 +25,15 @@ public class EffectMultipleEffects : IEffect
             this.effects.Add(effects[i]);
         }
         return this;
+    }
+
+    public void ToSafeFormat(StringBuilder stringBuilder)
+    {
+        stringBuilder.Append("{Multi ");
+        foreach (IEffect effect in effects)
+        {
+            effect.ToSafeFormat(stringBuilder);
+        }
+        stringBuilder.Append("}");
     }
 }
