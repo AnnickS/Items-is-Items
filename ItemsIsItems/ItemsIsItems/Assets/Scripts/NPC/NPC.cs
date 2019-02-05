@@ -22,7 +22,7 @@ public class NPC : Item {
 
 	// Use this for initialization
 	void Start () {
-        Base = transform.position;
+        Base = Target = transform.position;
 	}
 	
 	// Update is called once per frame
@@ -32,12 +32,11 @@ public class NPC : Item {
             transform.Rotate(new Vector3(0, 0, 1.5F));
         }
         InView();
-        Target = SelectTarget();
 
         //Moves NPC back to base if movement has stopped and timer is finished
-        if(Target == new Vector2(transform.position.x, transform.position.y) && Wait == 0)
+        if(Wait == 0)
         {
-            Target = Base;
+            Target = SelectTarget();
         } else
         {
             Wait--;
@@ -65,7 +64,13 @@ public class NPC : Item {
             if (ScaredOf.Find(x => name.Contains(x)) != null)
             {
                 Wait = 100;
-                return new Vector2(-cTransform.position.x-transform.position.x, -cTransform.position.y-transform.position.y);
+                Vector2 ItemPosition = new Vector2(cTransform.position.x, cTransform.position.y);
+                ItemPosition -= CurrentPosition;
+                ItemPosition.Normalize();
+                ItemPosition = new Vector2(-ItemPosition.x*5, -ItemPosition.y*5);
+                ItemPosition += CurrentPosition;
+
+                return ItemPosition;
             }//Items that the npc is hostile to has next priority
             else if (HostileTo.Find(x => name.Contains(x)) != null)
             {
@@ -85,14 +90,36 @@ public class NPC : Item {
             cTransform = current.GetComponent<Transform>();
             string name = current.gameObject.name;
 
-            //Items that the npc is scared of has first priority
-            if (name.Contains("Smellable"))
+            if (ScaredOf.Find(x => name.Contains(x)) != null)
             {
-                Rotate = true;
-                return CurrentPosition;
+                //Items that the npc is scared of has first priority
+                if (name.Contains("Smellable"))
+                {
+                    Rotate = true;
+                    return CurrentPosition;
+                }
+            }//Items that the npc is hostile to has next priority
+            else if (HostileTo.Find(x => name.Contains(x)) != null)
+            {
+                //Items that the npc is scared of has first priority
+                if (name.Contains("Smellable"))
+                {
+                    Rotate = true;
+                    return CurrentPosition;
+                }
+            }//Items that the npc is attracted to have last priority
+            else if (AttractedTo.Find(x => name.Contains(x)) != null)
+            {
+                //Items that the npc is scared of has first priority
+                if (name.Contains("Smellable"))
+                {
+                    Rotate = true;
+                    return CurrentPosition;
+                }
             }
         }
-        return CurrentPosition;
+
+        return Base;
     }
 
     //Detects game objects within FoV and adds them to WithinView list
