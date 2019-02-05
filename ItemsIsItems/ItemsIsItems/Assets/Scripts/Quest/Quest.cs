@@ -40,7 +40,7 @@ public class Quest : MonoBehaviour
         getCurrentQuestState().OnQuestGiverClicked();
     }
 
-    private QuestState getCurrentQuestState()
+    public QuestState getCurrentQuestState()
     {
         return states[currentStateIndex];
     }
