@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class NPCInventory : Inventory {
+    Item OverItem;
 
 	// Use this for initialization
 	void Start () {
@@ -11,7 +12,13 @@ public class NPCInventory : Inventory {
 	
 	// Update is called once per frame
 	void Update () {
-		
+		if(OverItem != null && OverItem.isPickupable)
+        {
+            //Item is added to inventory
+            OverItem.gameObject.SetActive(false);
+            this.AddItem(OverItem);
+            OverItem = null;
+        }
 	}
 
     void OnTriggerEnter2D(Collider2D other)
@@ -19,11 +26,25 @@ public class NPCInventory : Inventory {
         Item item = other.GetComponent<Item>();
 
         //Check the provided Collider2D parameter other to see if it is tagged "Player", if it is...
-        if (!item.Equals(null) && !Contains(item))
+        if (item != null && !Contains(item) && item.isPickupable)
         {
             //Item is added to inventory
-            this.AddItem(item);
             item.gameObject.SetActive(false);
+            this.AddItem(item);
+        }
+        else if(item != null && !Contains(item) && !item.isPickupable)
+        {
+            OverItem = item;
+        }
+    }
+
+    private void OnTriggerExit2D(Collider2D other)
+    {
+        Item item = other.GetComponent<Item>();
+
+        if (!item.Equals(null) && item.Equals(OverItem))
+        {
+            OverItem = null;
         }
     }
 
