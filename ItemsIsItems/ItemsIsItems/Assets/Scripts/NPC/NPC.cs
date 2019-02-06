@@ -9,7 +9,7 @@ public class NPC : Item {
     public Vector2 Target;
     public Vector2 Base;
 
-    Collider2D[] WithinCircle;
+    public Collider2D[] WithinCircle;
     public LayerMask ObstacleMask;
     public List<Item> WithinView;
     public List<Item> WithinSmell;
@@ -23,6 +23,7 @@ public class NPC : Item {
 	// Use this for initialization
 	void Start () {
         Base = Target = transform.position;
+        ObstacleMask = gameObject.layer;
 	}
 	
 	// Update is called once per frame
@@ -41,6 +42,7 @@ public class NPC : Item {
         {
             Wait--;
         }
+
         gameObject.GetComponent<MoveTowardPosition>().moveToPosition(Target);
 	}
 
@@ -151,7 +153,10 @@ public class NPC : Item {
                 }//If object isn't viewable, it's smellable
                 else
                 {
-                    WithinSmell.Add(WithinCircle[i].GetComponent<Item>());
+                    if(WithinCircle[i].gameObject != this.gameObject)
+                    {
+                        WithinSmell.Add(WithinCircle[i].GetComponent<Item>());
+                    }
                 }
             } else { continue;  }
         }
