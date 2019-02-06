@@ -63,19 +63,20 @@ public class TrailOffsetInventory : Inventory
     {
         base.AddItem(item);
         item.inventory = this;
+        item.isPickupable = false;
     }
 
     public override void RemoveItem(Item item)
     {
         base.RemoveItem(item);
     }
-
+    
     void OnTriggerEnter2D(Collider2D other)
     {
         Item item = other.GetComponent<Item>();
 
-        //Check the provided Collider2D parameter other to see if it is tagged "Player", if it is...
-        if (!item.Equals(null) && !base.Contains(item))
+        //Check if other is an item and item not already in inventory
+        if (item != null && !base.Contains(item))
         {
             //Item is added to inventory
             this.AddItem(item);

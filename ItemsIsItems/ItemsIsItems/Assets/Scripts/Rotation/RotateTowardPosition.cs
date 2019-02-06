@@ -8,6 +8,13 @@ public class RotateTowardPosition : MonoBehaviour
 
     public void rotateToPosition(Vector2 targetPosition)
     {
+        Vector2 currentPosition = new Vector2(transform.position.x, transform.position.y);
+
+        if (currentTargetPosition == targetPosition || targetPosition == null || targetPosition.Equals(currentPosition))
+        {
+            return;
+        }
+
         currentTargetPosition = targetPosition;
 
         Vector3 object_pos = this.transform.position;
