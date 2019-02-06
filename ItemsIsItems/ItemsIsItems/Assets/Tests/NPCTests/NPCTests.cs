@@ -57,8 +57,7 @@ public class NPCTests
 
         yield return null;
         yield return null;
-
-        //Assert.True(npc.GetComponent<NPC>().WithinCircle.Length.Equals(2));
+        
         Assert.True(npc.GetComponent<NPC>().WithinView.Count.Equals(1));
 
         MonoBehaviour.Destroy(npc);
