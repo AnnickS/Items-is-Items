@@ -25,7 +25,8 @@ GameObject:
   - component: {fileID: 114412740083062180}
   - component: {fileID: 114042330419243514}
   - component: {fileID: 61626825938183062}
-  - component: {fileID: 50742586819360678}
+  - component: {fileID: 50722458942770440}
+  - component: {fileID: 114629766429606882}
   m_Layer: 9
   m_Name: NPCCharacter
   m_TagString: Untagged
@@ -40,13 +41,13 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1304179708650458}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -5.55, y: 2.72, z: 0}
+  m_LocalPosition: {x: -5.44, y: 2.97, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!50 &50742586819360678
+--- !u!50 &50722458942770440
 Rigidbody2D:
   serializedVersion: 4
   m_ObjectHideFlags: 1
@@ -115,6 +116,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   name: 
+  nickname: 
   graphicalObj: {fileID: 0}
   overObject: {fileID: 0}
   inventory: {fileID: 0}
@@ -152,6 +154,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rotationOffset: 180
+--- !u!114 &114629766429606882
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1304179708650458}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a83cda3f7861a904f9fd4a6ac0ffad6b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  items: []
 --- !u!114 &114832774599050982
 MonoBehaviour:
   m_ObjectHideFlags: 1
