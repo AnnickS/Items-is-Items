@@ -6,23 +6,15 @@ using System.Collections;
 public class NPCTests
 {
     //Tests:
-    //In-place Rotation
     //Within View
     //Target Selection
 
-    [Test]
-    public void NewTestScriptSimplePasses()
-    {
-        // Use the Assert class to test conditions.
-    }
-
-    //NPC Exists
-    [Test]
+    [UnityTest]
     public IEnumerator InstantiateNPCTest()
     {
-        GameObject NPC = MonoBehaviour.Instantiate(Resources.Load<GameObject>("NPCCharacter"));
-        Assert.IsNotNull(NPC);
-        MonoBehaviour.Destroy(NPC);
+        GameObject npc = MonoBehaviour.Instantiate(Resources.Load<GameObject>("NPCCharacter"), new Vector3(0, 0, 0), new Quaternion());
+        Assert.IsNotNull(npc);
+        MonoBehaviour.Destroy(npc);
         yield return null;
     }
 
@@ -37,15 +29,21 @@ public class NPCTests
     [UnityTest]
     public IEnumerator WithinCircle()
     {
-        GameObject NPC = MonoBehaviour.Instantiate(Resources.Load<GameObject>("NPCCharacter"));
+        GameObject npc = MonoBehaviour.Instantiate(Resources.Load<GameObject>("NPCCharacter"), new Vector3(0, 0, 0), new Quaternion());
         GameObject itemOne = MonoBehaviour.Instantiate(Resources.Load<GameObject>("FlowerRoseSmellable"), new Vector3(0F, -2F, 0), new Quaternion());
         GameObject itemTwo = MonoBehaviour.Instantiate(Resources.Load<GameObject>("FlowerRoseSmellable"), new Vector3(0F, 2F, 0), new Quaternion());
         GameObject itemThree = MonoBehaviour.Instantiate(Resources.Load<GameObject>("FlowerRoseSmellable"), new Vector3(0F, 6F, 0), new Quaternion());
 
         // yield to skip a frame
         yield return null;
+        yield return null;
 
-        Assert.True(NPC.GetComponent<NPC>().WithinCircle.Length.Equals(3));
+        Assert.True(npc.GetComponent<NPC>().WithinCircle.Length.Equals(2));
+
+        MonoBehaviour.Destroy(npc);
+        MonoBehaviour.Destroy(itemOne);
+        MonoBehaviour.Destroy(itemTwo);
+        MonoBehaviour.Destroy(itemThree);
     }
 
     /* Within View */
@@ -53,13 +51,19 @@ public class NPCTests
     [UnityTest]
     public IEnumerator WithinView()
     {
-        GameObject NPC = MonoBehaviour.Instantiate(Resources.Load<GameObject>("NPCCharacter"));
-        GameObject itemOne = MonoBehaviour.Instantiate(Resources.Load<GameObject>("FlowerRoseSmellable"), new Vector3(0F, -2F, 0), new Quaternion());
-        GameObject itemTwo = MonoBehaviour.Instantiate(Resources.Load<GameObject>("FlowerRoseSmellable"), new Vector3(0F, 2F, 0), new Quaternion());
+        GameObject npc = MonoBehaviour.Instantiate(Resources.Load<GameObject>("NPCCharacter"), new Vector3(0, 0, 0), new Quaternion());
+        GameObject itemOne = MonoBehaviour.Instantiate(Resources.Load<GameObject>("FlowerRoseSmellable"), new Vector3(0, -2F, 0), new Quaternion());
+        GameObject itemTwo = MonoBehaviour.Instantiate(Resources.Load<GameObject>("FlowerRoseSmellable"), new Vector3(0, 2F, 0), new Quaternion());
 
         yield return null;
+        yield return null;
 
-        Assert.True(NPC.GetComponent<NPC>().WithinView.Equals(1));
+        //Assert.True(npc.GetComponent<NPC>().WithinCircle.Length.Equals(2));
+        Assert.True(npc.GetComponent<NPC>().WithinView.Count.Equals(1));
+
+        MonoBehaviour.Destroy(npc);
+        MonoBehaviour.Destroy(itemOne);
+        MonoBehaviour.Destroy(itemTwo);
     }
 
     /* Within Smell */
@@ -67,13 +71,17 @@ public class NPCTests
     [UnityTest]
     public IEnumerator WithinSmell()
     {
-        GameObject NPC = MonoBehaviour.Instantiate(Resources.Load<GameObject>("NPCCharacter"));
+        GameObject npc = MonoBehaviour.Instantiate(Resources.Load<GameObject>("NPCCharacter"), new Vector3(0, 0, 0), new Quaternion());
         GameObject itemOne = MonoBehaviour.Instantiate(Resources.Load<GameObject>("FlowerRoseSmellable"), new Vector3(0F, -2F, 0), new Quaternion());
         GameObject itemTwo = MonoBehaviour.Instantiate(Resources.Load<GameObject>("FlowerRoseSmellable"), new Vector3(0F, 2F, 0), new Quaternion());
 
         yield return null;
 
-        Assert.True(NPC.GetComponent<NPC>().WithinSmell.Equals(1));
+        Assert.True(npc.GetComponent<NPC>().WithinSmell.Count.Equals(1));
+
+        MonoBehaviour.Destroy(npc);
+        MonoBehaviour.Destroy(itemOne);
+        MonoBehaviour.Destroy(itemTwo);
     }
 
     /* Behind Obstacle */
@@ -81,13 +89,17 @@ public class NPCTests
     [UnityTest]
     public IEnumerator BehindObstacle()
     {
-        GameObject NPC = MonoBehaviour.Instantiate(Resources.Load<GameObject>("NPCCharacter"));
+        GameObject npc = MonoBehaviour.Instantiate(Resources.Load<GameObject>("NPCCharacter"), new Vector3(0, 0, 0), new Quaternion());
         GameObject character = MonoBehaviour.Instantiate(Resources.Load<GameObject>("Character"), new Vector3(0F, -1F, 0), new Quaternion());
         GameObject item = MonoBehaviour.Instantiate(Resources.Load<GameObject>("FlowerRoseSmellable"), new Vector3(0F, -3F, 0), new Quaternion());
 
         yield return null;
 
-        Assert.True(NPC.GetComponent<NPC>().WithinSmell.Equals(1));
+        Assert.True(npc.GetComponent<NPC>().WithinView.Count.Equals(0));
+
+        MonoBehaviour.Destroy(npc);
+        MonoBehaviour.Destroy(character);
+        MonoBehaviour.Destroy(item);
     }
 
     /*** Target Selection ***/
@@ -99,12 +111,19 @@ public class NPCTests
     [UnityTest]
     public IEnumerator SelectsItemsWithinView()
     {
-        GameObject NPC = MonoBehaviour.Instantiate(Resources.Load<GameObject>("NPCCharacter"));
-        GameObject item = MonoBehaviour.Instantiate(Resources.Load<GameObject>("FlowerRoseSmellable"), new Vector3(0F, -3F, 0), new Quaternion());
+        GameObject npc = MonoBehaviour.Instantiate(Resources.Load<GameObject>("NPCCharacter"), new Vector3(0, 0, 0), new Quaternion());
+        GameObject item = MonoBehaviour.Instantiate(Resources.Load<GameObject>("FlowerRoseSmellable"), new Vector3(0, -3, 0), new Quaternion());
 
-        yield return null;
+        Time.timeScale = 100;
+        yield return new WaitForSeconds(10);
 
-        Assert.True(NPC.GetComponent<NPC>().Target.Equals(new Vector2(0, -3)));
+        Debug.Log("Coordinates: " + npc.GetComponent<NPC>().Target);
+        Debug.Log("Wait: " + npc.GetComponent<NPC>().Wait);
+
+        Assert.True(npc.GetComponent<NPC>().Target.Equals(new Vector2(0, -3)));
+
+        MonoBehaviour.Destroy(npc);
+        MonoBehaviour.Destroy(item);
     }
 
     /* Smell Selection */
@@ -112,11 +131,15 @@ public class NPCTests
     [UnityTest]
     public IEnumerator RotatesWhenItemWithinSmell()
     {
-        GameObject NPC = MonoBehaviour.Instantiate(Resources.Load<GameObject>("NPCCharacter"));
-        GameObject item = MonoBehaviour.Instantiate(Resources.Load<GameObject>("FlowerRoseSmellable"), new Vector3(0F, 3F, 0), new Quaternion());
+        GameObject npc = MonoBehaviour.Instantiate(Resources.Load<GameObject>("NPCCharacter"), new Vector3(0, 0, 0), new Quaternion());
+        GameObject item = MonoBehaviour.Instantiate(Resources.Load<GameObject>("FlowerRoseSmellable"), new Vector3(0, 3, 0), new Quaternion());
 
-        yield return null;
+        Time.timeScale = 100;
+        yield return new WaitForSeconds(10);
+        
+        Assert.True(npc.GetComponent<NPC>().Rotate.Equals(true));
 
-        Assert.True(NPC.GetComponent<NPC>().Rotate.Equals(true));
+        MonoBehaviour.Destroy(npc);
+        MonoBehaviour.Destroy(item);
     }
 }

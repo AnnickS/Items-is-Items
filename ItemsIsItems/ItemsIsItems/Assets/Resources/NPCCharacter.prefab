@@ -26,8 +26,8 @@ GameObject:
   - component: {fileID: 114042330419243514}
   - component: {fileID: 61626825938183062}
   - component: {fileID: 50742586819360678}
-  m_Layer: 0
-  m_Name: ChildCharacter
+  m_Layer: 9
+  m_Name: NPCCharacter
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -119,21 +119,27 @@ MonoBehaviour:
   overObject: {fileID: 0}
   inventory: {fileID: 0}
   isPickupable: 1
-  drag: 1
+  drag: 0
   AttractedTo:
   - Rose
   ScaredOf: []
   HostileTo: []
   Target: {x: 0, y: 0}
+  Base: {x: 0, y: 0}
+  WithinCircle: []
+  TargetMask:
+    serializedVersion: 2
+    m_Bits: 256
   ObstacleMask:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 1024
   WithinView: []
   WithinSmell: []
   Rotate: 0
   ViewRadius: 5
   ViewAngle: 135
   RotationSpeed: 10
+  Wait: 5
 --- !u!114 &114412740083062180
 MonoBehaviour:
   m_ObjectHideFlags: 1

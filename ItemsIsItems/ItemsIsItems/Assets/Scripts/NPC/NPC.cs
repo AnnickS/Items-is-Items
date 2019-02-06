@@ -10,6 +10,7 @@ public class NPC : Item {
     public Vector2 Base;
 
     public Collider2D[] WithinCircle;
+    public LayerMask TargetMask;
     public LayerMask ObstacleMask;
     public List<Item> WithinView;
     public List<Item> WithinSmell;
@@ -17,13 +18,12 @@ public class NPC : Item {
     public float ViewRadius = 5;
     public float ViewAngle = 135;
     public float RotationSpeed = 10F;
-    public float Wait = 100;
+    public float Wait = 0;
 
 
 	// Use this for initialization
 	void Start () {
         Base = Target = transform.position;
-        ObstacleMask = gameObject.layer;
 	}
 	
 	// Update is called once per frame
@@ -127,7 +127,7 @@ public class NPC : Item {
     //Detects game objects within FoV and adds them to WithinView list
     private void InView()
     {
-        WithinCircle = Physics2D.OverlapCircleAll(transform.position, ViewRadius);
+        WithinCircle = Physics2D.OverlapCircleAll(transform.position, ViewRadius, TargetMask);
         WithinView.Clear();
         WithinSmell.Clear();
 

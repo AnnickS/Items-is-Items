@@ -23,7 +23,7 @@ GameObject:
   - component: {fileID: 114196809215396984}
   - component: {fileID: 114853476238258690}
   - component: {fileID: 61821019130556170}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: FlowerRoseSmellable
   m_TagString: Untagged
   m_Icon: {fileID: 0}
