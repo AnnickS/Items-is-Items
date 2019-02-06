@@ -117,9 +117,6 @@ public class NPCTests
         Time.timeScale = 100;
         yield return new WaitForSeconds(10);
 
-        Debug.Log("Coordinates: " + npc.GetComponent<NPC>().Target);
-        Debug.Log("Wait: " + npc.GetComponent<NPC>().Wait);
-
         Assert.True(npc.GetComponent<NPC>().Target.Equals(new Vector2(0, -3)));
 
         MonoBehaviour.Destroy(npc);
