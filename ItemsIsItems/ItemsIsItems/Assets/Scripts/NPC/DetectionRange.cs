@@ -17,10 +17,9 @@ public class DetectionRange : MonoBehaviour {
     //Items in range but not in view get added to WithinSmell
     public void InRange()
     {
+        WithinCircle = Physics2D.OverlapCircleAll(transform.position, ViewRadius, TargetMask);
         WithinView.Clear();
         WithinSmell.Clear();
-
-        WithinCircle = Physics2D.OverlapCircleAll(transform.position, ViewRadius, TargetMask);
 
         for (int i = 0; i < WithinCircle.Length; i++)
         {
@@ -34,7 +33,9 @@ public class DetectionRange : MonoBehaviour {
                 //Checks if object is within viewing distance
                 if (Vector2.Angle(DirItem, -transform.up) < ViewAngle / 2)
                 {
+
                     float Distance = Vector2.Distance(transform.position, ItemTransform.position);
+
 
                     //obstacles will be below the layer the object is in
                     if (!Physics2D.Raycast(transform.position, DirItem, Distance, ObstacleMask))
