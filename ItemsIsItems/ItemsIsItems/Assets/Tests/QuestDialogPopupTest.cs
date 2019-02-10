@@ -5,9 +5,6 @@ using System.Collections;
 
 public class QuestDialogPopupTest
 {
-    
-    //Change Text
-
     [UnityTest]
     public IEnumerator DialogPopupStartsHidden()
     {
@@ -33,23 +30,6 @@ public class QuestDialogPopupTest
         bool isActive = popup.isActiveAndEnabled;
 
         Assert.IsTrue(isActive);
-        GameObject.Destroy(popup);
-    }
-
-    [UnityTest]
-    public IEnumerator DialogPopupQuestChangesTextMeshText()
-    {
-        GameObject questObject = MonoBehaviour.Instantiate(Resources.Load<GameObject>("ExampleQuest"));
-        Quest quest = questObject.GetComponent<Quest>();
-        DialogPopup popup = questObject.GetComponentInChildren<DialogPopup>();
-        quest.text = "test";
-        yield return null;
-        yield return null;
-        yield return null;
-        string actual = popup.textMesh.text;
-        string expected = "test";
-
-        Assert.True(actual.Equals(expected));
         GameObject.Destroy(popup);
     }
 }
