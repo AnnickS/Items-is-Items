@@ -5,7 +5,7 @@ using UnityEngine;
 
 public abstract class QuestState : MonoBehaviour
 {
-    public String story = "There once was a butterfly";
+    public String story = "Put what you want the quest giver to say here (Story/Hint/etc)";
 
     public abstract void Initialize(GameObject questGiver);
 

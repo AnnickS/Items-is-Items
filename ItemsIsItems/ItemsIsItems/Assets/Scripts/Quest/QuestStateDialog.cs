@@ -26,7 +26,7 @@ public class QuestStateDialog : QuestState
 
     public override bool IsDone()
     {
-        if (showedDialog)// && !dialog.isActiveAndEnabled)
+        if (showedDialog)
         {
             return true;
         }
