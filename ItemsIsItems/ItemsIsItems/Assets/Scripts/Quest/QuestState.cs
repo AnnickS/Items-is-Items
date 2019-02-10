@@ -3,21 +3,13 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public abstract class QuestState
+public abstract class QuestState : MonoBehaviour
 {
-    private bool isDone = false;
+    public String story = "There once was a butterfly";
 
-    public abstract void Initialize();
-    public abstract void OnQuestGiverClicked();
-    public abstract void FixedUpdate();
+    public abstract void Initialize(GameObject questGiver);
 
-    protected void done()
-    {
-        isDone = true;
-    }
+    public abstract void ShowStory();
 
-    public bool IsDone()
-    {
-        return isDone;
-    }
+    public abstract bool IsDone();
 }

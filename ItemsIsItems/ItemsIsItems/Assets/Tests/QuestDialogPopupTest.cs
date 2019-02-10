@@ -36,6 +36,7 @@ public class QuestDialogPopupTest
         GameObject.Destroy(popup);
     }
 
+    /* 
     [UnityTest]
     public IEnumerator DialogPopupQuestChangesTextMeshText()
     {
@@ -51,5 +52,5 @@ public class QuestDialogPopupTest
 
         Assert.True(actual.Equals(expected));
         GameObject.Destroy(popup);
-    }
+    }//*/
 }
