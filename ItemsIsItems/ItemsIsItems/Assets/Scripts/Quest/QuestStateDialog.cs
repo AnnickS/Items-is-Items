@@ -19,7 +19,7 @@ public class QuestStateDialog : QuestState
 
     public override void ShowStory()
     {
-        dialog.setText(story);
+        dialog.setText(text);
         dialog.show();
         showedDialog = true;
     }
