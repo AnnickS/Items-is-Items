@@ -19,8 +19,9 @@ public class Item : MonoBehaviour
 
     public List<Descriptor> Descriptors;
 
-    void Start()
+    protected void Start()
     {
+        gameObject.layer = 8;
         movement = GetComponent<MoveTowardPosition>();
         
         if(transform.Find("Mesh") != null)

@@ -9,6 +9,15 @@ public class DialogPopup : Dialog
     private double timeLeft = 0;
     public double timeOnScreen = 1.0;
 
+    void Awake()
+    {
+        textMesh = this.gameObject.GetComponentInChildren<TextMeshPro>();
+        if (textMesh == null)
+        {
+            Debug.LogError("DialogPopup Object could not find TextMeshPro Child");
+        }
+    }
+
     void Start()
     {
         hide();

@@ -4,6 +4,12 @@ using UnityEngine;
 
 public class Player : Item {
 
+    void Start()
+    {
+        base.Start();
+        gameObject.layer = 10;
+    }
+
     void OnTriggerEnter2D(Collider2D other)
     {
         if (drag)
