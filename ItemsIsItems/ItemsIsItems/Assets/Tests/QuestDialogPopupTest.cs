@@ -54,7 +54,7 @@ public class QuestDialogPopupTest
         DialogPopup popup = questObject.GetComponentInChildren<DialogPopup>();
         yield return null;
         string actual = popup.textMesh.text;
-        string expected = quest.getCurrentQuestState().story;
+        string expected = quest.getCurrentQuestState().text;
         Assert.AreNotEqual(expected, actual, "The default textmesh text didn't change to the quest state's text");
         GameObject.Destroy(questObject);
     }
