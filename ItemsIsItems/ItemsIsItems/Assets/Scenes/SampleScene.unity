@@ -347,7 +347,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 199772878}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -4.69, y: -2.19, z: 0}
+  m_LocalPosition: {x: 7.64, y: 3.31, z: 0}
   m_LocalScale: {x: 4, y: 4, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -1095,6 +1095,11 @@ Prefab:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 114128205298660918, guid: e86bf148fce6b5b4993fef83dafaa0ed,
+        type: 2}
+      propertyPath: AttractedTo.Array.size
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 4491901457865212, guid: e86bf148fce6b5b4993fef83dafaa0ed, type: 2}
       propertyPath: m_LocalPosition.x
       value: -4.2899427
@@ -1169,6 +1174,21 @@ Prefab:
         type: 2}
       propertyPath: m_SpriteTilingProperty.oldSize.y
       value: 0.32
+      objectReference: {fileID: 0}
+    - target: {fileID: 114128205298660918, guid: e86bf148fce6b5b4993fef83dafaa0ed,
+        type: 2}
+      propertyPath: AttractedTo.Array.data[1]
+      value: CharacterSmellable
+      objectReference: {fileID: 0}
+    - target: {fileID: 114363505815800274, guid: e86bf148fce6b5b4993fef83dafaa0ed,
+        type: 2}
+      propertyPath: ObstacleMask.m_Bits
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114363505815800274, guid: e86bf148fce6b5b4993fef83dafaa0ed,
+        type: 2}
+      propertyPath: TargetMask.m_Bits
+      value: 1280
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: e86bf148fce6b5b4993fef83dafaa0ed, type: 2}
