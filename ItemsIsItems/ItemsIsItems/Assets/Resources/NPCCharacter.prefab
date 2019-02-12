@@ -21,11 +21,14 @@ GameObject:
   - component: {fileID: 4491901457865212}
   - component: {fileID: 212168331170956534}
   - component: {fileID: 114082189032574304}
+  - component: {fileID: 114128205298660918}
+  - component: {fileID: 114363505815800274}
   - component: {fileID: 114832774599050982}
   - component: {fileID: 114412740083062180}
+  - component: {fileID: 114538217292154584}
   - component: {fileID: 114042330419243514}
   - component: {fileID: 61626825938183062}
-  - component: {fileID: 50742586819360678}
+  - component: {fileID: 50722458942770440}
   m_Layer: 9
   m_Name: NPCCharacter
   m_TagString: Untagged
@@ -40,13 +43,13 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1304179708650458}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -5.55, y: 2.72, z: 0}
+  m_LocalPosition: {x: -5.44, y: 2.97, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!50 &50742586819360678
+--- !u!50 &50722458942770440
 Rigidbody2D:
   serializedVersion: 4
   m_ObjectHideFlags: 1
@@ -115,31 +118,52 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   name: 
+  nickname: 
   graphicalObj: {fileID: 0}
   overObject: {fileID: 0}
   inventory: {fileID: 0}
   isPickupable: 1
   drag: 0
+  Rotate: 0
+  Wait: 5
+--- !u!114 &114128205298660918
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1304179708650458}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 00f91d5f40434e94c956e01b95851755, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
   AttractedTo:
   - Rose
   ScaredOf: []
   HostileTo: []
   Target: {x: 0, y: 0}
-  Base: {x: 0, y: 0}
-  WithinCircle: []
+--- !u!114 &114363505815800274
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1304179708650458}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b73c39098bca33d41836bf602a6b8a64, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
   TargetMask:
     serializedVersion: 2
     m_Bits: 256
   ObstacleMask:
     serializedVersion: 2
     m_Bits: 1024
+  WithinCircle: []
   WithinView: []
   WithinSmell: []
-  Rotate: 0
   ViewRadius: 5
   ViewAngle: 135
-  RotationSpeed: 10
-  Wait: 5
 --- !u!114 &114412740083062180
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -152,6 +176,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rotationOffset: 180
+--- !u!114 &114538217292154584
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1304179708650458}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cb79d9480a6078442bedf5e5953a0bbc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  FrontFacing: {x: 0, y: 0, z: 0}
+  RotationSpeed: 10
 --- !u!114 &114832774599050982
 MonoBehaviour:
   m_ObjectHideFlags: 1
