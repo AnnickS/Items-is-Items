@@ -17,6 +17,7 @@ public class Item : MonoBehaviour
     public bool isPickupable = true;
     public bool drag;
 
+    [SerializeField]
     public List<Descriptor> Descriptors;
 
     protected void Start()
