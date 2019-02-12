@@ -42,7 +42,7 @@ public class NPCInventory : Inventory {
     {
         Item item = other.GetComponent<Item>();
 
-        if (!item.Equals(null) && item.Equals(OverItem))
+        if (item != null && item.Equals(OverItem))
         {
             OverItem = null;
         }

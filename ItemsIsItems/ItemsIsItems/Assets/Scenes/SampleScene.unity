@@ -1367,7 +1367,7 @@ Prefab:
     - target: {fileID: 114363505815800274, guid: e86bf148fce6b5b4993fef83dafaa0ed,
         type: 2}
       propertyPath: ObstacleMask.m_Bits
-      value: 0
+      value: 256
       objectReference: {fileID: 0}
     - target: {fileID: 114363505815800274, guid: e86bf148fce6b5b4993fef83dafaa0ed,
         type: 2}
@@ -1481,6 +1481,14 @@ Prefab:
     - target: {fileID: 1637548426560836, guid: 53078ca4093931040b60ed4a59fa9f1e, type: 2}
       propertyPath: m_Name
       value: FlowerRoseSmellable (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 4949157221537090, guid: 53078ca4093931040b60ed4a59fa9f1e, type: 2}
+      propertyPath: m_LocalScale.x
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4949157221537090, guid: 53078ca4093931040b60ed4a59fa9f1e, type: 2}
+      propertyPath: m_LocalScale.y
+      value: 2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 53078ca4093931040b60ed4a59fa9f1e, type: 2}
@@ -1781,7 +1789,7 @@ BoxCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
