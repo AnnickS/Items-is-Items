@@ -6,11 +6,11 @@ using System.Text;
 using System.Text.RegularExpressions;
 using UnityEngine;
 
-public class Descriptor //: ScriptableObject
+[CreateAssetMenu(menuName = "Descriptor")]
+public class Descriptor : ScriptableObject
 {
-    public new string name;
     public List<Descriptor> children = new List<Descriptor>();
-    /**/
+    /*/
     private static Descriptor ROOT;
 
     public static Descriptor GetRoot()
@@ -50,7 +50,17 @@ public class Descriptor //: ScriptableObject
         parentDescriptor.children.Add(this);
     }/**/
 
-    public Descriptor GetDescriptor(string name)
+    public static Descriptor GetDescriptor(string name)
+    {
+        Descriptor d = Resources.Load<Descriptor>("Descriptors/"+name);
+        if(d == null)
+        {
+            throw new FileNotFoundException("Descriptor, "+name+", could not be found!");
+        }
+        return d;
+    }
+
+    public Descriptor GetSubdescriptor(string name)
     {
         Queue<Descriptor> descriptors = new Queue<Descriptor>();
         descriptors.Enqueue(this);

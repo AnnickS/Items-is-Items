@@ -7,7 +7,7 @@ using System.Text;
 public class EffectMultipleEffects : IEffect
 {
 
-    public List<IEffect> effects;
+    public List<IEffect> effects = new List<IEffect>();
 
     public void Execute(Item item1, Item item2)
     {
@@ -20,6 +20,7 @@ public class EffectMultipleEffects : IEffect
     public IEffect LoadArgs(System.Object[] args)
     {
         IEffect[] effects = (IEffect[])args;
+        Debug.Log(effects.Length);
         for(int i = 0; i < effects.Length; i++)
         {
             this.effects.Add(effects[i]);

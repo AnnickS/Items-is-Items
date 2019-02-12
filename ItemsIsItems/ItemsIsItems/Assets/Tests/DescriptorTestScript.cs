@@ -3,7 +3,7 @@ using UnityEngine.TestTools;
 using NUnit.Framework;
 using System.Collections;
 
-
+/*
 public class DescriptorTest
 {
 
@@ -51,3 +51,4 @@ public class DescriptorTest
         Assert.False(r.Contains(o));
     }
 }
+*/

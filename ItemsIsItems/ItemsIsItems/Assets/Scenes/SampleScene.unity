@@ -263,7 +263,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 1304179708650458, guid: e86bf148fce6b5b4993fef83dafaa0ed, type: 2}
       propertyPath: m_Layer
-      value: 10
+      value: 9
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: e86bf148fce6b5b4993fef83dafaa0ed, type: 2}
@@ -886,7 +886,7 @@ GameObject:
   - component: {fileID: 723780738}
   - component: {fileID: 723780737}
   - component: {fileID: 723780736}
-  m_Layer: 10
+  m_Layer: 8
   m_Name: FlowerRoseSmellable (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -943,6 +943,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   name: 
+  nickname: 
   graphicalObj: {fileID: 0}
   overObject: {fileID: 0}
   inventory: {fileID: 0}
@@ -1113,7 +1114,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 1637548426560836, guid: 53078ca4093931040b60ed4a59fa9f1e, type: 2}
       propertyPath: m_Layer
-      value: 9
+      value: 8
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 53078ca4093931040b60ed4a59fa9f1e, type: 2}
@@ -1159,7 +1160,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 1637548426560836, guid: 53078ca4093931040b60ed4a59fa9f1e, type: 2}
       propertyPath: m_Layer
-      value: 9
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 1637548426560836, guid: 53078ca4093931040b60ed4a59fa9f1e, type: 2}
       propertyPath: m_StaticEditorFlags
@@ -1167,6 +1168,48 @@ Prefab:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 53078ca4093931040b60ed4a59fa9f1e, type: 2}
+  m_IsPrefabParent: 0
+--- !u!1001 &1525059050
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 4727249831661154, guid: 9f59934d8a640df49a8ed514fa293993, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: -0.6188997
+      objectReference: {fileID: 0}
+    - target: {fileID: 4727249831661154, guid: 9f59934d8a640df49a8ed514fa293993, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 0.48860478
+      objectReference: {fileID: 0}
+    - target: {fileID: 4727249831661154, guid: 9f59934d8a640df49a8ed514fa293993, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4727249831661154, guid: 9f59934d8a640df49a8ed514fa293993, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4727249831661154, guid: 9f59934d8a640df49a8ed514fa293993, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4727249831661154, guid: 9f59934d8a640df49a8ed514fa293993, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4727249831661154, guid: 9f59934d8a640df49a8ed514fa293993, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4727249831661154, guid: 9f59934d8a640df49a8ed514fa293993, type: 2}
+      propertyPath: m_RootOrder
+      value: 11
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 100100000, guid: 9f59934d8a640df49a8ed514fa293993, type: 2}
   m_IsPrefabParent: 0
 --- !u!1 &1700562484 stripped
 GameObject:
