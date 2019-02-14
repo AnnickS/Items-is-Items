@@ -7,8 +7,8 @@ using UnityEngine;
 public class ItemCombinationGUI
 {
 
-    public IInteractable useItemType;
-    public IInteractable affectedItemType;
+    public Validator useItemType;
+    public Validator affectedItemType;
     public IEffect effect;
 
     public ItemCombinationGUI()
@@ -16,7 +16,7 @@ public class ItemCombinationGUI
 
     }
 
-    public ItemCombinationGUI(IInteractable useItemType, IInteractable affectedItemType, IEffect effect)
+    public ItemCombinationGUI(Validator useItemType, Validator affectedItemType, IEffect effect)
     {
         this.useItemType = useItemType;
         this.affectedItemType = affectedItemType;

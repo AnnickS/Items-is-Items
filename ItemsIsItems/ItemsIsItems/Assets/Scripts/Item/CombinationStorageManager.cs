@@ -23,19 +23,19 @@ public static class CombinationStorageManager
             {
                 Debug.Log(match.Groups[1].Value + " + " + match.Groups[2].Value + " = " + match.Groups[3].Value);
 
-                InteracteeItem item1 = new InteracteeItem(match.Groups[1].Value);
+                ItemValidator item1 = new ItemValidator(match.Groups[1].Value);
                 String interactee = match.Groups[2].Value;
                 effect = ParseEffect(match.Groups[3].Value);
 
                 if (interactee.IndexOf('"') != -1)
                 {
                     Descriptor d = Descriptor.GetDescriptor(interactee.Replace("\"", ""));
-                    InteracteeDescriptor desc = new InteracteeDescriptor(d);
+                    DescriptorValidator desc = new DescriptorValidator(d);
                     combinations.Add(new Combination(item1, desc, effect));
                 }
                 else
                 {
-                    InteracteeItem item2 = new InteracteeItem(interactee);
+                    ItemValidator item2 = new ItemValidator(interactee);
                     combinations.Add(new Combination(item1, item2, effect));
                 }
             }

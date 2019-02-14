@@ -3,25 +3,26 @@ using System.Collections.Generic;
 using System.Text;
 using UnityEngine;
 
-public class InteracteeDescriptor : IInteractable
+[CreateAssetMenu(menuName = "Combination/Validator/Descriptor")]
+public class DescriptorValidator : Validator
 {
     public Descriptor descriptor;
 
-    public InteracteeDescriptor(Descriptor descriptor)
+    public DescriptorValidator(Descriptor descriptor)
     {
         this.descriptor = descriptor;
     }
 
-    public string GetName()
+    public override string GetName()
     {
         return descriptor.name;
     }
 
-    public bool ItemMatch(Item interactee)
+    public override bool ItemMatch(Item interactee)
     {
         if (descriptor == null)
         {
-            throw new MissingFieldException("InteracteeDescriptor descriptor is NULL");
+            throw new MissingFieldException("DescriptorValidator descriptor is NULL");
         }
         else
         {
@@ -29,7 +30,7 @@ public class InteracteeDescriptor : IInteractable
         }
     }
 
-    public void ToSafeFormat(StringBuilder stringBuilder)
+    public override void ToSafeFormat(StringBuilder stringBuilder)
     {
         stringBuilder.Append("\""+GetName()+"\"");
     }

@@ -3,25 +3,26 @@ using System.Collections.Generic;
 using System.Text;
 using UnityEngine;
 
-public class InteracteeItem : IInteractable
+[CreateAssetMenu(menuName = "Combination/Validator/Item")]
+public class ItemValidator : Validator
 {
     public String item;
 
-    public InteracteeItem(String item)
+    public ItemValidator(String item)
     {
         this.item = item;
     }
 
-    public string GetName()
+    public override string GetName()
     {
         return item;
     }
 
-    public bool ItemMatch(Item interactee)
+    public override bool ItemMatch(Item interactee)
     {
         if(item == null)
         {
-            throw new MissingFieldException("InteracteeItem item is NULL");
+            throw new MissingFieldException("ItemValidator item is NULL");
         }
         else
         {
@@ -29,7 +30,7 @@ public class InteracteeItem : IInteractable
         }
     }
 
-    public void ToSafeFormat(StringBuilder stringBuilder)
+    public override void ToSafeFormat(StringBuilder stringBuilder)
     {
         stringBuilder.Append(GetName());
     }
