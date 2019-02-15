@@ -194,7 +194,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4491901457865212, guid: e86bf148fce6b5b4993fef83dafaa0ed, type: 2}
       propertyPath: m_RootOrder
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 114082189032574304, guid: e86bf148fce6b5b4993fef83dafaa0ed,
         type: 2}
@@ -354,6 +354,7 @@ MonoBehaviour:
   inventory: {fileID: 0}
   isPickupable: 1
   drag: 0
+  Descriptors: []
 --- !u!212 &199772883
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -410,7 +411,7 @@ Transform:
   m_LocalScale: {x: 4, y: 4, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 12
+  m_RootOrder: 13
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &279814829
 GameObject:
@@ -608,7 +609,7 @@ Transform:
   - {fileID: 7697329}
   - {fileID: 1246940140}
   m_Father: {fileID: 0}
-  m_RootOrder: 11
+  m_RootOrder: 12
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &408686550
 MonoBehaviour:
@@ -621,8 +622,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e44897cad30833143a02c3e40a124053, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  states: []
-  currentStateIndex: 0
 --- !u!61 &408686551
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1089,6 +1088,7 @@ MonoBehaviour:
   inventory: {fileID: 0}
   isPickupable: 1
   drag: 0
+  Descriptors: []
 --- !u!212 &723780739
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -1404,7 +1404,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7b42c0b2e052aa84f858e96fe386ae1d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  text: Put what you want the quest giver to say here (Story/Hint/etc)
+  text: How Dare u
 --- !u!1 &1246940139
 GameObject:
   m_ObjectHideFlags: 0
@@ -1432,7 +1432,7 @@ Transform:
   m_Children:
   - {fileID: 1587586342}
   - {fileID: 1190225328}
-  - {fileID: 1440916726}
+  - {fileID: 1816550390}
   m_Father: {fileID: 408686549}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1528,47 +1528,6 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 9f59934d8a640df49a8ed514fa293993, type: 2}
   m_IsPrefabParent: 0
---- !u!1 &1700562484 stripped
-GameObject:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  serializedVersion: 5
-  m_Component:
-  - component: {fileID: 1440916726}
-  - component: {fileID: 1440916727}
-  m_Layer: 0
-  m_Name: Ignore
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1440916726
-Transform:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1440916725}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 1246940140}
-  m_RootOrder: 2
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1440916727
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1440916725}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7b42c0b2e052aa84f858e96fe386ae1d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  text: Put what you want the quest giver to say here (Story/Hint/etc)
 --- !u!1 &1587586341
 GameObject:
   m_ObjectHideFlags: 0
@@ -1609,7 +1568,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7b42c0b2e052aa84f858e96fe386ae1d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  text: Put what you want the quest giver to say here (Story/Hint/etc)
+  text: U poke me
 --- !u!1 &1812464497
 GameObject:
   m_ObjectHideFlags: 0
@@ -1664,3 +1623,44 @@ RectTransform:
   m_AnchoredPosition: {x: -35.9, y: 3}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!1 &1816550389
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 1816550390}
+  - component: {fileID: 1816550391}
+  m_Layer: 0
+  m_Name: UPokeMe (1)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1816550390
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1816550389}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1246940140}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1816550391
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1816550389}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7b42c0b2e052aa84f858e96fe386ae1d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  text: U poke me

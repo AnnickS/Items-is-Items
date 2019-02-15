@@ -15,6 +15,10 @@ public class QuestStateDialog : QuestState
         {
             Debug.LogError("QuestStateDialog Object could not find a Dialog");
         }
+        else
+        {
+            dialog.gameObject.SetActive(true);
+        }
     }
 
     public override void ShowStory()
