@@ -9,14 +9,14 @@ public class ItemCombinationGUI
 
     public Validator useItemType;
     public Validator affectedItemType;
-    public IEffect effect;
+    public Effect effect;
 
     public ItemCombinationGUI()
     {
 
     }
 
-    public ItemCombinationGUI(Validator useItemType, Validator affectedItemType, IEffect effect)
+    public ItemCombinationGUI(Validator useItemType, Validator affectedItemType, Effect effect)
     {
         this.useItemType = useItemType;
         this.affectedItemType = affectedItemType;
@@ -38,7 +38,7 @@ public class ItemCombinationGUI
         return (useItemSame && affectedItemSame);
     }
 
-    public IEffect getEffect()
+    public Effect getEffect()
     {
         return effect;
     }

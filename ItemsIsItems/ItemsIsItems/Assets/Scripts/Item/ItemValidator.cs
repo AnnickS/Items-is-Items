@@ -7,7 +7,6 @@ using UnityEngine;
 public class ItemValidator : Validator
 {
     public String item;
-
     public ItemValidator(String item)
     {
         this.item = item;

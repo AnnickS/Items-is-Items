@@ -10,9 +10,9 @@ public class Combination : ScriptableObject
 {
     public Validator interactable1;
     public Validator interactable2;
-    public IEffect effect;
+    public Effect effect;
 
-    public Combination(Validator interactable1, Validator interactable2, IEffect effect)
+    public Combination(Validator interactable1, Validator interactable2, Effect effect)
     {
         this.interactable1 = interactable1;
         this.interactable2 = interactable2;
@@ -24,7 +24,7 @@ public class Combination : ScriptableObject
         return (interactable1.ItemMatch(item1) && interactable2.ItemMatch(item2));
     }
     
-    public IEffect GetEffect()
+    public Effect GetEffect()
     {
         return effect;
     }

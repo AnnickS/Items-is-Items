@@ -37,7 +37,7 @@ public class ItemManagerGUITest
     public void ResourceChangeColorEffectExists()
     {
         GameObject effectChangeColor = MonoBehaviour.Instantiate(Resources.Load<GameObject>("EffectChangeColor"));
-        IEffect effectChangeColorEffect = effectChangeColor.GetComponent<IEffect>();
+        Effect effectChangeColorEffect = effectChangeColor.GetComponent<Effect>();
         Assert.IsNotNull(effectChangeColorEffect);
         MonoBehaviour.Destroy(effectChangeColor);
     }

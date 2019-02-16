@@ -4,22 +4,24 @@ using UnityEngine;
 using System.Collections.Generic;
 using System.Text;
 
-public class EffectMultipleEffects : IEffect
+
+[CreateAssetMenu(menuName = "Effects/Multi")]
+public class EffectMultipleEffects : Effect
 {
 
-    public List<IEffect> effects = new List<IEffect>();
+    public List<Effect> effects = new List<Effect>();
 
-    public void Execute(Item item1, Item item2)
+    public override void Execute(Item item1, Item item2)
     {
-        foreach(IEffect effect in effects)
+        foreach(Effect effect in effects)
         {
             effect.Execute(item1, item2);
         }
     }
 
-    public IEffect LoadArgs(System.Object[] args)
+    public override Effect LoadArgs(System.Object[] args)
     {
-        IEffect[] effects = (IEffect[])args;
+        Effect[] effects = (Effect[])args;
         Debug.Log(effects.Length);
         for(int i = 0; i < effects.Length; i++)
         {
@@ -28,10 +30,10 @@ public class EffectMultipleEffects : IEffect
         return this;
     }
 
-    public void ToSafeFormat(StringBuilder stringBuilder)
+    public override void ToSafeFormat(StringBuilder stringBuilder)
     {
         stringBuilder.Append("{Multi ");
-        foreach (IEffect effect in effects)
+        foreach (Effect effect in effects)
         {
             effect.ToSafeFormat(stringBuilder);
         }

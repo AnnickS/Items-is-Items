@@ -18,7 +18,7 @@ public static class CombinationStorageManager
         {
             string fileText = File.ReadAllText(Path.Combine(Application.streamingAssetsPath, COMBINATIONFILE));
 
-            IEffect effect = null;
+            Effect effect = null;
             foreach (Match match in Regex.Matches(fileText, @"\s*(.*?)\s(.*?)\s({.*})"))
             {
                 Debug.Log(match.Groups[1].Value + " + " + match.Groups[2].Value + " = " + match.Groups[3].Value);
@@ -43,7 +43,7 @@ public static class CombinationStorageManager
         return combinations;
     }
 
-    private static IEffect ParseEffect(String s)
+    private static Effect ParseEffect(String s)
     {
         Match m = Regex.Match(s, @"{(?:\s*({.*?}|.+?(?=[\s}])))*}");
         String[] args = new String[m.Groups[1].Captures.Count-1];
@@ -55,14 +55,14 @@ public static class CombinationStorageManager
         return LoadEffect(m.Groups[1].Captures[0].Value, args);
     }
 
-    private static IEffect LoadEffect(String effectName, String[] args)
+    private static Effect LoadEffect(String effectName, String[] args)
     {
         switch (effectName)
         {
             case "Spawn":
                 return new EffectSpawn().LoadArgs(args);
             case "Multi":
-                List<IEffect> effects = new List<IEffect>();
+                List<Effect> effects = new List<Effect>();
                 for(int i = 0; i < args.Length; i++)
                 {
                     effects.Add(ParseEffect(args[i]));

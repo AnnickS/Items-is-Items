@@ -35,7 +35,7 @@ public class ItemManager {//: MonoBehaviour {
         {
             if(combination.Match(item1, item2))
             {
-                IEffect effect = combination.GetEffect();
+                Effect effect = combination.GetEffect();
                 effect.Execute(item1, item2);
                 break;
             }
