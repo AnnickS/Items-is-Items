@@ -6,7 +6,7 @@ using UnityEngine;
 [ExecuteInEditMode]
 //[RequireComponent(typeof(ItemManager))]
 public class ItemManagerGUI : MonoBehaviour
-{
+{ /*
     public ItemCombinationGUI combinationNew = new ItemCombinationGUI();
     public List<ItemCombinationGUI> combinationDisplay = new List<ItemCombinationGUI>();
     protected List<Combination> bufferDisplay = new List<Combination>();
@@ -19,11 +19,11 @@ public class ItemManagerGUI : MonoBehaviour
 
     void Update()
     {
-        /*
+        
         if(itemManager == null)
         {
             itemManager = GetComponent<ItemManager>();
-        }*/
+        }
 
         updateModifiedCombinations();
         addAnyNewCombinations();
@@ -40,6 +40,7 @@ public class ItemManagerGUI : MonoBehaviour
         }
     }
 
+   
     private void createBufferMatchingNewCombination()
     {
         bufferDisplay.Clear();
@@ -128,4 +129,5 @@ public class ItemManagerGUI : MonoBehaviour
             combinations.Remove(combination);
         }
     }
+    */
 }

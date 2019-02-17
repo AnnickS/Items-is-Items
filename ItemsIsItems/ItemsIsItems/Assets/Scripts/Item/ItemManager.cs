@@ -3,31 +3,18 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ItemManager {//: MonoBehaviour {
+public class ItemManager : MonoBehaviour {
     
     public static ItemManager Instance;
-    private List<Combination> combinations = new List<Combination>();
+    private Combination[] combinations;
 
-    [RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.AfterSceneLoad)]
-    private static void Initialize()
+    //[RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.AfterSceneLoad)]
+    private void Awake()
     {
-        Instance = new ItemManager();
-        Debug.Log(Descriptor.GetDescriptor("ROOT").ToStringRecursive());
-        CombinationStorageManager.Load();
-        //Instance.combinations.Add(new GeneralItemCombination(new Item(), Descriptor.ROOT.GetDescriptor("Food"), new EffectSpawn()));
-    }
-
-    /*
-	// Use this for initialization
-	void Start () {
         Instance = this;
-	}*/
-
-    /*
-	// Update is called once per frame
-	void Update () {
-		
-	}*/
+        Debug.Log(Descriptor.PrintDescriptorTree());
+        combinations = CombinationStorageManager.GetCombinations();
+    }
 
     public void ExecuteInteraction(Item item1, Item item2)
     {

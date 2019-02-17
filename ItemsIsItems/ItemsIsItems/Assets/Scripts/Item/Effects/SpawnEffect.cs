@@ -12,20 +12,4 @@ public class EffectSpawn : Effect
     {
         GameObject.Instantiate(prefab, targetItemPosition.transform.position, Quaternion.identity);
     }
-
-    public override Effect LoadArgs(System.Object[] args)
-    {
-        prefab = ItemLoader.GetItemGameObject((System.String)args[0]);
-        targetItemPosition = GameManager.instance.GetItemByNickname((System.String)args[1]);
-        return this;
-    }
-
-    public override void ToSafeFormat(StringBuilder stringBuilder)
-    {
-        stringBuilder.Append("{Spawn ");
-        stringBuilder.Append(prefab.name);
-        stringBuilder.Append(" ");
-        stringBuilder.Append(targetItemPosition.nickname);
-        stringBuilder.Append("}");
-    }
 }

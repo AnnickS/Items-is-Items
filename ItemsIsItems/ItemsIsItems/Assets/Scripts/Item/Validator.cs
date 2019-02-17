@@ -7,5 +7,4 @@ public abstract class Validator : ScriptableObject
 {
     public abstract String GetName();
     public abstract bool ItemMatch(Item interactee);
-    public abstract void ToSafeFormat(StringBuilder stringBuilder);
 }

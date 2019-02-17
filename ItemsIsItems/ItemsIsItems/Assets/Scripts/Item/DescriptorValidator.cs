@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Text;
 using UnityEngine;
 
-[CreateAssetMenu(menuName = "Combination/Validator/Descriptor")]
+[CreateAssetMenu(menuName = "Validator/Descriptor")]
 public class DescriptorValidator : Validator
 {
     public Descriptor descriptor;
@@ -28,10 +28,5 @@ public class DescriptorValidator : Validator
         {
             return interactee.HasDescriptor(descriptor);
         }
-    }
-
-    public override void ToSafeFormat(StringBuilder stringBuilder)
-    {
-        stringBuilder.Append("\""+GetName()+"\"");
     }
 }

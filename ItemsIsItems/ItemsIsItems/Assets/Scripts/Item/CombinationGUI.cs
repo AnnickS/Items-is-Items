@@ -25,8 +25,8 @@ public class ItemCombinationGUI
 
     public ItemCombinationGUI(Combination combination)
     {
-        useItemType = combination.interactable1;
-        affectedItemType = combination.interactable2;
+        useItemType = combination.itemValidator1;
+        affectedItemType = combination.itemValidator2;
         effect = combination.effect;
     }
 
