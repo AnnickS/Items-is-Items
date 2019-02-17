@@ -7,11 +7,27 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
-    public static GameManager instance;
+    public static GameManager Instance;
+    private Combination[] combinations;
 
     private void Awake()
     {
-        instance = this;
+        Instance = this;
+        Debug.Log(Descriptor.PrintDescriptorTree());
+        combinations = GetCombinations();
+    }
+
+    public void ExecuteInteraction(Item item1, Item item2)
+    {
+        foreach (Combination combination in combinations)
+        {
+            if (combination.Match(item1, item2))
+            {
+                Effect effect = combination.GetEffect();
+                effect.Execute(item1, item2);
+                break;
+            }
+        }
     }
 
     public Item GetItemByNickname(String name)
@@ -24,6 +40,21 @@ public class GameManager : MonoBehaviour
             }
         }
         throw new Exception("Item nickname not found!");
+    }
+
+    public Combination[] Load()
+    {
+        combinations = Resources.LoadAll<Combination>("Combinations");
+        return combinations;
+    }
+
+    public Combination[] GetCombinations()
+    {
+        if (combinations == null)
+        {
+            Load();
+        }
+        return combinations;
     }
 
 }

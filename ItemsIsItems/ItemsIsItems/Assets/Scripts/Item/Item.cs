@@ -73,12 +73,12 @@ public class Item : MonoBehaviour
             drag = false;
             isPickupable = true;
 
-            if (ItemManager.Instance != null && overObject != null)
+            if (GameManager.Instance != null && overObject != null)
             {
                 Item other = overObject.GetComponent<Item>();
                 if (other != null)
                 {
-                    ItemManager.Instance.ExecuteInteraction(this, other);
+                    GameManager.Instance.ExecuteInteraction(this, other);
                 }
             }
         }
