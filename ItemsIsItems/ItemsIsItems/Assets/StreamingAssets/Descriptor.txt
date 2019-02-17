@@ -1,6 +1,0 @@
-Sharp
-Food{
-	Cheesy
-	Fishy
-}
-Funny

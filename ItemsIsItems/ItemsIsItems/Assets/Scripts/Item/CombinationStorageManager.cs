@@ -9,7 +9,6 @@ using UnityEngine;
 public static class CombinationStorageManager
 {
     private static Combination[] combinations;
-    public static bool isLoaded = false; 
 
     public static Combination[] Load()
     {
