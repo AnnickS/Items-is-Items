@@ -12,7 +12,7 @@ public class ItemManager {//: MonoBehaviour {
     private static void Initialize()
     {
         Instance = new ItemManager();
-        Debug.Log(Descriptor.GetRoot().ToStringRecursive());
+        Debug.Log(Descriptor.GetDescriptor("ROOT").ToStringRecursive());
         CombinationStorageManager.Load();
         //Instance.combinations.Add(new GeneralItemCombination(new Item(), Descriptor.ROOT.GetDescriptor("Food"), new EffectSpawn()));
     }

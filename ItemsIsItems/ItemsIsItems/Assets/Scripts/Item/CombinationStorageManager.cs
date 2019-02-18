@@ -29,7 +29,8 @@ public static class CombinationStorageManager
 
                 if (interactee.IndexOf('"') != -1)
                 {
-                    InteracteeDescriptor desc = new InteracteeDescriptor(Descriptor.GetRoot().GetDescriptor(interactee.Replace("\"", "")));
+                    Descriptor d = Descriptor.GetDescriptor(interactee.Replace("\"", ""));
+                    InteracteeDescriptor desc = new InteracteeDescriptor(d);
                     combinations.Add(new Combination(item1, desc, effect));
                 }
                 else
@@ -54,7 +55,7 @@ public static class CombinationStorageManager
         return LoadEffect(m.Groups[1].Captures[0].Value, args);
     }
 
-    public static IEffect LoadEffect(String effectName, String[] args)
+    private static IEffect LoadEffect(String effectName, String[] args)
     {
         switch (effectName)
         {
