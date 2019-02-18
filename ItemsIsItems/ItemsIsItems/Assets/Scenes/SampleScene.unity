@@ -1702,7 +1702,7 @@ GameObject:
   - component: {fileID: 1935914914}
   - component: {fileID: 1935914913}
   - component: {fileID: 1935914912}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: puppers
   m_TagString: Untagged
   m_Icon: {fileID: 0}
