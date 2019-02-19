@@ -76,7 +76,7 @@ public class TrailOffsetInventory : Inventory
         Item item = other.GetComponent<Item>();
 
         //Check if other is an item and item not already in inventory
-        if (item != null && !base.Contains(item))
+        if (item != null && !base.Contains(item) && item.isPickupable)
         {
             //Item is added to inventory
             this.AddItem(item);
