@@ -30,9 +30,9 @@ public class Player : Item {
     {
         drag = false;
 
-        if (ItemManager.Instance != null && overObject != null)
+        if (GameManager.Instance != null && overObject != null)
         {
-            ItemManager.Instance.ExecuteInteraction(this, overObject.GetComponent<Item>());
+            GameManager.Instance.ExecuteInteraction(this, overObject.GetComponent<Item>());
         }
     }
 }

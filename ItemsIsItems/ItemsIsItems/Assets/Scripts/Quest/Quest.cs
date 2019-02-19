@@ -7,8 +7,8 @@ using UnityEngine;
 [RequireComponent(typeof(BoxCollider2D))]
 public class Quest : MonoBehaviour
 {
-    public QuestState[] states;
-    public int currentStateIndex = 0;
+    private QuestState[] states;
+    private int currentStateIndex = 0;
 
     void Start()
     {

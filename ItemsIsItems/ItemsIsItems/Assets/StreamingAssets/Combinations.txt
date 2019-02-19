@@ -1,2 +1,0 @@
-Rope "Sharp" {SpawnUnderItem Rope}
-Rope "Sharp" {Multi {SpawnUnderItem Rope} {SpawnUnderItem Rope}}
