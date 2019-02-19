@@ -11,4 +11,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2052585f632854847a29788582e52c66, type: 3}
   m_Name: Medicine
   m_EditorClassIdentifier: 
-  descriptor: {fileID: 0}
+  descriptor: {fileID: 11400000, guid: 7c32e7484f605d343aa962b76c2e65b5, type: 2}
