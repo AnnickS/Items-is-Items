@@ -2,15 +2,18 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-[RequireComponent(typeof(MoveTowardPosition))]
 public class RotateTowardMovementTarget : RotateTowardPosition
 {
-
     MoveTowardPosition moveTowardPositionScript;
 
     void Start()
     {
         moveTowardPositionScript = GetComponent<MoveTowardPosition>();
+
+        if (moveTowardPositionScript == null)
+        {
+            Debug.Log("RotateTowardMovementTarget in " + this.gameObject.name + " needs a MoveTowardPosition.");
+        }
     }
 
     void FixedUpdate()

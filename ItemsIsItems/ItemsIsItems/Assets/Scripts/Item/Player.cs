@@ -4,6 +4,7 @@ using UnityEngine;
 
 [RequireComponent(typeof(MoveTowardMouse))]
 [RequireComponent(typeof(RotateTowardMovementTarget))]
+[RequireComponent(typeof(TrailOffsetInventory))]
 public class Player : Item, Respawnable
 {
 
