@@ -2,12 +2,15 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Player : Item {
+public class Player : Item, Respawnable {
+
+    Vector3 startPosition;
 
     void Start()
     {
         base.Start();
         gameObject.layer = 10;
+        startPosition = transform.position;
     }
 
     void OnTriggerEnter2D(Collider2D other)
@@ -34,5 +37,10 @@ public class Player : Item {
         {
             GameManager.Instance.ExecuteInteraction(this, overObject.GetComponent<Item>());
         }
+    }
+
+    public void Respawn()
+    {
+        this.transform.position = startPosition;
     }
 }
