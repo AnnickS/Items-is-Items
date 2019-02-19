@@ -10,5 +10,7 @@ public class EffectChangeColor : Effect {
     public override void Execute(Item sender, Item interactor)
     {
         interactor.GetComponent<SpriteRenderer>().color = color;
+
+        Destroy(sender.gameObject);
     }
 }
