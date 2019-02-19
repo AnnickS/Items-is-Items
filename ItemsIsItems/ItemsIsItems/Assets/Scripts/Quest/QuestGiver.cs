@@ -4,8 +4,16 @@ using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 
+/*
+ * Item is required
+ * so that when something is given
+ * that GameManager.ExecuteInteraction is called
+ * Thereby triggering Combination Listener
+ */
+ 
+[RequireComponent(typeof(Item))]
 [RequireComponent(typeof(BoxCollider2D))]
-public class Quest : MonoBehaviour
+public class QuestGiver : MonoBehaviour
 {
     private QuestState[] states;
     private int currentStateIndex = 0;
@@ -15,13 +23,20 @@ public class Quest : MonoBehaviour
        states = this.gameObject.GetComponentsInChildren<QuestState>();
         if (states == null)
         {
-            Debug.LogError("Quest Object could not find any QuestStateDialog children");
+            Debug.LogError("QuestGiver Object could not find any QuestStateDialog children");
         }
 
         if (states.Length == 0)
         {
-            Debug.LogError("Quest Object could not find any QuestStateDialog children");
+            Debug.LogError("QuestGiver Object could not find any QuestStateDialog children");
         }
+
+        Item questGiverItem = GetComponent<Item>();
+        if (questGiverItem == null)
+        {
+            Debug.LogError("QuestGiver Object could not find any Item Component");
+        }
+        
 
         getCurrentQuestState().Initialize(this.gameObject);
     }
