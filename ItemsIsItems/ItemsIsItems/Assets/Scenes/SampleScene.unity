@@ -1355,14 +1355,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 830a61b150f3ac24bbe0978249224c6c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  name: 
+  name: Medicine
   nickname: 
   graphicalObj: {fileID: 0}
   overObject: {fileID: 0}
   inventory: {fileID: 0}
   isPickupable: 1
   drag: 0
-  Descriptors: []
+  Descriptors:
+  - {fileID: 11400000, guid: 7c32e7484f605d343aa962b76c2e65b5, type: 2}
 --- !u!212 &882959850
 SpriteRenderer:
   m_ObjectHideFlags: 0
