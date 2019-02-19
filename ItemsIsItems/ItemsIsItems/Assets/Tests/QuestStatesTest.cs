@@ -19,7 +19,7 @@ public class QuestStatesTest
     {
 
         GameObject quest = MonoBehaviour.Instantiate(Resources.Load<GameObject>("ExampleQuest"));
-        Quest questComponent = quest.GetComponent<Quest>();
+        QuestGiver questComponent = quest.GetComponent<QuestGiver>();
         Assert.NotNull(questComponent);
         MonoBehaviour.Destroy(quest);
     }

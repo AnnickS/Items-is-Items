@@ -21,7 +21,7 @@ public class QuestDialogPopupTest
     public IEnumerator DialogPopupShowsOnQuestClicked()
     {
         GameObject questObject = MonoBehaviour.Instantiate(Resources.Load<GameObject>("ExampleQuest"));
-        Quest quest = questObject.GetComponent<Quest>();
+        QuestGiver quest = questObject.GetComponent<QuestGiver>();
         DialogPopup popup = questObject.GetComponentInChildren<DialogPopup>();
         yield return null;
         quest.OnMouseDown();
@@ -37,7 +37,7 @@ public class QuestDialogPopupTest
     public IEnumerator QuestHasStates()
     {
         GameObject questObject = MonoBehaviour.Instantiate(Resources.Load<GameObject>("ExampleQuest"));
-        Quest quest = questObject.GetComponent<Quest>();
+        QuestGiver quest = questObject.GetComponent<QuestGiver>();
         DialogPopup popup = questObject.GetComponentInChildren<DialogPopup>();
         yield return null;
         int count = quest.GetComponentsInChildren<QuestState>().Length;
@@ -50,7 +50,7 @@ public class QuestDialogPopupTest
     public IEnumerator DialogPopupTextEqualInitialState()
     {
         GameObject questObject = MonoBehaviour.Instantiate(Resources.Load<GameObject>("ExampleQuest"));
-        Quest quest = questObject.GetComponent<Quest>();
+        QuestGiver quest = questObject.GetComponent<QuestGiver>();
         DialogPopup popup = questObject.GetComponentInChildren<DialogPopup>();
         yield return null;
         string actual = popup.textMesh.text;
