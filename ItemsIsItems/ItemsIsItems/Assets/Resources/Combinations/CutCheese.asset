@@ -12,5 +12,5 @@ MonoBehaviour:
   m_Name: CutCheese
   m_EditorClassIdentifier: 
   itemValidator1: {fileID: 11400000, guid: 1e099c11e04defb4f9d39ed0dfc91669, type: 2}
-  itemValidator2: {fileID: 11400000, guid: 1e099c11e04defb4f9d39ed0dfc91669, type: 2}
+  itemValidator2: {fileID: 11400000, guid: 9fa6c66d1794c9e4bb7651a6b0fce654, type: 2}
   effect: {fileID: 11400000, guid: a0290ead51272464484ad835d717c284, type: 2}
