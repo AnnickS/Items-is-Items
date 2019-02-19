@@ -2,7 +2,10 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Player : Item, Respawnable {
+[RequireComponent(typeof(MoveTowardMouse))]
+[RequireComponent(typeof(RotateTowardMovementTarget))]
+public class Player : Item, Respawnable
+{
 
     Vector3 startPosition;
 

@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-[RequireComponent(typeof(MoveTowardPosition))]
 [Serializable]
 public class Item : MonoBehaviour
 {
@@ -12,7 +11,6 @@ public class Item : MonoBehaviour
     public Collider2D overObject;
 
     public Inventory inventory;
-    MoveTowardPosition movement;
     
     public bool isPickupable = true;
     public bool drag;
@@ -23,7 +21,6 @@ public class Item : MonoBehaviour
     protected void Start()
     {
         gameObject.layer = 8;
-        movement = GetComponent<MoveTowardPosition>();
         
         if(transform.Find("Mesh") != null)
         {
