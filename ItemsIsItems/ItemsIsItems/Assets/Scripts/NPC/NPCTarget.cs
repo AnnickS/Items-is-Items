@@ -20,6 +20,27 @@ public class NPCTarget : MonoBehaviour {
         Vision = gameObject.GetComponent<DetectionRange>();
     }
 
+    //Checks if the NPC wants the item in some way shape or form
+    public bool isDesireable(Item item)
+    {
+        string name = item.name;
+
+        if (ScaredOf.Find(x => name.Contains(x)) != null)
+        {
+            return true;
+        }//Items that the npc is hostile to has next priority
+        else if (HostileTo.Find(x => name.Contains(x)) != null)
+        {
+            return true;
+        }//Items that the npc is attracted to have last priority
+        else if (AttractedTo.Find(x => name.Contains(x)) != null)
+        {
+            return true;
+        }
+
+        return false;
+    }
+
     //Gets a direction for the npc to go towards
     public Vector2 SelectTarget()
     {

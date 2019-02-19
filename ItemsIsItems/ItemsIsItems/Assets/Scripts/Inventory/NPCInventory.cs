@@ -25,14 +25,13 @@ public class NPCInventory : Inventory {
     {
         Item item = other.GetComponent<Item>();
 
-        //Check the provided Collider2D parameter other to see if it is tagged "Player", if it is...
+        //Checks if it is a pickubable item
         if (item != null && !Contains(item) && item.isPickupable)
         {
             //Item is added to inventory
             item.gameObject.SetActive(false);
             this.AddItem(item);
-        }
-        else if(item != null && !Contains(item) && !item.isPickupable)
+        } else if(item != null && !Contains(item) && !item.isPickupable)
         {
             OverItem = item;
         }

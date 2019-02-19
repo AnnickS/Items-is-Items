@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [RequireComponent(typeof(NPCTarget))]
+[RequireComponent(typeof(NPCInventory))]
 [RequireComponent(typeof(Rotate))]
 public class NPC : Item {
     private Rotate Rotation;
