@@ -8,14 +8,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-<<<<<<< HEAD
   m_Script: {fileID: 11500000, guid: 2052585f632854847a29788582e52c66, type: 3}
-  m_Name: Rose
+  m_Name: Pink
   m_EditorClassIdentifier: 
-  descriptor: {fileID: 11400000, guid: ca10a6958d8f96c47939b0f8d88bc651, type: 2}
-=======
-  m_Script: {fileID: 11500000, guid: d5aef791484958145ba6ed592c05102c, type: 3}
-  m_Name: Rose
-  m_EditorClassIdentifier: 
-  item: Rose
->>>>>>> JobsBranch
+  descriptor: {fileID: 11400000, guid: ad0a0910379e5654d8dca2288e5b8e0e, type: 2}
