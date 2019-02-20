@@ -1,11 +1,12 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 
 public class DialogPopup : Dialog
 {
-    public TextMeshPro textMesh;
+    protected TextMeshPro textMesh;
     private double timeLeft = 0;
     public double timeOnScreen = 1.0;
 
@@ -54,5 +55,10 @@ public class DialogPopup : Dialog
     {
         this.gameObject.SetActive(true);
         timeLeft = timeOnScreen;
+    }
+
+    internal string getText()
+    {
+        return textMesh.text;
     }
 }
