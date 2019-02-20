@@ -9,56 +9,23 @@ public class GameManager : MonoBehaviour
 {
     public static GameManager Instance;
     private Combination[] combinations;
-    private List<CombinationListener> combinationListeners = new List<CombinationListener>();
 
     private void Awake()
     {
         Instance = this;
-        Debug.Log(Descriptor.PrintDescriptorTree());
+        Descriptor.PrintDescriptorTree();
         combinations = GetCombinations();
+        Debug.Log(combinations.Length);
     }
 
     public void ExecuteInteraction(Item item1, Item item2)
     {
-        tellCombinationListeners(item1, item2);
-
         foreach (Combination combination in combinations)
         {
-            if (combination.Match(item1, item2))
+            if (combination.IsMatch(item1, item2))
             {
-                Effect effect = combination.GetEffect();
-                effect.Execute(item1, item2);
-                break;
-            }
-        }
-    }
-
-    public void AddCombinationListener(CombinationListener combinationListener)
-    {
-        combinationListeners.Add(combinationListener);
-    }
-
-    public void RemoveCombinationListener(CombinationListener combinationListener)
-    {
-        if(combinationListeners.Contains(combinationListener))
-        {
-            combinationListeners.Remove(combinationListener);
-        }
-    }
-
-    private void tellCombinationListeners(Item item1, Item item2)
-    {
-        for(int index = combinationListeners.Count - 1; index >= 0; index--)
-        {
-            CombinationListener combinationListener = combinationListeners[index];
-
-            if (combinationListener == null)
-            {
-                combinationListeners.Remove(combinationListener);
-            }
-            else
-            {
-                combinationListener.ItemsCombined(item1, item2);
+                combination.Execute(item1, item2);
+                //break;
             }
         }
     }
@@ -67,12 +34,12 @@ public class GameManager : MonoBehaviour
     {
         foreach(Item item in GameObject.FindObjectsOfType<Item>())
         {
-            if(item.nickname == name)
+            if(item.name == name)
             {
                 return item;
             }
         }
-        throw new Exception("Item nickname not found!");
+        throw new Exception("Item name not found!");
     }
 
     public Combination[] Load()

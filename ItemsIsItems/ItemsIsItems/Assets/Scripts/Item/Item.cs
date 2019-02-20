@@ -10,7 +10,6 @@ using UnityEngine;
 public class Item : MonoBehaviour
 {
     public new String name;
-    public String nickname;
     public GameObject graphicalObj;
     public Collider2D overObject;
 
@@ -20,7 +19,7 @@ public class Item : MonoBehaviour
     public bool drag;
 
     [SerializeField]
-    public List<Descriptor> Descriptors;
+    public List<Descriptor> Descriptors = new List<Descriptor>();
 
     protected void Start()
     {

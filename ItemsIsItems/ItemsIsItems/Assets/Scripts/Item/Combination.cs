@@ -5,12 +5,17 @@ using System.Text;
 using UnityEngine;
 using UnityEditor;
 
+public delegate void CombinationEventHandler();
+
 [CreateAssetMenu(menuName = "Combination/Combination")]
 public class Combination : ScriptableObject
 {
     public Validator itemValidator1;
     public Validator itemValidator2;
-    public Effect effect;
+    [SerializeField]
+    private Effect effect;
+
+    private event CombinationEventHandler CombinationEvent;
 
     private void OnAwake()
     {
@@ -28,21 +33,37 @@ public class Combination : ScriptableObject
         }
     }
 
-    public Combination(Validator itemValidator1, Validator itemValidator2, Effect effect)
+    public bool IsMatch(Item item1, Item item2)
     {
-        this.itemValidator1 = itemValidator1;
-        this.itemValidator2 = itemValidator2;
-        this.effect = effect;
-    }
-
-    public bool Match(Item item1, Item item2)
-    {
-        return (itemValidator1.ItemMatch(item1) && itemValidator2.ItemMatch(item2));
+        return (itemValidator1.ValidateItem(item1) && itemValidator2.ValidateItem(item2));
     }
     
-    public Effect GetEffect()
+    public void Execute(Item item1, Item item2)
     {
-        return effect;
+        effect.Execute(item1, item2);
+        //Debug.Log("Executed "+name);
+        if (CombinationEvent != null)
+        {
+            //Debug.Log("Invoke");
+            CombinationEvent.Invoke();            
+        }
+    }
+
+    public void Subscribe(CombinationEventHandler handler)
+    {
+        //Debug.Log("Subscribed to "+ name);
+        if (handler != null)
+        {
+            CombinationEvent += handler;
+        }
+    }
+
+    public void Unsubscribe(CombinationEventHandler handler)
+    {
+        if (handler != null)
+        {
+            CombinationEvent -= handler;
+        }
     }
 
     public override string ToString()

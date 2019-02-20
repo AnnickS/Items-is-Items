@@ -6,18 +6,14 @@ using UnityEngine;
 [CreateAssetMenu(menuName = "Validator/Item")]
 public class ItemValidator : Validator
 {
-    public String item;
-    public ItemValidator(String item)
-    {
-        this.item = item;
-    }
+    public String itemName;
 
     public override string GetName()
     {
-        return item;
+        return itemName;
     }
 
-    public override bool ItemMatch(Item interactee)
+    public override bool ValidateItem(Item item)
     {
         if(item == null)
         {
@@ -25,7 +21,7 @@ public class ItemValidator : Validator
         }
         else
         {
-            return interactee.name == item;
+            return item.name == this.itemName;
         }
     }
 }

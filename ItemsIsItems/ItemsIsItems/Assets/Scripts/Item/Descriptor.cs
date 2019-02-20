@@ -32,7 +32,7 @@ public class Descriptor : ScriptableObject
         return false;
     }
 
-    public static string PrintDescriptorTree()
+    public static void PrintDescriptorTree()
     {
         Descriptor[] all = Resources.LoadAll<Descriptor>("Descriptors");
         List<Descriptor> tier1 = all.ToList<Descriptor>();
@@ -51,7 +51,7 @@ public class Descriptor : ScriptableObject
         string tree = ROOT.ToStringRecursive();
         Destroy(ROOT);
 
-        return tree;
+        Debug.Log(tree);
     }
 
     public string ToStringRecursive()
