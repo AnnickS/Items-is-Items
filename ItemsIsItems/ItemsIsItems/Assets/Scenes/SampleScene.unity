@@ -1473,6 +1473,11 @@ Prefab:
     m_Modifications:
     - target: {fileID: 114128205298660918, guid: e86bf148fce6b5b4993fef83dafaa0ed,
         type: 2}
+      propertyPath: ScaredOf.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114128205298660918, guid: e86bf148fce6b5b4993fef83dafaa0ed,
+        type: 2}
       propertyPath: HostileTo.Array.size
       value: 1
       objectReference: {fileID: 0}
@@ -1595,6 +1600,11 @@ Prefab:
         type: 2}
       propertyPath: m_IsTrigger
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114128205298660918, guid: e86bf148fce6b5b4993fef83dafaa0ed,
+        type: 2}
+      propertyPath: ScaredOf.Array.data[0]
+      value: Dog
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 114042330419243514, guid: e86bf148fce6b5b4993fef83dafaa0ed, type: 2}
@@ -2501,11 +2511,11 @@ MonoBehaviour:
     lineCount: 1
     pageCount: 1
     materialCount: 1
-  m_havePropertiesChanged: 1
+  m_havePropertiesChanged: 0
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_spriteAnimator: {fileID: 0}
-  m_isInputParsingRequired: 1
+  m_isInputParsingRequired: 0
   m_inputSource: 0
   m_hasFontAssetChanged: 0
   m_renderer: {fileID: 2025796019}
