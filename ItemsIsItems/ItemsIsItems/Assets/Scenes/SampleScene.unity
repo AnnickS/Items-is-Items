@@ -1355,7 +1355,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 830a61b150f3ac24bbe0978249224c6c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  name: Medicine
+  name: 
   nickname: 
   graphicalObj: {fileID: 0}
   overObject: {fileID: 0}
