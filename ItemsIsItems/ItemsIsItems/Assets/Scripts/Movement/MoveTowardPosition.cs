@@ -14,6 +14,14 @@ public class MoveTowardPosition : MonoBehaviour
     void Start()
     {
         targetPosition = this.transform.position;
+        Rigidbody2D rigidBody = GetComponent<Rigidbody2D>();
+
+        if(rigidBody == null)
+        {
+            Debug.LogError("MoveTowardsPosition in " + gameObject.name + " needs a Rigidbody2D.");
+        }
+
+        rigidBody.gravityScale = 0;
     }
 
     public void moveToPosition(Vector2 newGoalPosition)
