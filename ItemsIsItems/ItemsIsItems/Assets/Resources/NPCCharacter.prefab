@@ -43,7 +43,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1304179708650458}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -5.44, y: 2.97, z: 0}
+  m_LocalPosition: {x: 0.2, y: 5.94, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -124,6 +124,7 @@ MonoBehaviour:
   inventory: {fileID: 0}
   isPickupable: 1
   drag: 0
+  Descriptors: []
   Rotate: 0
   Wait: 5
 --- !u!114 &114128205298660918
@@ -138,7 +139,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   AttractedTo:
-  - Rose
+  - {fileID: 0}
   ScaredOf: []
   HostileTo: []
   Target: {x: 0, y: 0}
