@@ -21,7 +21,7 @@ public class DescriptorValidator : Validator
         }
         else
         {
-            return interactee.HasDescriptor(descriptor);
+            return item.HasDescriptor(descriptor);
         }
     }
 }

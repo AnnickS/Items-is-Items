@@ -25,7 +25,7 @@ public class QuestStateQuest : QuestStateDialog, CombinationListener
     {
         if(isQuestGiverItem(item1))
         {
-            if(validator.ItemMatch(item2))
+            if(validator.ValidateItem(item2))
             {
                 isDone = true;
                 GameManager.Instance.RemoveCombinationListener(this);
@@ -33,7 +33,7 @@ public class QuestStateQuest : QuestStateDialog, CombinationListener
         }
         else if (isQuestGiverItem(item2))
         {
-            if (validator.ItemMatch(item1))
+            if (validator.ValidateItem(item1))
             {
                 isDone = true;
                 GameManager.Instance.RemoveCombinationListener(this);
