@@ -25,7 +25,7 @@ public class GameManager : MonoBehaviour
             if (combination.IsMatch(item1, item2))
             {
                 combination.Execute(item1, item2);
-                break;
+                //break;
             }
         }
     }
