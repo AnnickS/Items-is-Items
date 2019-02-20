@@ -8,7 +8,6 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2052585f632854847a29788582e52c66, type: 3}
-  m_Name: Medicine
+  m_Script: {fileID: 11500000, guid: 210d51f1c81aa7f4a92c8cc521f042bd, type: 3}
+  m_Name: FinalQuest
   m_EditorClassIdentifier: 
-  descriptor: {fileID: 11400000, guid: 7c32e7484f605d343aa962b76c2e65b5, type: 2}

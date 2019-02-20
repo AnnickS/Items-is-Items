@@ -1852,6 +1852,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1309974498}
   - component: {fileID: 1309974499}
+  - component: {fileID: 1309974500}
   m_Layer: 0
   m_Name: I'mSick
   m_TagString: Untagged
@@ -1884,6 +1885,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   text: AaroOOoo... [He sounds sick]
+--- !u!114 &1309974500
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1309974497}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 469bebefe8849e04f9fd612a26175877, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  text: AaroOOoo... [He sounds sick]
+  validator: {fileID: 11400000, guid: 755740fec4e49bd4eaad8438ea63cb20, type: 2}
 --- !u!1 &1362517592
 GameObject:
   m_ObjectHideFlags: 0
@@ -2215,7 +2229,8 @@ MonoBehaviour:
   inventory: {fileID: 0}
   isPickupable: 1
   drag: 0
-  Descriptors: []
+  Descriptors:
+  - {fileID: 11400000, guid: 38eb2c84d6c39f34abdb28d326d2531d, type: 2}
   Rotate: 0
   Wait: 0
 --- !u!114 &1812464505

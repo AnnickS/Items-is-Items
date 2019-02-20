@@ -101,11 +101,14 @@ public class Item : MonoBehaviour
 
     public bool HasDescriptor(Descriptor tag)
     {
-        foreach(Descriptor d in Descriptors)
+        if (Descriptors != null)
         {
-            if (d.Contains(tag))
+            foreach (Descriptor d in Descriptors)
             {
-                return true;
+                if (d.Contains(tag))
+                {
+                    return true;
+                }
             }
         }
         return false;

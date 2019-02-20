@@ -86,6 +86,8 @@ MonoBehaviour:
   inventory: {fileID: 0}
   isPickupable: 1
   drag: 0
+  Descriptors:
+  - {fileID: 11400000, guid: ca10a6958d8f96c47939b0f8d88bc651, type: 2}
 --- !u!114 &114853476238258690
 MonoBehaviour:
   m_ObjectHideFlags: 1
