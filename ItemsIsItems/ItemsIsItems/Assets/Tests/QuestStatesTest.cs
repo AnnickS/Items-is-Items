@@ -3,6 +3,7 @@ using UnityEngine.TestTools;
 using NUnit.Framework;
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 
 public class QuestStatesTest
 {
@@ -32,6 +33,23 @@ public class QuestStatesTest
         Dialog dialog = quest.GetComponentInChildren<Dialog>();
         Assert.NotNull(dialog);
         MonoBehaviour.Destroy(quest);
+    }
+
+    [Test]
+    public void test()
+    {
+        GameObject questGiver = new GameObject();
+        GameObject dialog = new GameObject();
+        GameObject textMesh = new GameObject();
+
+        dialog.transform.parent = questGiver.transform;
+        textMesh.transform.parent = dialog.transform;
+
+        textMesh.AddComponent<TextMeshPro>();
+        dialog.AddComponent<DialogPopup>();
+        questGiver.AddComponent<QuestGiver>();
+
+        MonoBehaviour.Destroy(questGiver);
     }
 
 }
