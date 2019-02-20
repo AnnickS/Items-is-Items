@@ -37,7 +37,7 @@ public class Combination : ScriptableObject
 
     public bool Match(Item item1, Item item2)
     {
-        return (itemValidator1.ItemMatch(item1) && itemValidator2.ItemMatch(item2));
+        return (itemValidator1.ValidateItem(item1) && itemValidator2.ValidateItem(item2));
     }
     
     public Effect GetEffect()

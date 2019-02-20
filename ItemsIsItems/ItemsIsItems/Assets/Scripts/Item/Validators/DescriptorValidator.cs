@@ -8,17 +8,12 @@ public class DescriptorValidator : Validator
 {
     public Descriptor descriptor;
 
-    public DescriptorValidator(Descriptor descriptor)
-    {
-        this.descriptor = descriptor;
-    }
-
     public override string GetName()
     {
         return descriptor.name;
     }
 
-    public override bool ItemMatch(Item interactee)
+    public override bool ValidateItem(Item item)
     {
         if (descriptor == null)
         {

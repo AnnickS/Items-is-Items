@@ -6,5 +6,5 @@ using UnityEngine;
 public abstract class Validator : ScriptableObject
 {
     public abstract String GetName();
-    public abstract bool ItemMatch(Item interactee);
+    public abstract bool ValidateItem(Item item);
 }

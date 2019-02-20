@@ -930,6 +930,7 @@ GameObject:
   - component: {fileID: 723780738}
   - component: {fileID: 723780737}
   - component: {fileID: 723780736}
+  - component: {fileID: 723780741}
   m_Layer: 8
   m_Name: FlowerRoseSmellable (1)
   m_TagString: Untagged
@@ -986,14 +987,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 830a61b150f3ac24bbe0978249224c6c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  name: 
+  name: Rose
   nickname: 
   graphicalObj: {fileID: 0}
   overObject: {fileID: 0}
   inventory: {fileID: 0}
   isPickupable: 1
   drag: 0
-  Descriptors: []
+  Descriptors:
+  - {fileID: 11400000, guid: ad0a0910379e5654d8dca2288e5b8e0e, type: 2}
 --- !u!212 &723780739
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -1046,12 +1048,32 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 723780735}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.35, y: -2.34, z: 0}
+  m_LocalPosition: {x: -3.54, y: -2.34, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!50 &723780741
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 723780735}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
 --- !u!1001 &955072527
 Prefab:
   m_ObjectHideFlags: 0
@@ -1268,11 +1290,11 @@ Prefab:
     m_Modifications:
     - target: {fileID: 4949157221537090, guid: 53078ca4093931040b60ed4a59fa9f1e, type: 2}
       propertyPath: m_LocalPosition.x
-      value: 3.27
+      value: -1.01
       objectReference: {fileID: 0}
     - target: {fileID: 4949157221537090, guid: 53078ca4093931040b60ed4a59fa9f1e, type: 2}
       propertyPath: m_LocalPosition.y
-      value: -1.93
+      value: -3.68
       objectReference: {fileID: 0}
     - target: {fileID: 4949157221537090, guid: 53078ca4093931040b60ed4a59fa9f1e, type: 2}
       propertyPath: m_LocalPosition.z
@@ -1301,10 +1323,6 @@ Prefab:
     - target: {fileID: 1637548426560836, guid: 53078ca4093931040b60ed4a59fa9f1e, type: 2}
       propertyPath: m_Name
       value: FlowerRoseSmellable (2)
-      objectReference: {fileID: 0}
-    - target: {fileID: 1637548426560836, guid: 53078ca4093931040b60ed4a59fa9f1e, type: 2}
-      propertyPath: m_Layer
-      value: 8
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 53078ca4093931040b60ed4a59fa9f1e, type: 2}

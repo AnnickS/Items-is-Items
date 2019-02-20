@@ -13,8 +13,9 @@ public class GameManager : MonoBehaviour
     private void Awake()
     {
         Instance = this;
-        Debug.Log(Descriptor.PrintDescriptorTree());
+        Descriptor.PrintDescriptorTree();
         combinations = GetCombinations();
+        Debug.Log(combinations.Length);
     }
 
     public void ExecuteInteraction(Item item1, Item item2)

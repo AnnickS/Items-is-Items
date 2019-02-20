@@ -7,17 +7,13 @@ using UnityEngine;
 public class ItemValidator : Validator
 {
     public String item;
-    public ItemValidator(String item)
-    {
-        this.item = item;
-    }
 
     public override string GetName()
     {
         return item;
     }
 
-    public override bool ItemMatch(Item interactee)
+    public override bool ValidateItem(Item item)
     {
         if(item == null)
         {
