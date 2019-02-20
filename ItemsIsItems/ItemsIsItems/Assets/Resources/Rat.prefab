@@ -105,7 +105,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   AttractedTo:
-  - {fileID: 0}
+  - {fileID: 11400000, guid: 2db99555ce83c4947a3dc75e69aa4a3b, type: 2}
   ScaredOf:
   - {fileID: 11400000, guid: 38eb2c84d6c39f34abdb28d326d2531d, type: 2}
   HostileTo:

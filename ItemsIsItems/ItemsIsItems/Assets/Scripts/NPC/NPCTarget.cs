@@ -31,10 +31,13 @@ public class NPCTarget : MonoBehaviour {
         Item current;
         Transform cTransform;
 
+        List<Item> WithinView = Vision.withinView();
+        List<Item> WithinSmell = Vision.withinSmell();
 
-        for (int i = 0; i < Vision.WithinView.Count; i++)
+
+        for (int i = 0; i < WithinView.Count; i++)
         {
-            current = Vision.WithinView[i];
+            current = WithinView[i];
             cTransform = current.GetComponent<Transform>();
             string name = current.gameObject.name;
 
@@ -63,9 +66,9 @@ public class NPCTarget : MonoBehaviour {
             }
         }
 
-        for (int i = 0; i < Vision.WithinSmell.Count; i++)
+        for (int i = 0; i < WithinSmell.Count; i++)
         {
-            current = Vision.WithinSmell[i];
+            current = WithinSmell[i];
             string name = current.gameObject.name;
 
             if (ScaredOf.Find(x => current.HasDescriptor(x)) != null)

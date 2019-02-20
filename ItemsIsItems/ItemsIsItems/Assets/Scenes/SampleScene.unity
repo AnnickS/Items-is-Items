@@ -448,6 +448,7 @@ MonoBehaviour:
   drag: 0
   Descriptors:
   - {fileID: 11400000, guid: 2db99555ce83c4947a3dc75e69aa4a3b, type: 2}
+  - {fileID: 11400000, guid: 19fcd47dae0b48340bd118d2d6609f61, type: 2}
 --- !u!212 &199772883
 SpriteRenderer:
   m_ObjectHideFlags: 0

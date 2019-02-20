@@ -354,7 +354,7 @@ Transform:
   m_GameObject: {fileID: 434291325}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 3.09, y: -0.19, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 2, y: 2, z: 1}
   m_Children:
   - {fileID: 1335773340}
   - {fileID: 32328960}
@@ -379,7 +379,8 @@ MonoBehaviour:
   inventory: {fileID: 0}
   isPickupable: 0
   drag: 0
-  Descriptors: []
+  Descriptors:
+  - {fileID: 11400000, guid: 38eb2c84d6c39f34abdb28d326d2531d, type: 2}
 --- !u!61 &434291329
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -558,7 +559,7 @@ BoxCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
@@ -606,10 +607,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   AttractedTo:
-  - Cheese
-  ScaredOf: []
+  - {fileID: 11400000, guid: 2db99555ce83c4947a3dc75e69aa4a3b, type: 2}
+  ScaredOf:
+  - {fileID: 11400000, guid: 38eb2c84d6c39f34abdb28d326d2531d, type: 2}
   HostileTo:
-  - Player
+  - {fileID: 11400000, guid: f2f3269d45ef1d6408b5d583144caacd, type: 2}
   Target: {x: 0, y: 0}
 --- !u!114 &1458679262
 MonoBehaviour:
@@ -628,9 +630,6 @@ MonoBehaviour:
   ObstacleMask:
     serializedVersion: 2
     m_Bits: 0
-  WithinCircle: []
-  WithinView: []
-  WithinSmell: []
   ViewRadius: 3
   ViewAngle: 135
 --- !u!114 &1458679263
@@ -721,7 +720,7 @@ Transform:
   m_GameObject: {fileID: 1458679257}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 10.48, y: 0.08, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 2.5, y: 2.5, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 3
@@ -815,7 +814,7 @@ BoxCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
@@ -898,6 +897,7 @@ MonoBehaviour:
   drag: 0
   Descriptors:
   - {fileID: 11400000, guid: f2f3269d45ef1d6408b5d583144caacd, type: 2}
+  - {fileID: 11400000, guid: 19fcd47dae0b48340bd118d2d6609f61, type: 2}
 --- !u!212 &1990886217
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -998,7 +998,7 @@ BoxCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
@@ -1107,7 +1107,7 @@ Transform:
   m_GameObject: {fileID: 2060509339}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 5.97, y: -0.12, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 2, y: 2, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 5
@@ -1154,7 +1154,7 @@ BoxCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}

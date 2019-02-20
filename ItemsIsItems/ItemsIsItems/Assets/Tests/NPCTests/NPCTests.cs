@@ -38,7 +38,7 @@ public class NPCTests
         yield return null;
         yield return null;
 
-        Assert.True(npc.GetComponent<DetectionRange>().WithinCircle.Length.Equals(2));
+        Assert.True(npc.GetComponent<DetectionRange>().withinCircle().Length.Equals(2));
 
         MonoBehaviour.Destroy(npc);
         MonoBehaviour.Destroy(itemOne);
@@ -58,7 +58,7 @@ public class NPCTests
         yield return null;
         yield return null;
         
-        Assert.True(npc.GetComponent<DetectionRange>().WithinView.Count.Equals(1));
+        Assert.True(npc.GetComponent<DetectionRange>().withinView().Count.Equals(1));
 
         MonoBehaviour.Destroy(npc);
         MonoBehaviour.Destroy(itemOne);
@@ -76,7 +76,7 @@ public class NPCTests
 
         yield return null;
 
-        Assert.True(npc.GetComponent<DetectionRange>().WithinSmell.Count.Equals(1));
+        Assert.True(npc.GetComponent<DetectionRange>().withinSmell().Count.Equals(1));
 
         MonoBehaviour.Destroy(npc);
         MonoBehaviour.Destroy(itemOne);
@@ -94,7 +94,7 @@ public class NPCTests
 
         yield return null;
 
-        Assert.True(npc.GetComponent<DetectionRange>().WithinView.Count.Equals(0));
+        Assert.True(npc.GetComponent<DetectionRange>().withinView().Count.Equals(0));
 
         MonoBehaviour.Destroy(npc);
         MonoBehaviour.Destroy(character);

@@ -7,12 +7,20 @@ public class DetectionRange : MonoBehaviour {
     private LayerMask TargetMask;
     [SerializeField]
     private LayerMask ObstacleMask;
-    public Collider2D[] WithinCircle;
-    public List<Item> WithinView;
-    public List<Item> WithinSmell;
-    public float ViewRadius = 5;
-    public float ViewAngle = 135;
-    
+    private Collider2D[] WithinCircle;
+    private List<Item> WithinView;
+    private List<Item> WithinSmell;
+    [SerializeField]
+    private float ViewRadius = 5;
+    [SerializeField]
+    private float ViewAngle = 135;
+
+    private void Start()
+    {
+        WithinView = new List<Item>();
+        WithinSmell = new List<Item>();
+    }
+
     //Detects game objects within FoV and adds them to WithinView list
     //Items in range but not in view get added to WithinSmell
     public void InRange()
@@ -56,5 +64,20 @@ public class DetectionRange : MonoBehaviour {
             }
             else { continue; }
         }
+    }
+
+    public List<Item> withinView()
+    {
+        return WithinView;
+    }
+
+    public List<Item> withinSmell()
+    {
+        return WithinSmell;
+    }
+
+    public Collider2D[] withinCircle()
+    {
+        return WithinCircle;
     }
 }
