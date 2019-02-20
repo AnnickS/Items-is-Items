@@ -105,10 +105,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   AttractedTo:
-  - Cheese
-  ScaredOf: []
+  - {fileID: 0}
+  ScaredOf:
+  - {fileID: 11400000, guid: 38eb2c84d6c39f34abdb28d326d2531d, type: 2}
   HostileTo:
-  - CharacterSmellable
+  - {fileID: 11400000, guid: f2f3269d45ef1d6408b5d583144caacd, type: 2}
   Target: {x: 0, y: 0}
 --- !u!114 &114430166751914096
 MonoBehaviour:
@@ -151,7 +152,7 @@ MonoBehaviour:
   graphicalObj: {fileID: 0}
   overObject: {fileID: 0}
   inventory: {fileID: 0}
-  isPickupable: 1
+  isPickupable: 0
   drag: 0
   Descriptors:
   - {fileID: 11400000, guid: e3bbea66ee6fe4949ac8bb43529d5d90, type: 2}
