@@ -373,7 +373,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   name: 
-  nickname: 
   graphicalObj: {fileID: 0}
   overObject: {fileID: 0}
   inventory: {fileID: 0}
@@ -606,10 +605,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   AttractedTo:
-  - Cheese
+  - {fileID: 11400000, guid: 2db99555ce83c4947a3dc75e69aa4a3b, type: 2}
   ScaredOf: []
   HostileTo:
-  - Player
+  - {fileID: 11400000, guid: f2f3269d45ef1d6408b5d583144caacd, type: 2}
   Target: {x: 0, y: 0}
 --- !u!114 &1458679262
 MonoBehaviour:
@@ -658,11 +657,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   name: Rat
-  nickname: 
   graphicalObj: {fileID: 0}
   overObject: {fileID: 0}
   inventory: {fileID: 0}
-  isPickupable: 1
+  isPickupable: 0
   drag: 0
   Descriptors:
   - {fileID: 11400000, guid: e3bbea66ee6fe4949ac8bb43529d5d90, type: 2}
@@ -769,7 +767,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   text: '*Woof* need medicine *woof*? *head tilt*'
-  validator: {fileID: 11400000, guid: 755740fec4e49bd4eaad8438ea63cb20, type: 2}
+  combination: {fileID: 11400000, guid: 9a0d462a8840b5340b52bcc311a1de7a, type: 2}
 --- !u!1 &1990886210
 GameObject:
   m_ObjectHideFlags: 0
@@ -890,7 +888,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   name: 
-  nickname: 
   graphicalObj: {fileID: 0}
   overObject: {fileID: 0}
   inventory: {fileID: 0}
@@ -1046,7 +1043,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   name: Cheese
-  nickname: 
   graphicalObj: {fileID: 0}
   overObject: {fileID: 0}
   inventory: {fileID: 0}
@@ -1202,7 +1198,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   name: 
-  nickname: 
   graphicalObj: {fileID: 0}
   overObject: {fileID: 0}
   inventory: {fileID: 0}
