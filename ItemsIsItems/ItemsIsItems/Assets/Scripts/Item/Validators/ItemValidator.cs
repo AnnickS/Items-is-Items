@@ -6,11 +6,9 @@ using UnityEngine;
 [CreateAssetMenu(menuName = "Validator/Item")]
 public class ItemValidator : Validator
 {
-    public String itemName;
-
     public override string GetName()
     {
-        return itemName;
+        return name;
     }
 
     public override bool ValidateItem(Item item)
@@ -21,7 +19,12 @@ public class ItemValidator : Validator
         }
         else
         {
-            return item.name == this.itemName;
+            return item.name == name;
         }
+    }
+
+    public override bool IsInitialized()
+    {
+        return true;
     }
 }

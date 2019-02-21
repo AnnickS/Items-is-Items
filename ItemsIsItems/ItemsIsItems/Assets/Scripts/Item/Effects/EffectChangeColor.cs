@@ -13,4 +13,9 @@ public class EffectChangeColor : Effect {
 
         Destroy(sender.gameObject);
     }
+
+    public override bool IsInitialized()
+    {
+        return color != null;
+    }
 }

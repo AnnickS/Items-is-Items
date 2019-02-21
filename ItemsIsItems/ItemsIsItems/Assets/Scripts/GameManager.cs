@@ -22,10 +22,13 @@ public class GameManager : MonoBehaviour
     {
         foreach (Combination combination in combinations)
         {
-            if (combination.IsMatch(item1, item2))
+            if (combination.IsInitialized())
             {
-                combination.Execute(item1, item2);
-                //break;
+                if (combination.IsMatch(item1, item2))
+                {
+                    combination.Execute(item1, item2);
+                    //break;
+                }
             }
         }
     }

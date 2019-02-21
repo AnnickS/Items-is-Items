@@ -17,4 +17,17 @@ public class EffectMultipleEffects : Effect
             effect.Execute(item1, item2);
         }
     }
+
+    public override bool IsInitialized()
+    {
+        foreach (Effect effect in effects)
+        {
+            if(effect.IsInitialized() == false)
+            {
+                return false;
+            }
+        }
+
+        return true;
+    }
 }

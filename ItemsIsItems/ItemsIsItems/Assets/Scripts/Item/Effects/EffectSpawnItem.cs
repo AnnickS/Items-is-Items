@@ -15,4 +15,9 @@ public class EffectSpawnItem : Effect {
         GameObject item = GameObject.Instantiate<GameObject>(itemToSpawn);
         item.transform.position = interactor.transform.position;
     }
+
+    public override bool IsInitialized()
+    {
+        return itemToSpawn != null;
+    }
 }

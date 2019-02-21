@@ -9,4 +9,9 @@ public class EffectDestroyItem : Effect
     {
         Destroy(interactor.gameObject);
     }
+
+    public override bool IsInitialized()
+    {
+        return true;
+    }
 }

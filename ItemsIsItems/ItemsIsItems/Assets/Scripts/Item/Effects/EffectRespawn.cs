@@ -13,4 +13,9 @@ public class EffectRespawn : Effect
             respawnable.Respawn();
         }
     }
+
+    public override bool IsInitialized()
+    {
+        return true;
+    }
 }

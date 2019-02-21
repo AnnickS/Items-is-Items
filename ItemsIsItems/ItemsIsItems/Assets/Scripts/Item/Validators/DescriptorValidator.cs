@@ -24,4 +24,9 @@ public class DescriptorValidator : Validator
             return item.HasDescriptor(descriptor);
         }
     }
+
+    public override bool IsInitialized()
+    {
+        return descriptor != null;
+    }
 }

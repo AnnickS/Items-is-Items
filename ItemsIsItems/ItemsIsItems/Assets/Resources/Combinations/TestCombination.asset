@@ -8,7 +8,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d5aef791484958145ba6ed592c05102c, type: 3}
-  m_Name: CheeseItem
+  m_Script: {fileID: 11500000, guid: c7c572a8d19548544abfe65b2612c124, type: 3}
+  m_Name: TestCombination
   m_EditorClassIdentifier: 
-  item: Cheese
+  itemValidator1: {fileID: 11400000, guid: f751cd25b1080804da028dbb65357b12, type: 2}
+  itemValidator2: {fileID: 0}
+  effect: {fileID: 0}

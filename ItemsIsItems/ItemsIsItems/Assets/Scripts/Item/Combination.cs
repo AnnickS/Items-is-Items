@@ -17,19 +17,11 @@ public class Combination : ScriptableObject
 
     private event CombinationEventHandler CombinationEvent;
 
-    private void OnAwake()
+    private void OnEnable()
     {
-        if (itemValidator1 == null)
+        if (IsInitialized() == false)
         {
-            Debug.LogError("Combination, " + name + ", is missing itemValidator1!");
-        }
-        if(itemValidator2 == null)
-        {
-            Debug.LogError("Combination, " + name + ", is missing itemValidator2!");
-        }
-        if(effect == null)
-        {
-            Debug.LogError("Combination, " + name + ", is missing an effect!");
+            Debug.LogWarning(name + ", Combination, is not initialized!");
         }
     }
 
@@ -63,6 +55,18 @@ public class Combination : ScriptableObject
         if (handler != null)
         {
             CombinationEvent -= handler;
+        }
+    }
+
+    public bool IsInitialized()
+    {
+        try
+        {
+            return itemValidator1.IsInitialized() && itemValidator2.IsInitialized() && effect.IsInitialized();
+        }
+        catch (Exception e)
+        {
+            return false;
         }
     }
 
