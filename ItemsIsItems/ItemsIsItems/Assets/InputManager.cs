@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 
-/*
+
 public delegate void TouchEventHandler(TouchWrapper touchWrapper);
 
 public class InputManager : MonoBehaviour
@@ -46,15 +46,10 @@ public class InputManager : MonoBehaviour
     }
 }
 
-public delegate void TouchUpdateEventHandler(Touch touch);
-
 public class TouchWrapper
 {
+    public Touchable clicked;
     public Touch touch;
-
-    private event TouchUpdateEventHandler OnTouchStart;
-    private event TouchUpdateEventHandler OnTouchDrag;
-    private event TouchUpdateEventHandler OnTouchEnd;
 
     public TouchWrapper(Touch touch)
     {
@@ -72,27 +67,40 @@ public class TouchWrapper
         switch (touch.phase)
         {
             case TouchPhase.Began:
-                if (OnTouchStart != null)
-                {
-                    OnTouchStart.Invoke(touch);
-                }
+                GetGameObject();
+                clicked.OnTouchDown(touch);
                 break;
-            //case TouchPhase.Stationary:
+
+            case TouchPhase.Stationary:
             case TouchPhase.Moved:
-                if (OnTouchDrag != null)
-                {
-                    OnTouchDrag.Invoke(touch);
-                }
+                clicked.OnTouchDrag(touch);
                 break;
+
             case TouchPhase.Canceled:
             case TouchPhase.Ended:
-                if (OnTouchEnd != null)
-                {
-                    OnTouchEnd.Invoke(touch);
-                }
+                clicked.OnTouchUp(touch);
                 break;
         }
     }
+
+    private Touchable GetGameObject()
+    {
+        if(clicked == null)
+        {
+            RaycastHit2D hit = Physics2D.Raycast(touch.position, Vector2.zero, 0f);
+            if (hit)
+            {
+                Debug.Log("touched["+touch.fingerId+"]: " + hit.transform.name);
+                clicked = hit.transform.gameObject.GetComponent<Touchable>();
+            }
+        }
+        return clicked;
+    }
 }
 
-    */
+public interface Touchable
+{
+    void OnTouchDown(Touch touch);
+    void OnTouchDrag(Touch touch);
+    void OnTouchUp(Touch touch);
+}
