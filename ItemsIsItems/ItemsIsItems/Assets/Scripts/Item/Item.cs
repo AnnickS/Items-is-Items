@@ -39,6 +39,7 @@ public class Item : MonoBehaviour
         {
             Debug.Log("Item " + this.gameObject.name + " needs a BoxCollider.");
         }
+        boxCollider.isTrigger = true;
     }
 
     private void OnMouseDrag()
