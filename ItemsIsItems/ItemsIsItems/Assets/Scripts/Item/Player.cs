@@ -46,5 +46,7 @@ public class Player : CollidableItem, Respawnable
     public void Respawn()
     {
         this.transform.position = startPosition;
+        MoveTowardMouse movement = GetComponent<MoveTowardMouse>();
+        movement.moveToPosition(new Vector2(startPosition.x, startPosition.y));
     }
 }
