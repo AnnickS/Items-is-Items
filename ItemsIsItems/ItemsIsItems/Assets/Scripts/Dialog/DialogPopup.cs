@@ -57,7 +57,7 @@ public class DialogPopup : Dialog
         timeLeft = timeOnScreen;
     }
 
-    internal string getText()
+    public string getText()
     {
         return textMesh.text;
     }
