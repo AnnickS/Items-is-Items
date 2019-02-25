@@ -13,19 +13,22 @@ public class GameManager : MonoBehaviour
     private void Awake()
     {
         Instance = this;
-        Debug.Log(Descriptor.PrintDescriptorTree());
+        Descriptor.PrintDescriptorTree();
         combinations = GetCombinations();
+        Debug.Log(combinations.Length);
     }
 
     public void ExecuteInteraction(Item item1, Item item2)
     {
         foreach (Combination combination in combinations)
         {
-            if (combination.Match(item1, item2))
+            if (combination.IsInitialized())
             {
-                Effect effect = combination.GetEffect();
-                effect.Execute(item1, item2);
-                break;
+                if (combination.IsMatch(item1, item2))
+                {
+                    combination.Execute(item1, item2);
+                    //break;
+                }
             }
         }
     }
@@ -34,12 +37,12 @@ public class GameManager : MonoBehaviour
     {
         foreach(Item item in GameObject.FindObjectsOfType<Item>())
         {
-            if(item.nickname == name)
+            if(item.name == name)
             {
                 return item;
             }
         }
-        throw new Exception("Item nickname not found!");
+        throw new Exception("Item name not found!");
     }
 
     public Combination[] Load()

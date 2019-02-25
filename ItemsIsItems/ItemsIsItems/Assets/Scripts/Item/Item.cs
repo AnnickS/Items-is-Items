@@ -2,27 +2,28 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+[RequireComponent(typeof(BoxCollider2D))]
+[RequireComponent(typeof(Rigidbody2D))]
 [RequireComponent(typeof(MoveTowardPosition))]
+[RequireComponent(typeof(SpriteRenderer))]
 [Serializable]
 public class Item : MonoBehaviour
 {
     public new String name;
-    public String nickname;
     public GameObject graphicalObj;
     public Collider2D overObject;
 
     public Inventory inventory;
-    MoveTowardPosition movement;
     
     public bool isPickupable = true;
     public bool drag;
 
-    public List<Descriptor> Descriptors;
+    [SerializeField]
+    public List<Descriptor> Descriptors = new List<Descriptor>();
 
     protected void Start()
     {
         gameObject.layer = 8;
-        movement = GetComponent<MoveTowardPosition>();
         
         if(transform.Find("Mesh") != null)
         {
@@ -32,6 +33,13 @@ public class Item : MonoBehaviour
         {
             graphicalObj = gameObject;
         }
+
+        BoxCollider2D boxCollider = GetComponent<BoxCollider2D>();
+        if(boxCollider == null)
+        {
+            Debug.Log("Item " + this.gameObject.name + " needs a BoxCollider.");
+        }
+        boxCollider.isTrigger = true;
     }
 
     private void OnMouseDrag()

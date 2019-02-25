@@ -26,7 +26,6 @@ GameObject:
   - component: {fileID: 114832774599050982}
   - component: {fileID: 114412740083062180}
   - component: {fileID: 114538217292154584}
-  - component: {fileID: 114042330419243514}
   - component: {fileID: 61626825938183062}
   - component: {fileID: 50722458942770440}
   m_Layer: 9
@@ -43,7 +42,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1304179708650458}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -5.44, y: 2.97, z: 0}
+  m_LocalPosition: {x: 0.2, y: 5.94, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -78,7 +77,7 @@ BoxCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
@@ -94,18 +93,6 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
---- !u!114 &114042330419243514
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1304179708650458}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a83cda3f7861a904f9fd4a6ac0ffad6b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  items: []
 --- !u!114 &114082189032574304
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -124,6 +111,7 @@ MonoBehaviour:
   inventory: {fileID: 0}
   isPickupable: 1
   drag: 0
+  Descriptors: []
   Rotate: 0
   Wait: 5
 --- !u!114 &114128205298660918
@@ -137,8 +125,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 00f91d5f40434e94c956e01b95851755, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  AttractedTo:
-  - Rose
+  AttractedTo: []
   ScaredOf: []
   HostileTo: []
   Target: {x: 0, y: 0}
