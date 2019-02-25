@@ -4,7 +4,7 @@ using UnityEngine;
 
 [RequireComponent(typeof(NPCTarget))]
 [RequireComponent(typeof(Rotate))]
-public class NPC : Item {
+public class NPC : CollidableItem {
     private Item OverItem;
     private Rotate Rotation;
     private NPCTarget Target;
