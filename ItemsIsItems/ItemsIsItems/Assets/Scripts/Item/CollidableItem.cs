@@ -15,14 +15,14 @@ public class CollidableItem : Item
 
         if (this.GetComponents<BoxCollider2D>().Length == 0)
         {
-            BoxCollider2D triggerableCollider = gameObject.AddComponent<BoxCollider2D>();
-            triggerableCollider.isTrigger = true;
+            BoxCollider2D dragAndDropCollider = gameObject.AddComponent<BoxCollider2D>();
+            dragAndDropCollider.isTrigger = true;
         }
 
         if (this.GetComponents<BoxCollider2D>().Length == 1)
         {
-            BoxCollider2D triggerableCollider = gameObject.AddComponent<BoxCollider2D>();
-            triggerableCollider.isTrigger = false;
+            BoxCollider2D wallCollider = gameObject.AddComponent<BoxCollider2D>();
+            wallCollider.isTrigger = false;
         }
     }
 }
