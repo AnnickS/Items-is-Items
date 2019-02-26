@@ -13,6 +13,11 @@ public class Item : MonoBehaviour
     public GameObject graphicalObj;
     public Collider2D overObject;
 
+    public int onDragZ = -5;
+    public Vector3 onDragScaleSize = new Vector3(1.3f, 1.3f, 1);
+    private Vector3 onDragPreviousScale;
+    private float onDragPreviousZ;
+
     public Inventory inventory;
     
     public bool isPickupable = true;
@@ -46,9 +51,7 @@ public class Item : MonoBehaviour
     {
         if (inventory != null)
         {
-            drag = true;
-            inventory.RemoveItem(this);
-            inventory = null;
+            dragStart();
         }
         if (drag)
         {
@@ -78,7 +81,7 @@ public class Item : MonoBehaviour
     {
         if(drag == true)
         {
-            drag = false;
+            dragEnd();
             isPickupable = true;
 
             if (GameManager.Instance != null && overObject != null)
@@ -90,6 +93,31 @@ public class Item : MonoBehaviour
                 }
             }
         }
+    }
+
+    private void dragStart()
+    {
+        drag = true;
+
+        //*
+        onDragPreviousZ = this.transform.position.z;
+        this.transform.position = new Vector3(this.transform.position.x, this.transform.position.y, onDragZ);
+
+        onDragPreviousScale = this.transform.localScale;
+        this.transform.localScale = this.transform.localScale + onDragScaleSize;
+        //*/
+        inventory.RemoveItem(this);
+        inventory = null;
+    }
+
+    private void dragEnd()
+    {
+        drag = false;
+
+        //*
+        this.transform.localScale = onDragPreviousScale;
+        this.transform.position = new Vector3(this.transform.position.x, this.transform.position.y, onDragPreviousZ);
+        //*/
     }
 
     /*/
