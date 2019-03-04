@@ -12,6 +12,7 @@ public class DetectionRange : MonoBehaviour {
     public List<Item> WithinSmell;
     public float ViewRadius = 5;
     public float ViewAngle = 135;
+    public int GizmoSmellSides = 20;
     
     //Detects game objects within FoV and adds them to WithinView list
     //Items in range but not in view get added to WithinSmell
@@ -56,5 +57,26 @@ public class DetectionRange : MonoBehaviour {
             }
             else { continue; }
         }
+    }
+
+    
+    private void OnDrawGizmosSelected()
+    {
+        Vector3 forward = -transform.up;
+
+        Gizmos.color = Color.red;
+        Gizmos.DrawLine(transform.position, transform.position + forward * (ViewRadius >= 1 ? 1 : ViewRadius));
+        Gizmos.DrawLine(transform.position, transform.position + Quaternion.Euler(0, 0, ViewAngle/2) * forward * ViewRadius);
+        Gizmos.DrawLine(transform.position, transform.position + Quaternion.Euler(0, 0, -ViewAngle / 2) * forward * ViewRadius);
+
+        Gizmos.color = Color.blue;
+        Vector3 currentPoint = Quaternion.Euler(0, 0, 60*0) * forward * ViewRadius;
+        for (int i = 1; i <= GizmoSmellSides; i++)
+        {
+            Vector3 nextPoint = Quaternion.Euler(0, 0, 360/ GizmoSmellSides * i) * forward * ViewRadius;
+            Gizmos.DrawLine(transform.position + currentPoint, transform.position + nextPoint);
+            currentPoint = nextPoint;
+        }
+        //Gizmos.draw = Color.red;
     }
 }

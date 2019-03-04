@@ -5,7 +5,7 @@ using UnityEngine;
 [RequireComponent(typeof(MoveTowardMouse))]
 [RequireComponent(typeof(RotateTowardMovementTarget))]
 [RequireComponent(typeof(TrailOffsetInventory))]
-public class Player : Item, Respawnable
+public class Player : CollidableItem, Respawnable
 {
 
     Vector3 startPosition;
@@ -46,5 +46,7 @@ public class Player : Item, Respawnable
     public void Respawn()
     {
         this.transform.position = startPosition;
+        MoveTowardMouse movement = GetComponent<MoveTowardMouse>();
+        movement.moveToPosition(new Vector2(startPosition.x, startPosition.y));
     }
 }
