@@ -21,6 +21,7 @@ GameObject:
   - component: {fileID: 4853471054012910}
   - component: {fileID: 212172514318282398}
   - component: {fileID: 114068477866548410}
+  - component: {fileID: 114815040293948826}
   - component: {fileID: 114212193194859672}
   - component: {fileID: 114320641457046552}
   - component: {fileID: 50316986011992432}
@@ -127,6 +128,7 @@ MonoBehaviour:
   WithinSmell: []
   ViewRadius: 5
   ViewAngle: 135
+  GizmoSmellSides: 20
 --- !u!114 &114320641457046552
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -143,6 +145,18 @@ MonoBehaviour:
   ScaredOf: []
   HostileTo: []
   Target: {x: 0, y: 0}
+--- !u!114 &114815040293948826
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1910978162164332}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ccbb68d842519e543a8c7a698635c80b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rotationOffset: 180
 --- !u!114 &114854604772146102
 MonoBehaviour:
   m_ObjectHideFlags: 1
