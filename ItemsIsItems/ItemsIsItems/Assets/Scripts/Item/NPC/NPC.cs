@@ -11,7 +11,7 @@ public class NPC : CollidableItem {
     private Vector2 CurrentTarget;
     
     public bool Rotate = false;
-    public float Wait = 0;
+    public bool isWaiting = false;
 
 
 	// Use this for initialization
@@ -38,16 +38,28 @@ public class NPC : CollidableItem {
         }
 
         //Moves NPC back to base if movement has stopped and timer is finished
-        if(Wait == 0)
+        if(isWaiting == false)
         {
             CurrentTarget = Target.SelectTarget();
-        } else
-        {
-            Wait--;
-        }
+        } 
 
         gameObject.GetComponent<MoveTowardPosition>().moveToPosition(CurrentTarget);
 	}
+
+    public IEnumerator Wait(float time)
+    {
+        if(time >= 0)
+        {
+            isWaiting = true;
+            yield return new WaitForSeconds(time);
+            isWaiting = false;
+        }
+        else
+        {
+            Debug.LogWarning("NPC Wait time cannot be less than 0");
+        }
+        
+    }
 
     void OnTriggerEnter2D(Collider2D other)
     {

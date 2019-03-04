@@ -4,6 +4,9 @@ using UnityEngine;
 
 [RequireComponent(typeof(DetectionRange))]
 public class NPCTarget : MonoBehaviour {
+
+    [Range(0, 10)]
+    public float waitTime = 0;
     [SerializeField]
     private List<Descriptor> AttractedTo;
     [SerializeField]
@@ -42,7 +45,7 @@ public class NPCTarget : MonoBehaviour {
             //Items that the npc is scared of has first priority
             if (ScaredOf.Find(x => current.HasDescriptor(x)))
             {
-                gameObject.GetComponent<NPC>().Wait = 100;
+                StartCoroutine(gameObject.GetComponent<NPC>().Wait(waitTime));
                 Vector2 ItemPosition = new Vector2(cTransform.position.x, cTransform.position.y);
                 ItemPosition -= CurrentPosition;
                 ItemPosition.Normalize();
@@ -53,12 +56,12 @@ public class NPCTarget : MonoBehaviour {
             }//Items that the npc is hostile to has next priority
             else if (HostileTo.Find(x => current.HasDescriptor(x)))
             {
-                gameObject.GetComponent<NPC>().Wait = 100;
+                StartCoroutine(gameObject.GetComponent<NPC>().Wait(waitTime));
                 return new Vector2(cTransform.position.x, cTransform.position.y);
             }//Items that the npc is attracted to have last priority
             else if (AttractedTo.Find(x => current.HasDescriptor(x)))
             {
-                gameObject.GetComponent<NPC>().Wait = 100;
+                StartCoroutine(gameObject.GetComponent<NPC>().Wait(waitTime));
                 return new Vector2(cTransform.position.x, cTransform.position.y);
             }
         }
