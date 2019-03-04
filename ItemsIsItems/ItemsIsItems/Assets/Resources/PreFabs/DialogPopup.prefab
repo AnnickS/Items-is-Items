@@ -143,7 +143,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d27b14794abcc124e96312edc9ff1f39, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  textMesh: {fileID: 114516260607384936}
   timeOnScreen: 1
 --- !u!114 &114516260607384936
 MonoBehaviour:

@@ -319,7 +319,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7b42c0b2e052aa84f858e96fe386ae1d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  story: I don't c u
+  text: Put what you want the quest giver to say here (Story/Hint/etc)
 --- !u!114 &114243694662500718
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -331,7 +331,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d27b14794abcc124e96312edc9ff1f39, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  textMesh: {fileID: 114436562449192722}
   timeOnScreen: 1
 --- !u!114 &114358946745294920
 MonoBehaviour:
@@ -344,8 +343,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e44897cad30833143a02c3e40a124053, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  states: []
-  currentStateIndex: 0
 --- !u!114 &114436562449192722
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -470,7 +467,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7b42c0b2e052aa84f858e96fe386ae1d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  story: U poke me
+  text: Put what you want the quest giver to say here (Story/Hint/etc)
 --- !u!114 &114729798222960152
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -482,7 +479,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7b42c0b2e052aa84f858e96fe386ae1d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  story: How Dare u
+  text: Put what you want the quest giver to say here (Story/Hint/etc)
 --- !u!212 &212091884078213064
 SpriteRenderer:
   m_ObjectHideFlags: 1
