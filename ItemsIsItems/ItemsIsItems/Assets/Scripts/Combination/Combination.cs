@@ -7,7 +7,7 @@ using UnityEditor;
 
 public delegate void CombinationEventHandler();
 
-[CreateAssetMenu(menuName = "Combination/Combination")]
+[CreateAssetMenu(menuName = "Combination")]
 public class Combination : ScriptableObject
 {
     public Validator itemValidator1;
