@@ -324,7 +324,7 @@ GameObject:
   - component: {fileID: 248273690}
   - component: {fileID: 248273692}
   - component: {fileID: 248273691}
-  m_Layer: 0
+  m_Layer: 15
   m_Name: Tilemap_Base
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -76769,7 +76769,7 @@ GameObject:
   - component: {fileID: 319868131}
   - component: {fileID: 319868130}
   - component: {fileID: 319868129}
-  m_Layer: 0
+  m_Layer: 15
   m_Name: Tilemap_Collision
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -85143,7 +85143,7 @@ GameObject:
   - component: {fileID: 1160749140}
   - component: {fileID: 1160749142}
   - component: {fileID: 1160749141}
-  m_Layer: 0
+  m_Layer: 15
   m_Name: Tilemap
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -85393,7 +85393,7 @@ GameObject:
   - component: {fileID: 1234871799}
   - component: {fileID: 1234871801}
   - component: {fileID: 1234871800}
-  m_Layer: 0
+  m_Layer: 15
   m_Name: Tilemap_Top
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -90951,7 +90951,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1493405855}
   - component: {fileID: 1493405854}
-  m_Layer: 0
+  m_Layer: 15
   m_Name: Grid
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -90994,7 +90994,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1544949737}
   - component: {fileID: 1544949736}
-  m_Layer: 0
+  m_Layer: 15
   m_Name: Grid
   m_TagString: Untagged
   m_Icon: {fileID: 0}
