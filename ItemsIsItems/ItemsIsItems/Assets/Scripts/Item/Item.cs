@@ -11,7 +11,6 @@ public class Item : MonoBehaviour
 {
     public new String name;
     public GameObject graphicalObj;
-    public Collider2D overObject;
 
     public int onDragZ = -5;
     public Vector3 onDragScaleSize = new Vector3(1.3f, 1.3f, 1);
@@ -22,6 +21,8 @@ public class Item : MonoBehaviour
     
     public bool isPickupable = true;
     public bool drag;
+    public bool multipleInteract = false;
+    private List<Item> touching = new List<Item>();
 
     [SerializeField]
     public List<Descriptor> Descriptors = new List<Descriptor>();
@@ -63,18 +64,16 @@ public class Item : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D other)
     {
-        if (drag)
+        Item item = other.GetComponent<Item>();
+        if (item != null && touching.Contains(item) == false)
         {
-            overObject = other;
+            touching.Add(item);
         }
     }
 
     void OnTriggerExit2D(Collider2D other)
     {
-        if(overObject == other && drag)
-        {
-            overObject = null;
-        }
+        touching.Remove(other.GetComponent<Item>());
     }
 
     void OnMouseUp()
@@ -84,12 +83,20 @@ public class Item : MonoBehaviour
             dragEnd();
             isPickupable = true;
 
-            if (GameManager.Instance != null && overObject != null)
+            if (GameManager.Instance != null && touching.Count >= 0)
             {
-                Item other = overObject.GetComponent<Item>();
-                if (other != null)
+                if (multipleInteract)
                 {
-                    GameManager.Instance.ExecuteInteraction(this, other);
+                    for (int i = touching.Count-1; i >= 0; i--)
+                    {
+                        Debug.Log(i +" <= "+touching.Count);
+                        Item item = touching[i];
+                        GameManager.Instance.ExecuteInteraction(this, item);
+                    }
+                }
+                else
+                {
+                    GameManager.Instance.ExecuteInteraction(this, touching[0]);
                 }
             }
         }
