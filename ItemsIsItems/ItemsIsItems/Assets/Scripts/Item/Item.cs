@@ -118,6 +118,8 @@ public class Item : MonoBehaviour
         this.transform.localScale = onDragPreviousScale;
         this.transform.position = new Vector3(this.transform.position.x, this.transform.position.y, onDragPreviousZ);
         //*/
+
+        GetComponent<MoveTowardPosition>().moveToPosition(transform.position);
     }
 
     /*/
