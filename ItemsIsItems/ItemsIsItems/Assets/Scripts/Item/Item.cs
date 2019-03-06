@@ -17,7 +17,7 @@ public class Item : MonoBehaviour
     private Vector3 onDragPreviousScale;
     private float onDragPreviousZ;
 
-    public Inventory inventory;
+    public Inventory inventoryWithin;
     
     public bool isPickupable = true;
     public bool drag;
@@ -26,6 +26,8 @@ public class Item : MonoBehaviour
 
     [SerializeField]
     public List<Descriptor> Descriptors = new List<Descriptor>();
+
+    public GameObject jail;
 
     protected void Start()
     {
@@ -50,7 +52,7 @@ public class Item : MonoBehaviour
 
     private void OnMouseDrag()
     {
-        if (inventory != null)
+        if (inventoryWithin != null)
         {
             dragStart();
         }
@@ -113,8 +115,8 @@ public class Item : MonoBehaviour
         onDragPreviousScale = this.transform.localScale;
         this.transform.localScale = this.transform.localScale + onDragScaleSize;
         //*/
-        inventory.RemoveItem(this);
-        inventory = null;
+        inventoryWithin.RemoveItem(this);
+        inventoryWithin = null;
     }
 
     private void dragEnd()
@@ -153,6 +155,11 @@ public class Item : MonoBehaviour
             }
         }
         return false;
+    }
+
+    public GameObject GetJail()
+    {
+        return jail;
     }
 
     public bool NameEquals(Item other)
