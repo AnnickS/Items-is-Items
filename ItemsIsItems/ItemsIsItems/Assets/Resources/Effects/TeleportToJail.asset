@@ -9,7 +9,5 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ab8fb982f924a3243a215a9161d936e6, type: 3}
-  m_Name: TutorialBunnyTP
+  m_Name: TeleportToJail
   m_EditorClassIdentifier: 
-  teleportPosition: {fileID: 0}
-  pos: {x: 5, y: 5, z: 0}
