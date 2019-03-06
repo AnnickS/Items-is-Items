@@ -50,6 +50,14 @@ public class Item : MonoBehaviour
         boxCollider.isTrigger = true;
     }
 
+    public void Drop()
+    {
+        drag = false;
+        isPickupable = true;
+        GetComponent<MoveTowardPosition>().moveToPosition(transform.position);
+        inventoryWithin = null;
+    }
+
     private void OnMouseDrag()
     {
         if (inventoryWithin != null)
@@ -82,8 +90,7 @@ public class Item : MonoBehaviour
     {
         if(drag == true)
         {
-            dragEnd();
-            isPickupable = true;
+            dragEnd();            
 
             if (GameManager.Instance != null && touching.Count >= 0)
             {
@@ -91,7 +98,6 @@ public class Item : MonoBehaviour
                 {
                     for (int i = touching.Count-1; i >= 0; i--)
                     {
-                        Debug.Log(i +" <= "+touching.Count);
                         Item item = touching[i];
                         GameManager.Instance.ExecuteInteraction(this, item);
                     }
@@ -121,14 +127,9 @@ public class Item : MonoBehaviour
 
     private void dragEnd()
     {
-        drag = false;
-
-        //*
+        Drop();
         this.transform.localScale = onDragPreviousScale;
         this.transform.position = new Vector3(this.transform.position.x, this.transform.position.y, onDragPreviousZ);
-        //*/
-
-        GetComponent<MoveTowardPosition>().moveToPosition(transform.position);
     }
 
     /*/

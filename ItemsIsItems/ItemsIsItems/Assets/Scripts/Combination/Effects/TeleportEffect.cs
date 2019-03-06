@@ -8,6 +8,11 @@ public class TeleportEffect : Effect
         GameObject jail = sender.GetJail();
         if (jail != null)
         {
+            Inventory inven = interactor.GetComponent<Inventory>();
+            if(inven != null)
+            {
+                inven.RemoveAll();
+            }
             interactor.gameObject.transform.position = jail.transform.position;
         }
         else

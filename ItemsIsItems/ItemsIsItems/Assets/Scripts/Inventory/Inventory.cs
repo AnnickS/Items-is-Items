@@ -26,6 +26,12 @@ public abstract class Inventory : MonoBehaviour
         items.Remove(item);
     }
 
+    public virtual void RemoveAll()
+    {
+        items.RemoveAll((item) => { item.Drop(); return true; });
+    }
+
+
     public virtual bool Contains(Item item)
     {
         return items.Contains(item);
