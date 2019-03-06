@@ -18,8 +18,9 @@ public class GameManager : MonoBehaviour
         Debug.Log(combinations.Length);
     }
 
-    public void ExecuteInteraction(Item item1, Item item2)
+    public bool ExecuteInteraction(Item item1, Item item2)
     {
+        bool interacted = false;
         foreach (Combination combination in combinations)
         {
             if (combination.IsInitialized())
@@ -27,10 +28,11 @@ public class GameManager : MonoBehaviour
                 if (combination.IsMatch(item1, item2))
                 {
                     combination.Execute(item1, item2);
-                    //break;
+                    interacted = true;
                 }
             }
         }
+        return interacted;
     }
 
     public Item GetItemByNickname(String name)
