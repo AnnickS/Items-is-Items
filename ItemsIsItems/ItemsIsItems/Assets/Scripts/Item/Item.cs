@@ -17,7 +17,7 @@ public class Item : MonoBehaviour
     private Vector3 onDragPreviousScale;
     private float onDragPreviousZ;
 
-    public Inventory inventory;
+    public Inventory inventoryWithin;
     
     public bool isPickupable = true;
     public bool drag;
@@ -26,6 +26,8 @@ public class Item : MonoBehaviour
 
     [SerializeField]
     public List<Descriptor> Descriptors = new List<Descriptor>();
+
+    public GameObject jail;
 
     protected void Start()
     {
@@ -48,9 +50,17 @@ public class Item : MonoBehaviour
         boxCollider.isTrigger = true;
     }
 
+    public void Drop()
+    {
+        drag = false;
+        isPickupable = true;
+        GetComponent<MoveTowardPosition>().moveToPosition(transform.position);
+        inventoryWithin = null;
+    }
+
     private void OnMouseDrag()
     {
-        if (inventory != null)
+        if (inventoryWithin != null)
         {
             dragStart();
         }
@@ -80,8 +90,7 @@ public class Item : MonoBehaviour
     {
         if(drag == true)
         {
-            dragEnd();
-            isPickupable = true;
+            dragEnd();            
 
             if (GameManager.Instance != null && touching.Count >= 0)
             {
@@ -89,7 +98,6 @@ public class Item : MonoBehaviour
                 {
                     for (int i = touching.Count-1; i >= 0; i--)
                     {
-                        Debug.Log(i +" <= "+touching.Count);
                         Item item = touching[i];
                         GameManager.Instance.ExecuteInteraction(this, item);
                     }
@@ -113,20 +121,15 @@ public class Item : MonoBehaviour
         onDragPreviousScale = this.transform.localScale;
         this.transform.localScale = this.transform.localScale + onDragScaleSize;
         //*/
-        inventory.RemoveItem(this);
-        inventory = null;
+        inventoryWithin.RemoveItem(this);
+        inventoryWithin = null;
     }
 
     private void dragEnd()
     {
-        drag = false;
-
-        //*
+        Drop();
         this.transform.localScale = onDragPreviousScale;
         this.transform.position = new Vector3(this.transform.position.x, this.transform.position.y, onDragPreviousZ);
-        //*/
-
-        GetComponent<MoveTowardPosition>().moveToPosition(transform.position);
     }
 
     /*/
@@ -153,6 +156,11 @@ public class Item : MonoBehaviour
             }
         }
         return false;
+    }
+
+    public GameObject GetJail()
+    {
+        return jail;
     }
 
     public bool NameEquals(Item other)

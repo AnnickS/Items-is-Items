@@ -14,7 +14,7 @@ public class MoveTowardMouse : MoveTowardPosition
         {
             
             RaycastHit2D hit = Physics2D.Raycast(Camera.main.ScreenToWorldPoint(Input.mousePosition), Vector2.zero, 0f);
-            if (hit && hit.transform.GetComponent<Item>() != null && hit.transform.GetComponent<Item>().inventory != false)
+            if (hit && hit.transform.GetComponent<Item>() != null && hit.transform.GetComponent<Item>().inventoryWithin != false)
             {
                 holding = true;
             }

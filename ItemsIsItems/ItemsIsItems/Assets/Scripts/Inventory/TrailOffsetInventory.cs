@@ -62,7 +62,7 @@ public class TrailOffsetInventory : Inventory
     public override void AddItem(Item item)
     {
         base.AddItem(item);
-        item.inventory = this;
+        item.inventoryWithin = this;
         item.isPickupable = false;
     }
 

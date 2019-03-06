@@ -1,16 +1,28 @@
 ﻿using UnityEngine;
 
+[CreateAssetMenu(menuName = "Effects/Teleport")]
 public class TeleportEffect : Effect
 {
-    public GameObject teleportPosition;
-
     public override void Execute(Item sender, Item interactor)
     {
-        interactor.gameObject.transform.position = teleportPosition.transform.position;
+        GameObject jail = sender.GetJail();
+        if (jail != null)
+        {
+            Inventory inven = interactor.GetComponent<Inventory>();
+            if(inven != null)
+            {
+                inven.RemoveAll();
+            }
+            interactor.gameObject.transform.position = jail.transform.position;
+        }
+        else
+        {
+            Debug.LogWarning(sender.name + " does not have a jail to send " + interactor.name + " to!");
+        }
     }
 
     public override bool IsInitialized()
     {
-        return teleportPosition != null;
+        return true;
     }
 }
