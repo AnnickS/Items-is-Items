@@ -177,6 +177,10 @@ public class Item : MonoBehaviour
     {
         foreach(Descriptor d in Descriptors)
         {
+            if(d == null)
+            {
+                continue;
+            }
             if (d.Contains(tag))
             {
                 return true;
