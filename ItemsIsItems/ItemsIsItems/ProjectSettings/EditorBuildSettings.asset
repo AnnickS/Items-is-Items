@@ -18,9 +18,12 @@ EditorBuildSettings:
     path: Assets/Scenes/TestBuild.unity
     guid: 9000fe1db322e8245b0bc24281d92d70
   - enabled: 1
+<<<<<<< HEAD
     path: Assets/Scenes/VictoryScreen.unity
     guid: edd75c4d97cf5ca48baf7a2a50942e58
   - enabled: 1
+=======
+>>>>>>> master
     path: Assets/Scenes/Level 0.unity
     guid: 770750d516110ec49af6fdf33782ae61
   m_configObjects: {}
