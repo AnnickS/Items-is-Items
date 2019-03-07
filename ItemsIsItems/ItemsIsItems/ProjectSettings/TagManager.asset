@@ -18,10 +18,10 @@ TagManager:
   - Player
   - 
   - 
-  - 
+  - Dragged
   - 
   - TileMaps
-  - CollisionTileMaps
+  - BoundaryTiles
   - 
   - 
   - 

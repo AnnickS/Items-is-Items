@@ -155,6 +155,32 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 3553da48257ca744e95a9a88105b10f2, type: 2}
   m_IsPrefabParent: 0
+--- !u!1 &12024953 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1791826380607824, guid: c68ba7de754b453429650d323422ab01,
+    type: 2}
+  m_PrefabInternal: {fileID: 1222959523}
+--- !u!114 &12024954
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 12024953}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 517001a17f3fb2045a7c64d517ebad9f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  name: 
+  graphicalObj: {fileID: 0}
+  onDragZ: -5
+  onDragScaleSize: {x: 1.3, y: 1.3, z: 1}
+  inventoryWithin: {fileID: 0}
+  isPickupable: 1
+  drag: 0
+  multipleInteract: 0
+  Descriptors: []
+  jail: {fileID: 0}
 --- !u!1 &73892278 stripped
 GameObject:
   m_PrefabParentObject: {fileID: 1095877137879606, guid: 3553da48257ca744e95a9a88105b10f2,
@@ -197,13 +223,19 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4618095824180452, guid: c68ba7de754b453429650d323422ab01, type: 2}
       propertyPath: m_RootOrder
-      value: 1
+      value: 23
       objectReference: {fileID: 0}
     - target: {fileID: 1791826380607824, guid: c68ba7de754b453429650d323422ab01, type: 2}
       propertyPath: m_Name
       value: Wood1 (2)
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    - target: {fileID: 50841329140137928, guid: c68ba7de754b453429650d323422ab01,
+        type: 2}
+      propertyPath: m_BodyType
+      value: 2
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: 114484696701778882, guid: c68ba7de754b453429650d323422ab01, type: 2}
   m_ParentPrefab: {fileID: 100100000, guid: c68ba7de754b453429650d323422ab01, type: 2}
   m_IsPrefabParent: 0
 --- !u!1001 &159030074
@@ -454,11 +486,32 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: b99979ff0f13b9741b1ff24bc21973f5, type: 2}
   m_IsPrefabParent: 0
---- !u!4 &211409847 stripped
-Transform:
-  m_PrefabParentObject: {fileID: 4146125045484832, guid: b99979ff0f13b9741b1ff24bc21973f5,
+--- !u!1 &230720470 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1791826380607824, guid: c68ba7de754b453429650d323422ab01,
     type: 2}
-  m_PrefabInternal: {fileID: 211409846}
+  m_PrefabInternal: {fileID: 650213081}
+--- !u!114 &230720471
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 230720470}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 517001a17f3fb2045a7c64d517ebad9f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  name: 
+  graphicalObj: {fileID: 0}
+  onDragZ: -5
+  onDragScaleSize: {x: 1.3, y: 1.3, z: 1}
+  inventoryWithin: {fileID: 0}
+  isPickupable: 1
+  drag: 0
+  multipleInteract: 0
+  Descriptors: []
+  jail: {fileID: 0}
 --- !u!1001 &236758783
 Prefab:
   m_ObjectHideFlags: 0
@@ -496,13 +549,19 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4618095824180452, guid: c68ba7de754b453429650d323422ab01, type: 2}
       propertyPath: m_RootOrder
-      value: 2
+      value: 22
       objectReference: {fileID: 0}
     - target: {fileID: 1791826380607824, guid: c68ba7de754b453429650d323422ab01, type: 2}
       propertyPath: m_Name
       value: Wood1 (1)
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    - target: {fileID: 50841329140137928, guid: c68ba7de754b453429650d323422ab01,
+        type: 2}
+      propertyPath: m_BodyType
+      value: 2
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: 114484696701778882, guid: c68ba7de754b453429650d323422ab01, type: 2}
   m_ParentPrefab: {fileID: 100100000, guid: c68ba7de754b453429650d323422ab01, type: 2}
   m_IsPrefabParent: 0
 --- !u!1 &246164266
@@ -547,7 +606,7 @@ GameObject:
   - component: {fileID: 248273690}
   - component: {fileID: 248273692}
   - component: {fileID: 248273691}
-  m_Layer: 0
+  m_Layer: 16
   m_Name: Tilemap_Base
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -89274,7 +89333,29 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &446677953
+--- !u!114 &461141532
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 461141531}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 830a61b150f3ac24bbe0978249224c6c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  name: Axe
+  graphicalObj: {fileID: 0}
+  onDragZ: -5
+  onDragScaleSize: {x: 1.3, y: 1.3, z: 1}
+  inventoryWithin: {fileID: 0}
+  isPickupable: 1
+  drag: 0
+  multipleInteract: 1
+  Descriptors:
+  - {fileID: 11400000, guid: c70de21d42e253c4d9110289af4a6a8b, type: 2}
+  jail: {fileID: 0}
+--- !u!114 &461141533
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 114946560997330900, guid: ddddfd1ff255c484db38ed69012b0f14,
@@ -89488,7 +89569,7 @@ Transform:
   - {fileID: 246164267}
   - {fileID: 841119837}
   m_Father: {fileID: 0}
-  m_RootOrder: 15
+  m_RootOrder: 28
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 96.268005}
 --- !u!1001 &463995120
 Prefab:
@@ -89579,13 +89660,19 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4618095824180452, guid: c68ba7de754b453429650d323422ab01, type: 2}
       propertyPath: m_RootOrder
-      value: 5
+      value: 26
       objectReference: {fileID: 0}
     - target: {fileID: 1791826380607824, guid: c68ba7de754b453429650d323422ab01, type: 2}
       propertyPath: m_Name
       value: Wood1 (5)
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    - target: {fileID: 50841329140137928, guid: c68ba7de754b453429650d323422ab01,
+        type: 2}
+      propertyPath: m_BodyType
+      value: 2
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: 114484696701778882, guid: c68ba7de754b453429650d323422ab01, type: 2}
   m_ParentPrefab: {fileID: 100100000, guid: c68ba7de754b453429650d323422ab01, type: 2}
   m_IsPrefabParent: 0
 --- !u!1001 &500806140
@@ -89799,13 +89886,19 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4618095824180452, guid: c68ba7de754b453429650d323422ab01, type: 2}
       propertyPath: m_RootOrder
-      value: 3
+      value: 24
       objectReference: {fileID: 0}
     - target: {fileID: 1791826380607824, guid: c68ba7de754b453429650d323422ab01, type: 2}
       propertyPath: m_Name
       value: Wood1 (3)
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    - target: {fileID: 50841329140137928, guid: c68ba7de754b453429650d323422ab01,
+        type: 2}
+      propertyPath: m_BodyType
+      value: 2
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: 114484696701778882, guid: c68ba7de754b453429650d323422ab01, type: 2}
   m_ParentPrefab: {fileID: 100100000, guid: c68ba7de754b453429650d323422ab01, type: 2}
   m_IsPrefabParent: 0
 --- !u!1001 &652706930
@@ -89940,13 +90033,19 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4618095824180452, guid: c68ba7de754b453429650d323422ab01, type: 2}
       propertyPath: m_RootOrder
-      value: 4
+      value: 25
       objectReference: {fileID: 0}
     - target: {fileID: 1791826380607824, guid: c68ba7de754b453429650d323422ab01, type: 2}
       propertyPath: m_Name
       value: Wood1 (4)
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    - target: {fileID: 50841329140137928, guid: c68ba7de754b453429650d323422ab01,
+        type: 2}
+      propertyPath: m_BodyType
+      value: 2
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: 114484696701778882, guid: c68ba7de754b453429650d323422ab01, type: 2}
   m_ParentPrefab: {fileID: 100100000, guid: c68ba7de754b453429650d323422ab01, type: 2}
   m_IsPrefabParent: 0
 --- !u!1001 &745073257
@@ -90323,11 +90422,32 @@ Prefab:
     - {fileID: 61088093688960650, guid: b99979ff0f13b9741b1ff24bc21973f5, type: 2}
   m_ParentPrefab: {fileID: 100100000, guid: b99979ff0f13b9741b1ff24bc21973f5, type: 2}
   m_IsPrefabParent: 0
---- !u!4 &847240026 stripped
-Transform:
-  m_PrefabParentObject: {fileID: 4146125045484832, guid: b99979ff0f13b9741b1ff24bc21973f5,
+--- !u!1 &933696704 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1791826380607824, guid: c68ba7de754b453429650d323422ab01,
     type: 2}
-  m_PrefabInternal: {fileID: 847240025}
+  m_PrefabInternal: {fileID: 490960410}
+--- !u!114 &933696705
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 933696704}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 517001a17f3fb2045a7c64d517ebad9f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  name: 
+  graphicalObj: {fileID: 0}
+  onDragZ: -5
+  onDragScaleSize: {x: 1.3, y: 1.3, z: 1}
+  inventoryWithin: {fileID: 0}
+  isPickupable: 1
+  drag: 0
+  multipleInteract: 0
+  Descriptors: []
+  jail: {fileID: 0}
 --- !u!1001 &979212705
 Prefab:
   m_ObjectHideFlags: 0
@@ -90896,7 +91016,13 @@ Prefab:
       propertyPath: m_RootOrder
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    - target: {fileID: 50841329140137928, guid: c68ba7de754b453429650d323422ab01,
+        type: 2}
+      propertyPath: m_BodyType
+      value: 2
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: 114484696701778882, guid: c68ba7de754b453429650d323422ab01, type: 2}
   m_ParentPrefab: {fileID: 100100000, guid: c68ba7de754b453429650d323422ab01, type: 2}
   m_IsPrefabParent: 0
 --- !u!1001 &1225280657
@@ -90960,7 +91086,7 @@ GameObject:
   - component: {fileID: 1234871799}
   - component: {fileID: 1234871801}
   - component: {fileID: 1234871800}
-  m_Layer: 15
+  m_Layer: 16
   m_Name: Tilemap_Top
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -96776,7 +96902,7 @@ Transform:
   m_LocalScale: {x: 3, y: 3, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 14
+  m_RootOrder: 27
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1484785566
 GameObject:
@@ -96833,7 +96959,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1493405855}
   - component: {fileID: 1493405854}
-  m_Layer: 15
+  m_Layer: 16
   m_Name: Grid
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -97070,21 +97196,32 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 53078ca4093931040b60ed4a59fa9f1e, type: 2}
   m_IsPrefabParent: 0
---- !u!4 &1584423970 stripped
-Transform:
-  m_PrefabParentObject: {fileID: 4949157221537090, guid: 53078ca4093931040b60ed4a59fa9f1e,
+--- !u!1 &1603654036 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1791826380607824, guid: c68ba7de754b453429650d323422ab01,
     type: 2}
-  m_PrefabInternal: {fileID: 1584423969}
---- !u!4 &1624002600 stripped
-Transform:
-  m_PrefabParentObject: {fileID: 4491901457865212, guid: e86bf148fce6b5b4993fef83dafaa0ed,
-    type: 2}
-  m_PrefabInternal: {fileID: 159030074}
---- !u!4 &1634812161 stripped
-Transform:
-  m_PrefabParentObject: {fileID: 4618095824180452, guid: c68ba7de754b453429650d323422ab01,
-    type: 2}
-  m_PrefabInternal: {fileID: 650213081}
+  m_PrefabInternal: {fileID: 683524199}
+--- !u!114 &1603654037
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1603654036}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 517001a17f3fb2045a7c64d517ebad9f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  name: 
+  graphicalObj: {fileID: 0}
+  onDragZ: -5
+  onDragScaleSize: {x: 1.3, y: 1.3, z: 1}
+  inventoryWithin: {fileID: 0}
+  isPickupable: 1
+  drag: 0
+  multipleInteract: 0
+  Descriptors: []
+  jail: {fileID: 0}
 --- !u!1001 &1639651571
 Prefab:
   m_ObjectHideFlags: 0
@@ -97587,11 +97724,32 @@ Prefab:
     - {fileID: 61088093688960650, guid: b99979ff0f13b9741b1ff24bc21973f5, type: 2}
   m_ParentPrefab: {fileID: 100100000, guid: b99979ff0f13b9741b1ff24bc21973f5, type: 2}
   m_IsPrefabParent: 0
---- !u!4 &1943228712 stripped
-Transform:
-  m_PrefabParentObject: {fileID: 4146125045484832, guid: b99979ff0f13b9741b1ff24bc21973f5,
+--- !u!1 &1910442663 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1791826380607824, guid: c68ba7de754b453429650d323422ab01,
     type: 2}
-  m_PrefabInternal: {fileID: 1943228711}
+  m_PrefabInternal: {fileID: 236758783}
+--- !u!114 &1910442664
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1910442663}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 517001a17f3fb2045a7c64d517ebad9f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  name: 
+  graphicalObj: {fileID: 0}
+  onDragZ: -5
+  onDragScaleSize: {x: 1.3, y: 1.3, z: 1}
+  inventoryWithin: {fileID: 0}
+  isPickupable: 1
+  drag: 0
+  multipleInteract: 0
+  Descriptors: []
+  jail: {fileID: 0}
 --- !u!1001 &1955129772
 Prefab:
   m_ObjectHideFlags: 0
@@ -98310,13 +98468,29 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: b99979ff0f13b9741b1ff24bc21973f5, type: 2}
   m_IsPrefabParent: 0
---- !u!1 &2134303202 stripped
+--- !u!1 &2127626409 stripped
 GameObject:
-  m_PrefabParentObject: {fileID: 1148111851774156, guid: b99979ff0f13b9741b1ff24bc21973f5,
+  m_PrefabParentObject: {fileID: 1791826380607824, guid: c68ba7de754b453429650d323422ab01,
     type: 2}
-  m_PrefabInternal: {fileID: 2080638880}
---- !u!4 &2134303204 stripped
-Transform:
-  m_PrefabParentObject: {fileID: 4146125045484832, guid: b99979ff0f13b9741b1ff24bc21973f5,
-    type: 2}
-  m_PrefabInternal: {fileID: 2080638880}
+  m_PrefabInternal: {fileID: 149549662}
+--- !u!114 &2127626410
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2127626409}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 517001a17f3fb2045a7c64d517ebad9f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  name: 
+  graphicalObj: {fileID: 0}
+  onDragZ: -5
+  onDragScaleSize: {x: 1.3, y: 1.3, z: 1}
+  inventoryWithin: {fileID: 0}
+  isPickupable: 1
+  drag: 0
+  multipleInteract: 0
+  Descriptors: []
+  jail: {fileID: 0}

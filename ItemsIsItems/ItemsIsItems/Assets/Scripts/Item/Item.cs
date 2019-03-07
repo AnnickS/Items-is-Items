@@ -29,9 +29,12 @@ public class Item : MonoBehaviour
 
     public GameObject jail;
 
+    private BoxCollider2D boxCollider;
+    private Rigidbody2D rb;
+
     protected void Start()
     {
-        gameObject.layer = 8;
+        gameObject.layer = LayerMask.NameToLayer("Foreground");
         
         if(transform.Find("Mesh") != null)
         {
@@ -42,12 +45,18 @@ public class Item : MonoBehaviour
             graphicalObj = gameObject;
         }
 
-        BoxCollider2D boxCollider = GetComponent<BoxCollider2D>();
+        boxCollider = GetComponent<BoxCollider2D>();
         if(boxCollider == null)
         {
             Debug.Log("Item " + this.gameObject.name + " needs a BoxCollider.");
         }
         boxCollider.isTrigger = true;
+
+        rb = GetComponent<Rigidbody2D>();
+        rb.interpolation = RigidbodyInterpolation2D.Extrapolate;
+        rb.collisionDetectionMode = CollisionDetectionMode2D.Continuous;
+
+        //rb.constraints = RigidbodyConstraints2D.FreezeRotation | rb.constraints;
     }
 
     public void Drop()
@@ -56,6 +65,9 @@ public class Item : MonoBehaviour
         isPickupable = true;
         GetComponent<MoveTowardPosition>().moveToPosition(transform.position);
         inventoryWithin = null;
+        gameObject.layer = LayerMask.NameToLayer("Foreground");
+        rb.velocity = Vector2.zero;
+        boxCollider.isTrigger = true;
     }
 
     private void OnMouseDrag()
@@ -68,10 +80,12 @@ public class Item : MonoBehaviour
         {
             Vector2 mousePosition = new Vector2(Input.mousePosition.x, Input.mousePosition.y);
             Vector2 objectPosition = Camera.main.ScreenToWorldPoint(mousePosition);
-            transform.position = objectPosition;
+            //transform.position = objectPosition;
+            GetComponent<Rigidbody2D>().MovePosition(objectPosition);
         }
     }
 
+    /*
     void OnTriggerEnter2D(Collider2D other)
     {
         Item item = other.GetComponent<Item>();
@@ -84,36 +98,21 @@ public class Item : MonoBehaviour
     void OnTriggerExit2D(Collider2D other)
     {
         touching.Remove(other.GetComponent<Item>());
-    }
+    }*/
 
     void OnMouseUp()
     {
         if(drag == true)
         {
-            dragEnd();            
-
-            if (GameManager.Instance != null && touching.Count >= 0)
-            {
-                if (multipleInteract)
-                {
-                    for (int i = touching.Count-1; i >= 0; i--)
-                    {
-                        Item item = touching[i];
-                        GameManager.Instance.ExecuteInteraction(this, item);
-                    }
-                }
-                else
-                {
-                    GameManager.Instance.ExecuteInteraction(this, touching[0]);
-                }
-            }
+            dragEnd();
         }
     }
 
     private void dragStart()
     {
         drag = true;
-
+        gameObject.layer = LayerMask.NameToLayer("Dragged");
+        boxCollider.isTrigger = false;
         //*
         onDragPreviousZ = this.transform.position.z;
         this.transform.position = new Vector3(this.transform.position.x, this.transform.position.y, onDragZ);
@@ -130,6 +129,19 @@ public class Item : MonoBehaviour
         Drop();
         this.transform.localScale = onDragPreviousScale;
         this.transform.position = new Vector3(this.transform.position.x, this.transform.position.y, onDragPreviousZ);
+
+        List<Item> touching = GetTouching();
+        if (GameManager.Instance != null && touching.Count > 0)
+        {
+            foreach (Item item in touching)
+            {
+                bool interacted = GameManager.Instance.ExecuteInteraction(this, item);
+                if (interacted && multipleInteract == false)
+                {
+                    break;
+                }
+            }
+        }
     }
 
     /*/
@@ -146,10 +158,29 @@ public class Item : MonoBehaviour
     }
     /**/
 
+    public List<Item> GetTouching()
+    {
+        Collider2D[] under = Physics2D.OverlapBoxAll(transform.position, (Vector2)GetComponent<Collider2D>().bounds.size / 2, transform.eulerAngles.z);
+        List<Item> touching = new List<Item>();
+        foreach (Collider2D coll in under)
+        {
+            Item item = coll.GetComponent<Item>();
+            if (item != null)
+            {
+                touching.Add(item);
+            }
+        }
+        return touching;
+    }
+
     public bool HasDescriptor(Descriptor tag)
     {
         foreach(Descriptor d in Descriptors)
         {
+            if(d == null)
+            {
+                continue;
+            }
             if (d.Contains(tag))
             {
                 return true;
@@ -167,4 +198,11 @@ public class Item : MonoBehaviour
     {
         return other.name == this.name;
     }
+
+    /*
+    private void OnDrawGizmosSelected()
+    {
+        Gizmos.color = Color.green;
+        Gizmos.DrawLine((Vector2)transform.position, (Vector2)transform.position + (Vector2)GetComponent<Collider2D>().bounds.size/2);
+    }*/
 }
