@@ -6,6 +6,7 @@ public class QuestStateDialog : QuestState
 {
     protected Dialog dialog;
     protected bool showedDialog = false;
+    protected bool isDone = false;
 
     public override void Initialize(GameObject questGiver)
     {
@@ -21,6 +22,14 @@ public class QuestStateDialog : QuestState
         }
     }
 
+    void Update()
+    {
+        if(showedDialog && dialog.isShowing() == false)
+        {
+            isDone = true;
+        }
+    }
+
     public override void ShowStory()
     {
         dialog.setText(text);
@@ -30,11 +39,6 @@ public class QuestStateDialog : QuestState
 
     public override bool IsDone()
     {
-        if (showedDialog)
-        {
-            return true;
-        }
-
-        return false;
+        return isDone;
     }
 }

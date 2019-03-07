@@ -90461,6 +90461,52 @@ MonoBehaviour:
   multipleInteract: 0
   Descriptors: []
   jail: {fileID: 0}
+--- !u!1001 &968406769
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 4243318165166284, guid: e30d6914fbcc49f459e557433a052304, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 6.9
+      objectReference: {fileID: 0}
+    - target: {fileID: 4243318165166284, guid: e30d6914fbcc49f459e557433a052304, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: -5.67
+      objectReference: {fileID: 0}
+    - target: {fileID: 4243318165166284, guid: e30d6914fbcc49f459e557433a052304, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4243318165166284, guid: e30d6914fbcc49f459e557433a052304, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4243318165166284, guid: e30d6914fbcc49f459e557433a052304, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4243318165166284, guid: e30d6914fbcc49f459e557433a052304, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4243318165166284, guid: e30d6914fbcc49f459e557433a052304, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4243318165166284, guid: e30d6914fbcc49f459e557433a052304, type: 2}
+      propertyPath: m_RootOrder
+      value: 18
+      objectReference: {fileID: 0}
+    - target: {fileID: 1391044553497518, guid: e30d6914fbcc49f459e557433a052304, type: 2}
+      propertyPath: m_Name
+      value: Medicine (1)
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 100100000, guid: e30d6914fbcc49f459e557433a052304, type: 2}
+  m_IsPrefabParent: 0
 --- !u!1001 &979212705
 Prefab:
   m_ObjectHideFlags: 0
@@ -97183,6 +97229,11 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: ddddfd1ff255c484db38ed69012b0f14, type: 2}
   m_IsPrefabParent: 0
+--- !u!4 &1549243493 stripped
+Transform:
+  m_PrefabParentObject: {fileID: 4763836975259026, guid: ddddfd1ff255c484db38ed69012b0f14,
+    type: 2}
+  m_PrefabInternal: {fileID: 1549243492}
 --- !u!1001 &1584423969
 Prefab:
   m_ObjectHideFlags: 0
@@ -97314,6 +97365,60 @@ Transform:
   m_PrefabParentObject: {fileID: 4146125045484832, guid: b99979ff0f13b9741b1ff24bc21973f5,
     type: 2}
   m_PrefabInternal: {fileID: 1639651571}
+--- !u!1 &1695091871
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 1695091872}
+  - component: {fileID: 1695091874}
+  - component: {fileID: 1695091873}
+  m_Layer: 0
+  m_Name: GoToVictoryScene
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1695091872
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1695091871}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1549243493}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1695091873
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1695091871}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cc6cbfcd43e7fd847bf0ac6f9aadb4c0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1695091874
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1695091871}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: da2bc5bb4c801d74982fa8811a5e7f4c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  text: Put what you want the quest giver to say here (Story/Hint/etc)
+  SceneToLoad: VictoryScreen
 --- !u!1001 &1695435810
 Prefab:
   m_ObjectHideFlags: 0
@@ -98158,11 +98263,11 @@ MonoBehaviour:
     lineCount: 1
     pageCount: 1
     materialCount: 1
-  m_havePropertiesChanged: 0
+  m_havePropertiesChanged: 1
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_spriteAnimator: {fileID: 0}
-  m_isInputParsingRequired: 0
+  m_isInputParsingRequired: 1
   m_inputSource: 0
   m_hasFontAssetChanged: 0
   m_renderer: {fileID: 2043348648}
