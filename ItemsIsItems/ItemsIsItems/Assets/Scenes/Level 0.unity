@@ -97512,7 +97512,7 @@ GameObject:
   - component: {fileID: 1657116186}
   - component: {fileID: 1657116185}
   m_Layer: 5
-  m_Name: Panel
+  m_Name: ButtonPanel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -98683,7 +98683,7 @@ GameObject:
   - component: {fileID: 2067484674}
   - component: {fileID: 2067484673}
   m_Layer: 5
-  m_Name: Canvas
+  m_Name: GUI
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
