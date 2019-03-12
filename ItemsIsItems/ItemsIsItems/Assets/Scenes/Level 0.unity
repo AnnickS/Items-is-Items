@@ -90922,7 +90922,7 @@ Prefab:
         type: 2}
       propertyPath: jail
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 1990765831}
     - target: {fileID: 114979643142946090, guid: 9afbcddd4d0f86e4daf054074980ed6d,
         type: 2}
       propertyPath: ObstacleMask.m_Bits
@@ -97845,6 +97845,11 @@ Transform:
 --- !u!4 &1979955430 stripped
 Transform:
   m_PrefabParentObject: {fileID: 4146125045484832, guid: b99979ff0f13b9741b1ff24bc21973f5,
+    type: 2}
+  m_PrefabInternal: {fileID: 2080638880}
+--- !u!1 &1990765831 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1148111851774156, guid: b99979ff0f13b9741b1ff24bc21973f5,
     type: 2}
   m_PrefabInternal: {fileID: 2080638880}
 --- !u!1 &2016611764
