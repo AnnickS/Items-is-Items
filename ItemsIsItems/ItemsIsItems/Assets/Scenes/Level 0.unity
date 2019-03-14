@@ -90059,7 +90059,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 20
+  m_RootOrder: 19
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &683524199
 Prefab:
@@ -90523,52 +90523,6 @@ MonoBehaviour:
   multipleInteract: 0
   Descriptors: []
   jail: {fileID: 0}
---- !u!1001 &968406769
-Prefab:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 4243318165166284, guid: e30d6914fbcc49f459e557433a052304, type: 2}
-      propertyPath: m_LocalPosition.x
-      value: 6.9
-      objectReference: {fileID: 0}
-    - target: {fileID: 4243318165166284, guid: e30d6914fbcc49f459e557433a052304, type: 2}
-      propertyPath: m_LocalPosition.y
-      value: -5.67
-      objectReference: {fileID: 0}
-    - target: {fileID: 4243318165166284, guid: e30d6914fbcc49f459e557433a052304, type: 2}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4243318165166284, guid: e30d6914fbcc49f459e557433a052304, type: 2}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4243318165166284, guid: e30d6914fbcc49f459e557433a052304, type: 2}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4243318165166284, guid: e30d6914fbcc49f459e557433a052304, type: 2}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4243318165166284, guid: e30d6914fbcc49f459e557433a052304, type: 2}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4243318165166284, guid: e30d6914fbcc49f459e557433a052304, type: 2}
-      propertyPath: m_RootOrder
-      value: 18
-      objectReference: {fileID: 0}
-    - target: {fileID: 1391044553497518, guid: e30d6914fbcc49f459e557433a052304, type: 2}
-      propertyPath: m_Name
-      value: Medicine (1)
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_ParentPrefab: {fileID: 100100000, guid: e30d6914fbcc49f459e557433a052304, type: 2}
-  m_IsPrefabParent: 0
 --- !u!1001 &979212705
 Prefab:
   m_ObjectHideFlags: 0
@@ -98763,7 +98717,7 @@ RectTransform:
   m_Children:
   - {fileID: 1657116184}
   m_Father: {fileID: 0}
-  m_RootOrder: 19
+  m_RootOrder: 18
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
