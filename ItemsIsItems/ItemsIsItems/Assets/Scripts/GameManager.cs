@@ -4,6 +4,7 @@ using System.IO;
 using System.Linq;
 using System.Text;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
@@ -16,6 +17,24 @@ public class GameManager : MonoBehaviour
         Descriptor.PrintDescriptorTree();
         combinations = GetCombinations();
         Debug.Log(combinations.Length);
+
+        StorageManager.ExecuteLoadIfAny();
+    }
+
+    private void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.J))
+        {
+            Debug.Log("Saving...");
+            StorageManager.SaveGameData();
+            Debug.Log("Saved.");
+        }
+        else if (Input.GetKeyDown(KeyCode.L))
+        {
+            Debug.Log("Loading...");
+            StorageManager.PrepLoad(SceneManager.GetActiveScene().name);
+            Debug.Log("Loaded.");
+        }
     }
 
     public bool ExecuteInteraction(Item item1, Item item2)

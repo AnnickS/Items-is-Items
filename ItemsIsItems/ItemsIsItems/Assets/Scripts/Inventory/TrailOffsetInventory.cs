@@ -58,12 +58,21 @@ public class TrailOffsetInventory : Inventory
         return;
     }
 
-
-    public override void AddItem(Item item)
+    public virtual void AddItemAtFront(Item item)
     {
-        base.AddItem(item);
+        AddItemAt(item, 0);
+    }
+
+    public override void AddItemAt(Item item, int index)
+    {
+        base.AddItemAt(item, index);
         item.inventoryWithin = this;
         item.isPickupable = false;
+    }
+
+    public virtual void AddItemAtBack(Item item)
+    {
+        AddItemAt(item, items.Count);
     }
 
     public override void RemoveItem(Item item)
@@ -79,7 +88,7 @@ public class TrailOffsetInventory : Inventory
         if (item != null && !base.Contains(item) && item.isPickupable)
         {
             //Item is added to inventory
-            this.AddItem(item);
+            this.AddItemAtFront(item);
         }
     }
 
