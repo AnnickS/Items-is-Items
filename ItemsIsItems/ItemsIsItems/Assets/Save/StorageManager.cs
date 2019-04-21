@@ -90,7 +90,25 @@ public static class StorageManager
 
         foreach(NPCItemData npc in gameData.npcs)
         {
+            GameObject realNPC = GameObject.Find(npc.name);
+            if (realNPC == null)
+            {
+                if (npc.itemBase != null)
+                {
+                    realNPC = GameObject.Instantiate<GameObject>(Resources.Load<GameObject>("PreFabs/Item/" + npc.itemBase));
+                    realNPC.name = npc.name;
+                }
+                else
+                {
+                    Debug.LogWarning("Loading item '" + realNPC.name + "' failed.");
+                    continue;
+                }
+            }
+            realNPC.transform.position = new Vector3(npc.position[0], npc.position[1], realNPC.transform.position.z);
+            realNPC.transform.rotation = new Quaternion(npc.rotation[0], npc.rotation[1], npc.rotation[2], npc.rotation[3]);
 
+            QuestGiver questContainer = realNPC.GetComponent<QuestGiver>();
+            questContainer.currentStateIndex = npc.questIndex;
         }
 
         foreach (PlayerItemData player in gameData.players)
