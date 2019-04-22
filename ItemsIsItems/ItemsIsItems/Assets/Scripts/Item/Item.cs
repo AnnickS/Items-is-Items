@@ -9,7 +9,6 @@ using UnityEngine;
 [Serializable]
 public class Item : MonoBehaviour
 {
-    public new String name;
     public GameObject graphicalObj;
 
     public int onDragZ = -5;
@@ -31,6 +30,8 @@ public class Item : MonoBehaviour
 
     private BoxCollider2D boxCollider;
     private Rigidbody2D rb;
+
+    public GameObject itemBasePrefab = null;
 
     protected void Start()
     {

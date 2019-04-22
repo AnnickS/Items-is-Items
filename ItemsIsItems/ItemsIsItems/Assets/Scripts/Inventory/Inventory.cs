@@ -16,9 +16,10 @@ public abstract class Inventory : MonoBehaviour
     public abstract void Open();
     public abstract void Close();
 
-    public virtual void AddItem(Item item)
+    public virtual void AddItemAt(Item item, int index)
     {
-        items.Insert(0, item);
+        index = Math.Max(0, Math.Min(index, items.Count));
+        items.Insert(index, item);
     }
 
     public virtual void RemoveItem(Item item)
@@ -35,5 +36,20 @@ public abstract class Inventory : MonoBehaviour
     public virtual bool Contains(Item item)
     {
         return items.Contains(item);
+    }
+
+    public int ItemCount()
+    {
+        return items.Count;
+    }
+
+    public List<String> GetAllItemNames()
+    {
+        List<String> itemNames = new List<string>();
+        foreach(Item item in items)
+        {
+            itemNames.Add(item.name);
+        }
+        return itemNames;
     }
 }

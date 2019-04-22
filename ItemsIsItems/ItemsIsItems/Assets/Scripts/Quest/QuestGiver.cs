@@ -16,7 +16,7 @@ using UnityEngine;
 public class QuestGiver : MonoBehaviour
 {
     private QuestState[] states;
-    private int currentStateIndex = 0;
+    public int currentStateIndex = 0;
 
     void Start()
     {
