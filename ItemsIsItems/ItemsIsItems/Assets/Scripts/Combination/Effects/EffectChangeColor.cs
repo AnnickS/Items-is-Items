@@ -11,7 +11,7 @@ public class EffectChangeColor : Effect {
     {
         interactor.GetComponent<SpriteRenderer>().color = color;
 
-        Destroy(sender.gameObject);
+        sender.gameObject.SetActive(false);
     }
 
     public override bool IsInitialized()

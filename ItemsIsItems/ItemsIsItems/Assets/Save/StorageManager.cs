@@ -18,7 +18,7 @@ public static class StorageManager
         //new GameData(SceneManager.GetActiveScene().name); /*
         using (StreamWriter streamWriter = File.CreateText(path))
         {
-            String json = JsonUtility.ToJson(new GameData(SceneManager.GetActiveScene().name));
+            String json = JsonUtility.ToJson(new GameData());
             streamWriter.Write(json);
         }
         /**/
@@ -34,7 +34,7 @@ public static class StorageManager
                 string jsonString = streamReader.ReadToEnd();
                 GameData gameData = JsonUtility.FromJson<GameData>(jsonString);
                 FileToLoad = fileName;
-                SceneManager.LoadScene(gameData.sceneBase);
+                SceneManager.LoadScene(gameData.sceneBaseName);
             }
         }
     }
@@ -53,6 +53,7 @@ public static class StorageManager
             }
 
             LoadGameData(gameData);
+            Debug.Log("Loaded.");
         }
         else
         {
@@ -60,7 +61,7 @@ public static class StorageManager
         }
     }
 
-    public static void LoadGameData(GameData gameData)
+    private static void LoadGameData(GameData gameData)
     {
         FileToLoad = null;
         if(gameData == null)
@@ -73,9 +74,9 @@ public static class StorageManager
             GameObject realItem = GameObject.Find(item.name);
             if(realItem == null)
             {
-                if(item.itemBase != null)
+                if(item.itemBaseName != null)
                 {
-                    realItem = GameObject.Instantiate<GameObject>(Resources.Load<GameObject>("PreFabs/Item/" + item.itemBase));
+                    realItem = GameObject.Instantiate<GameObject>(Resources.Load<GameObject>("PreFabs/Item/" + item.itemBaseName));
                     realItem.name = item.name;
                 }
                 else
@@ -84,6 +85,7 @@ public static class StorageManager
                     continue;
                 }
             }
+            realItem.SetActive(!item.disabled);
             realItem.transform.position = new Vector3(item.position[0], item.position[1], realItem.transform.position.z);
             realItem.transform.rotation = new Quaternion(item.rotation[0], item.rotation[1], item.rotation[2], item.rotation[3]);
         }
@@ -93,9 +95,9 @@ public static class StorageManager
             GameObject realNPC = GameObject.Find(npc.name);
             if (realNPC == null)
             {
-                if (npc.itemBase != null)
+                if (npc.itemBaseName != null)
                 {
-                    realNPC = GameObject.Instantiate<GameObject>(Resources.Load<GameObject>("PreFabs/Item/" + npc.itemBase));
+                    realNPC = GameObject.Instantiate<GameObject>(Resources.Load<GameObject>("PreFabs/Item/" + npc.itemBaseName));
                     realNPC.name = npc.name;
                 }
                 else
@@ -107,8 +109,12 @@ public static class StorageManager
             realNPC.transform.position = new Vector3(npc.position[0], npc.position[1], realNPC.transform.position.z);
             realNPC.transform.rotation = new Quaternion(npc.rotation[0], npc.rotation[1], npc.rotation[2], npc.rotation[3]);
 
-            QuestGiver questContainer = realNPC.GetComponent<QuestGiver>();
-            questContainer.currentStateIndex = npc.questIndex;
+            
+            if (npc.questIndex != -1)
+            {
+                QuestGiver questContainer = realNPC.GetComponent<QuestGiver>();
+                questContainer.currentStateIndex = npc.questIndex;
+            }
         }
 
         foreach (PlayerItemData player in gameData.players)
@@ -116,9 +122,9 @@ public static class StorageManager
             GameObject realPlayer = GameObject.Find(player.name);
             if (realPlayer == null)
             {
-                if (player.itemBase != null)
+                if (player.itemBaseName != null)
                 {
-                    realPlayer = GameObject.Instantiate<GameObject>(Resources.Load<GameObject>("PreFabs/Item/" + player.itemBase));
+                    realPlayer = GameObject.Instantiate<GameObject>(Resources.Load<GameObject>("PreFabs/Item/" + player.itemBaseName));
                     realPlayer.name = player.name;
                 }
                 else
@@ -151,16 +157,17 @@ public static class StorageManager
 [Serializable]
 public class GameData {
 
-    public String sceneBase;
+    public String sceneBaseName;
     public List<ItemData> items = new List<ItemData>();
     public List<NPCItemData> npcs = new List<NPCItemData>();
     public List<PlayerItemData> players = new List<PlayerItemData>();
 
-    public GameData(String sceneBase)
+    public GameData()
     {
-        this.sceneBase = sceneBase;
-        foreach(Item item in GameObject.FindObjectsOfType<Item>())
+        this.sceneBaseName = SceneManager.GetActiveScene().name;
+        foreach(Item item in FindAllItems())
         {
+            //Debug.Log(item.name+": "+item.gameObject.activeSelf);
             if(item is NPC)
             {
                 //Debug.Log("NPC - " +item.name);
@@ -179,23 +186,32 @@ public class GameData {
         }
     }
 
+    private static List<Item> FindAllItems()
+    {
+        List<Item> results = new List<Item>();
+        new List<GameObject>(SceneManager.GetActiveScene().GetRootGameObjects()).ForEach(g => results.AddRange(g.GetComponentsInChildren<Item>(true)));
+        return results;
+    }
+
 }
 
 [Serializable]
 public class ItemData
 {
     public String name;
-    public String itemBase;
+    public String itemBaseName;
     public float[] position;
     public float[] rotation;
+    public bool disabled;
 
     public ItemData(Item item)
     {
         name = item.name;
         if (item.itemBasePrefab != null)
         {
-            itemBase = item.itemBasePrefab.name;
+            itemBaseName = item.itemBasePrefab.name;
         }
+        disabled = !item.gameObject.activeInHierarchy;
         position = new float[] { item.transform.position.x, item.transform.position.y };
         rotation = new float[] { item.transform.rotation.x, item.transform.rotation.y, item.transform.rotation.z, item.transform.rotation.w };
     }

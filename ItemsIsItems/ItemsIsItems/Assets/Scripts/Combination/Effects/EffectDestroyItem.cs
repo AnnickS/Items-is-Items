@@ -7,7 +7,7 @@ public class EffectDestroyItem : Effect
 {
     public override void Execute(Item sender, Item interactor)
     {
-        Destroy(interactor.gameObject);
+        interactor.gameObject.SetActive(false);
     }
 
     public override bool IsInitialized()
