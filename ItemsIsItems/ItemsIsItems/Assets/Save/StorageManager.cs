@@ -7,6 +7,7 @@ using UnityEngine.SceneManagement;
 
 public static class StorageManager
 {
+    private const String PREFABFILEPATH = "PreFabs";
     private static String FileToLoad;
 
     public static void SaveGameData()
@@ -76,8 +77,15 @@ public static class StorageManager
             {
                 if(item.itemBaseName != null)
                 {
-                    realItem = GameObject.Instantiate<GameObject>(Resources.Load<GameObject>("PreFabs/Item/" + item.itemBaseName));
-                    realItem.name = item.name;
+                    try
+                    {
+                        realItem = GameObject.Instantiate<GameObject>(Resources.Load<GameObject>(PREFABFILEPATH+"/Item/" + item.itemBaseName));
+                        realItem.name = item.name;
+                    }
+                    catch(ArgumentException ex)
+                    {
+                        Debug.LogError("Failed to load '" + item.name+"': '" + item.itemBaseName + "' does not exist in ");
+                    }
                 }
                 else
                 {
@@ -97,8 +105,14 @@ public static class StorageManager
             {
                 if (npc.itemBaseName != null)
                 {
-                    realNPC = GameObject.Instantiate<GameObject>(Resources.Load<GameObject>("PreFabs/Item/" + npc.itemBaseName));
-                    realNPC.name = npc.name;
+                    try { 
+                        realNPC = GameObject.Instantiate<GameObject>(Resources.Load<GameObject>(PREFABFILEPATH+"/NPC/" + npc.itemBaseName));
+                        realNPC.name = npc.name;
+                    }
+                    catch (ArgumentException ex)
+                    {
+                        Debug.LogError("Failed to load '" + npc.name + "': '" + npc.itemBaseName + "' does not exist in ");
+                    }
                 }
                 else
                 {
@@ -124,7 +138,7 @@ public static class StorageManager
             {
                 if (player.itemBaseName != null)
                 {
-                    realPlayer = GameObject.Instantiate<GameObject>(Resources.Load<GameObject>("PreFabs/Item/" + player.itemBaseName));
+                    realPlayer = GameObject.Instantiate<GameObject>(Resources.Load<GameObject>("PreFabs/" + player.itemBaseName));
                     realPlayer.name = player.name;
                 }
                 else
