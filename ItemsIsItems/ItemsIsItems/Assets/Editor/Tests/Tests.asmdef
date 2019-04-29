@@ -1,0 +1,12 @@
+{
+    "name": "Tests",
+    "references": [
+        "Scripts"
+    ],
+    "optionalUnityReferences": [
+        "TestAssemblies"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false
+}
