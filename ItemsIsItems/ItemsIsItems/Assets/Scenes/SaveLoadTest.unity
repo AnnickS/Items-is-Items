@@ -343,6 +343,23 @@ Prefab:
       propertyPath: m_Name
       value: Rose (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 114196809215396984, guid: 53078ca4093931040b60ed4a59fa9f1e,
+        type: 2}
+      propertyPath: itemBasePrefab
+      value: 
+      objectReference: {fileID: 1637548426560836, guid: 53078ca4093931040b60ed4a59fa9f1e,
+        type: 2}
+    - target: {fileID: 212046299132820880, guid: 53078ca4093931040b60ed4a59fa9f1e,
+        type: 2}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 78562ce704c542247bbbb32110f71ab8,
+        type: 3}
+    - target: {fileID: 212046299132820880, guid: 53078ca4093931040b60ed4a59fa9f1e,
+        type: 2}
+      propertyPath: m_WasSpriteAssigned
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 53078ca4093931040b60ed4a59fa9f1e, type: 2}
   m_IsPrefabParent: 0
@@ -590,6 +607,23 @@ Prefab:
     - target: {fileID: 4949157221537090, guid: 53078ca4093931040b60ed4a59fa9f1e, type: 2}
       propertyPath: m_RootOrder
       value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 114196809215396984, guid: 53078ca4093931040b60ed4a59fa9f1e,
+        type: 2}
+      propertyPath: itemBasePrefab
+      value: 
+      objectReference: {fileID: 1637548426560836, guid: 53078ca4093931040b60ed4a59fa9f1e,
+        type: 2}
+    - target: {fileID: 212046299132820880, guid: 53078ca4093931040b60ed4a59fa9f1e,
+        type: 2}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 78562ce704c542247bbbb32110f71ab8,
+        type: 3}
+    - target: {fileID: 212046299132820880, guid: 53078ca4093931040b60ed4a59fa9f1e,
+        type: 2}
+      propertyPath: m_WasSpriteAssigned
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 53078ca4093931040b60ed4a59fa9f1e, type: 2}
