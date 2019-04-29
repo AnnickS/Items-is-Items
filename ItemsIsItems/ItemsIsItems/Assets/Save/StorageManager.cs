@@ -221,9 +221,9 @@ public class ItemData
     public ItemData(Item item)
     {
         name = item.name;
-        if (item.itemBasePrefab != null)
+        if (String.IsNullOrEmpty(item.itemBaseName) == false)
         {
-            itemBaseName = item.itemBasePrefab.name;
+            itemBaseName = item.itemBaseName;
         }
         disabled = !item.gameObject.activeInHierarchy;
         position = new float[] { item.transform.position.x, item.transform.position.y };

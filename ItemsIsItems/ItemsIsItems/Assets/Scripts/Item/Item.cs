@@ -9,7 +9,7 @@ using UnityEngine;
 [Serializable]
 public class Item : MonoBehaviour
 {
-    public GameObject graphicalObj;
+    public String itemBaseName;
 
     public int onDragZ = -5;
     public Vector3 onDragScaleSize = new Vector3(1.3f, 1.3f, 1);
@@ -19,32 +19,22 @@ public class Item : MonoBehaviour
     public Inventory inventoryWithin;
     
     public bool isPickupable = true;
+    [HideInInspector]
     public bool drag;
     public bool multipleInteract = false;
     private List<Item> touching = new List<Item>();
 
+    public GameObject jail;
+
     [SerializeField]
     public List<Descriptor> Descriptors = new List<Descriptor>();
-
-    public GameObject jail;
 
     private BoxCollider2D boxCollider;
     private Rigidbody2D rb;
 
-    public GameObject itemBasePrefab = null;
-
     protected void Start()
     {
         gameObject.layer = LayerMask.NameToLayer("Foreground");
-        
-        if(transform.Find("Mesh") != null)
-        {
-            graphicalObj = transform.Find("Mesh").gameObject;
-        }
-        else
-        {
-            graphicalObj = gameObject;
-        }
 
         boxCollider = GetComponent<BoxCollider2D>();
         if(boxCollider == null)
