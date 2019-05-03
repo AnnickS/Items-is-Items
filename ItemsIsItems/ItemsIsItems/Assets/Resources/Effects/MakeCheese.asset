@@ -8,7 +8,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 143f8962c7ffe5d43a61e0896e276a41, type: 3}
-  m_Name: Cow
+  m_Script: {fileID: 11500000, guid: 23f09b28cae2d6a40acff9177e4a38f8, type: 3}
+  m_Name: MakeCheese
   m_EditorClassIdentifier: 
-  children: []
+  effects:
+  - {fileID: 11400000, guid: 24c7d626f5f0334499eb3a0601f53384, type: 2}
+  - {fileID: 11400000, guid: 8142bd5896256da4380f864fdb5f078d, type: 2}

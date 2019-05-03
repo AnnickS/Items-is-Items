@@ -8,8 +8,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7889e15cda6944b4c867f76933c5059f, type: 3}
-  m_Name: SpawnBucketMilk
+  m_Script: {fileID: 11500000, guid: 2052585f632854847a29788582e52c66, type: 3}
+  m_Name: ChurnerDescriptor
   m_EditorClassIdentifier: 
-  itemToSpawn: {fileID: 1277138342189178, guid: 0d8385717ef59794a9f7d4db083e6d15,
-    type: 2}
+  descriptor: {fileID: 11400000, guid: 5d32fd2a151a6e44a8a7286b24cef121, type: 2}

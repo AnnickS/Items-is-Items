@@ -9,7 +9,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 7889e15cda6944b4c867f76933c5059f, type: 3}
-  m_Name: SpawnBucketMilk
+  m_Name: SpawnCheese
   m_EditorClassIdentifier: 
-  itemToSpawn: {fileID: 1277138342189178, guid: 0d8385717ef59794a9f7d4db083e6d15,
+  itemToSpawn: {fileID: 1577010987143022, guid: 5ed6622eb8f3a0b42a83b40b10b79034,
     type: 2}

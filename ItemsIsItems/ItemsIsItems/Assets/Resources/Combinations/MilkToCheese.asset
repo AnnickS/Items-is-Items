@@ -9,8 +9,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c7c572a8d19548544abfe65b2612c124, type: 3}
-  m_Name: CutCheese
+  m_Name: MilkToCheese
   m_EditorClassIdentifier: 
-  itemValidator1: {fileID: 0}
-  itemValidator2: {fileID: 11400000, guid: b01dfb06dac98304ba84825655ab3b9d, type: 2}
-  effect: {fileID: 11400000, guid: a0290ead51272464484ad835d717c284, type: 2}
+  itemValidator1: {fileID: 11400000, guid: 82d0775904f3ccc42b818a7369800d5f, type: 2}
+  itemValidator2: {fileID: 11400000, guid: 93c18873ebefae146bbf59ddd84c06af, type: 2}
+  effect: {fileID: 11400000, guid: 7e1bbd58de5d11440881f4bf06bfa13d, type: 2}

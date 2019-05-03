@@ -5,7 +5,7 @@ using System.Text;
 using UnityEngine;
 
 
-[CreateAssetMenu(menuName = "Effects/SpawnAtSecond")]
+[CreateAssetMenu(menuName = "Effects/SpawnAtInteractor")]
 public class EffectSpawnItem : Effect {
 
     public GameObject itemToSpawn;
