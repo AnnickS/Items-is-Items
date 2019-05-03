@@ -1,0 +1,17 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 23f09b28cae2d6a40acff9177e4a38f8, type: 3}
+  m_Name: EffectGiveDuckToMommaDuck
+  m_EditorClassIdentifier: 
+  effects:
+  - {fileID: 11400000, guid: 29720ee8e5ae28f45919f846b8156e10, type: 2}
+  - {fileID: 11400000, guid: 5bc5c80198cbb3a4099e3492ef10db07, type: 2}
+  - {fileID: 11400000, guid: 45a5de2d3b7071a4c8fc449a082784a2, type: 2}
