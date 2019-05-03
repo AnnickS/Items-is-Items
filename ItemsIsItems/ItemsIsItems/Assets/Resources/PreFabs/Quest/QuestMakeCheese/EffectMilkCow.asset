@@ -8,7 +8,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2052585f632854847a29788582e52c66, type: 3}
-  m_Name: ChurnerDescriptor
+  m_Script: {fileID: 11500000, guid: 23f09b28cae2d6a40acff9177e4a38f8, type: 3}
+  m_Name: EffectMilkCow
   m_EditorClassIdentifier: 
-  descriptor: {fileID: 11400000, guid: 5d32fd2a151a6e44a8a7286b24cef121, type: 2}
+  effects:
+  - {fileID: 11400000, guid: 24c7d626f5f0334499eb3a0601f53384, type: 2}
+  - {fileID: 11400000, guid: d00570f522835ac40b4286b2d0717d16, type: 2}
