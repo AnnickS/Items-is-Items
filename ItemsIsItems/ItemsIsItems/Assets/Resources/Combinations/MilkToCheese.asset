@@ -1,0 +1,16 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c7c572a8d19548544abfe65b2612c124, type: 3}
+  m_Name: MilkToCheese
+  m_EditorClassIdentifier: 
+  itemValidator1: {fileID: 11400000, guid: 82d0775904f3ccc42b818a7369800d5f, type: 2}
+  itemValidator2: {fileID: 11400000, guid: 93c18873ebefae146bbf59ddd84c06af, type: 2}
+  effect: {fileID: 11400000, guid: 7e1bbd58de5d11440881f4bf06bfa13d, type: 2}
