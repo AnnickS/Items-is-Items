@@ -149,6 +149,12 @@ public class Item : MonoBehaviour
     }
     /**/
 
+
+    public void Destroy()
+    {
+        gameObject.SetActive(false);
+    }
+
     public List<Item> GetTouching()
     {
         Collider2D[] under = Physics2D.OverlapBoxAll(transform.position, (Vector2)GetComponent<Collider2D>().bounds.size / 2, transform.eulerAngles.z);

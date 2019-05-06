@@ -25,7 +25,7 @@ GameObject:
   - component: {fileID: 61821019130556170}
   - component: {fileID: 50983841304853948}
   m_Layer: 8
-  m_Name: Egg_Base
+  m_Name: WetMix_Base
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -100,7 +100,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 830a61b150f3ac24bbe0978249224c6c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemBaseName: Egg_Base
+  itemBaseName: WetMix_Base
   onDragZ: -5
   onDragScaleSize: {x: 1.3, y: 1.3, z: 1}
   inventoryWithin: {fileID: 0}
@@ -108,8 +108,7 @@ MonoBehaviour:
   drag: 0
   multipleInteract: 0
   jail: {fileID: 0}
-  Descriptors:
-  - {fileID: 11400000, guid: 03006dc2a9a46764c86ccf701af1b1b1, type: 2}
+  Descriptors: []
 --- !u!114 &114853476238258690
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -158,7 +157,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 5f145990c7db35845b02f3a52219f2fa, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 5384cf0162806e046a389d57f45e2b66, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0

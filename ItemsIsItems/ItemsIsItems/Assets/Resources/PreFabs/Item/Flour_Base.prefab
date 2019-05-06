@@ -108,7 +108,8 @@ MonoBehaviour:
   drag: 0
   multipleInteract: 0
   jail: {fileID: 0}
-  Descriptors: []
+  Descriptors:
+  - {fileID: 11400000, guid: 861324dab8bd9fc46a358f79e0afcd4f, type: 2}
 --- !u!114 &114853476238258690
 MonoBehaviour:
   m_ObjectHideFlags: 1
