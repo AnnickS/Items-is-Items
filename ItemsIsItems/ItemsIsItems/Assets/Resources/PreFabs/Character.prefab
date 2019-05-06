@@ -26,6 +26,7 @@ GameObject:
   - component: {fileID: 114460076621048274}
   - component: {fileID: 50753789717472714}
   - component: {fileID: 61646913019364822}
+  - component: {fileID: 61183874137853972}
   m_Layer: 10
   m_Name: Character
   m_TagString: Untagged
@@ -39,8 +40,8 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1095877137879606}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.6188997, y: 0.48860475, z: 0}
+  m_LocalRotation: {x: 0, y: 0, z: -0.17642309, w: 0.98431444}
+  m_LocalPosition: {x: 69.75176, y: -139.9353, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -62,11 +63,11 @@ Rigidbody2D:
   m_AngularDrag: 0.05
   m_GravityScale: 0
   m_Material: {fileID: 0}
-  m_Interpolate: 0
+  m_Interpolate: 2
   m_SleepingMode: 1
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
   m_Constraints: 0
---- !u!61 &61646913019364822
+--- !u!61 &61183874137853972
 BoxCollider2D:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -76,6 +77,31 @@ BoxCollider2D:
   m_Density: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 1.28, y: 1.28}
+    newSize: {x: 1.28, y: 1.28}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 1.28, y: 1.28}
+  m_EdgeRadius: 0
+--- !u!61 &61646913019364822
+BoxCollider2D:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1095877137879606}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
@@ -102,7 +128,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 96932bcc781ccb640abb46d40db74062, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 0.05
+  speed: 0.075
   moving: 0
   mouseButton: 0
 --- !u!114 &114460076621048274
@@ -116,14 +142,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b722b2df36ecc2f4e8cb897c50f7ea7c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  name: 
-  graphicalObj: {fileID: 0}
-  overObject: {fileID: 0}
+  itemBaseName: 
   onDragZ: -5
   onDragScaleSize: {x: 1.3, y: 1.3, z: 1}
-  inventory: {fileID: 0}
+  inventoryWithin: {fileID: 0}
   isPickupable: 1
   drag: 0
+  multipleInteract: 0
+  jail: {fileID: 0}
   Descriptors:
   - {fileID: 11400000, guid: f2f3269d45ef1d6408b5d583144caacd, type: 2}
 --- !u!114 &114546223294604956
