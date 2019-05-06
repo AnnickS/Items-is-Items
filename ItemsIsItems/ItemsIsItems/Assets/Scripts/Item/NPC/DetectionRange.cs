@@ -27,7 +27,7 @@ public class DetectionRange : MonoBehaviour {
             Transform ItemTransform = WithinCircle[i].transform;
 
             //Checks to see if object is an item that can be picked up
-            if ((ItemTransform.GetComponent<Item>() != null) && (ItemTransform.GetComponent<Item>().isPickupable))
+            if ((ItemTransform.GetComponent<Item>() != null))
             {
                 Vector2 DirItem = new Vector2(ItemTransform.position.x - transform.position.x, ItemTransform.position.y - transform.position.y);
 
