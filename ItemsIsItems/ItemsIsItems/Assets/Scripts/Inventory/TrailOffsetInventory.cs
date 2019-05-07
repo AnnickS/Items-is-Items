@@ -5,8 +5,6 @@ using UnityEngine;
 public class TrailOffsetInventory : Inventory
 {
     public float speed = 10;
-    private Dictionary<int, Item> selectedItems = new Dictionary<int, Item>();
-
     public float distance = 1;
     public float segmentSize = 0.1f;
     private List<Vector3> points = new List<Vector3>();

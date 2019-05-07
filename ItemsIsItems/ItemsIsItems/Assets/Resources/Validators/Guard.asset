@@ -11,4 +11,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2052585f632854847a29788582e52c66, type: 3}
   m_Name: Guard
   m_EditorClassIdentifier: 
-  descriptor: {fileID: 0}
+  descriptor: {fileID: 11400000, guid: ecbfbcb7e0429af44825c906c2781bae, type: 2}

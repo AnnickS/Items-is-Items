@@ -33,11 +33,15 @@ public class Combination : ScriptableObject
     
     public void Execute(Item item1, Item item2)
     {
-        effect.Execute(item1, item2);
-        //Debug.Log("Executed "+name);
+        if (itemValidator1.ValidateItem(item1) && itemValidator2.ValidateItem(item2)){
+            effect.Execute(item1, item2);
+        }
+        else if (itemValidator1.ValidateItem(item2) && itemValidator2.ValidateItem(item1))
+        {
+            effect.Execute(item2, item1);
+        }
         if (CombinationEvent != null)
         {
-            //Debug.Log("Invoke");
             CombinationEvent.Invoke();            
         }
     }
@@ -65,7 +69,7 @@ public class Combination : ScriptableObject
         {
             return itemValidator1.IsInitialized() && itemValidator2.IsInitialized() && effect.IsInitialized();
         }
-        catch (Exception e)
+        catch (Exception)
         {
             return false;
         }

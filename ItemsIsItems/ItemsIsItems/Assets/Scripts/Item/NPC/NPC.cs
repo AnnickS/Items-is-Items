@@ -15,7 +15,7 @@ public class NPC : CollidableItem {
 
 
 	// Use this for initialization
-	void Start ()
+	new void Start ()
     {
         base.Start();
         gameObject.layer = 9;

@@ -10,7 +10,7 @@ public class RotateTowardPosition : MonoBehaviour
     {
         Vector2 currentPosition = new Vector2(transform.position.x, transform.position.y);
 
-        if (currentTargetPosition == targetPosition || targetPosition == null || targetPosition.Equals(currentPosition))
+        if (currentTargetPosition == targetPosition || targetPosition.Equals(currentPosition))
         {
             return;
         }

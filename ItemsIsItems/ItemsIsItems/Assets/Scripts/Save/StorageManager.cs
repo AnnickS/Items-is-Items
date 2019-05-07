@@ -82,7 +82,7 @@ public static class StorageManager
                         realItem = GameObject.Instantiate<GameObject>(Resources.Load<GameObject>(PREFABFILEPATH+"/Item/" + item.itemBaseName));
                         realItem.name = item.name;
                     }
-                    catch(ArgumentException ex)
+                    catch(ArgumentException)
                     {
                         Debug.LogError("Failed to load '" + item.name+"': '" + item.itemBaseName + "' does not exist in ");
                     }
@@ -109,7 +109,7 @@ public static class StorageManager
                         realNPC = GameObject.Instantiate<GameObject>(Resources.Load<GameObject>(PREFABFILEPATH+"/NPC/" + npc.itemBaseName));
                         realNPC.name = npc.name;
                     }
-                    catch (ArgumentException ex)
+                    catch (ArgumentException)
                     {
                         Debug.LogError("Failed to load '" + npc.name + "': '" + npc.itemBaseName + "' does not exist in ");
                     }

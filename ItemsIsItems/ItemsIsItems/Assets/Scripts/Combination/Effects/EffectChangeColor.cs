@@ -16,6 +16,6 @@ public class EffectChangeColor : Effect {
 
     public override bool IsInitialized()
     {
-        return color != null;
+        return true; //Unity-Color is always not null // color != null;
     }
 }

@@ -9,9 +9,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 2153d6c733cab484fbfa0a1572d5b132, type: 3}
-  m_Name: CraftWetMix
+  m_Name: CraftRawCake
   m_EditorClassIdentifier: 
   deleteItem1: 1
   deleteItem2: 1
   itemsToSpawn:
-  - {fileID: 1637548426560836, guid: 1ee386ecb271518469721338f69995c3, type: 2}
+  - {fileID: 1637548426560836, guid: 3d0c0b6a517c40540a9069db95ef194c, type: 2}
+  - {fileID: 1637548426560836, guid: 39c2834c8030ee3408b4fc61d7d9aa49, type: 2}

@@ -12,8 +12,7 @@ public class EffectSpawnItem : Effect {
 
     public override void Execute(Item sender, Item interactor)
     {
-        GameObject item = GameObject.Instantiate<GameObject>(itemToSpawn);
-        item.transform.position = interactor.transform.position;
+        GameManager.Instance.SpawnItem(itemToSpawn, interactor.transform.position, Quaternion.identity);
     }
 
     public override bool IsInitialized()

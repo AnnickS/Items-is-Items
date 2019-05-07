@@ -10,7 +10,7 @@ public class Player : CollidableItem, Respawnable
 
     Vector3 startPosition;
 
-    void Start()
+    new void Start()
     {
         base.Start();
         gameObject.layer = 10;

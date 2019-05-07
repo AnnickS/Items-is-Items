@@ -6,7 +6,6 @@ using UnityEngine;
 public class QuestStateQuest : QuestStateDialog
 {
     public Combination combination;
-    bool isDone = false;
 
     public override void Initialize(GameObject questGiver)
     {

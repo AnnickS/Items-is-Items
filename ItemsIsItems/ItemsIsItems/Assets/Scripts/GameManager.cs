@@ -36,6 +36,12 @@ public class GameManager : MonoBehaviour
         }
     }
 
+    public void SpawnItem(GameObject itemPrefab, Vector3 position, Quaternion rotation)
+    {
+        GameObject newItem = Instantiate(itemPrefab, position, rotation);
+        newItem.GetComponent<Item>().itemBaseName = itemPrefab.name;
+    }
+
     public bool ExecuteInteraction(Item item1, Item item2)
     {
         bool interacted = false;

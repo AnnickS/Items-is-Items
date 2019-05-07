@@ -10,7 +10,7 @@ public class EffectSpawn : Effect
 
     public override void Execute(Item sender, Item interactor)
     {
-        GameObject.Instantiate(prefab, targetItemPosition.transform.position, Quaternion.identity);
+        GameManager.Instance.SpawnItem(prefab, targetItemPosition.transform.position, Quaternion.identity);
     }
 
     public override bool IsInitialized()

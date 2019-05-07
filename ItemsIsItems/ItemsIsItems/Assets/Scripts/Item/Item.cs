@@ -9,6 +9,7 @@ using UnityEngine;
 [Serializable]
 public class Item : MonoBehaviour
 {
+    [HideInInspector]
     public String itemBaseName;
 
     public int onDragZ = -5;
@@ -22,7 +23,6 @@ public class Item : MonoBehaviour
     [HideInInspector]
     public bool drag;
     public bool multipleInteract = false;
-    private List<Item> touching = new List<Item>();
 
     public GameObject jail;
 

@@ -38,7 +38,7 @@ public class QuestDialogPopupTest
     {
         GameObject questObject = MonoBehaviour.Instantiate(Resources.Load<GameObject>("ExampleQuest"));
         QuestGiver quest = questObject.GetComponent<QuestGiver>();
-        DialogPopup popup = questObject.GetComponentInChildren<DialogPopup>();
+        //DialogPopup popup = questObject.GetComponentInChildren<DialogPopup>();
         yield return null;
         int count = quest.GetComponentsInChildren<QuestState>().Length;
 
