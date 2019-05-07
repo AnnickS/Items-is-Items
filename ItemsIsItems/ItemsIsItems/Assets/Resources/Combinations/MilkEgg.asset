@@ -11,6 +11,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c7c572a8d19548544abfe65b2612c124, type: 3}
   m_Name: MilkEgg
   m_EditorClassIdentifier: 
-  itemValidator1: {fileID: 11400000, guid: 809c01d73d026424c9e480a0f062077c, type: 2}
+  itemValidator1: {fileID: 11400000, guid: 93c18873ebefae146bbf59ddd84c06af, type: 2}
   itemValidator2: {fileID: 11400000, guid: 94fdb9fed4244d642bdcbba1824aa178, type: 2}
-  effect: {fileID: 0}
+  effect: {fileID: 11400000, guid: ead52a026e5bd5e4f8b6c401c3612cfd, type: 2}

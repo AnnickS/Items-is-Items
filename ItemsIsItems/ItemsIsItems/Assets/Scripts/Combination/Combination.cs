@@ -27,7 +27,8 @@ public class Combination : ScriptableObject
 
     public bool IsMatch(Item item1, Item item2)
     {
-        return (itemValidator1.ValidateItem(item1) && itemValidator2.ValidateItem(item2));
+        return (itemValidator1.ValidateItem(item1) && itemValidator2.ValidateItem(item2) 
+            || itemValidator1.ValidateItem(item2) && itemValidator2.ValidateItem(item1));
     }
     
     public void Execute(Item item1, Item item2)
