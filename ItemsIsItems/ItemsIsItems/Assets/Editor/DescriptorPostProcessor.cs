@@ -54,14 +54,19 @@ public class DescriptorPostProcessor : AssetPostprocessor {
             if (str.Contains("/Descriptors/")) {
                 int startIndex = str.LastIndexOf('/') + 1;
                 string filename = str.Substring(startIndex, str.Length - startIndex - 6);
+                Descriptor des = AssetDatabase.LoadAssetAtPath<Descriptor>("Assets/Resources/Descriptors/" + filename + ".asset");
                 DescriptorValidator val = AssetDatabase.LoadAssetAtPath<DescriptorValidator>("Assets/Resources/Validators/" + filename + ".asset");
                 if(val == null)
                 {
                     DescriptorValidator newVal = DescriptorValidator.CreateInstance<DescriptorValidator>();
-                    Descriptor des = AssetDatabase.LoadAssetAtPath<Descriptor>("Assets/Resources/Descriptors/" + filename + ".asset");
                     newVal.descriptor = des;
                     AssetDatabase.CreateAsset(newVal, "Assets/Resources/Validators/" + filename + ".asset");
                     Debug.Log("DescriptorValidator " + filename + " created");
+                }
+                else if(val.descriptor != des)
+                {
+                    val.descriptor = des;
+                    Debug.Log("DescriptorValidator " + filename + " updated");
                 }
             }
         }

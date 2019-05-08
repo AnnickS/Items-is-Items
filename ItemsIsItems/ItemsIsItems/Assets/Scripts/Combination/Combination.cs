@@ -32,7 +32,10 @@ public class Combination : ScriptableObject
     
     public void Execute(Item item1, Item item2)
     {
-        effect.Execute(item1, item2);
+        if (effect != null)
+        {
+            effect.Execute(item1, item2);
+        }
         if (CombinationEvent != null)
         {
             CombinationEvent.Invoke();            
@@ -60,7 +63,7 @@ public class Combination : ScriptableObject
     {
         try
         {
-            return itemValidator1.IsInitialized() && itemValidator2.IsInitialized() && effect.IsInitialized();
+            return itemValidator1.IsInitialized() && itemValidator2.IsInitialized() && (effect == null || effect.IsInitialized());
         }
         catch (Exception)
         {
