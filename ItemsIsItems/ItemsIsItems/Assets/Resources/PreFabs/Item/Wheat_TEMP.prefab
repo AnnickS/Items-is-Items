@@ -87,7 +87,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.0001, y: 0.0001}
+  m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
 --- !u!114 &114709992743838326
 MonoBehaviour:
@@ -121,7 +121,8 @@ MonoBehaviour:
   drag: 0
   multipleInteract: 0
   jail: {fileID: 0}
-  Descriptors: []
+  Descriptors:
+  - {fileID: 11400000, guid: 516ef8a6b9b8c5c42b49848cdc4e8e8b, type: 2}
 --- !u!212 &212528702380099012
 SpriteRenderer:
   m_ObjectHideFlags: 1

@@ -113,6 +113,9 @@ public class GameManager : MonoBehaviour
                         rb.interpolation = RigidbodyInterpolation2D.Extrapolate;
                         rb.collisionDetectionMode = CollisionDetectionMode2D.Continuous;
 
+                        BoxCollider2D coll = newPrefab.GetComponent<BoxCollider2D>();
+                        coll.size = new Vector2(1, 1);
+
                         Sprite sprite = AssetDatabase.LoadAssetAtPath<Sprite>("Assets/Art/" + texture.name + ".png");
                         newPrefab.GetComponent<SpriteRenderer>().sprite = sprite;
 
@@ -131,6 +134,9 @@ public class GameManager : MonoBehaviour
             Rigidbody2D rb = newPrefab.GetComponent<Rigidbody2D>();
             rb.interpolation = RigidbodyInterpolation2D.Extrapolate;
             rb.collisionDetectionMode = CollisionDetectionMode2D.Continuous;
+
+            BoxCollider2D coll = newPrefab.GetComponent<BoxCollider2D>();
+            coll.size = new Vector2(1, 1);
 
             Selection.activeObject = newPrefab;
             Debug.Log("NewItem Created!");
@@ -158,6 +164,9 @@ public class GameManager : MonoBehaviour
                         rb.interpolation = RigidbodyInterpolation2D.Extrapolate;
                         rb.collisionDetectionMode = CollisionDetectionMode2D.Continuous;
 
+                        BoxCollider2D coll = newPrefab.GetComponent<BoxCollider2D>();
+                        coll.size = new Vector2(1, 1);
+
                         DetectionRange detector = newPrefab.GetComponent<DetectionRange>();
                         detector.TargetMask = (1 << LayerMask.NameToLayer("Foreground")) | (1 << LayerMask.NameToLayer("Player")) | (1 << LayerMask.NameToLayer("NPC"));
                         detector.ObstacleMask = (1 << LayerMask.NameToLayer("BoundaryTiles"));
@@ -180,6 +189,9 @@ public class GameManager : MonoBehaviour
             Rigidbody2D rb = newPrefab.GetComponent<Rigidbody2D>();
             rb.interpolation = RigidbodyInterpolation2D.Extrapolate;
             rb.collisionDetectionMode = CollisionDetectionMode2D.Continuous;
+
+            BoxCollider2D coll = newPrefab.GetComponent<BoxCollider2D>();
+            coll.size = new Vector2(1, 1);
 
             Selection.activeObject = newPrefab;
             Debug.Log("NewNPC Created!");
