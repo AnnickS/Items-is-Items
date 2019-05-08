@@ -160,6 +160,9 @@ public class GameManager : MonoBehaviour
                         newPrefab.AddComponent<NPC>();
                         newPrefab.layer = LayerMask.NameToLayer("NPC");
 
+                        NPC npc = newPrefab.GetComponent<NPC>();
+                        npc.isPickupable = false;
+
                         Rigidbody2D rb = newPrefab.GetComponent<Rigidbody2D>();
                         rb.interpolation = RigidbodyInterpolation2D.Extrapolate;
                         rb.collisionDetectionMode = CollisionDetectionMode2D.Continuous;
@@ -186,6 +189,9 @@ public class GameManager : MonoBehaviour
             newPrefab.AddComponent<NPC>();
             newPrefab.layer = LayerMask.NameToLayer("NPC");
 
+            NPC npc = newPrefab.GetComponent<NPC>();
+            npc.isPickupable = false;
+
             Rigidbody2D rb = newPrefab.GetComponent<Rigidbody2D>();
             rb.interpolation = RigidbodyInterpolation2D.Extrapolate;
             rb.collisionDetectionMode = CollisionDetectionMode2D.Continuous;
@@ -211,6 +217,9 @@ public class GameManager : MonoBehaviour
                 dialogPopup.name = "DialogPopup";
                 GameObject statelist = new GameObject("QuestStates");
                 statelist.transform.SetParent(obj.transform);
+                GameObject starter = new GameObject("Quest_Name_Here");
+                starter.AddComponent<QuestStateQuest>().text = "NPC_Text_Here";
+                starter.transform.SetParent(statelist.transform);
             }            
         }
     }
