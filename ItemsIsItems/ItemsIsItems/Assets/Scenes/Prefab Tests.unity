@@ -359,6 +359,11 @@ Prefab:
       propertyPath: m_Constraints
       value: 7
       objectReference: {fileID: 0}
+    - target: {fileID: 114976684400626712, guid: bbff4269b5df6aa4b952dea3d56f6900,
+        type: 2}
+      propertyPath: goestToBase
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: bbff4269b5df6aa4b952dea3d56f6900, type: 2}
   m_IsPrefabParent: 0
@@ -410,6 +415,16 @@ Prefab:
         type: 2}
       propertyPath: isPickupable
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114128205298660918, guid: e86bf148fce6b5b4993fef83dafaa0ed,
+        type: 2}
+      propertyPath: goestToBase
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114128205298660918, guid: e86bf148fce6b5b4993fef83dafaa0ed,
+        type: 2}
+      propertyPath: goesToBase
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: e86bf148fce6b5b4993fef83dafaa0ed, type: 2}
