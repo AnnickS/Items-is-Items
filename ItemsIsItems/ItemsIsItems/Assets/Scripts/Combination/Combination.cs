@@ -32,6 +32,8 @@ public class Combination : ScriptableObject
     
     public void Execute(Item item1, Item item2)
     {
+        Debug.Log("Item 1: " + item1.name + "  Item 2: " + item2.name);
+
         if (effect != null)
         {
             effect.Execute(item1, item2);
