@@ -18,7 +18,7 @@ public class NPC : CollidableItem {
 	new void Start ()
     {
         base.Start();
-        gameObject.layer = 9;
+        gameObject.layer = LayerMask.NameToLayer("NPC");
         Target = gameObject.GetComponent<NPCTarget>();
         Rotation = gameObject.GetComponent<Rotate>();
         CurrentTarget = transform.position;

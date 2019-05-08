@@ -3,10 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class DetectionRange : MonoBehaviour {
-    [SerializeField]
-    private LayerMask TargetMask;
-    [SerializeField]
-    private LayerMask ObstacleMask;
+    public LayerMask TargetMask;
+    public LayerMask ObstacleMask;
     public Collider2D[] WithinCircle;
     public List<Item> WithinView;
     public List<Item> WithinSmell;
