@@ -14,8 +14,8 @@ public class NPC : CollidableItem {
     public bool isWaiting = false;
 
 
-	// Use this for initialization
-	new void Start ()
+    // Use this for initialization
+    new void Start ()
     {
         base.Start();
         gameObject.layer = LayerMask.NameToLayer("NPC");
