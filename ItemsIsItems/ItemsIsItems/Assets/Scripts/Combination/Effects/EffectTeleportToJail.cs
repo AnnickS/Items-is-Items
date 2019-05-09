@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 
-[CreateAssetMenu(menuName = "Effects/Teleport")]
-public class TeleportEffect : Effect
+[CreateAssetMenu(menuName = "Effects/EffectTeleportToJail")]
+public class EffectTeleportToJail : Effect
 {
     public override void Execute(Item sender, Item interactor)
     {

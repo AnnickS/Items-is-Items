@@ -12,7 +12,7 @@ public class NPCTests
     [UnityTest]
     public IEnumerator InstantiateNPCTest()
     {
-        GameObject npc = MonoBehaviour.Instantiate(Resources.Load<GameObject>("NPCCharacter"), new Vector3(0, 0, 0), new Quaternion());
+        GameObject npc = MonoBehaviour.Instantiate(Resources.Load<GameObject>("PreFabs/NPC/NPC_Base"), new Vector3(0, 0, 0), new Quaternion());
         Assert.IsNotNull(npc);
         MonoBehaviour.Destroy(npc);
         yield return null;
