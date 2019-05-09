@@ -7,10 +7,11 @@ using TMPro;
 
 public class QuestStatesTest
 {
+
     [Test]
     public void ExampleQuestIsNotNull()
     {
-        GameObject quest = MonoBehaviour.Instantiate(Resources.Load<GameObject>("ExampleQuest"));
+        GameObject quest = MonoBehaviour.Instantiate(Resources.Load<GameObject>("PreFabs/ForTests/TestPrefabForQuestStatesTest"));
         Assert.NotNull(quest);
         MonoBehaviour.Destroy(quest);
     }
@@ -19,7 +20,7 @@ public class QuestStatesTest
     public void ExampleQuestQuestComponentIsNotNull()
     {
 
-        GameObject quest = MonoBehaviour.Instantiate(Resources.Load<GameObject>("ExampleQuest"));
+        GameObject quest = MonoBehaviour.Instantiate(Resources.Load<GameObject>("PreFabs/ForTests/TestPrefabForQuestStatesTest"));
         QuestGiver questComponent = quest.GetComponent<QuestGiver>();
         Assert.NotNull(questComponent);
         MonoBehaviour.Destroy(quest);
@@ -29,14 +30,14 @@ public class QuestStatesTest
     public void ExampleQuestDialogIsNotNull()
     {
 
-        GameObject quest = MonoBehaviour.Instantiate(Resources.Load<GameObject>("ExampleQuest"));
+        GameObject quest = MonoBehaviour.Instantiate(Resources.Load<GameObject>("PreFabs/ForTests/TestPrefabForQuestStatesTest"));
         Dialog dialog = quest.GetComponentInChildren<Dialog>();
         Assert.NotNull(dialog);
         MonoBehaviour.Destroy(quest);
     }
 
     [Test]
-    public void test()
+    public void GoesToNextQuestState()
     {
         GameObject questGiver = new GameObject();
         GameObject dialog = new GameObject();
