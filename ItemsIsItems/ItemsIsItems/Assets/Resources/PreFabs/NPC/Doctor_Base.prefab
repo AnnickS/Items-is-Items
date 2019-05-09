@@ -397,6 +397,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   text: You want to heal your dog? Give me herbs, I can make him medicine!
   combination: {fileID: 11400000, guid: 7edeeda621b526749bd323900aea0b80, type: 2}
+  isDone: 0
 --- !u!114 &114594664226793804
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -611,6 +612,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: f79ef1d2fe284be459e639477173757e, type: 2}
   HostileTo: []
   Target: {x: 0, y: 0}
+  goestToBase: 1
 --- !u!212 &212344828694448036
 SpriteRenderer:
   m_ObjectHideFlags: 1

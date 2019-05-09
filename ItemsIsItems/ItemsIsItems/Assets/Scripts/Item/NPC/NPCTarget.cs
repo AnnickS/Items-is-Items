@@ -17,6 +17,7 @@ public class NPCTarget : MonoBehaviour {
     public Vector2 Target;
     private Vector2 Base;
     Descriptor smelly;
+    public bool goesToBase = true;
 
     // Use this for initialization
     void Start () {
@@ -100,6 +101,12 @@ public class NPCTarget : MonoBehaviour {
             }
         }
 
-        return Base;
+        if(goesToBase)
+        {
+            return Base;
+        } else
+        {
+            return new Vector2(this.transform.position.x, this.transform.position.y);
+        }
     }
 }
