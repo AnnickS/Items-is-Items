@@ -155,7 +155,7 @@ Transform:
   m_GameObject: {fileID: 1984755469874816}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -2.7991545, y: -1.232734, z: 4.877459}
-  m_LocalScale: {x: 3, y: 3, z: 1}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4778535774314416}
   m_RootOrder: 4
@@ -194,7 +194,7 @@ Transform:
   m_GameObject: {fileID: 1639999929379792}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0.20886397, y: 0.15263176, z: 4.877459}
-  m_LocalScale: {x: 3, y: 3, z: 1}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4778535774314416}
   m_RootOrder: 1
@@ -358,7 +358,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 0.32, y: 0.32}
+    oldSize: {x: 1, y: 1}
     newSize: {x: 0.32, y: 0.32}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -553,6 +553,7 @@ MonoBehaviour:
   ScaredOf: []
   HostileTo: []
   Target: {x: 0, y: 0}
+  goesToBase: 1
 --- !u!114 &114256110563286574
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -617,6 +618,7 @@ MonoBehaviour:
   ScaredOf: []
   HostileTo: []
   Target: {x: 0, y: 0}
+  goesToBase: 1
 --- !u!114 &114393613723742034
 MonoBehaviour:
   m_ObjectHideFlags: 1
