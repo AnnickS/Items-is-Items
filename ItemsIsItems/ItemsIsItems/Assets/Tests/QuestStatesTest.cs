@@ -39,18 +39,12 @@ public class QuestStatesTest
     [Test]
     public void GoesToNextQuestState()
     {
-        GameObject questGiver = new GameObject();
-        GameObject dialog = new GameObject();
-        GameObject textMesh = new GameObject();
+        GameObject quest = MonoBehaviour.Instantiate(Resources.Load<GameObject>("PreFabs/ForTests/TestPrefabForQuestStatesTest"));
+        Dialog dialog = quest.GetComponentInChildren<Dialog>();
 
-        dialog.transform.parent = questGiver.transform;
-        textMesh.transform.parent = dialog.transform;
+        Assert.NotNull(dialog);
 
-        textMesh.AddComponent<TextMeshPro>();
-        dialog.AddComponent<DialogPopup>();
-        questGiver.AddComponent<QuestGiver>();
-
-        MonoBehaviour.Destroy(questGiver);
+        MonoBehaviour.Destroy(quest);
     }
 
 }
