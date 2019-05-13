@@ -9,6 +9,6 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 2052585f632854847a29788582e52c66, type: 3}
-  m_Name: Cheese
+  m_Name: Duck
   m_EditorClassIdentifier: 
-  descriptor: {fileID: 11400000, guid: 2db99555ce83c4947a3dc75e69aa4a3b, type: 2}
+  descriptor: {fileID: 11400000, guid: de0cca9761765e348a261b23ee608e97, type: 2}
