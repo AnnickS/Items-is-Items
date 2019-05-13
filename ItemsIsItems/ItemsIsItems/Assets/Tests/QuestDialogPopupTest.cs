@@ -5,10 +5,18 @@ using System.Collections;
 
 public class QuestDialogPopupTest
 {
+    [Test]
+    public void ExampleQuestIsNotNull()
+    {
+        GameObject quest = MonoBehaviour.Instantiate(Resources.Load<GameObject>("PreFabs/ForTests/TestPrefabForQuestDialogPopupTest"));
+        Assert.NotNull(quest);
+        MonoBehaviour.Destroy(quest);
+    }
+
     [UnityTest]
     public IEnumerator DialogPopupStartsHidden()
     {
-        GameObject questObject = MonoBehaviour.Instantiate(Resources.Load<GameObject>("ExampleQuest"));
+        GameObject questObject = MonoBehaviour.Instantiate(Resources.Load<GameObject>("PreFabs/ForTests/TestPrefabForQuestDialogPopupTest"));
         DialogPopup popup = questObject.GetComponentInChildren<DialogPopup>();
         yield return null;
         bool isActive = popup.isActiveAndEnabled;
@@ -20,7 +28,7 @@ public class QuestDialogPopupTest
     [UnityTest]
     public IEnumerator DialogPopupShowsOnQuestClicked()
     {
-        GameObject questObject = MonoBehaviour.Instantiate(Resources.Load<GameObject>("ExampleQuest"));
+        GameObject questObject = MonoBehaviour.Instantiate(Resources.Load<GameObject>("PreFabs/ForTests/TestPrefabForQuestDialogPopupTest"));
         QuestGiver quest = questObject.GetComponent<QuestGiver>();
         DialogPopup popup = questObject.GetComponentInChildren<DialogPopup>();
         yield return null;
@@ -36,7 +44,7 @@ public class QuestDialogPopupTest
     [UnityTest]
     public IEnumerator QuestHasStates()
     {
-        GameObject questObject = MonoBehaviour.Instantiate(Resources.Load<GameObject>("ExampleQuest"));
+        GameObject questObject = MonoBehaviour.Instantiate(Resources.Load<GameObject>("PreFabs/ForTests/TestPrefabForQuestDialogPopupTest"));
         QuestGiver quest = questObject.GetComponent<QuestGiver>();
         //DialogPopup popup = questObject.GetComponentInChildren<DialogPopup>();
         yield return null;
@@ -49,7 +57,7 @@ public class QuestDialogPopupTest
     [UnityTest]
     public IEnumerator DialogPopupTextEqualInitialState()
     {
-        GameObject questObject = MonoBehaviour.Instantiate(Resources.Load<GameObject>("ExampleQuest"));
+        GameObject questObject = MonoBehaviour.Instantiate(Resources.Load<GameObject>("PreFabs/ForTests/TestPrefabForQuestDialogPopupTest"));
         QuestGiver quest = questObject.GetComponent<QuestGiver>();
         DialogPopup popup = questObject.GetComponentInChildren<DialogPopup>();
         yield return null;
