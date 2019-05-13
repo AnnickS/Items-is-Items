@@ -156,34 +156,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   timeOnScreen: 1
---- !u!1 &53027935
-GameObject:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 424295795}
-  serializedVersion: 5
-  m_Component:
-  - component: {fileID: 53027936}
-  m_Layer: 0
-  m_Name: Missing Prefab
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &53027936
-Transform:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 424295795}
-  m_GameObject: {fileID: 53027935}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 12
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &55793181
 Prefab:
   m_ObjectHideFlags: 0
@@ -283,7 +255,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 0.64, y: 0.64}
+    oldSize: {x: 2, y: 2}
     newSize: {x: 0.64, y: 0.64}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -328,6 +300,7 @@ MonoBehaviour:
   ScaredOf: []
   HostileTo: []
   Target: {x: 0, y: 0}
+  goesToBase: 1
 --- !u!114 &59675810
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -420,14 +393,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0a2159523d8e98242a44018142f42fd1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  name: 
-  graphicalObj: {fileID: 0}
-  overObject: {fileID: 0}
+  itemBaseName: 
   onDragZ: -5
   onDragScaleSize: {x: 1.3, y: 1.3, z: 1}
-  inventory: {fileID: 0}
+  inventoryWithin: {fileID: 0}
   isPickupable: 1
   drag: 0
+  multipleInteract: 0
+  jail: {fileID: 0}
   Descriptors:
   - {fileID: 11400000, guid: 38eb2c84d6c39f34abdb28d326d2531d, type: 2}
   Rotate: 0
@@ -443,6 +416,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e44897cad30833143a02c3e40a124053, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  currentStateIndex: 0
 --- !u!4 &59675815
 Transform:
   m_ObjectHideFlags: 0
@@ -457,7 +431,7 @@ Transform:
   - {fileID: 1373610203}
   - {fileID: 831658252}
   m_Father: {fileID: 0}
-  m_RootOrder: 16
+  m_RootOrder: 15
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &153611063
 Prefab:
@@ -655,7 +629,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 0.32, y: 0.32}
+    oldSize: {x: 1, y: 1}
     newSize: {x: 0.32, y: 0.32}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -695,14 +669,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 830a61b150f3ac24bbe0978249224c6c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  name: Cheese
-  graphicalObj: {fileID: 0}
-  overObject: {fileID: 0}
+  itemBaseName: 
   onDragZ: -5
   onDragScaleSize: {x: 1.3, y: 1.3, z: 1}
-  inventory: {fileID: 0}
+  inventoryWithin: {fileID: 0}
   isPickupable: 1
   drag: 0
+  multipleInteract: 0
+  jail: {fileID: 0}
   Descriptors:
   - {fileID: 11400000, guid: 2db99555ce83c4947a3dc75e69aa4a3b, type: 2}
 --- !u!212 &199772883
@@ -805,6 +779,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   text: Me wants CHEESE!
   combination: {fileID: 11400000, guid: 685aec5b68f45cc4a819c1454e12f36b, type: 2}
+  isDone: 0
 --- !u!1 &279814829
 GameObject:
   m_ObjectHideFlags: 0
@@ -1011,7 +986,7 @@ Transform:
   - {fileID: 514814720}
   - {fileID: 1070890576}
   m_Father: {fileID: 0}
-  m_RootOrder: 15
+  m_RootOrder: 14
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &408686547
 GameObject:
@@ -1105,6 +1080,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e44897cad30833143a02c3e40a124053, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  currentStateIndex: 0
 --- !u!61 &408686551
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1141,14 +1117,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 830a61b150f3ac24bbe0978249224c6c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  name: 
-  graphicalObj: {fileID: 0}
-  overObject: {fileID: 0}
+  itemBaseName: 
   onDragZ: -5
   onDragScaleSize: {x: 1.3, y: 1.3, z: 1}
-  inventory: {fileID: 0}
+  inventoryWithin: {fileID: 0}
   isPickupable: 0
   drag: 0
+  multipleInteract: 0
+  jail: {fileID: 0}
   Descriptors:
   - {fileID: 0}
 --- !u!114 &408686553
@@ -1184,48 +1160,6 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!1001 &424295795
-Prefab:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 4749847253669656, guid: 8472a44bbf42886498d69be5c82d44b9, type: 2}
-      propertyPath: m_LocalPosition.x
-      value: -1.0090238
-      objectReference: {fileID: 0}
-    - target: {fileID: 4749847253669656, guid: 8472a44bbf42886498d69be5c82d44b9, type: 2}
-      propertyPath: m_LocalPosition.y
-      value: 0.064669184
-      objectReference: {fileID: 0}
-    - target: {fileID: 4749847253669656, guid: 8472a44bbf42886498d69be5c82d44b9, type: 2}
-      propertyPath: m_LocalPosition.z
-      value: -0.0625
-      objectReference: {fileID: 0}
-    - target: {fileID: 4749847253669656, guid: 8472a44bbf42886498d69be5c82d44b9, type: 2}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4749847253669656, guid: 8472a44bbf42886498d69be5c82d44b9, type: 2}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4749847253669656, guid: 8472a44bbf42886498d69be5c82d44b9, type: 2}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4749847253669656, guid: 8472a44bbf42886498d69be5c82d44b9, type: 2}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4749847253669656, guid: 8472a44bbf42886498d69be5c82d44b9, type: 2}
-      propertyPath: m_RootOrder
-      value: 11
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_ParentPrefab: {fileID: 100100000, guid: 8472a44bbf42886498d69be5c82d44b9, type: 2}
-  m_IsPrefabParent: 0
 --- !u!1 &514814719
 GameObject:
   m_ObjectHideFlags: 0
@@ -1425,7 +1359,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 13
+  m_RootOrder: 12
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &572302009
 GameObject:
@@ -1757,11 +1691,11 @@ MonoBehaviour:
     lineCount: 1
     pageCount: 1
     materialCount: 1
-  m_havePropertiesChanged: 1
+  m_havePropertiesChanged: 0
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_spriteAnimator: {fileID: 0}
-  m_isInputParsingRequired: 1
+  m_isInputParsingRequired: 0
   m_inputSource: 0
   m_hasFontAssetChanged: 0
   m_renderer: {fileID: 674771302}
@@ -1892,14 +1826,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 830a61b150f3ac24bbe0978249224c6c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  name: Rose
-  graphicalObj: {fileID: 0}
-  overObject: {fileID: 0}
+  itemBaseName: 
   onDragZ: -5
   onDragScaleSize: {x: 1.3, y: 1.3, z: 1}
-  inventory: {fileID: 0}
+  inventoryWithin: {fileID: 0}
   isPickupable: 1
   drag: 0
+  multipleInteract: 0
+  jail: {fileID: 0}
   Descriptors:
   - {fileID: 11400000, guid: ca10a6958d8f96c47939b0f8d88bc651, type: 2}
 --- !u!212 &723780739
@@ -1945,7 +1879,7 @@ SpriteRenderer:
   m_Size: {x: 0.64, y: 0.64}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
 --- !u!4 &723780740
 Transform:
@@ -2442,6 +2376,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   text: AaroOOoo... [He sounds sick]
   combination: {fileID: 11400000, guid: 9a0d462a8840b5340b52bcc311a1de7a, type: 2}
+  isDone: 0
 --- !u!1 &1231061512
 GameObject:
   m_ObjectHideFlags: 0
@@ -2475,7 +2410,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 0.32, y: 0.32}
+    oldSize: {x: 1, y: 1}
     newSize: {x: 0.32, y: 0.32}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -2540,7 +2475,7 @@ Transform:
   m_LocalScale: {x: 10, y: 10, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 14
+  m_RootOrder: 13
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1246940139
 GameObject:
@@ -2731,6 +2666,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   text: AaroOOoo... [He sounds sick]
   combination: {fileID: 11400000, guid: 9a0d462a8840b5340b52bcc311a1de7a, type: 2}
+  isDone: 0
 --- !u!1 &1356523319
 GameObject:
   m_ObjectHideFlags: 0
@@ -3040,7 +2976,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 0.64, y: 0.64}
+    oldSize: {x: 2, y: 2}
     newSize: {x: 0.64, y: 0.64}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -3085,6 +3021,7 @@ MonoBehaviour:
   ScaredOf: []
   HostileTo: []
   Target: {x: 0, y: 0}
+  goesToBase: 1
 --- !u!114 &1812464502
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3132,14 +3069,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0a2159523d8e98242a44018142f42fd1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  name: 
-  graphicalObj: {fileID: 0}
-  overObject: {fileID: 0}
+  itemBaseName: 
   onDragZ: -5
   onDragScaleSize: {x: 1.3, y: 1.3, z: 1}
-  inventory: {fileID: 0}
+  inventoryWithin: {fileID: 0}
   isPickupable: 1
   drag: 0
+  multipleInteract: 0
+  jail: {fileID: 0}
   Descriptors:
   - {fileID: 11400000, guid: 38eb2c84d6c39f34abdb28d326d2531d, type: 2}
   Rotate: 0
@@ -3155,6 +3092,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e44897cad30833143a02c3e40a124053, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  currentStateIndex: 0
 --- !u!1 &1816550389
 GameObject:
   m_ObjectHideFlags: 0
@@ -3389,11 +3327,11 @@ MonoBehaviour:
     lineCount: 1
     pageCount: 1
     materialCount: 1
-  m_havePropertiesChanged: 1
+  m_havePropertiesChanged: 0
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_spriteAnimator: {fileID: 0}
-  m_isInputParsingRequired: 1
+  m_isInputParsingRequired: 0
   m_inputSource: 0
   m_hasFontAssetChanged: 0
   m_renderer: {fileID: 2025796019}
