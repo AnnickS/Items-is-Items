@@ -3,7 +3,7 @@ using UnityEngine.TestTools;
 using NUnit.Framework;
 using System.Collections;
 
-public class QuestDialogPopupTest
+public class DialogPopupTest
 {
     [Test]
     public void ExampleQuestIsNotNull()
