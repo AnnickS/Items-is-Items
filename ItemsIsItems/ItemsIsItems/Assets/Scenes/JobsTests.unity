@@ -867,7 +867,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.64, y: 0.64}
+  m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
 --- !u!50 &732436051
 Rigidbody2D:
@@ -907,6 +907,7 @@ MonoBehaviour:
   ScaredOf: []
   HostileTo: []
   Target: {x: 0, y: 0}
+  goesToBase: 1
 --- !u!114 &732436053
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1037,7 +1038,7 @@ Transform:
   m_GameObject: {fileID: 732436048}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 3.420117, y: 0.09013033, z: 0}
-  m_LocalScale: {x: 2.5, y: 2.5, z: 1}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1920316065}
   - {fileID: 1617470878}
@@ -1131,6 +1132,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   text: AaroOOoo... [He sounds sick]
   combination: {fileID: 11400000, guid: 9a0d462a8840b5340b52bcc311a1de7a, type: 2}
+  isDone: 0
 --- !u!1 &1101619241
 GameObject:
   m_ObjectHideFlags: 0
@@ -1236,6 +1238,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   text: Home :(
   combination: {fileID: 11400000, guid: 87f307f1219a7f14a9b2b1f7a38facfe, type: 2}
+  isDone: 0
 --- !u!1 &1495620740
 GameObject:
   m_ObjectHideFlags: 0

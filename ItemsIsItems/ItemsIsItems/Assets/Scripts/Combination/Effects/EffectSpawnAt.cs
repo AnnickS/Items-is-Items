@@ -3,7 +3,7 @@ using System.Text;
 using UnityEngine;
 
 [CreateAssetMenu(menuName = "Effects/SpawnAt")]
-public class EffectSpawn : Effect
+public class EffectSpawnAt : Effect
 {
     public GameObject prefab;
     public GameObject targetItemPosition;

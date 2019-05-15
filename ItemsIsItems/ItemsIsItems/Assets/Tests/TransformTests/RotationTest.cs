@@ -8,7 +8,7 @@ public class RotationTest {
     [Test]
     public void InstantiateCharacterTest()
     {
-        GameObject character = MonoBehaviour.Instantiate(Resources.Load<GameObject>("Character"));
+        GameObject character = MonoBehaviour.Instantiate(Resources.Load<GameObject>("PreFabs/Character"));
         Assert.IsNotNull(character);
         MonoBehaviour.Destroy(character);
     }
@@ -16,7 +16,7 @@ public class RotationTest {
     [UnityTest]
     public IEnumerator DifferentRotationTest()
     {
-        GameObject character = MonoBehaviour.Instantiate(Resources.Load<GameObject>("Character"));
+        GameObject character = MonoBehaviour.Instantiate(Resources.Load<GameObject>("PreFabs/Character"));
         MoveTowardPosition moveTowardPosition = character.GetComponent<MoveTowardPosition>();
 
         character.transform.position = new Vector3(0, 0);
@@ -36,7 +36,7 @@ public class RotationTest {
     [UnityTest]
     public IEnumerator RotateTowardsMovePositionTest()
     {
-        GameObject character = MonoBehaviour.Instantiate(Resources.Load<GameObject>("Character"));
+        GameObject character = MonoBehaviour.Instantiate(Resources.Load<GameObject>("PreFabs/Character"));
         character.transform.position = new Vector2(0, 0);
         MoveTowardPosition moveScript = character.GetComponent<MoveTowardPosition>();
         RotateTowardMovementTarget rotateScript = character.GetComponent<RotateTowardMovementTarget>();

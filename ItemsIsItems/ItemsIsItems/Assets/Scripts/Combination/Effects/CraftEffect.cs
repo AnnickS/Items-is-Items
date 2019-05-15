@@ -8,7 +8,7 @@ public class CraftEffect : Effect
     public bool deleteItem1 = true;
     public bool deleteItem2 = true;
 
-    public GameObject[] itemsToSpawn;
+    public List<GameObject> itemsToSpawn = new List<GameObject>();
 
     public override void Execute(Item sender, Item interactor)
     {
@@ -22,7 +22,7 @@ public class CraftEffect : Effect
 
     public override bool IsInitialized()
     {
-        if(itemsToSpawn != null && itemsToSpawn.Length > 0)
+        if(itemsToSpawn != null && itemsToSpawn.Count > 0)
         {
             return true;
         }

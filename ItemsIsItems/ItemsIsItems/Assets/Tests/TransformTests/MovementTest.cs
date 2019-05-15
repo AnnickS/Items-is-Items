@@ -18,7 +18,7 @@ public class MovementTest
     [UnityTest]
     public IEnumerator InstantiateCharacterTest()
     {
-        GameObject character = MonoBehaviour.Instantiate(Resources.Load<GameObject>("Character"));
+        GameObject character = MonoBehaviour.Instantiate(Resources.Load<GameObject>("PreFabs/Character"));
         Assert.IsNotNull(character);
         MonoBehaviour.Destroy(character);
         yield return null;
@@ -27,7 +27,7 @@ public class MovementTest
     [UnityTest]
     public IEnumerator MovesAwayTest()
     {
-        GameObject character = MonoBehaviour.Instantiate(Resources.Load<GameObject>("Character"));
+        GameObject character = MonoBehaviour.Instantiate(Resources.Load<GameObject>("PreFabs/Character"));
         MoveTowardPosition moveTowardPosition = character.GetComponent<MoveTowardPosition>();
         Vector3 expected = character.transform.position;
 
@@ -37,6 +37,8 @@ public class MovementTest
         yield return new WaitForSeconds(1);
         Vector3 actual = character.transform.position;
 
+        Debug.Log(actual);
+
         Assert.False(actual.Equals(expected));
         MonoBehaviour.Destroy(character);
     }
@@ -44,7 +46,7 @@ public class MovementTest
     [UnityTest]
     public IEnumerator GoToPositionTest()
     {
-        GameObject character = MonoBehaviour.Instantiate(Resources.Load<GameObject>("Character"));
+        GameObject character = MonoBehaviour.Instantiate(Resources.Load<GameObject>("PreFabs/Character"));
         character.transform.position = new Vector2(0, 0);
         MoveTowardPosition moveTowardPosition = character.GetComponent<MoveTowardPosition>();
         Vector2 targetPosition = new Vector2(1, 1);
@@ -52,8 +54,9 @@ public class MovementTest
         moveTowardPosition.moveToPosition(targetPosition);
 
         Time.timeScale = 100;
-        yield return new WaitForSeconds(10);
+        yield return new WaitForSeconds(0);
         Vector3 actual = character.transform.position;
+
         Vector3 expected = new Vector3(targetPosition.x, targetPosition.y, character.transform.position.z);
 
         Assert.True(actual.Equals(expected));

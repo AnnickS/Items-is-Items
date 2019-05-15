@@ -317,6 +317,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   text: Flowers \o/
   combination: {fileID: 11400000, guid: 3941535d378113940b84b46d96f87f94, type: 2}
+  isDone: 0
 --- !u!114 &114231046792231834
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -342,6 +343,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   text: yay \o/
   combination: {fileID: 11400000, guid: 3941535d378113940b84b46d96f87f94, type: 2}
+  isDone: 0
 --- !u!114 &114333930512770592
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -360,6 +362,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: e3bbea66ee6fe4949ac8bb43529d5d90, type: 2}
   HostileTo: []
   Target: {x: 0, y: 0}
+  goesToBase: 1
 --- !u!114 &114373203586219898
 MonoBehaviour:
   m_ObjectHideFlags: 1
