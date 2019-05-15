@@ -195,7 +195,7 @@ Transform:
   m_GameObject: {fileID: 1377205859988660}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 3.52, y: 3.86, z: 0}
-  m_LocalScale: {x: 2.5, y: 2.5, z: 1}
+  m_LocalScale: {x: 0.75, y: 0.75, z: 1}
   m_Children:
   - {fileID: 4029236916399986}
   - {fileID: 4844208710500092}
@@ -295,7 +295,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 0.64, y: 0.64}
+    oldSize: {x: 2, y: 2}
     newSize: {x: 0.64, y: 0.64}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -479,6 +479,7 @@ MonoBehaviour:
   ScaredOf: []
   HostileTo: []
   Target: {x: 0, y: 0}
+  goesToBase: 1
 --- !u!114 &114440608331253804
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -542,6 +543,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   text: AaroOOoo... [He sounds sick]
   combination: {fileID: 11400000, guid: 9a0d462a8840b5340b52bcc311a1de7a, type: 2}
+  isDone: 0
 --- !u!114 &114790739100432314
 MonoBehaviour:
   m_ObjectHideFlags: 1
