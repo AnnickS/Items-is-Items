@@ -12,8 +12,7 @@ public class Combination : ScriptableObject
 {
     public Validator itemValidator1;
     public Validator itemValidator2;
-    [SerializeField]
-    private Effect effect;
+    public Effect effect;
 
     private event CombinationEventHandler CombinationEvent;
 

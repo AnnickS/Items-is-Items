@@ -5,7 +5,7 @@ using UnityEngine;
 [RequireComponent(typeof(MoveTowardMouse))]
 [RequireComponent(typeof(RotateTowardMovementTarget))]
 [RequireComponent(typeof(TrailOffsetInventory))]
-public class Player : CollidableItem, Respawnable
+public class Player : CollidableItem
 {
 
     Vector3 startPosition;
