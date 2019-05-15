@@ -14,14 +14,13 @@ public class NPCTarget : MonoBehaviour {
     [SerializeField]
     private List<Descriptor> HostileTo;
     private DetectionRange Vision;
-    public Vector2 Target;
     private Vector2 Base;
     Descriptor smelly;
     public bool goesToBase = true;
 
     // Use this for initialization
     void Start () {
-        Base = Target = transform.position;
+        Base = transform.position;
         Vision = gameObject.GetComponent<DetectionRange>();
         smelly = Resources.Load<Descriptor>("Descriptors/Smelly");
     }
@@ -42,7 +41,6 @@ public class NPCTarget : MonoBehaviour {
             cTransform = current.GetComponent<Transform>();
             string name = current.gameObject.name;
 
-            //NOTE: Needs to change to accept Tags instead of Strings
             //Items that the npc is scared of has first priority
             if (ScaredOf.Find(x => current.HasDescriptor(x)))
             {

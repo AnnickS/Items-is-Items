@@ -8,8 +8,8 @@ public class NPC : CollidableItem {
     private Item OverItem;
     private Rotate Rotation;
     private NPCTarget Target;
-    private Vector2 CurrentTarget;
-    
+
+    public Vector2 CurrentTarget;
     public bool Rotate = false;
     public bool isWaiting = false;
 
@@ -66,7 +66,7 @@ public class NPC : CollidableItem {
         Item item = other.GetComponent<Item>();
 
         //Checks if it is a pickubable item
-        if (item != null && item.isPickupable)
+        if (item != null && item.isPickupable && GameManager.Instance != null)
         {
             GameManager.Instance.ExecuteInteraction(this, item);
 
