@@ -365,7 +365,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.32, y: 0.32}
+  m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
 --- !u!61 &61445500949638412
 BoxCollider2D:
@@ -415,7 +415,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.32, y: 0.32}
+  m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
 --- !u!61 &61801785394817418
 BoxCollider2D:
@@ -512,6 +512,7 @@ MonoBehaviour:
   jail: {fileID: 0}
   Descriptors:
   - {fileID: 11400000, guid: 5d32fd2a151a6e44a8a7286b24cef121, type: 2}
+  CurrentTarget: {x: 0, y: 0}
   Rotate: 0
   isWaiting: 0
 --- !u!114 &114147576698466362
@@ -552,7 +553,6 @@ MonoBehaviour:
   AttractedTo: []
   ScaredOf: []
   HostileTo: []
-  Target: {x: 0, y: 0}
   goesToBase: 1
 --- !u!114 &114256110563286574
 MonoBehaviour:
@@ -588,6 +588,7 @@ MonoBehaviour:
   jail: {fileID: 0}
   Descriptors:
   - {fileID: 11400000, guid: a0d2f5b498825a14190c1bf3e53f635a, type: 2}
+  CurrentTarget: {x: 0, y: 0}
   Rotate: 0
   isWaiting: 0
 --- !u!114 &114326621647234036
@@ -617,7 +618,6 @@ MonoBehaviour:
   AttractedTo: []
   ScaredOf: []
   HostileTo: []
-  Target: {x: 0, y: 0}
   goesToBase: 1
 --- !u!114 &114393613723742034
 MonoBehaviour:
