@@ -46,7 +46,7 @@ public class DialogPopupTest
     {
         GameObject questObject = MonoBehaviour.Instantiate(Resources.Load<GameObject>("PreFabs/ForTests/TestPrefabForQuestDialogPopupTest"));
         QuestGiver quest = questObject.GetComponent<QuestGiver>();
-        //DialogPopup popup = questObject.GetComponentInChildren<DialogPopup>();
+
         yield return null;
         int count = quest.GetComponentsInChildren<QuestState>().Length;
 
@@ -63,7 +63,22 @@ public class DialogPopupTest
         yield return null;
         string actual = popup.getText();
         string expected = quest.getCurrentQuestState().text;
-        Assert.AreNotEqual(expected, actual, "The default textmesh text didn't change to the quest state's text");
+        Assert.AreNotEqual(expected, actual, "The default textmesh text didn't change to the quest state's text. Expected: " + expected + " Actual: " + actual);
+        GameObject.Destroy(questObject);
+    }
+
+    [UnityTest]
+    public IEnumerator DialogPopupTextEqualQuestStateAfterClick()
+    {
+        GameObject questObject = MonoBehaviour.Instantiate(Resources.Load<GameObject>("PreFabs/ForTests/TestPrefabForQuestDialogPopupTest"));
+        QuestGiver quest = questObject.GetComponent<QuestGiver>();
+        DialogPopup popup = questObject.GetComponentInChildren<DialogPopup>();
+        yield return null;
+        quest.OnMouseDown();
+        yield return null;
+        string actual = popup.getText();
+        string expected = quest.getCurrentQuestState().text;
+        Assert.AreEqual(expected, actual, "The default textmesh text didn't change to the quest state's text. Expected: " + expected + " Actual: " + actual);
         GameObject.Destroy(questObject);
     }
 }
