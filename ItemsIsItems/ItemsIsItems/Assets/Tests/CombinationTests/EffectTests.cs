@@ -112,7 +112,7 @@ public class EffectTests {
         obj2.transform.position = new Vector3(10, 10, 10);
 
         GameObject objToSpawn = new GameObject("objToSpawn");
-        Item spawned = objToSpawn.AddComponent<Item>();
+        objToSpawn.AddComponent<Item>();
 
         CraftEffect craft = ScriptableObject.CreateInstance<CraftEffect>();
         craft.deleteItem1 = false;
@@ -141,7 +141,7 @@ public class EffectTests {
         obj2.transform.position = new Vector3(10, 10, 10);
 
         GameObject objToSpawn = new GameObject("objToSpawn");
-        Item spawned = objToSpawn.AddComponent<Item>();
+        objToSpawn.AddComponent<Item>();
 
         CraftEffect craft = ScriptableObject.CreateInstance<CraftEffect>();
         craft.deleteItem1 = true;
@@ -170,7 +170,7 @@ public class EffectTests {
         obj2.transform.position = new Vector3(10, 10, 10);
 
         GameObject objToSpawn = new GameObject("objToSpawn");
-        Item spawned = objToSpawn.AddComponent<Item>();
+        objToSpawn.AddComponent<Item>();
 
         CraftEffect craft = ScriptableObject.CreateInstance<CraftEffect>();
         craft.deleteItem1 = false;
@@ -199,7 +199,7 @@ public class EffectTests {
         obj2.transform.position = new Vector3(10, 10, 10);
 
         GameObject objToSpawn = new GameObject("objToSpawn");
-        Item spawned = objToSpawn.AddComponent<Item>();
+        objToSpawn.AddComponent<Item>();
 
         CraftEffect craft = ScriptableObject.CreateInstance<CraftEffect>();
         craft.deleteItem1 = false;
@@ -259,7 +259,7 @@ public class EffectTests {
         Item item2 = obj2.AddComponent<Item>();
 
         GameObject objToSpawn = new GameObject("objToSpawn");
-        Item spawned = objToSpawn.AddComponent<Item>();
+        objToSpawn.AddComponent<Item>();
 
         EffectSpawnItem spawn = ScriptableObject.CreateInstance<EffectSpawnItem>();
         spawn.itemToSpawn = objToSpawn;
