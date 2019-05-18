@@ -101,7 +101,7 @@ Transform:
   m_GameObject: {fileID: 1483169243230048}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -2.40516, y: -0.35817015, z: 0}
-  m_LocalScale: {x: 1.5, y: 1.5, z: 1}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4789856214865548}
   m_RootOrder: 1
@@ -127,7 +127,7 @@ Transform:
   m_GameObject: {fileID: 1494058321832128}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -1.2235148, y: -3.0502985, z: 0}
-  m_LocalScale: {x: 2, y: 2, z: 1}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4436766363960754}
   - {fileID: 4346871481748368}
@@ -143,7 +143,7 @@ Transform:
   m_GameObject: {fileID: 1515128804260770}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -1.176456, y: 0.43477714, z: 0}
-  m_LocalScale: {x: 1.5, y: 1.5, z: 1}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4789856214865548}
   m_RootOrder: 2
@@ -224,14 +224,14 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 0.32, y: 0.32}
+    oldSize: {x: 1, y: 1}
     newSize: {x: 0.32, y: 0.32}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.32, y: 0.32}
+  m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
 --- !u!61 &61609529049078330
 BoxCollider2D:
@@ -274,14 +274,14 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 0.32, y: 0.32}
+    oldSize: {x: 1, y: 1}
     newSize: {x: 0.32, y: 0.32}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.32, y: 0.32}
+  m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
 --- !u!114 &114003622540381196
 MonoBehaviour:
@@ -311,7 +311,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: f2f3269d45ef1d6408b5d583144caacd, type: 2}
   ScaredOf: []
   HostileTo: []
-  Target: {x: 0, y: 0}
+  goesToBase: 1
 --- !u!114 &114207180910111996
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -327,7 +327,7 @@ MonoBehaviour:
   AttractedTo: []
   ScaredOf: []
   HostileTo: []
-  Target: {x: 0, y: 0}
+  goesToBase: 1
 --- !u!114 &114245450395054846
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -370,6 +370,7 @@ MonoBehaviour:
   jail: {fileID: 0}
   Descriptors:
   - {fileID: 11400000, guid: ba01d4bca25f4bf48bd59af81c5e8d49, type: 2}
+  CurrentTarget: {x: 0, y: 0}
   Rotate: 0
   isWaiting: 0
 --- !u!114 &114482259282416664
@@ -454,6 +455,7 @@ MonoBehaviour:
   multipleInteract: 0
   jail: {fileID: 0}
   Descriptors: []
+  CurrentTarget: {x: 0, y: 0}
   Rotate: 0
   isWaiting: 0
 --- !u!114 &114780710711244808
