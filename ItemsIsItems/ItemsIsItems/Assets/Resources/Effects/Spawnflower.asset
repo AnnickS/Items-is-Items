@@ -11,5 +11,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7889e15cda6944b4c867f76933c5059f, type: 3}
   m_Name: Spawnflower
   m_EditorClassIdentifier: 
-  itemToSpawn: {fileID: 1637548426560836, guid: 53078ca4093931040b60ed4a59fa9f1e,
+  itemToSpawn: {fileID: 1998499691199406, guid: 53078ca4093931040b60ed4a59fa9f1e,
     type: 2}
