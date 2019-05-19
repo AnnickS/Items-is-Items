@@ -111,6 +111,7 @@ MonoBehaviour:
   Descriptors:
   - {fileID: 11400000, guid: 8287c01c8afbbf54bbb50f1175759bd3, type: 2}
   - {fileID: 11400000, guid: f379592378a592945bf2edc742c7a621, type: 2}
+  - {fileID: 11400000, guid: 2f7de67867ae9bf43be653ef2df1499a, type: 2}
 --- !u!114 &114140900012227910
 MonoBehaviour:
   m_ObjectHideFlags: 1

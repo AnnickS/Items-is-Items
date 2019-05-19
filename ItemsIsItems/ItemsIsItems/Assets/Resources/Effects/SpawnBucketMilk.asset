@@ -11,5 +11,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7889e15cda6944b4c867f76933c5059f, type: 3}
   m_Name: SpawnBucketMilk
   m_EditorClassIdentifier: 
-  itemToSpawn: {fileID: 1277138342189178, guid: 0d8385717ef59794a9f7d4db083e6d15,
+  itemToSpawn: {fileID: 1503670828857004, guid: ed50c6368401bf449818b8c61d8fd535,
     type: 2}
