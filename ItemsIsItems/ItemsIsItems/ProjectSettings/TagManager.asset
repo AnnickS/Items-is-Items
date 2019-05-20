@@ -16,12 +16,12 @@ TagManager:
   - Foreground
   - NPC
   - Player
-  - 
+  - Item
   - 
   - Dragged
   - 
   - TileMaps
-  - BoundaryTiles
+  - BoundaryTIles
   - 
   - 
   - 
@@ -41,6 +41,21 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
+  - name: Background
+    uniqueID: 3867789763
+    locked: 0
+  - name: NPC
+    uniqueID: 1706176099
+    locked: 0
   - name: Item
     uniqueID: 3081407983
+    locked: 0
+  - name: Player
+    uniqueID: 1941163187
+    locked: 0
+  - name: Foreground
+    uniqueID: 98730535
+    locked: 0
+  - name: UI
+    uniqueID: 219923791
     locked: 0

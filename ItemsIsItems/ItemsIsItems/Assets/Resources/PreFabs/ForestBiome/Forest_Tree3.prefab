@@ -21,7 +21,7 @@ GameObject:
   - component: {fileID: 4178486019076258}
   - component: {fileID: 212505638908411044}
   - component: {fileID: 61849117049828138}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Forest_Tree3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -35,7 +35,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1909884196069444}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -24.66, y: -102.84, z: -1}
+  m_LocalPosition: {x: -24.66, y: -102.84, z: 0}
   m_LocalScale: {x: 2, y: 2, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -98,8 +98,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: 98730535
+  m_SortingLayer: 5
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 31b73d63a2a8de54c95be2b8e4771b9e, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}

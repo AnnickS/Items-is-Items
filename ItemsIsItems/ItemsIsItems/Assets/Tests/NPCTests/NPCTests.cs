@@ -38,6 +38,7 @@ public class NPCTests
         yield return null;
         yield return null;
 
+        Debug.Log("Within Circle: " + npc.GetComponent<DetectionRange>().WithinCircle.Length);
         Assert.True(npc.GetComponent<DetectionRange>().WithinCircle.Length.Equals(2));
 
         MonoBehaviour.Destroy(npc);

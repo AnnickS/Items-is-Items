@@ -19,6 +19,7 @@ public class DetectionRange : MonoBehaviour {
         WithinCircle = Physics2D.OverlapCircleAll(transform.position, ViewRadius, TargetMask);
         WithinView.Clear();
         WithinSmell.Clear();
+        Debug.Log("Target: " + LayerMask.LayerToName(TargetMask));
 
         for (int i = 0; i < WithinCircle.Length; i++)
         {
@@ -32,7 +33,7 @@ public class DetectionRange : MonoBehaviour {
                 //Checks if object is within viewing distance
                 if (Vector2.Angle(DirItem, -transform.up) < ViewAngle / 2)
                 {
-
+                    
                     float Distance = Vector2.Distance(transform.position, ItemTransform.position);
 
 
