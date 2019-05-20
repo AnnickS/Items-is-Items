@@ -20,6 +20,8 @@ GameObject:
   m_Component:
   - component: {fileID: 4362401662669904}
   - component: {fileID: 114965861563623910}
+  - component: {fileID: 114397029630438172}
+  - component: {fileID: 114532600154598270}
   - component: {fileID: 114183371517918714}
   - component: {fileID: 114485960586335272}
   - component: {fileID: 212782332269378138}
@@ -128,7 +130,7 @@ MonoBehaviour:
   CurrentTarget: {x: 0, y: 0}
   Rotate: 0
   isWaiting: 0
-  rotateForward: 1
+  rotateForward: 0
 --- !u!114 &114183371517918714
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -152,6 +154,18 @@ MonoBehaviour:
   ViewRadius: 5
   ViewAngle: 135
   GizmoSmellSides: 20
+--- !u!114 &114397029630438172
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1287590788890964}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ccbb68d842519e543a8c7a698635c80b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rotationOffset: 0
 --- !u!114 &114485960586335272
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -168,6 +182,18 @@ MonoBehaviour:
   ScaredOf: []
   HostileTo: []
   goesToBase: 1
+--- !u!114 &114532600154598270
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1287590788890964}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8339e6c2e35569d4584f57fbe99e3f26, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rotationOffset: 0
 --- !u!114 &114965861563623910
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -214,7 +240,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 1633504967
-  m_SortingLayer: 2
+  m_SortingLayer: 3
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: c987b17769e2a2b43a8fd923feeaba53, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}

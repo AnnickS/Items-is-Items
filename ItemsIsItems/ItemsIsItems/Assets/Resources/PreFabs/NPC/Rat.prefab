@@ -25,6 +25,7 @@ GameObject:
   - component: {fileID: 114979643142946090}
   - component: {fileID: 114630771357615790}
   - component: {fileID: 114623300684737406}
+  - component: {fileID: 114153686112294634}
   - component: {fileID: 114430166751914096}
   - component: {fileID: 61346946405293730}
   - component: {fileID: 50870001396009812}
@@ -112,6 +113,18 @@ MonoBehaviour:
   HostileTo:
   - {fileID: 11400000, guid: f2f3269d45ef1d6408b5d583144caacd, type: 2}
   goesToBase: 1
+--- !u!114 &114153686112294634
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1760583027658292}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8339e6c2e35569d4584f57fbe99e3f26, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rotationOffset: 0
 --- !u!114 &114430166751914096
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -231,7 +244,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 1633504967
-  m_SortingLayer: 2
+  m_SortingLayer: 3
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 6ffeb0de0ee63d7468993530f9a32439, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
