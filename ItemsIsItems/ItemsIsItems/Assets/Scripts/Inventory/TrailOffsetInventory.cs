@@ -5,7 +5,7 @@ using UnityEngine;
 public class TrailOffsetInventory : Inventory
 {
     public float speed = 10;
-    public float distance = 1;
+    public float distance = 0.5f;
     public float segmentSize = 0.1f;
     private List<Vector3> points = new List<Vector3>();
 
@@ -36,6 +36,7 @@ public class TrailOffsetInventory : Inventory
                 break;
             }
             Item item = items[i];
+            item.GetComponent<MoveTowardPosition>().speed = speed;
             item.GetComponent<MoveTowardPosition>().moveToPosition(points[(i+1)* Mathf.RoundToInt(distance / segmentSize)]);
         }
 
@@ -44,6 +45,12 @@ public class TrailOffsetInventory : Inventory
         {
             MoveSelectedItem(pair.Key, pair.Value);
         }*/
+    }
+
+    public override void RemoveAll()
+    {
+        base.RemoveAll();
+        points.Clear();
     }
 
     public override void Open()
