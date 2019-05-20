@@ -24,7 +24,7 @@ GameObject:
   - component: {fileID: 50766119775302666}
   - component: {fileID: 61285180601851280}
   - component: {fileID: 114287784402903568}
-  m_Layer: 8
+  m_Layer: 11
   m_Name: Medicine_Base
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -155,8 +155,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: -1213559313
+  m_SortingLayer: 3
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: ccfe7c622654bb448b9564b1c88c10e2, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
