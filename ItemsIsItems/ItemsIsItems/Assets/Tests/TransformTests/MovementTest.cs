@@ -18,7 +18,7 @@ public class MovementTest
     [UnityTest]
     public IEnumerator InstantiateCharacterTest()
     {
-        GameObject character = MonoBehaviour.Instantiate(Resources.Load<GameObject>("Character"));
+        GameObject character = MonoBehaviour.Instantiate(Resources.Load<GameObject>("PreFabs/Character"));
         Assert.IsNotNull(character);
         MonoBehaviour.Destroy(character);
         yield return null;
@@ -27,9 +27,11 @@ public class MovementTest
     [UnityTest]
     public IEnumerator MovesAwayTest()
     {
-        GameObject character = MonoBehaviour.Instantiate(Resources.Load<GameObject>("Character"));
+        GameObject character = MonoBehaviour.Instantiate(Resources.Load<GameObject>("PreFabs/Character"));
         MoveTowardPosition moveTowardPosition = character.GetComponent<MoveTowardPosition>();
         Vector3 expected = character.transform.position;
+
+        yield return null;
 
         moveTowardPosition.moveToPosition(new Vector2(1, 1));
 
@@ -44,16 +46,18 @@ public class MovementTest
     [UnityTest]
     public IEnumerator GoToPositionTest()
     {
-        GameObject character = MonoBehaviour.Instantiate(Resources.Load<GameObject>("Character"));
+        GameObject character = MonoBehaviour.Instantiate(Resources.Load<GameObject>("PreFabs/Character"));
         character.transform.position = new Vector2(0, 0);
-        MoveTowardPosition moveTowardPosition = character.GetComponent<MoveTowardPosition>();
         Vector2 targetPosition = new Vector2(1, 1);
 
-        moveTowardPosition.moveToPosition(targetPosition);
+        yield return null;
+
+        character.GetComponent<MoveTowardPosition>().moveToPosition(targetPosition);
 
         Time.timeScale = 100;
         yield return new WaitForSeconds(10);
         Vector3 actual = character.transform.position;
+        Debug.Log("Character position current: " + actual);
         Vector3 expected = new Vector3(targetPosition.x, targetPosition.y, character.transform.position.z);
 
         Assert.True(actual.Equals(expected));

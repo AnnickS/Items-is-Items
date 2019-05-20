@@ -4,6 +4,7 @@ using UnityEngine;
 
 [RequireComponent(typeof(NPCTarget))]
 [RequireComponent(typeof(Rotate))]
+[RequireComponent(typeof(RotateTowardPosition))]
 public class NPC : CollidableItem {
     private Item OverItem;
     private Rotate Rotation;
@@ -12,6 +13,7 @@ public class NPC : CollidableItem {
     public Vector2 CurrentTarget;
     public bool Rotate = false;
     public bool isWaiting = false;
+    public bool rotateForward = true;
 
 
     // Use this for initialization
@@ -43,7 +45,13 @@ public class NPC : CollidableItem {
             CurrentTarget = Target.SelectTarget();
         } 
 
-        gameObject.GetComponent<MoveTowardPosition>().moveToPosition(CurrentTarget);
+        if((CurrentTarget.x == this.transform.position.x) && (CurrentTarget.y == this.transform.position.y) && rotateForward)
+        {
+            gameObject.GetComponent<RotateTowardPosition>().rotateToPosition(new Vector2(transform.position.x, transform.position.y - 1));
+        } else
+        {
+            gameObject.GetComponent<MoveTowardPosition>().moveToPosition(CurrentTarget);
+        }
 	}
 
     public IEnumerator Wait(float time)
