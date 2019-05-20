@@ -13,6 +13,17 @@ public class DialogPopupTest
         MonoBehaviour.Destroy(quest);
     }
 
+    [Test]
+    public void ExampleQuestHasRotateTowardPosition()
+    {
+        GameObject quest = MonoBehaviour.Instantiate(Resources.Load<GameObject>("PreFabs/ForTests/TestPrefabForQuestDialogPopupTest"));
+        RotateTowardPosition rotateTowardPosition = quest.GetComponent<RotateTowardPosition>();
+
+        Assert.NotNull(rotateTowardPosition);
+
+        MonoBehaviour.Destroy(quest);
+    }
+
     [UnityTest]
     public IEnumerator DialogPopupStartsHidden()
     {
