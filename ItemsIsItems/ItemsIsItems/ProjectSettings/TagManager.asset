@@ -16,7 +16,7 @@ TagManager:
   - Foreground
   - NPC
   - Player
-  - 
+  - Item
   - 
   - Dragged
   - 
@@ -41,6 +41,21 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
+  - name: Background
+    uniqueID: 941401381
+    locked: 0
   - name: Item
     uniqueID: 3081407983
+    locked: 0
+  - name: NPC
+    uniqueID: 1633504967
+    locked: 0
+  - name: Player
+    uniqueID: 3626894945
+    locked: 0
+  - name: Foreground
+    uniqueID: 2365354209
+    locked: 0
+  - name: UI
+    uniqueID: 1705728979
     locked: 0

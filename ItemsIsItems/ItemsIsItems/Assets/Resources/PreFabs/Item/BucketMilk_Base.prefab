@@ -24,7 +24,7 @@ GameObject:
   - component: {fileID: 50701034719632404}
   - component: {fileID: 61008088749128076}
   - component: {fileID: 114142728539545184}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: BucketMilk_Base
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -158,8 +158,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: -1213559313
+  m_SortingLayer: 3
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 25b303010ebe01747a5528c0e326d20f, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
