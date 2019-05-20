@@ -24,7 +24,7 @@ GameObject:
   - component: {fileID: 61803976358052934}
   - component: {fileID: 114709992743838326}
   - component: {fileID: 114871931239973290}
-  m_Layer: 8
+  m_Layer: 11
   m_Name: Wheat_TEMP
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -155,8 +155,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: -1213559313
+  m_SortingLayer: 3
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 3920f0f84b7e49844b94ce15d8c12102, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
