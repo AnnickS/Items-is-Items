@@ -36,7 +36,10 @@ public class TrailOffsetInventory : Inventory
                 break;
             }
             Item item = items[i];
-            item.GetComponent<MoveTowardPosition>().speed = speed;
+            if(item.inventoryWithin != this)
+            {
+                RemoveItem(item);
+            }
             item.GetComponent<MoveTowardPosition>().moveToPosition(points[(i+1)* Mathf.RoundToInt(distance / segmentSize)]);
         }
 
@@ -73,6 +76,7 @@ public class TrailOffsetInventory : Inventory
         base.AddItemAt(item, index);
         item.inventoryWithin = this;
         item.isPickupable = false;
+        item.GetComponent<MoveTowardPosition>().speed = speed;
     }
 
     public virtual void AddItemAtBack(Item item)
