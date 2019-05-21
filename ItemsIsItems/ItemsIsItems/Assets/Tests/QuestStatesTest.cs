@@ -9,7 +9,7 @@ public class QuestStatesTest
 {
 
     [Test]
-    public void ExampleQuestIsNotNull()
+    public void PrefabQuestIsNotNull()
     {
         GameObject quest = MonoBehaviour.Instantiate(Resources.Load<GameObject>("PreFabs/ForTests/TestPrefabForQuestStatesTest"));
         Assert.NotNull(quest);
@@ -17,7 +17,7 @@ public class QuestStatesTest
     }
 
     [Test]
-    public void ExampleQuestQuestComponentIsNotNull()
+    public void PrefabQuestQuestGiverIsNotNull()
     {
 
         GameObject quest = MonoBehaviour.Instantiate(Resources.Load<GameObject>("PreFabs/ForTests/TestPrefabForQuestStatesTest"));
@@ -27,7 +27,7 @@ public class QuestStatesTest
     }
 
     [Test]
-    public void ExampleQuestDialogIsNotNull()
+    public void PrefabQuestDialogIsNotNull()
     {
 
         GameObject quest = MonoBehaviour.Instantiate(Resources.Load<GameObject>("PreFabs/ForTests/TestPrefabForQuestStatesTest"));

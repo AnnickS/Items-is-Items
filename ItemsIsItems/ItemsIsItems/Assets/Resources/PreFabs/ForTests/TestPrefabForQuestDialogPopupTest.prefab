@@ -78,6 +78,7 @@ GameObject:
   - component: {fileID: 50507284430377530}
   - component: {fileID: 114384204585789996}
   - component: {fileID: 114053694730767488}
+  - component: {fileID: 114738386433408540}
   m_Layer: 0
   m_Name: TestPrefabForQuestDialogPopupTest
   m_TagString: Untagged
@@ -366,8 +367,10 @@ MonoBehaviour:
   multipleInteract: 0
   jail: {fileID: 0}
   Descriptors: []
+  CurrentTarget: {x: 0, y: 0}
   Rotate: 0
   isWaiting: 0
+  rotateForward: 1
 --- !u!114 &114055107055966042
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -545,7 +548,7 @@ MonoBehaviour:
   AttractedTo: []
   ScaredOf: []
   HostileTo: []
-  Target: {x: 0, y: 0}
+  goesToBase: 1
 --- !u!114 &114646495741544422
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -581,6 +584,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   text: Put what you want the quest giver to say here (Story/Hint/etc)
+--- !u!114 &114738386433408540
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1476471459298116}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8339e6c2e35569d4584f57fbe99e3f26, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rotationOffset: 0
 --- !u!114 &114993128464188124
 MonoBehaviour:
   m_ObjectHideFlags: 1

@@ -30,6 +30,7 @@ GameObject:
   - component: {fileID: 50724469620945700}
   - component: {fileID: 61378119670902980}
   - component: {fileID: 114500373504692292}
+  - component: {fileID: 114385903100201640}
   m_Layer: 9
   m_Name: Pupper_Base
   m_TagString: Untagged
