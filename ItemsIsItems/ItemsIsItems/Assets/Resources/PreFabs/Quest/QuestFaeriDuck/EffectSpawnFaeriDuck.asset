@@ -11,5 +11,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7889e15cda6944b4c867f76933c5059f, type: 3}
   m_Name: EffectSpawnFaeriDuck
   m_EditorClassIdentifier: 
-  itemToSpawn: {fileID: 1483169243230048, guid: 13a218d892967d34eb2a7a90884e7bc2,
+  itemToSpawn: {fileID: 1597162370061434, guid: bad806a109684e44095f3796fa1305b6,
     type: 2}
