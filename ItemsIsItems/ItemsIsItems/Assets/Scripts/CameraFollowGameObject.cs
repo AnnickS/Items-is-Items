@@ -23,6 +23,6 @@ public class CameraFollowGameObject : MonoBehaviour
         float newYPosition = gameObjectToFollow.transform.position.y;
         float oldZPosition = this.transform.position.z;
 
-        this.transform.position = new Vector3(newXPosition, newYPosition, oldZPosition);
+        this.transform.position = new Vector3(Mathf.Lerp(transform.position.x, newXPosition, Time.deltaTime*10), Mathf.Lerp(transform.position.y, newYPosition, Time.deltaTime * 10), oldZPosition);
     }
 }

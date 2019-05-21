@@ -19,11 +19,11 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4436766363960754}
+  - component: {fileID: 114548716826282624}
   - component: {fileID: 212699766255089910}
   - component: {fileID: 50510215423119492}
   - component: {fileID: 61609529049078330}
-  - component: {fileID: 114270266025230698}
-  - component: {fileID: 114745002093084440}
+  - component: {fileID: 114897313107813670}
   m_Layer: 0
   m_Name: Faeri Circle
   m_TagString: Untagged
@@ -54,7 +54,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!1 &1494058321832128
 GameObject:
   m_ObjectHideFlags: 0
@@ -89,7 +89,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &4346871481748368
 Transform:
   m_ObjectHideFlags: 1
@@ -110,7 +110,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1098278398052258}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: -10.62, y: 4.59, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4789856214865548}
@@ -123,7 +123,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1494058321832128}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -1.2235148, y: -3.0502985, z: 0}
+  m_LocalPosition: {x: 56.580505, y: 38.31482, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4436766363960754}
@@ -330,19 +330,6 @@ MonoBehaviour:
   jail: {fileID: 0}
   Descriptors:
   - {fileID: 11400000, guid: d3e3ccacec5bbe642a3b7e99ec939236, type: 2}
---- !u!114 &114270266025230698
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1098278398052258}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f3eb2269655c17f4d9635f0cc0c3943a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  speed: 0.05
-  moving: 0
 --- !u!114 &114482259282416664
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -379,6 +366,27 @@ MonoBehaviour:
   ViewRadius: 5
   ViewAngle: 135
   GizmoSmellSides: 20
+--- !u!114 &114548716826282624
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1098278398052258}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 830a61b150f3ac24bbe0978249224c6c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemBaseName: 
+  onDragZ: -5
+  onDragScaleSize: {x: 1.3, y: 1.3, z: 1}
+  inventoryWithin: {fileID: 0}
+  isPickupable: 0
+  drag: 0
+  multipleInteract: 0
+  jail: {fileID: 0}
+  Descriptors:
+  - {fileID: 11400000, guid: ba01d4bca25f4bf48bd59af81c5e8d49, type: 2}
 --- !u!114 &114576330168325738
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -424,32 +432,24 @@ MonoBehaviour:
   drag: 0
   multipleInteract: 0
   jail: {fileID: 0}
-  Descriptors:
-  - {fileID: 11400000, guid: ba01d4bca25f4bf48bd59af81c5e8d49, type: 2}
---- !u!114 &114774316888799826
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1483169243230048}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0a2159523d8e98242a44018142f42fd1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  itemBaseName: 
-  onDragZ: -5
-  onDragScaleSize: {x: 1.3, y: 1.3, z: 1}
-  inventoryWithin: {fileID: 0}
-  isPickupable: 0
-  drag: 0
-  multipleInteract: 0
-  jail: {fileID: 0}
   Descriptors: []
   CurrentTarget: {x: 0, y: 0}
   Rotate: 0
   isWaiting: 0
   rotateForward: 1
+--- !u!114 &114897313107813670
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1098278398052258}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f3eb2269655c17f4d9635f0cc0c3943a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 0.05
+  moving: 0
 --- !u!212 &212343978840094836
 SpriteRenderer:
   m_ObjectHideFlags: 1

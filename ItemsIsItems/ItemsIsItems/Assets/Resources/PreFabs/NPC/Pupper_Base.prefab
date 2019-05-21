@@ -21,8 +21,10 @@ GameObject:
   - component: {fileID: 4489873543069526}
   - component: {fileID: 114479802639266946}
   - component: {fileID: 114354018127176360}
+  - component: {fileID: 114717352496624490}
   - component: {fileID: 212793608240406220}
   - component: {fileID: 114440608331253804}
+  - component: {fileID: 114654760858765062}
   - component: {fileID: 114061426315644006}
   - component: {fileID: 114424958375498580}
   - component: {fileID: 50724469620945700}
@@ -465,19 +467,7 @@ MonoBehaviour:
   CurrentTarget: {x: 0, y: 0}
   Rotate: 0
   isWaiting: 0
-  rotateForward: 1
---- !u!114 &114385903100201640
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1377205859988660}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8339e6c2e35569d4584f57fbe99e3f26, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  rotationOffset: 0
+  rotateForward: 0
 --- !u!114 &114424958375498580
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -544,6 +534,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 0.05
   moving: 0
+--- !u!114 &114654760858765062
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1377205859988660}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8339e6c2e35569d4584f57fbe99e3f26, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rotationOffset: 0
 --- !u!114 &114661956963476156
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -558,6 +560,18 @@ MonoBehaviour:
   text: AaroOOoo... [He sounds sick]
   combination: {fileID: 11400000, guid: 9a0d462a8840b5340b52bcc311a1de7a, type: 2}
   isDone: 0
+--- !u!114 &114717352496624490
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1377205859988660}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8339e6c2e35569d4584f57fbe99e3f26, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rotationOffset: 0
 --- !u!114 &114790739100432314
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -648,7 +662,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 1633504967
-  m_SortingLayer: 2
+  m_SortingLayer: 3
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: abeb8a05090d5834f9f51e8a5759e3a3, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
