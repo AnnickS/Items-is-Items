@@ -69,6 +69,7 @@ public class Item : MonoBehaviour
         }
         if (drag)
         {
+            GetComponent<MoveTowardPosition>().moving = false;
             Vector2 mousePosition = new Vector2(Input.mousePosition.x, Input.mousePosition.y);
             Vector2 objectPosition = Camera.main.ScreenToWorldPoint(mousePosition);
             //transform.position = objectPosition;

@@ -36,10 +36,6 @@ public class TrailOffsetInventory : Inventory
                 break;
             }
             Item item = items[i];
-            if(item.inventoryWithin != this)
-            {
-                RemoveItem(item);
-            }
             item.GetComponent<MoveTowardPosition>().moveToPosition(points[(i+1)* Mathf.RoundToInt(distance / segmentSize)]);
         }
 
