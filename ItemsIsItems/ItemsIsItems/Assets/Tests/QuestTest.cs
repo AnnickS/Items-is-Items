@@ -51,7 +51,6 @@ public class QuestTest
     [UnityTest]
     public IEnumerator QuestHealDog()
     {
-        //GameObject gameManager = MonoBehaviour.Instantiate(Resources.Load<GameObject>("PreFabs/GameManager"));
         GameObject gameManager = new GameObject();
         gameManager.AddComponent<GameManager>();
 
