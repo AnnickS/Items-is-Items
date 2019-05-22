@@ -20,7 +20,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4687261841531462}
   - component: {fileID: 212962676787968108}
-  - component: {fileID: 58206648049747470}
+  - component: {fileID: 61359795576708044}
   m_Layer: 8
   m_Name: Forest_Stump2
   m_TagString: Untagged
@@ -35,14 +35,14 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1793830346987796}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -8.95, y: -104.64, z: 0}
+  m_LocalPosition: {x: 7.51, y: 61.13, z: 0}
   m_LocalScale: {x: 2, y: 2, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!58 &58206648049747470
-CircleCollider2D:
+--- !u!61 &61359795576708044
+BoxCollider2D:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
@@ -53,9 +53,19 @@ CircleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: -0.6394882}
+  m_Offset: {x: 0.012285948, y: -0.8231592}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 2, y: 2}
+    newSize: {x: 2, y: 2}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
   serializedVersion: 2
-  m_Radius: 0.36051178
+  m_Size: {x: 0.906549, y: 0.35368156}
+  m_EdgeRadius: 0
 --- !u!212 &212962676787968108
 SpriteRenderer:
   m_ObjectHideFlags: 1
@@ -89,7 +99,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -1929613087
-  m_SortingLayer: 4
+  m_SortingLayer: 5
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 57b64f04f25d3bc45807ded042ee1504, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
