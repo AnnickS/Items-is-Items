@@ -54,6 +54,7 @@ public static class StorageManager
             }
 
             LoadGameData(gameData);
+            FileToLoad = null;
             Debug.Log("Loaded.");
         }
         else
