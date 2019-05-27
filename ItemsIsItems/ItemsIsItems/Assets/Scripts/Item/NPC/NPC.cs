@@ -28,7 +28,7 @@ public class NPC : CollidableItem {
 	
 	// Update is called once per frame
 	void Update () {
-        if (OverItem != null && OverItem.isPickupable)
+        if (OverItem != null && OverItem.inWorld)
         {
             //Combination is called
             GameManager.Instance.ExecuteInteraction(this, OverItem);
@@ -74,12 +74,12 @@ public class NPC : CollidableItem {
         Item item = other.GetComponent<Item>();
 
         //Checks if it is a pickubable item
-        if (item != null && item.isPickupable && GameManager.Instance != null)
+        if (item != null && item.inWorld && GameManager.Instance != null)
         {
             GameManager.Instance.ExecuteInteraction(this, item);
 
         }
-        else if (item != null && !item.isPickupable)
+        else if (item != null && !item.inWorld)
         {
             OverItem = item;
         }

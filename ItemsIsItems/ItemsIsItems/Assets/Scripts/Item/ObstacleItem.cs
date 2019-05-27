@@ -10,6 +10,7 @@ public class ObstacleItem : CollidableItem
         base.Start();
 
         isPickupable = false;
+        inWorld = true;
         GetComponent<Rigidbody2D>().bodyType = RigidbodyType2D.Static;
     }
 }

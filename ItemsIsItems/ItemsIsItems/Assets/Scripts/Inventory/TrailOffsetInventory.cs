@@ -72,6 +72,7 @@ public class TrailOffsetInventory : Inventory
         base.AddItemAt(item, index);
         item.inventoryWithin = this;
         item.isPickupable = false;
+        item.inWorld = false;
         item.GetComponent<MoveTowardPosition>().speed = speed;
     }
 

@@ -19,7 +19,10 @@ public class Item : MonoBehaviour
 
     public Inventory inventoryWithin;
     
+    //Used so player can place in inventory
     public bool isPickupable = true;
+    //Used so NPCs can see the item (ergo, NPCs cannot see items in player's inventory)
+    public bool inWorld = true;
     [HideInInspector]
     public bool drag;
     public bool multipleInteract = false;
@@ -54,6 +57,7 @@ public class Item : MonoBehaviour
     {
         drag = false;
         isPickupable = true;
+        inWorld = true;
         GetComponent<MoveTowardPosition>().moveToPosition(transform.position);
         inventoryWithin = null;
         gameObject.layer = LayerMask.NameToLayer("Foreground");
