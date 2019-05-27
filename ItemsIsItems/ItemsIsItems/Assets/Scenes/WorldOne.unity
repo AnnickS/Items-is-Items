@@ -110549,6 +110549,11 @@ Prefab:
       propertyPath: m_Name
       value: StoneBrick (29)
       objectReference: {fileID: 0}
+    - target: {fileID: 61579337249382516, guid: 204e66ede9468e247930478f7213d13a,
+        type: 2}
+      propertyPath: m_IsTrigger
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 204e66ede9468e247930478f7213d13a, type: 2}
   m_IsPrefabParent: 0
@@ -111752,6 +111757,48 @@ Transform:
   m_PrefabParentObject: {fileID: 4814660298753150, guid: 96258f27f477f4c4ba9bbf3cabbebb75,
     type: 2}
   m_PrefabInternal: {fileID: 446937516}
+--- !u!1001 &1095359116
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 4180078965799908, guid: 861feb995b7db974ab5266f0947c84bb, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: -2.056
+      objectReference: {fileID: 0}
+    - target: {fileID: 4180078965799908, guid: 861feb995b7db974ab5266f0947c84bb, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 23.608
+      objectReference: {fileID: 0}
+    - target: {fileID: 4180078965799908, guid: 861feb995b7db974ab5266f0947c84bb, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4180078965799908, guid: 861feb995b7db974ab5266f0947c84bb, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4180078965799908, guid: 861feb995b7db974ab5266f0947c84bb, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4180078965799908, guid: 861feb995b7db974ab5266f0947c84bb, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4180078965799908, guid: 861feb995b7db974ab5266f0947c84bb, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4180078965799908, guid: 861feb995b7db974ab5266f0947c84bb, type: 2}
+      propertyPath: m_RootOrder
+      value: 16
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 100100000, guid: 861feb995b7db974ab5266f0947c84bb, type: 2}
+  m_IsPrefabParent: 0
 --- !u!1001 &1098389649
 Prefab:
   m_ObjectHideFlags: 0
@@ -118023,11 +118070,11 @@ MonoBehaviour:
     lineCount: 1
     pageCount: 1
     materialCount: 1
-  m_havePropertiesChanged: 1
+  m_havePropertiesChanged: 0
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_spriteAnimator: {fileID: 0}
-  m_isInputParsingRequired: 1
+  m_isInputParsingRequired: 0
   m_inputSource: 0
   m_hasFontAssetChanged: 0
   m_renderer: {fileID: 1705093087}
