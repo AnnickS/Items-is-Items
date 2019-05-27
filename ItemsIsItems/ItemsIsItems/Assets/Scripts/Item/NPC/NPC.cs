@@ -73,6 +73,7 @@ public class NPC : CollidableItem {
     {
         Item item = other.GetComponent<Item>();
 
+        Debug.Log("In here for " + this.gameObject.name);
         //Checks if it is a pickubable item
         if (item != null && item.inWorld && GameManager.Instance != null)
         {

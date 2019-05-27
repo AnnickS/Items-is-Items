@@ -9,8 +9,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c7c572a8d19548544abfe65b2612c124, type: 3}
-  m_Name: GuardImprison
+  m_Name: ImprisonGuard
   m_EditorClassIdentifier: 
-  itemValidator1: {fileID: 11400000, guid: e0ef533fb8dd0914cb1bd57c02aaa8b3, type: 2}
-  itemValidator2: {fileID: 11400000, guid: 36fdc5ca39ee253439890b5d67cb320c, type: 2}
+  itemValidator1: {fileID: 11400000, guid: e001f440cad223948a1dfeef492c9674, type: 2}
+  itemValidator2: {fileID: 11400000, guid: 43c1758e62f2ac743be975ba7080eb9d, type: 2}
   effect: {fileID: 11400000, guid: 2a7ec324b21b4f748b15752cfaf0ba7e, type: 2}

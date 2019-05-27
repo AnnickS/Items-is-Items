@@ -45,6 +45,7 @@ public class GameManager : MonoBehaviour
 
     public bool ExecuteInteraction(Item item1, Item item2)
     {
+        Debug.Log("Executing interaction... item 1: " + item1.name + " item 2: " + item2.name);
         bool interacted = false;
         foreach (Combination combination in combinations)
         {
