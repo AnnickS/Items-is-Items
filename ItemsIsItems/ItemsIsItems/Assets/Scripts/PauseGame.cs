@@ -12,6 +12,7 @@ public class PauseGame : MonoBehaviour
 
     void Start()
     {
+        Resume();
         pauseMenu.SetActive(false);
     }
 
@@ -19,6 +20,7 @@ public class PauseGame : MonoBehaviour
     {
         if (Input.GetKeyDown(pauseKey))
         {
+            Debug.Log("Pause Button was pressed");
             if (isGamePaused)
             {
                 Resume();
