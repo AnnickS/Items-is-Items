@@ -8,11 +8,10 @@ public class PauseGame : MonoBehaviour
     public static bool isGamePaused = false;
     public GameObject pauseMenu;
     public KeyCode pauseKey;
-    protected static float defaultGameSpeed = 1;
+    protected static float defaultTimeScale;
 
     void Start()
     {
-        Resume();
         pauseMenu.SetActive(false);
     }
 
@@ -35,7 +34,7 @@ public class PauseGame : MonoBehaviour
     public void Pause()
     {
         isGamePaused = true;
-        defaultGameSpeed = Time.timeScale;
+        defaultTimeScale = Time.timeScale;
         Time.timeScale = 0;
         pauseMenu.SetActive(true);
     }
@@ -43,7 +42,19 @@ public class PauseGame : MonoBehaviour
     public void Resume()
     {
         isGamePaused = false;
-        Time.timeScale = defaultGameSpeed;
+        Time.timeScale = defaultTimeScale;
         pauseMenu.SetActive(false);
+    }
+
+    public float getDefaultTimeScale()
+    {
+        if(isGamePaused)
+        {
+            return defaultTimeScale;
+        }
+        else
+        {
+            return Time.timeScale;
+        }
     }
 }
