@@ -85,6 +85,13 @@ public class MoveTowardPosition : MonoBehaviour
 
     private void setPositionXY(Vector2 newPosition)
     {
-        this.transform.position = Vector3.Lerp(transform.position, new Vector3(newPosition.x, newPosition.y, this.transform.position.z), Time.deltaTime*5f);
+        Vector3 targetPos = new Vector3(newPosition.x, newPosition.y, this.transform.position.z);
+        if (Vector3.Distance(transform.position, targetPos) < 0.001)
+        {
+            this.transform.position = targetPos;
+        }
+        else {
+            this.transform.position = Vector3.Lerp(transform.position, new Vector3(newPosition.x, newPosition.y, this.transform.position.z), Time.deltaTime * 5f);
+        }
     }
 }

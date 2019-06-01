@@ -122,11 +122,11 @@ public class Item : MonoBehaviour
 
     private void dragEnd()
     {
+        List<Item> touching = GetTouching();
         Drop();
         this.transform.localScale = onDragPreviousScale;
         this.transform.position = new Vector3(this.transform.position.x, this.transform.position.y, onDragPreviousZ);
-
-        List<Item> touching = GetTouching();
+        
         if (GameManager.Instance != null && touching.Count > 0)
         {
             foreach (Item item in touching)

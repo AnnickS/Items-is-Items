@@ -105,8 +105,9 @@ MonoBehaviour:
   onDragScaleSize: {x: 1.3, y: 1.3, z: 1}
   inventoryWithin: {fileID: 0}
   isPickupable: 1
+  inWorld: 1
   drag: 0
-  multipleInteract: 0
+  multipleInteract: 1
   jail: {fileID: 0}
   Descriptors:
   - {fileID: 11400000, guid: dd00adb47a7458342946fde8a67786df, type: 2}

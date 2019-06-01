@@ -13,7 +13,11 @@ public class NPC : CollidableItem {
     public Vector2 CurrentTarget;
     public bool Rotate = false;
     public bool isWaiting = false;
-    public bool rotateForward = true;
+
+    public bool resetRotationAtRest = true;
+
+    public bool restWithStartingRotation = true;
+    private Vector2 startingRotation;
 
 
     // Use this for initialization
@@ -24,6 +28,9 @@ public class NPC : CollidableItem {
         Target = gameObject.GetComponent<NPCTarget>();
         Rotation = gameObject.GetComponent<Rotate>();
         CurrentTarget = transform.position;
+        
+        Vector3 forwardPosition = transform.position + transform.up*-1;
+        startingRotation = new Vector2(forwardPosition.x, forwardPosition.y);
     }
 	
 	// Update is called once per frame
@@ -45,9 +52,14 @@ public class NPC : CollidableItem {
             CurrentTarget = Target.SelectTarget();
         } 
 
-        if((CurrentTarget.x == this.transform.position.x) && (CurrentTarget.y == this.transform.position.y) && rotateForward)
+        if((CurrentTarget.x == this.transform.position.x) && (CurrentTarget.y == this.transform.position.y) && resetRotationAtRest)
         {
-            gameObject.GetComponent<RotateTowardPosition>().rotateToPosition(new Vector2(transform.position.x, transform.position.y - 1));
+            Vector2 restingRotation = new Vector2(transform.position.x, transform.position.y - 1);
+            if (restWithStartingRotation)
+            {
+                restingRotation = startingRotation;
+            }
+            gameObject.GetComponent<RotateTowardPosition>().rotateToPosition(restingRotation);
         } else
         {
             gameObject.GetComponent<MoveTowardPosition>().moveToPosition(CurrentTarget);
