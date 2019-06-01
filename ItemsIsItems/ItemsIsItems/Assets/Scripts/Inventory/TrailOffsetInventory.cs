@@ -36,7 +36,9 @@ public class TrailOffsetInventory : Inventory
                 break;
             }
             Item item = items[i];
-            item.GetComponent<MoveTowardPosition>().moveToPosition(points[(i+1)* Mathf.RoundToInt(distance / segmentSize)]);
+            MoveTowardPosition itemMTP = item.GetComponent<MoveTowardPosition>();
+            Vector3 nextPosition = points[(i + 1) * Mathf.RoundToInt(distance / segmentSize)];// Vector3.Lerp(item.transform.position, points[(i + 1) * Mathf.RoundToInt(distance / segmentSize)], Time.deltaTime*5f);
+            item.GetComponent<MoveTowardPosition>().moveToPosition(nextPosition);
         }
 
         /*
@@ -142,5 +144,11 @@ public class TrailOffsetInventory : Inventory
         item.GetComponent<Movement>().SetTargetPosition(hit.point);
     }*/
 
-
+    private void OnDrawGizmos()
+    {
+        for (int i = 1; i < points.Count; i++)
+        {
+            Gizmos.DrawLine(points[i - 1], points[i]);
+        }
+    }
 }

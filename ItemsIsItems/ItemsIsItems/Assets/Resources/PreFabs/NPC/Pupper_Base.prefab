@@ -19,7 +19,8 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4208559360217914}
-  - component: {fileID: 114520703623825152}
+  - component: {fileID: 114450335206910122}
+  - component: {fileID: 114454474908991620}
   m_Layer: 9
   m_Name: I'mBetter
   m_TagString: Untagged
@@ -113,7 +114,7 @@ GameObject:
   - component: {fileID: 33498573433260542}
   - component: {fileID: 222689163160067312}
   - component: {fileID: 114808001554632032}
-  m_Layer: 9
+  m_Layer: 5
   m_Name: DialogText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -168,8 +169,8 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1917203601430780}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 4.9491777, y: 1.5134286, z: -5}
-  m_LocalScale: {x: 0.4, y: 0.4, z: 1}
+  m_LocalPosition: {x: 4.949178, y: 1.5134277, z: -5}
+  m_LocalScale: {x: 0.40000004, y: 0.40000004, z: 1}
   m_Children:
   - {fileID: 4392186644360488}
   - {fileID: 4208559360217914}
@@ -184,7 +185,7 @@ Transform:
   m_GameObject: {fileID: 1583695239447432}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -7.6, y: 0.3, z: 0}
-  m_LocalScale: {x: 0.5, y: 0.5, z: 1}
+  m_LocalScale: {x: 0.25, y: 0.25, z: 1}
   m_Children: []
   m_Father: {fileID: 4973683575304590}
   m_RootOrder: 1
@@ -211,8 +212,8 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1667551460354070}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 4.3940177, y: 0.55361754, z: -4}
-  m_LocalScale: {x: 0.4, y: 0.4, z: 1}
+  m_LocalPosition: {x: 10.79, y: 0.18, z: -4}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 224914400869479300}
   - {fileID: 4782794657288148}
@@ -366,6 +367,30 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   FrontFacing: {x: 0, y: 0, z: 0}
   RotationSpeed: 10
+--- !u!114 &114450335206910122
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1191070131377962}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: da2bc5bb4c801d74982fa8811a5e7f4c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  text: Put what you want the quest giver to say here (Story/Hint/etc)
+  SceneToLoad: VictoryScreen
+--- !u!114 &114454474908991620
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1191070131377962}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cc6cbfcd43e7fd847bf0ac6f9aadb4c0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &114458865133273060
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -380,18 +405,6 @@ MonoBehaviour:
   text: AaroOOoo... [He sounds sick]
   combination: {fileID: 11400000, guid: 9a0d462a8840b5340b52bcc311a1de7a, type: 2}
   isDone: 0
---- !u!114 &114520703623825152
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1191070131377962}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7b42c0b2e052aa84f858e96fe386ae1d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  text: . . . Ruff! [He's wagging his tail!]
 --- !u!114 &114551377618368722
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -419,7 +432,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f3eb2269655c17f4d9635f0cc0c3943a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 0.05
+  speed: 1
   moving: 0
 --- !u!114 &114763156031707114
 MonoBehaviour:
@@ -437,6 +450,7 @@ MonoBehaviour:
   onDragScaleSize: {x: 1.3, y: 1.3, z: 1}
   inventoryWithin: {fileID: 0}
   isPickupable: 0
+  inWorld: 1
   drag: 0
   multipleInteract: 0
   jail: {fileID: 0}
@@ -530,7 +544,7 @@ MonoBehaviour:
   m_firstVisibleCharacter: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 0, y: 0, z: 0, w: 0}
+  m_margin: {x: 0, y: 0, z: 2.1019921, w: 0.7101339}
   m_textInfo:
     textComponent: {fileID: 114808001554632032}
     characterCount: 12
@@ -694,6 +708,6 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: -12.197, y: -0.214}
+  m_AnchoredPosition: {x: -11.48, y: 0.41}
   m_SizeDelta: {x: 10.774, y: 3.617}
   m_Pivot: {x: 0, y: 0}

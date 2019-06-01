@@ -7,7 +7,7 @@ using UnityEngine;
 [RequireComponent(typeof(Rigidbody2D))]
 public class MoveTowardPosition : MonoBehaviour
 {
-    public float speed = 0.05f;
+    public float speed = 1f;
     private Vector2 targetPosition;
     public bool moving = false;
 
@@ -85,6 +85,6 @@ public class MoveTowardPosition : MonoBehaviour
 
     private void setPositionXY(Vector2 newPosition)
     {
-        this.transform.position = new Vector3(newPosition.x, newPosition.y, this.transform.position.z);
+        this.transform.position = Vector3.Lerp(transform.position, new Vector3(newPosition.x, newPosition.y, this.transform.position.z), Time.deltaTime*5f);
     }
 }

@@ -200,7 +200,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1212175605527544}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 21.825045, y: 1.0940437, z: 0}
+  m_LocalPosition: {x: 21.825045, y: 1.0940437, z: -4}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 224743182300261180}
@@ -227,8 +227,8 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1450210610876158}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -15.05, y: -2.06, z: 0}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -9.233579, y: -22.174168, z: -0.087890625}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4356990917441022}
@@ -257,7 +257,7 @@ Transform:
   m_GameObject: {fileID: 1938312315199780}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -18.56, y: -1.03, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.25, y: 0.25, z: 1}
   m_Children: []
   m_Father: {fileID: 4356990917441022}
   m_RootOrder: 1
@@ -328,7 +328,7 @@ Rigidbody2D:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1450210610876158}
-  m_BodyType: 0
+  m_BodyType: 2
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
@@ -340,7 +340,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 5
+  m_Constraints: 0
 --- !u!61 &61566376205576066
 BoxCollider2D:
   m_ObjectHideFlags: 1
@@ -521,6 +521,7 @@ MonoBehaviour:
   onDragScaleSize: {x: 1.3, y: 1.3, z: 1}
   inventoryWithin: {fileID: 0}
   isPickupable: 0
+  inWorld: 1
   drag: 0
   multipleInteract: 0
   jail: {fileID: 0}
@@ -625,7 +626,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f3eb2269655c17f4d9635f0cc0c3943a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 0.05
+  speed: 1
   moving: 0
 --- !u!114 &114756132137454448
 MonoBehaviour:
@@ -664,7 +665,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   waitTime: 0
   AttractedTo:
-  - {fileID: 11400000, guid: a19c3a7252e26f44aab9e86d52a41f18, type: 2}
   - {fileID: 11400000, guid: 777b439b4598ce74cbbcba71a2ba435c, type: 2}
   ScaredOf:
   - {fileID: 11400000, guid: f79ef1d2fe284be459e639477173757e, type: 2}
@@ -747,8 +747,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: 1705728979
+  m_SortingLayer: 6
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: a4b10d833b068e746a7ce76dcdd45f96, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
