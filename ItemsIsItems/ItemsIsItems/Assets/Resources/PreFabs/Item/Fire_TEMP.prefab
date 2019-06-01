@@ -37,8 +37,8 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1809401408633794}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0.92422104, y: 24.57873, z: 0.07421875}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -104,7 +104,8 @@ MonoBehaviour:
   onDragZ: -5
   onDragScaleSize: {x: 1.3, y: 1.3, z: 1}
   inventoryWithin: {fileID: 0}
-  isPickupable: 1
+  isPickupable: 0
+  inWorld: 1
   drag: 0
   multipleInteract: 0
   jail: {fileID: 0}
@@ -156,7 +157,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -1213559313
-  m_SortingLayer: 3
+  m_SortingLayer: 2
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: b1bc883cea518ac478abce5c5b45e7c4, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
