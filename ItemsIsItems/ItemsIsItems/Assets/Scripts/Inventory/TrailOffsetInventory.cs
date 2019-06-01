@@ -23,11 +23,11 @@ public class TrailOffsetInventory : Inventory
 
         if (points.Count == 0 || Vector3.Distance(points[0], transform.position) >= segmentSize)
         {
-            if (points.Count > items.Count * (distance / segmentSize) +1)
+            while(points.Count > items.Count * (distance / segmentSize) +1)
             {
                 points.RemoveAt(points.Count-1);
             }
-            points.Insert(0, transform.position);            
+            points.Insert(0, transform.position);
         }
 
         for(int i = 0; i < items.Count; i++){
@@ -36,6 +36,12 @@ public class TrailOffsetInventory : Inventory
                 break;
             }
             Item item = items[i];
+            if(item == null || item.IsDestroyed())
+            {
+                items.RemoveAt(i);
+                i--;
+                continue;
+            }
             MoveTowardPosition itemMTP = item.GetComponent<MoveTowardPosition>();
             Vector3 nextPosition = points[(i + 1) * Mathf.RoundToInt(distance / segmentSize)];// Vector3.Lerp(item.transform.position, points[(i + 1) * Mathf.RoundToInt(distance / segmentSize)], Time.deltaTime*5f);
             item.GetComponent<MoveTowardPosition>().moveToPosition(nextPosition);
