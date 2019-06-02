@@ -33,7 +33,7 @@ public class GameManager : MonoBehaviour
         else if (Input.GetKeyDown(KeyCode.L))
         {
             Debug.Log("Loading...");
-            StorageManager.PrepLoad(SceneManager.GetActiveScene().name);            
+            StorageManager.PrepLoad();            
         }
     }
 

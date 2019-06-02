@@ -7,13 +7,19 @@ using UnityEngine.SceneManagement;
 
 public static class StorageManager
 {
+    public const String SAVENAME = "OnlySave";
     private const String PREFABFILEPATH = "PreFabs";
     private static String FileToLoad;
 
+    public static bool IfAny()
+    {
+        String path = Path.Combine(Application.persistentDataPath, SAVENAME + ".json");
+        return File.Exists(path);
+    }
+
     public static void SaveGameData()
     {
-        String sceneName = SceneManager.GetActiveScene().name;
-        String path = Path.Combine(Application.persistentDataPath, sceneName + ".json");
+        String path = Path.Combine(Application.persistentDataPath, SAVENAME + ".json");
         Debug.Log(path);
 
         //new GameData(SceneManager.GetActiveScene().name); /*
@@ -25,16 +31,16 @@ public static class StorageManager
         /**/
     }
 
-    public static void PrepLoad(String fileName)
+    public static void PrepLoad()
     {
-        String path = Path.Combine(Application.persistentDataPath, fileName + ".json");
+        String path = Path.Combine(Application.persistentDataPath, SAVENAME + ".json");
         if (File.Exists(path))
         {
             using (StreamReader streamReader = File.OpenText(path))
             {
                 string jsonString = streamReader.ReadToEnd();
                 GameData gameData = JsonUtility.FromJson<GameData>(jsonString);
-                FileToLoad = fileName;
+                FileToLoad = SAVENAME;
                 SceneManager.LoadScene(gameData.sceneBaseName);
             }
         }
