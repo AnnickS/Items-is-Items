@@ -100,11 +100,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 830a61b150f3ac24bbe0978249224c6c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemBaseName: Bucket_Base
+  itemBaseName: 
   onDragZ: -5
   onDragScaleSize: {x: 1.3, y: 1.3, z: 1}
   inventoryWithin: {fileID: 0}
   isPickupable: 1
+  inWorld: 1
   drag: 0
   multipleInteract: 0
   jail: {fileID: 0}
@@ -156,7 +157,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -1213559313
-  m_SortingLayer: 3
+  m_SortingLayer: 2
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 4e68e100f73b18d45bca37e23f4a34f7, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}

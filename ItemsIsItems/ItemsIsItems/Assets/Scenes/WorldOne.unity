@@ -9222,8 +9222,8 @@ Prefab:
       value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 1475441152347790, guid: ed50c6368401bf449818b8c61d8fd535, type: 2}
-      propertyPath: m_Name
-      value: BucketEmpty_Base
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: ed50c6368401bf449818b8c61d8fd535, type: 2}
@@ -125553,6 +125553,14 @@ Prefab:
     - target: {fileID: 4051972440044158, guid: 542271395240ea34a9042a0b0dadce91, type: 2}
       propertyPath: m_RootOrder
       value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 1910800974723444, guid: 542271395240ea34a9042a0b0dadce91, type: 2}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1449423478709104, guid: 542271395240ea34a9042a0b0dadce91, type: 2}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 542271395240ea34a9042a0b0dadce91, type: 2}
