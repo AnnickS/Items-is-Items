@@ -2259,11 +2259,6 @@ Transform:
   m_PrefabParentObject: {fileID: 4940966796152866, guid: 204e66ede9468e247930478f7213d13a,
     type: 2}
   m_PrefabInternal: {fileID: 246785733}
---- !u!4 &247951219 stripped
-Transform:
-  m_PrefabParentObject: {fileID: 4796838583741738, guid: 906c54292a7dc3f47920c558c9aa2466,
-    type: 2}
-  m_PrefabInternal: {fileID: 1601924899}
 --- !u!1001 &248581454
 Prefab:
   m_ObjectHideFlags: 0
@@ -9165,6 +9160,22 @@ Prefab:
       value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 1475441152347790, guid: ed50c6368401bf449818b8c61d8fd535, type: 2}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1475441152347790, guid: ed50c6368401bf449818b8c61d8fd535, type: 2}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4262593238580038, guid: ed50c6368401bf449818b8c61d8fd535, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 11.19
+      objectReference: {fileID: 0}
+    - target: {fileID: 4262593238580038, guid: ed50c6368401bf449818b8c61d8fd535, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 0.59
+      objectReference: {fileID: 0}
+    - target: {fileID: 1503670828857004, guid: ed50c6368401bf449818b8c61d8fd535, type: 2}
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
@@ -107783,7 +107794,7 @@ Transform:
   m_LocalPosition: {x: 23.918516, y: 38.242794, z: 0.087890625}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
-  - {fileID: 247951219}
+  - {fileID: 1044134713}
   - {fileID: 1056574455}
   - {fileID: 973455341}
   - {fileID: 1163842648}
@@ -109679,6 +109690,11 @@ Transform:
   m_PrefabParentObject: {fileID: 4940966796152866, guid: 204e66ede9468e247930478f7213d13a,
     type: 2}
   m_PrefabInternal: {fileID: 1028498936}
+--- !u!4 &1044134713 stripped
+Transform:
+  m_PrefabParentObject: {fileID: 4796838583741738, guid: 906c54292a7dc3f47920c558c9aa2466,
+    type: 2}
+  m_PrefabInternal: {fileID: 1601924899}
 --- !u!1 &1046226677
 GameObject:
   m_ObjectHideFlags: 0
@@ -110292,7 +110308,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1097237495
 MonoBehaviour:
   m_ObjectHideFlags: 0
