@@ -7,6 +7,7 @@ public class PauseGame : MonoBehaviour
 {
     public static bool isGamePaused = false;
     public GameObject activeOnPause;
+    public GameObject deactivateOnPause;
     public KeyCode pauseKey;
     protected static float defaultTimeScale;
     public string mainMenuSceneName = "MainMenu";
@@ -38,6 +39,7 @@ public class PauseGame : MonoBehaviour
         defaultTimeScale = Time.timeScale;
         Time.timeScale = 0;
         activeOnPause.SetActive(true);
+        deactivateOnPause.SetActive(false);
     }
 
     public void Resume()
@@ -45,6 +47,7 @@ public class PauseGame : MonoBehaviour
         isGamePaused = false;
         Time.timeScale = defaultTimeScale;
         activeOnPause.SetActive(false);
+        deactivateOnPause.SetActive(true);
     }
 
     public float getDefaultTimeScale()
