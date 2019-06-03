@@ -30,7 +30,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!1 &1475441152347790
 GameObject:
   m_ObjectHideFlags: 0
@@ -50,7 +50,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!1 &1503670828857004
 GameObject:
   m_ObjectHideFlags: 0
@@ -70,7 +70,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!1 &1639999929379792
 GameObject:
   m_ObjectHideFlags: 0
@@ -516,7 +516,8 @@ MonoBehaviour:
   CurrentTarget: {x: 0, y: 0}
   Rotate: 0
   isWaiting: 0
-  rotateForward: 1
+  resetRotationAtRest: 1
+  restWithStartingRotation: 1
 --- !u!114 &114147576698466362
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -594,7 +595,8 @@ MonoBehaviour:
   CurrentTarget: {x: 0, y: 0}
   Rotate: 0
   isWaiting: 0
-  rotateForward: 1
+  resetRotationAtRest: 1
+  restWithStartingRotation: 1
 --- !u!114 &114326621647234036
 MonoBehaviour:
   m_ObjectHideFlags: 1

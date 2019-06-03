@@ -9225,6 +9225,22 @@ Prefab:
       propertyPath: m_Name
       value: BucketEmpty_Base
       objectReference: {fileID: 0}
+    - target: {fileID: 1475441152347790, guid: ed50c6368401bf449818b8c61d8fd535, type: 2}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4262593238580038, guid: ed50c6368401bf449818b8c61d8fd535, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 11.19
+      objectReference: {fileID: 0}
+    - target: {fileID: 4262593238580038, guid: ed50c6368401bf449818b8c61d8fd535, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 0.59
+      objectReference: {fileID: 0}
+    - target: {fileID: 1503670828857004, guid: ed50c6368401bf449818b8c61d8fd535, type: 2}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: ed50c6368401bf449818b8c61d8fd535, type: 2}
   m_IsPrefabParent: 0
