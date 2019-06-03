@@ -121346,6 +121346,11 @@ Prefab:
       propertyPath: m_isInputParsingRequired
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 114763156031707114, guid: 906c54292a7dc3f47920c558c9aa2466,
+        type: 2}
+      propertyPath: resetRotationAtRest
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 906c54292a7dc3f47920c558c9aa2466, type: 2}
   m_IsPrefabParent: 0
