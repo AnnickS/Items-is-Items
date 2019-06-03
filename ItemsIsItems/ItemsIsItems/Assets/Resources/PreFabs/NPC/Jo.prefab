@@ -51,6 +51,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4671541464598644}
   - component: {fileID: 212887212691931866}
+  - component: {fileID: 114013222879889208}
   m_Layer: 9
   m_Name: DialogBackground
   m_TagString: Untagged
@@ -142,7 +143,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1419416199570414}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 16.41, y: -34.01, z: -0.087890625}
+  m_LocalPosition: {x: 40.9, y: 3.5, z: -0.087890625}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4647954207149044}
@@ -435,6 +436,17 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   m_maskType: 0
+--- !u!114 &114013222879889208
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1396917688997996}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1431c5dfd205c6141b8de80e56667163, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &114275583551462070
 MonoBehaviour:
   m_ObjectHideFlags: 1

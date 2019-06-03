@@ -51,6 +51,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4402516851577686}
   - component: {fileID: 212715915101839532}
+  - component: {fileID: 114195862192157766}
   m_Layer: 9
   m_Name: DialogBackground
   m_TagString: Untagged
@@ -143,7 +144,7 @@ GameObject:
   - component: {fileID: 33300564257782452}
   - component: {fileID: 222355593804294472}
   - component: {fileID: 114581093488057748}
-  - component: {fileID: 114873572876248198}
+  - component: {fileID: 114590019307631672}
   m_Layer: 5
   m_Name: DialogText
   m_TagString: Untagged
@@ -241,7 +242,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1863385466568264}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -16.187916, y: -25.159986, z: -0.087890625}
+  m_LocalPosition: {x: 7.58, y: 13.21, z: -0.087890625}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4360680508837970}
@@ -336,6 +337,17 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
+--- !u!114 &114195862192157766
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1517998216137744}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1431c5dfd205c6141b8de80e56667163, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &114222596459409366
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -512,6 +524,17 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   m_maskType: 0
+--- !u!114 &114590019307631672
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1903308267273996}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1431c5dfd205c6141b8de80e56667163, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &114629534898671400
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -575,17 +598,6 @@ MonoBehaviour:
   ViewRadius: 5
   ViewAngle: 135
   GizmoSmellSides: 20
---- !u!114 &114873572876248198
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1903308267273996}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1431c5dfd205c6141b8de80e56667163, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &114906187794737916
 MonoBehaviour:
   m_ObjectHideFlags: 1
