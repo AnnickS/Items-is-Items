@@ -10,9 +10,12 @@ public class CameraFollowGameObject : MonoBehaviour
     // Use this for initialization
     void Start()
     {
-        if (gameObjectToFollow == null)
+        if (gameObjectToFollow != null)
         {
-
+            float newXPosition = gameObjectToFollow.transform.position.x;
+            float newYPosition = gameObjectToFollow.transform.position.y;
+            float oldZPosition = this.transform.position.z;
+            this.transform.position = new Vector3(newXPosition, newYPosition, oldZPosition);
         }
     }
 

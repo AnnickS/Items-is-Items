@@ -82,7 +82,7 @@ public static class StorageManager
             GameObject realItem = GameObject.Find(item.name);
             if(realItem == null)
             {
-                if(item.itemBaseName != null)
+                if(String.IsNullOrEmpty(item.itemBaseName) == false)
                 {
                     try
                     {
@@ -96,7 +96,7 @@ public static class StorageManager
                 }
                 else
                 {
-                    Debug.LogWarning("Loading item '"+realItem.name+"' failed.");
+                    Debug.LogWarning("Loading item '"+item.name+"' failed.");
                     continue;
                 }
             }
@@ -110,7 +110,7 @@ public static class StorageManager
             GameObject realNPC = GameObject.Find(npc.name);
             if (realNPC == null)
             {
-                if (npc.itemBaseName != null)
+                if (String.IsNullOrEmpty(npc.itemBaseName) == false)
                 {
                     try { 
                         realNPC = GameObject.Instantiate<GameObject>(Resources.Load<GameObject>(PREFABFILEPATH+"/NPC/" + npc.itemBaseName));
@@ -123,7 +123,7 @@ public static class StorageManager
                 }
                 else
                 {
-                    Debug.LogWarning("Loading item '" + realNPC.name + "' failed.");
+                    Debug.LogWarning("Loading item '" + npc.name + "' failed.");
                     continue;
                 }
             }
@@ -143,14 +143,14 @@ public static class StorageManager
             GameObject realPlayer = GameObject.Find(player.name);
             if (realPlayer == null)
             {
-                if (player.itemBaseName != null)
+                if (String.IsNullOrEmpty(player.itemBaseName) == false)
                 {
                     realPlayer = GameObject.Instantiate<GameObject>(Resources.Load<GameObject>("PreFabs/" + player.itemBaseName));
                     realPlayer.name = player.name;
                 }
                 else
                 {
-                    Debug.LogWarning("Loading item '" + realPlayer.name + "' failed.");
+                    Debug.LogWarning("Loading item '" + player.name + "' failed.");
                     continue;
                 }
             }

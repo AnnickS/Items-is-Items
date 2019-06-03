@@ -45,7 +45,7 @@ GameObject:
   - component: {fileID: 61031278903694638}
   - component: {fileID: 50470181216684334}
   m_Layer: 8
-  m_Name: BucketEmpty
+  m_Name: BucketEmpty_Base
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -649,7 +649,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 830a61b150f3ac24bbe0978249224c6c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemBaseName: BucketEmpty
+  itemBaseName: 
   onDragZ: -5
   onDragScaleSize: {x: 1.3, y: 1.3, z: 1}
   inventoryWithin: {fileID: 0}
@@ -684,7 +684,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 830a61b150f3ac24bbe0978249224c6c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemBaseName: BucketEmpty
+  itemBaseName: 
   onDragZ: -5
   onDragScaleSize: {x: 1.3, y: 1.3, z: 1}
   inventoryWithin: {fileID: 0}
