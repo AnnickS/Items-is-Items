@@ -4,14 +4,17 @@ using UnityEngine;
 
 public class TrailOffsetInventory : Inventory
 {
+    public float offset = 0;
     public float speed = 10;
     public float distance = 0.5f;
     public float segmentSize = 0.1f;
     private List<Vector3> points = new List<Vector3>();
+    private int offestSegments = 0;
 
     protected override void Start()
     {
         base.Start();
+        offestSegments = (int)(offset / segmentSize);
     }
 
     void Update()
@@ -23,7 +26,7 @@ public class TrailOffsetInventory : Inventory
 
         if (points.Count == 0 || Vector3.Distance(points[0], transform.position) >= segmentSize)
         {
-            while(points.Count > items.Count * (distance / segmentSize) +1)
+            while(points.Count > items.Count * (distance / segmentSize) + 1 + offestSegments)
             {
                 points.RemoveAt(points.Count-1);
             }
@@ -31,7 +34,7 @@ public class TrailOffsetInventory : Inventory
         }
 
         for(int i = 0; i < items.Count; i++){
-            if(points.Count <= (i+1) * Mathf.RoundToInt(distance / segmentSize))
+            if(points.Count <= offestSegments + (i + 1) * Mathf.RoundToInt(distance / segmentSize))
             {
                 break;
             }
@@ -43,7 +46,7 @@ public class TrailOffsetInventory : Inventory
                 continue;
             }
             MoveTowardPosition itemMTP = item.GetComponent<MoveTowardPosition>();
-            Vector3 nextPosition = points[(i + 1) * Mathf.RoundToInt(distance / segmentSize)];// Vector3.Lerp(item.transform.position, points[(i + 1) * Mathf.RoundToInt(distance / segmentSize)], Time.deltaTime*5f);
+            Vector3 nextPosition = points[offestSegments + (i + 1) * Mathf.RoundToInt(distance / segmentSize)];
             item.GetComponent<MoveTowardPosition>().moveToPosition(nextPosition);
         }
 

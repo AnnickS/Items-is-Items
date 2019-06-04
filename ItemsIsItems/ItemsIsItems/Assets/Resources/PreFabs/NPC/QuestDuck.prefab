@@ -212,7 +212,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f3eb2269655c17f4d9635f0cc0c3943a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 1
+  speed: 0.5
   moving: 0
 --- !u!114 &114113168723565360
 MonoBehaviour:
@@ -325,7 +325,8 @@ MonoBehaviour:
   CurrentTarget: {x: 0, y: 0}
   Rotate: 0
   isWaiting: 0
-  rotateForward: 1
+  resetRotationAtRest: 1
+  restWithStartingRotation: 1
 --- !u!114 &114925286282615234
 MonoBehaviour:
   m_ObjectHideFlags: 1

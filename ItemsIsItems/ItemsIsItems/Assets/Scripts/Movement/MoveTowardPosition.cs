@@ -91,7 +91,7 @@ public class MoveTowardPosition : MonoBehaviour
             this.transform.position = targetPos;
         }
         else {
-            this.transform.position = Vector3.Lerp(transform.position, new Vector3(newPosition.x, newPosition.y, this.transform.position.z), Time.deltaTime * 5f);
+            this.transform.position = Vector3.Lerp(transform.position, new Vector3(newPosition.x, newPosition.y, this.transform.position.z), Time.deltaTime * 10f);
         }
     }
 }

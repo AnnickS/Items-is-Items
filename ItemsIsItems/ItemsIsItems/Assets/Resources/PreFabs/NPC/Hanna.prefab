@@ -345,6 +345,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d27b14794abcc124e96312edc9ff1f39, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  textColor: {r: 0, g: 0, b: 0, a: 1}
   timeOnScreen: 1
 --- !u!114 &114304274694286490
 MonoBehaviour:
@@ -400,7 +401,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f3eb2269655c17f4d9635f0cc0c3943a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 1
+  speed: 0.5
   moving: 0
 --- !u!114 &114430187775378356
 MonoBehaviour:
