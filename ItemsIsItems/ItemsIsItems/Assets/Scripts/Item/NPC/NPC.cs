@@ -29,7 +29,7 @@ public class NPC : CollidableItem {
         Rotation = gameObject.GetComponent<Rotate>();
         CurrentTarget = transform.position;
         
-        Vector3 forwardPosition = transform.position + transform.up*-1;
+        Vector3 forwardPosition = transform.position + transform.up;
         startingRotation = new Vector2(forwardPosition.x, forwardPosition.y);
     }
 	
@@ -106,5 +106,11 @@ public class NPC : CollidableItem {
         {
             OverItem = null;
         }
+    }
+
+    private void OnDrawGizmosSelected()
+    {
+        Gizmos.color = Color.red;
+        Gizmos.DrawLine(transform.position, startingRotation);
     }
 }

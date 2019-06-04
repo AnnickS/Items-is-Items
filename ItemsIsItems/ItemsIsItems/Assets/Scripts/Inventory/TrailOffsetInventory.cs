@@ -47,7 +47,7 @@ public class TrailOffsetInventory : Inventory
             }
             MoveTowardPosition itemMTP = item.GetComponent<MoveTowardPosition>();
             Vector3 nextPosition = points[offestSegments + (i + 1) * Mathf.RoundToInt(distance / segmentSize)];
-            item.GetComponent<MoveTowardPosition>().moveToPosition(nextPosition);
+            itemMTP.moveToPosition(nextPosition);
         }
 
         /*

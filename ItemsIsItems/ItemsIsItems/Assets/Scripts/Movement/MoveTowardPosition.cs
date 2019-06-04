@@ -86,7 +86,7 @@ public class MoveTowardPosition : MonoBehaviour
     private void setPositionXY(Vector2 newPosition)
     {
         Vector3 targetPos = new Vector3(newPosition.x, newPosition.y, this.transform.position.z);
-        if (Vector3.Distance(transform.position, targetPos) < 0.001)
+        if (Vector3.Distance(transform.position, targetPos) < 0.01)
         {
             this.transform.position = targetPos;
         }

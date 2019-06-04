@@ -50,7 +50,7 @@ public class RotationTest {
         rotateScript.rotateTowardsTargetPosition();
 
         Quaternion actual = character.transform.rotation;
-        Quaternion expected = Quaternion.Euler(new Vector3(0, 0, -45 + rotateScript.rotationOffset));
+        Quaternion expected = Quaternion.Euler(new Vector3(0, 0, -45));// + rotateScript.rotationOffset));
 
         string errorMessage = "";
         errorMessage += "The Rotation Test failed it had: ";
