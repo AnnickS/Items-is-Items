@@ -7,6 +7,7 @@ using UnityEngine;
 public class DialogPopup : Dialog
 {
     protected TextMeshPro textMesh;
+    public Color textColor = Color.black;
     private double timeLeft = 0;
     public double timeOnScreen = 1.0;
 
@@ -21,6 +22,7 @@ public class DialogPopup : Dialog
 
     void Start()
     {
+        textMesh.color = textColor;
         hide();
     }
 
