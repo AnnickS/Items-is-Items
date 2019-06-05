@@ -34,9 +34,9 @@ public class NPCTarget : MonoBehaviour {
         Item current;
         Transform cTransform;
 
-
         for (int i = 0; i < Vision.WithinView.Count; i++)
         {
+            
             current = Vision.WithinView[i];
             cTransform = current.GetComponent<Transform>();
             string name = current.gameObject.name;
@@ -98,8 +98,8 @@ public class NPCTarget : MonoBehaviour {
                 }
             }
         }
-
-        if(goesToBase)
+        
+        if (goesToBase)
         {
             return Base;
         } else

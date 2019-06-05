@@ -4,6 +4,7 @@ using UnityEngine;
 public class RotateTowardPosition : MonoBehaviour
 {
     private Vector2 currentTargetPosition = new Vector2();
+    public float rotationOffset = 0;
 
     public void rotateToPosition(Vector2 targetPosition)
     {
@@ -21,7 +22,8 @@ public class RotateTowardPosition : MonoBehaviour
         targetPosition.y = targetPosition.y - object_pos.y;
 
         float angle = Mathf.Atan2(targetPosition.y, targetPosition.x) * Mathf.Rad2Deg;
-        angle -= 90;
+        angle += 90;
+        angle += rotationOffset;
         transform.rotation = Quaternion.Euler(new Vector3(0, 0, angle));
     }
 

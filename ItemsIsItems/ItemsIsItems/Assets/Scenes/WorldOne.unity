@@ -114505,7 +114505,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ccbb68d842519e543a8c7a698635c80b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rotationOffset: 180
+  rotationOffset: 0
 --- !u!114 &1365528491
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -121676,6 +121676,21 @@ Prefab:
       propertyPath: jail
       value: 
       objectReference: {fileID: 82226013}
+    - target: {fileID: 114527250947717452, guid: a049f586d48507b4a9ce9554efdd9e7b,
+        type: 2}
+      propertyPath: rotationOffset
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114526502520317018, guid: a049f586d48507b4a9ce9554efdd9e7b,
+        type: 2}
+      propertyPath: resetRotationAtRest
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114526502520317018, guid: a049f586d48507b4a9ce9554efdd9e7b,
+        type: 2}
+      propertyPath: restWithStartingRotation
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: a049f586d48507b4a9ce9554efdd9e7b, type: 2}
   m_IsPrefabParent: 0

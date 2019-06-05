@@ -29,7 +29,7 @@ public class NPC : CollidableItem {
         Rotation = gameObject.GetComponent<Rotate>();
         CurrentTarget = transform.position;
         
-        Vector3 forwardPosition = transform.position + transform.up;
+        Vector3 forwardPosition = transform.position + Quaternion.Euler(new Vector3(0,0,GetComponent<RotateTowardPosition>().rotationOffset)*-1)*(transform.up*-1);
         startingRotation = new Vector2(forwardPosition.x, forwardPosition.y);
     }
 	
