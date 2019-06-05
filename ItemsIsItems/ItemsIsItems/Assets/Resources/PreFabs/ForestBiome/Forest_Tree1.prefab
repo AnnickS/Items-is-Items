@@ -20,10 +20,11 @@ GameObject:
   m_Component:
   - component: {fileID: 4059257757591732}
   - component: {fileID: 212820461387183234}
-  - component: {fileID: 114107282262766750}
   - component: {fileID: 61641632257312840}
-  - component: {fileID: 50603910192067950}
-  - component: {fileID: 114317339014394874}
+  - component: {fileID: 61746556152870004}
+  - component: {fileID: 114023250704006162}
+  - component: {fileID: 50660301344798272}
+  - component: {fileID: 114320580714251382}
   m_Layer: 8
   m_Name: Forest_Tree1
   m_TagString: Untagged
@@ -44,7 +45,7 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!50 &50603910192067950
+--- !u!50 &50660301344798272
 Rigidbody2D:
   serializedVersion: 4
   m_ObjectHideFlags: 1
@@ -89,7 +90,32 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1.0155153, y: 0.5646057}
   m_EdgeRadius: 0
---- !u!114 &114107282262766750
+--- !u!61 &61746556152870004
+BoxCollider2D:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1666680301047756}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -0.24424219, y: -0.71769714}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 2, y: 2}
+    newSize: {x: 2, y: 2}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 1.0155153, y: 0.5646057}
+  m_EdgeRadius: 0
+--- !u!114 &114023250704006162
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -97,7 +123,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1666680301047756}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 517001a17f3fb2045a7c64d517ebad9f, type: 3}
+  m_Script: {fileID: 11500000, guid: 6c023914054e0a04ead2d871fb688eef, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   itemBaseName: 
@@ -111,7 +137,8 @@ MonoBehaviour:
   jail: {fileID: 0}
   Descriptors:
   - {fileID: 11400000, guid: 94a76e62c40d3f240be2bb2fddf5a5c8, type: 2}
---- !u!114 &114317339014394874
+  needsColliders: 0
+--- !u!114 &114320580714251382
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}

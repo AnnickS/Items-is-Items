@@ -979,11 +979,11 @@ Prefab:
     m_Modifications:
     - target: {fileID: 4189023755930222, guid: 40088cc7edc9f0745a47c45adf84d0d1, type: 2}
       propertyPath: m_LocalPosition.x
-      value: -22.00578
+      value: 0.4
       objectReference: {fileID: 0}
     - target: {fileID: 4189023755930222, guid: 40088cc7edc9f0745a47c45adf84d0d1, type: 2}
       propertyPath: m_LocalPosition.y
-      value: 8.468729
+      value: 3.24
       objectReference: {fileID: 0}
     - target: {fileID: 4189023755930222, guid: 40088cc7edc9f0745a47c45adf84d0d1, type: 2}
       propertyPath: m_LocalPosition.z
@@ -112483,11 +112483,11 @@ Prefab:
     m_Modifications:
     - target: {fileID: 4059257757591732, guid: fa05caed218e73b43889d01420867d0c, type: 2}
       propertyPath: m_LocalPosition.x
-      value: 41.33
+      value: 41.49
       objectReference: {fileID: 0}
     - target: {fileID: 4059257757591732, guid: fa05caed218e73b43889d01420867d0c, type: 2}
       propertyPath: m_LocalPosition.y
-      value: 136.98
+      value: 136.62
       objectReference: {fileID: 0}
     - target: {fileID: 4059257757591732, guid: fa05caed218e73b43889d01420867d0c, type: 2}
       propertyPath: m_LocalPosition.z
@@ -112511,6 +112511,20 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4059257757591732, guid: fa05caed218e73b43889d01420867d0c, type: 2}
       propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: m_Simulated
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 61641632257312840, guid: fa05caed218e73b43889d01420867d0c,
+        type: 2}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 61746556152870004, guid: fa05caed218e73b43889d01420867d0c,
+        type: 2}
+      propertyPath: m_IsTrigger
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
@@ -114386,6 +114400,7 @@ MonoBehaviour:
   jail: {fileID: 0}
   Descriptors:
   - {fileID: 11400000, guid: a0d2f5b498825a14190c1bf3e53f635a, type: 2}
+  needsColliders: 1
   CurrentTarget: {x: 0, y: 0}
   Rotate: 0
   isWaiting: 0
