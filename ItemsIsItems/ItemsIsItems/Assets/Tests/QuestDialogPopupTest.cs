@@ -53,6 +53,41 @@ public class DialogPopupTest
     }
 
     [UnityTest]
+    public IEnumerator DialogPopupDoesntMoveWhenObjectDoes()
+    {
+        GameObject questNPC = MonoBehaviour.Instantiate(Resources.Load<GameObject>("PreFabs/NPC/Doctor_Base"));
+        questNPC.transform.position = new Vector3(0, 0, 0);
+        TextSortingPosition Sort = questNPC.GetComponentInChildren<DialogPopup>().GetComponentInChildren<TextSortingPosition>();
+        yield return null;
+        yield return null;
+        Vector3 prevPosition = Sort.getPos();
+        questNPC.transform.position = new Vector3(10, 10, 0);
+        yield return null;
+        yield return null;
+        Vector3 lastPosition = Sort.getPos();
+
+        Assert.IsTrue(lastPosition == prevPosition);
+        GameObject.Destroy(questNPC);
+    }
+
+    [UnityTest]
+    public IEnumerator DialogPopupDoesntRotateWhenObjectDoes()
+    {
+        GameObject questNPC = MonoBehaviour.Instantiate(Resources.Load<GameObject>("PreFabs/NPC/Doctor_Base"));
+        TextSortingPosition Sort = questNPC.GetComponentInChildren<DialogPopup>().GetComponentInChildren<TextSortingPosition>();
+        yield return null;
+        yield return null;
+        Quaternion prevRot = Sort.getRot();
+        questNPC.transform.rotation = new Quaternion( 30, 1, 11, 0);
+        yield return null;
+        yield return null;
+        Quaternion lastRot = Sort.getRot();
+
+        Assert.IsTrue(Quaternion.Angle(Quaternion.Euler(prevRot.x, prevRot.y, prevRot.z), Quaternion.Euler(lastRot.x, lastRot.y, lastRot.z)) < .001);
+        GameObject.Destroy(questNPC);
+    }
+
+    [UnityTest]
     public IEnumerator QuestHasStates()
     {
         GameObject questObject = MonoBehaviour.Instantiate(Resources.Load<GameObject>("PreFabs/ForTests/TestPrefabForQuestDialogPopupTest"));
