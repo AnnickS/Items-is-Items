@@ -557,6 +557,7 @@ MonoBehaviour:
   jail: {fileID: 0}
   Descriptors:
   - {fileID: 11400000, guid: 777b439b4598ce74cbbcba71a2ba435c, type: 2}
+  needsColliders: 1
   CurrentTarget: {x: 0, y: 0}
   Rotate: 0
   isWaiting: 0

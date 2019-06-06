@@ -19,5 +19,13 @@ public class TextSortingPosition : MonoBehaviour {
         transform.rotation = rot;
     }
 
+    public Vector3 getPos()
+    {
+        return pos;
+    }
 
+    public Quaternion getRot()
+    {
+        return rot;
+    }
 }
