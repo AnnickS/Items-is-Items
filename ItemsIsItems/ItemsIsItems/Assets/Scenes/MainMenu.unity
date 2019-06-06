@@ -650,8 +650,8 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'Created By: Annick Stephan, Jordan Betcher, Job Betcher. Superved by: Sara
-    Farag'
+  m_Text: 'Created By: Annick Stephan, Jordan Betcher, Job Betcher. Superved by: Dr.
+    Sara Farag'
 --- !u!222 &1035457133
 CanvasRenderer:
   m_ObjectHideFlags: 0
