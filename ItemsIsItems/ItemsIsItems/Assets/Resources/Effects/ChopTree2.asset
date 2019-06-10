@@ -11,7 +11,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2153d6c733cab484fbfa0a1572d5b132, type: 3}
   m_Name: ChopTree2
   m_EditorClassIdentifier: 
-  deleteItem1: 1
-  deleteItem2: 0
+  deleteItem1: 0
+  deleteItem2: 1
   itemsToSpawn:
   - {fileID: 1793830346987796, guid: 1c380b68a7d393d479e1e658d89e00a9, type: 2}

@@ -105,10 +105,16 @@ MonoBehaviour:
   onDragScaleSize: {x: 1.3, y: 1.3, z: 1}
   inventoryWithin: {fileID: 0}
   isPickupable: 1
+  inWorld: 1
   drag: 0
   multipleInteract: 0
   jail: {fileID: 0}
-  Descriptors: []
+  Descriptors:
+  - {fileID: 11400000, guid: 8287c01c8afbbf54bbb50f1175759bd3, type: 2}
+  - {fileID: 11400000, guid: f379592378a592945bf2edc742c7a621, type: 2}
+  - {fileID: 11400000, guid: f4cfdb07e3ce59445ae59ba922f98686, type: 2}
+  - {fileID: 11400000, guid: e54337631628b8c49ad845ccb2710ec1, type: 2}
+  - {fileID: 11400000, guid: 2f7de67867ae9bf43be653ef2df1499a, type: 2}
 --- !u!114 &114777316629581066
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -154,8 +160,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: -1213559313
+  m_SortingLayer: 2
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: b2e52da58ef2fee4295d41e86c868085, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}

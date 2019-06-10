@@ -11,5 +11,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7889e15cda6944b4c867f76933c5059f, type: 3}
   m_Name: EffectSpawnBucketEmpty
   m_EditorClassIdentifier: 
-  itemToSpawn: {fileID: 1089053692235246, guid: b91b0914f0622784e89ece2861ca793e,
+  itemToSpawn: {fileID: 1775345465259480, guid: 8d7a7dfe40154d947910ab12f5625655,
     type: 2}
