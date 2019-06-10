@@ -139,9 +139,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 430583602}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cd44e64a7a088fc47b3d97acc0eebcba, type: 3}
+  m_Script: {fileID: 11500000, guid: b3caa7237637176498120dfc90e2b173, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  exampleButtonName: ExampleButton
   startColor: {r: 1, g: 1, b: 1, a: 1}
   enterColor: {r: 0, g: 1, b: 0, a: 1}
   overColor: {r: 0, g: 1, b: 1, a: 1}
