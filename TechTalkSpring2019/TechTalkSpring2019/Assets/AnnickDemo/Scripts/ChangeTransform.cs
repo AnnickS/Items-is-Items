@@ -5,10 +5,23 @@ using UnityEngine;
 //[RequireComponent(typeof(Rigidbody2D))]
 public class ChangeTransform : MonoBehaviour {
     //**Properties**
-    //public Vector3 position = new Vector3(-2, 2);
+    //[SerializeField]
+    private int experience = 0;
 
-	// Use this for initialization
-	void Start () {
+    public int Level
+    {
+        get
+        {
+            return experience / 1000;
+        }
+        set
+        {
+            experience = value * 1000;
+        }
+    }
+
+    // Use this for initialization
+    void Start () {
         //**GameObject**
         Destroy(this);
         //Destroy(gameObject);
